@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>09 · Lei n.º 35/2014 — LGTFP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,0.94);}
+    [data-theme="light"]{--bg:#f5f4f0;--bg-card:#ffffff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,0.94);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px;}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s;}.nav-back:hover{color:var(--accent);}
+    .nav-right{display:flex;align-items:center;gap:1rem;}
+    .nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600;}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s;}.theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem;}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem;}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent);}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem;}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);}
+    .badge-accent{border-color:var(--accent2);color:var(--accent);}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0;}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem;}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem;}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem;}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem;}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem;}
+    li strong{color:var(--text);font-weight:600;}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem;}
+    .card h2,.card h3{margin-top:0;}
+    .card p:last-child,.card ul:last-child{margin-bottom:0;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem;}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem;}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7;}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .highlight p{margin-bottom:0;font-size:.875rem;}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .warning p{margin-bottom:0;font-size:.875rem;}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem;}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border);}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top;}
+    tr:nth-child(even) td{background:var(--bg-alt);}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+    .toc-title{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
+    .toc ol{padding-left:1.2rem;margin-bottom:0;}.toc li{font-size:.8rem;color:var(--text-muted);margin-bottom:.2rem;}.toc a{color:var(--text-muted);text-decoration:none;}.toc a:hover{color:var(--accent);}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label);}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem;}nav{padding:0 1.1rem;}.grid2,.grid3{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">09 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">09 · Emprego Público</p>
+<h1>Lei Geral do Trabalho em <em>Funções Públicas</em></h1>
+<p class="doc-sub">Lei n.º 35/2014, de 20 de junho (LGTFP) · Aprovada pela Assembleia da República · Republicada com alterações · Aplicada na RAM com as adaptações do DLR n.º 11/2018/M · A AT-RAM rege-se também pelo DLR n.º 28/2022/M (carreiras especiais) como lex specialis</p>
+<div class="meta-row">
+  <span class="badge badge-accent">LGTFP</span>
+  <span class="badge">Lei 35/2014</span>
+  <span class="badge">Emprego Público</span>
+  <span class="badge">Regime Disciplinar</span>
+  <span class="badge">Carreiras e Remunerações</span>
+  <span class="badge">SIADAP</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <ol>
+    <li><a href="#s1">Objeto, âmbito e hierarquia de fontes</a></li>
+    <li><a href="#s2">Vínculos de emprego público — comparação</a></li>
+    <li><a href="#s3">Recrutamento e seleção</a></li>
+    <li><a href="#s4">Carreiras gerais e especiais</a></li>
+    <li><a href="#s5">Progressão, promoção e remuneração</a></li>
+    <li><a href="#s6">Mobilidade</a></li>
+    <li><a href="#s7">Organização do tempo de trabalho</a></li>
+    <li><a href="#s8">Direitos dos trabalhadores — férias, faltas e licenças</a></li>
+    <li><a href="#s9">Deveres dos trabalhadores</a></li>
+    <li><a href="#s10">Incompatibilidades e impedimentos</a></li>
+    <li><a href="#s11">Proteção social — ADSE e CGA</a></li>
+    <li><a href="#s12">Cessação dos vínculos de emprego público</a></li>
+    <li><a href="#s13">Avaliação de desempenho — SIADAP e SIADAP-RAM</a></li>
+    <li><a href="#s14">Regime disciplinar</a></li>
+    <li><a href="#s15">Pessoal dirigente — comissão de serviço</a></li>
+    <li><a href="#s16">Síntese para o inspetor tributário</a></li>
+  </ol>
+</div>
+
+<hr class="divider" id="s1"/>
+<p class="section-label">1. Objeto, Âmbito e Hierarquia de Fontes</p>
+
+<div class="highlight">
+  <p>A LGTFP aprova o <strong>regime geral</strong> dos trabalhadores que exercem funções públicas, substituindo o Estatuto da Função Pública (DL 24/84) e o RCTFP (Lei 59/2008). Aproxima o emprego público do regime laboral privado (CT), mantendo as especificidades do serviço público.</p>
+</div>
+
+<div class="card">
+  <h3>Artigo 1.º — Objeto</h3>
+  <p>Regula os <strong>vínculos de emprego público</strong>, as <strong>carreiras e remunerações</strong>, os <strong>direitos e deveres</strong> dos trabalhadores e o <strong>regime disciplinar</strong>.</p>
+  <h3>Artigo 2.º — Âmbito</h3>
+  <p>Aplica-se a todos os trabalhadores de: órgãos e serviços da administração direta do Estado; administração indireta (institutos públicos, EPE); administração autónoma (autarquias, associações públicas); órgãos e serviços das Regiões Autónomas — com as adaptações do <strong>DLR n.º 11/2018/M</strong> para a RAM.</p>
+  <h3>Artigo 4.º — Relação com outras fontes</h3>
+  <p>A LGTFP prevalece sobre os instrumentos de regulação coletiva de trabalho (IRCT) que a contrariem. O CT aplica-se subsidiariamente nas matérias não reguladas. Os <strong>estatutos especiais das carreiras especiais prevalecem como lex specialis</strong> (ex.: DLR 28/2022/M para os inspetores tributários da AT-RAM).</p>
+</div>
+
+<table>
+  <thead><tr><th>Nível</th><th>Diploma</th><th>Natureza</th><th>Conteúdo relevante</th></tr></thead>
+  <tbody>
+    <tr><td>1.º</td><td><strong>CRP</strong></td><td>Constituição</td><td>Art. 47.º (acesso à função pública por concurso); art. 269.º (relação jurídica de emprego público); garantias dos trabalhadores</td></tr>
+    <tr><td>2.º</td><td><strong>LGTFP</strong> (Lei 35/2014)</td><td>Lei da AR</td><td>Regime geral: vínculos, carreiras, deveres, disciplina, SIADAP</td></tr>
+    <tr><td>3.º</td><td><strong>DLR n.º 11/2018/M</strong></td><td>Decreto Legislativo Regional</td><td>Adaptação da LGTFP à RAM (v. Resumo 10)</td></tr>
+    <tr><td>4.º</td><td><strong>DLR n.º 28/2022/M</strong></td><td>Decreto Legislativo Regional</td><td>Carreiras especiais AT-RAM: inspetor tributário, técnico tributário, perito aduaneiro (lex specialis)</td></tr>
+    <tr><td>5.º</td><td><strong>Regulamentos/Despachos AT-RAM</strong></td><td>Atos administrativos</td><td>Despachos do Conselho Diretivo sobre organização interna, horários, delegação</td></tr>
+    <tr><td>Sub.</td><td><strong>Código do Trabalho</strong></td><td>Lei da AR</td><td>Aplicação subsidiária às matérias não reguladas pela LGTFP</td></tr>
+  </tbody>
+</table>
+
+<hr class="divider" id="s2"/>
+<p class="section-label">2. Vínculos de Emprego Público — Comparação</p>
+
+<table>
+  <thead><tr><th>Vínculo</th><th>Art.</th><th>Características</th><th>Na AT-RAM</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Nomeação</strong></td><td>9.º</td><td>Vínculo estatutário; reservado a funções que implicam exercício de poderes de autoridade ou soberania; pode ser definitiva ou transitória; mais proteção no emprego (dificilmente extinguível)</td><td>Inspetor tributário exerce poderes de autoridade → vínculo de nomeação é o adequado para a carreira especial de inspeção. Trabalhadores nomeados antes de 2008 mantiveram a nomeação.</td></tr>
+    <tr><td><strong>Contrato de Trabalho em Funções Públicas (CTFP)</strong></td><td>10.º</td><td>Forma regra desde 2008; pode ser por tempo indeterminado (CTI) ou a termo (certo ou incerto); contrato de direito público; sujeito à LGTFP + CT subsidiário</td><td>Maioria dos trabalhadores administrativos e técnicos da AT-RAM. Inspetores admitidos após 2008 podem ter CTFP ou nomeação (a lei especial pode determinar).</td></tr>
+    <tr><td><strong>Comissão de serviço</strong></td><td>11.º</td><td>Vínculo especial para cargos dirigentes; por períodos de 3 anos renováveis; não extingue o vínculo principal; cessa sem direito a indemnização (salvo disposição em contrário)</td><td>Diretores de Serviços e Chefes de Divisão da AT-RAM exercem as suas funções em comissão de serviço. A cessação não afeta o vínculo como inspetor ou técnico tributário.</td></tr>
+    <tr><td><strong>Contrato a termo</strong></td><td>10.º + 57.º ss.</td><td>Para necessidades transitórias ou temporárias; máximo de 3 renovações; conversão em CTI se mantidas as condições após o prazo</td><td>Contratação de reforços temporários para campanhas declarativas ou projetos especiais.</td></tr>
+  </tbody>
+</table>
+
+<hr class="divider" id="s3"/>
+<p class="section-label">3. Recrutamento e Seleção (Arts. 36.º–55.º)</p>
+
+<div class="card">
+  <h3>Concurso público — regra constitucional (art. 47.º CRP + art. 36.º LGTFP)</h3>
+  <p>O recrutamento para o emprego público é feito, em regra, por <strong>concurso público</strong>, aberto a candidatos externos. Excecionalmente, pode realizar-se concurso interno limitado a trabalhadores da AP quando a lei o preveja.</p>
+  <h3>Fases do concurso</h3>
+  <ol>
+    <li>Publicação do aviso de abertura no <strong>Diário da República</strong> e na <strong>Bolsa de Emprego Público (BEP)</strong>; para a RAM também no <strong>JORAM</strong></li>
+    <li>Apresentação de candidaturas no prazo fixado (mínimo 10 dias úteis)</li>
+    <li>Verificação de requisitos formais (habilitações, não inibição, idoneidade)</li>
+    <li>Aplicação dos métodos de seleção obrigatórios e facultativos</li>
+    <li>Ordenação final dos candidatos e publicação dos resultados</li>
+    <li>Audiência prévia dos candidatos excluídos (art. 60.º CPA)</li>
+    <li>Homologação da lista de classificação final</li>
+    <li>Celebração do vínculo com os selecionados (período experimental)</li>
+  </ol>
+  <h3>Requisitos gerais de admissão (art. 17.º)</h3>
+  <ul>
+    <li>Ser cidadão português, de EM da UE ou de país de língua oficial portuguesa (com reciprocidade)</li>
+    <li>Ter 18 anos de idade</li>
+    <li>Não inibição do exercício de funções públicas ou interdição do exercício de funções</li>
+    <li>Robustez física e perfil psíquico indispensáveis ao exercício das funções</li>
+    <li>Escolaridade obrigatória e habilitações literárias exigidas para o cargo</li>
+  </ul>
+  <h3>Métodos de seleção obrigatórios e facultativos</h3>
+  <table>
+    <thead><tr><th>Método</th><th>Obrigatoriedade</th><th>Descrição</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Prova de conhecimentos</strong></td><td>Obrigatório para carreiras especiais (incluindo inspeção tributária)</td><td>Avalia os conhecimentos técnicos necessários ao exercício das funções (direito fiscal, LGT, CPPT, procedimento tributário)</td></tr>
+      <tr><td><strong>Avaliação curricular</strong></td><td>Obrigatório</td><td>Avalia formação académica, experiência profissional e formação complementar</td></tr>
+      <tr><td><strong>Entrevista de competências</strong></td><td>Facultativo</td><td>Avalia competências comportamentais (comunicação, trabalho em equipa, orientação para o serviço público)</td></tr>
+      <tr><td><strong>Entrevista profissional de seleção</strong></td><td>Facultativo</td><td>Avalia aptidão técnica e motivação para o cargo</td></tr>
+      <tr><td><strong>Avaliação de competências por centro de avaliação</strong></td><td>Facultativo</td><td>Para cargos de maior complexidade e responsabilidade</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s4"/>
+<p class="section-label">4. Carreiras Gerais e Especiais</p>
+
+<h2>Carreiras Gerais (arts. 77.º ss.)</h2>
+<div class="grid3">
+  <div class="art-block">
+    <div class="art-title">Técnico Superior</div>
+    <div class="art-body">Habilitação mínima: licenciatura. Funções de conceção, estudo, planeamento, coordenação, avaliação e aplicação de métodos técnicos e científicos. Posições remuneratórias: 1 a 10. Na AT-RAM: funções de análise técnica tributária (juristas, economistas, contabilistas não integrados nas carreiras especiais).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Assistente Técnico</div>
+    <div class="art-body">Habilitação mínima: 12.º ano. Funções administrativas, de apoio técnico, tratamento e análise de dados, prestação de informação, atendimento. Posições remuneratórias: 1 a 9. Na AT-RAM: funções de atendimento nos Serviços de Finanças e apoio administrativo às direções.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Assistente Operacional</div>
+    <div class="art-body">Habilitação mínima: escolaridade obrigatória. Funções manuais, de apoio a serviços, manutenção, limpeza, vigilância, atendimento básico. Na AT-RAM: funções de apoio logístico, manutenção de instalações, motoristas.</div>
+  </div>
+</div>
+
+<h2>Carreiras Especiais — DLR n.º 28/2022/M (Lex Specialis)</h2>
+<div class="highlight">
+  <p>As carreiras especiais da AT-RAM (inspetor tributário, técnico tributário, perito aduaneiro) estão reguladas pelo <strong>DLR n.º 28/2022/M</strong>, que prevalece sobre a LGTFP como lei especial. Os aspetos não regulados pelo DLR 28/2022/M são supridos pela LGTFP e pelo DLR 11/2018/M. Ver Resumo 08 para o detalhe das carreiras especiais.</p>
+</div>
+
+<table>
+  <thead><tr><th>Carreira</th><th>Diploma específico</th><th>Habilitação exigida</th><th>Diferença face às carreiras gerais</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Inspetor Tributário</strong></td><td>DLR 28/2022/M</td><td>Licenciatura em Direito, Gestão, Economia, Contabilidade ou equivalente</td><td>Poderes de autoridade (acesso a documentos, audições obrigatórias, avaliação indireta); independência técnica; regime remuneratório superior; suplemento de inspeção</td></tr>
+    <tr><td><strong>Técnico Tributário</strong></td><td>DLR 28/2022/M</td><td>Licenciatura em área tributária</td><td>Funções de apoio técnico e liquidação; sem poderes de inspeção autónomos; acesso às aplicações tributárias</td></tr>
+    <tr><td><strong>Perito Aduaneiro</strong></td><td>DLR 28/2022/M</td><td>Licenciatura em área técnica ou ciências aduaneiras</td><td>Competências específicas em classificação pautal, controlo aduaneiro, fiscalização de alfândegas</td></tr>
+  </tbody>
+</table>
+
+<hr class="divider" id="s5"/>
+<p class="section-label">5. Progressão, Promoção e Remuneração (Arts. 155.º–163.º)</p>
+
+<div class="card">
+  <h3>Progressão na mesma categoria (arts. 155.º–160.º)</h3>
+  <p>A progressão para a posição remuneratória imediatamente seguinte depende de:</p>
+  <ul>
+    <li><strong>10 pontos</strong> acumulados nas avaliações de desempenho dos últimos dois anos (cada menção tem uma pontuação: Excelente = 5; Muito Bom = 4; Bom = 3; Necessita de Desenvolvimento = 2; Inadequado = 1); ou</li>
+    <li><strong>Menção de Muito Bom em duas avaliações consecutivas</strong>; ou</li>
+    <li><strong>Menção de Excelente numa avaliação</strong></li>
+    <li>Cada progressão implica o <strong>incremento de 2 pontos</strong> na posição remuneratória</li>
+    <li>Período mínimo entre progressões: <strong>2 anos</strong> na mesma posição</li>
+  </ul>
+  <h3>Promoção — mudança de categoria (art. 77.º ss.)</h3>
+  <p>A mudança de categoria (ex.: de inspetor tributário para inspetor tributário principal) exige <strong>novo procedimento concursal</strong>. Não há promoção automática — o trabalhador concorre para a categoria superior quando aberto procedimento. No DLR 28/2022/M, a progressão de Inspetor para Inspetor Principal exige: mínimo de anos na categoria + avaliação mínima de Bom + procedimento concursal interno.</p>
+  <h3>Remuneração base e suplementos</h3>
+  <ul>
+    <li><strong>Remuneração base:</strong> Determinada pela posição remuneratória na tabela remuneratória única (TRU) ou pela tabela específica da carreira especial (DLR 28/2022/M para os inspetores)</li>
+    <li><strong>Suplemento remuneratório de inspeção:</strong> Pago aos inspetores tributários em efetivo exercício de funções inspetivas; montante fixado pelo DLR 28/2022/M</li>
+    <li><strong>Ajudas de custo e despesas de deslocação:</strong> Para deslocações no âmbito de inspeções externas fora da sede do serviço; reguladas por despacho do Governo Regional</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s6"/>
+<p class="section-label">6. Mobilidade (Arts. 58.º–99.º)</p>
+
+<div class="card">
+  <h3>Tipos de mobilidade</h3>
+  <table>
+    <thead><tr><th>Tipo</th><th>Art.</th><th>Descrição</th><th>Aplicação AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Mobilidade interna</strong></td><td>92.º ss.</td><td>Movimentação dentro do mesmo serviço (entre direções ou serviços locais) por iniciativa do serviço ou do trabalhador; mantém a categoria e remuneração</td><td>Deslocação de inspetor entre a DSIT e um Serviço de Finanças para reforço temporário; redistribuição interna após reorganização</td></tr>
+      <tr><td><strong>Mobilidade entre serviços</strong></td><td>92.º ss.</td><td>Movimentação entre serviços da mesma pessoa coletiva pública ou entre organismos distintos; requer acordo dos serviços envolvidos e do trabalhador (em regra)</td><td>Movimentação de um inspetor da AT-RAM para a AT nacional (e vice-versa) para cooperação; requer acordo do CD e da AT nacional</td></tr>
+      <tr><td><strong>Cedência de interesse público</strong></td><td>94.º</td><td>Colocação temporária ao serviço de entidade pública ou privada de interesse público; o trabalhador mantém o vínculo com o serviço de origem</td><td>Inspetor cedido à Direção Geral das Alfândegas para projeto conjunto; à Comissão Europeia (por ex. para OLAF)</td></tr>
+      <tr><td><strong>Mobilidade especial</strong></td><td>DLR 11/2018/M + LGTFP arts. 261.º ss.</td><td>Situação especial de trabalhadores em excedência ou cujo posto de trabalho foi extinto; aguardam nova colocação recebendo parte da remuneração</td><td>Reestruturação da AT-RAM ou extinção de um serviço de finanças pode colocar trabalhadores em mobilidade especial</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s7"/>
+<p class="section-label">7. Organização do Tempo de Trabalho (Arts. 100.º–127.º)</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Arts. 100.º–103.º</div>
+    <div class="art-title">Período normal de trabalho</div>
+    <div class="art-body">
+      O período normal de trabalho (PNT) é de <strong>35 horas semanais</strong> (7 horas diárias), em regra. O horário laboral é fixado pelo dirigente máximo do serviço (CD para a AT-RAM), dentro dos limites legais.<br/>
+      O PNT pode ser alargado até 40h semanais em situações de necessidade ou por IRCT.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 120.º</div>
+    <div class="art-title">Isenção de horário</div>
+    <div class="art-body">
+      Os trabalhadores com <strong>isenção de horário</strong> não estão sujeitos aos limites do PNT e ao controlo de assiduidade pela entrada e saída. Aplica-se tipicamente a: cargos dirigentes (diretores de serviços, chefes de divisão); trabalhadores com funções de confiança; inspetores tributários em inspeção externa (pela natureza das funções).<br/>
+      A isenção não afasta o direito a descanso semanal nem as regras de saúde e segurança.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Arts. 120.º ss.</div>
+    <div class="art-title">Trabalho suplementar</div>
+    <div class="art-body">
+      Trabalho prestado fora do horário de trabalho, a pedido do superior. Limitado a 2h por dia; 150h/ano em regra. Compensado por majoração remuneratória ou, a pedido do trabalhador, por descanso compensatório.<br/>
+      Limites mais generosos para trabalhadores com isenção de horário.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Arts. 128.º ss.</div>
+    <div class="art-title">Teletrabalho</div>
+    <div class="art-body">
+      Prestação de trabalho em local fora das instalações do serviço, por meios tecnológicos. Requer acordo escrito; o trabalhador mantém os mesmos direitos e deveres. Na AT-RAM, compatível com a realização de inspeções internas (análise documental à distância) mas incompatível com inspeções externas (que exigem presença física nas instalações do contribuinte).
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="s8"/>
+<p class="section-label">8. Direitos dos Trabalhadores — Férias, Faltas e Licenças</p>
+
+<h2>Férias (Arts. 225.º–242.º)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Regra</th><th>Detalhe</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Duração base</strong></td><td>22 dias úteis por ano civil</td></tr>
+      <tr><td><strong>Acréscimos por antiguidade</strong></td><td>+3 dias a partir de 10 anos; +5 dias a partir de 20 anos; +3 dias adicionais a partir de 25 anos (máximo total: 25 dias úteis)</td></tr>
+      <tr><td><strong>Acréscimos por avaliação</strong></td><td>Menção de Excelente ou Muito Bom pode dar +3 dias (depende da regulamentação específica da carreira)</td></tr>
+      <tr><td><strong>Vencimento</strong></td><td>Vencem-se a 1 de janeiro de cada ano civil; no 1.º ano: 2 dias por mês de serviço (até 20 dias), gozáveis após 6 meses</td></tr>
+      <tr><td><strong>Renúncia</strong></td><td>Proibida; o não gozo implica pagamento em dobro do vencimento diário por cada dia não gozado</td></tr>
+      <tr><td><strong>Marcação</strong></td><td>O trabalhador deve gozar pelo menos 11 dias úteis de férias seguidos; o restante pode ser fracionado; a marcação é acordada com o superior hierárquico</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Faltas (Arts. 243.º–263.º)</h2>
+<div class="card">
+  <h3>Faltas justificadas — principais casos</h3>
+  <ul>
+    <li>Doença do trabalhador (com certificado de incapacidade temporária a partir do 4.º dia)</li>
+    <li>Parentalidade: gozar licença parental, assistência a filho doente</li>
+    <li>Falecimento de familiar: <strong>4 dias</strong> (cônjuge/companheiro, pais, filhos, enteados); <strong>2 dias</strong> (outros familiares previstos em lei)</li>
+    <li>Casamento: <strong>15 dias seguidos</strong></li>
+    <li>Doação de sangue e medula óssea: 1 dia (ou mais se necessário)</li>
+    <li>Cumprimento de obrigações legais (tribunal, assembleias eleitorais, serviço cívico)</li>
+    <li>Representação de associação sindical (em número de dias legalmente fixado)</li>
+    <li>Trabalhador-estudante: faltas para prestação de provas de avaliação</li>
+    <li>Candidato em período eleitoral</li>
+  </ul>
+  <h3>Consequências das faltas injustificadas</h3>
+  <ul>
+    <li>Perda de remuneração proporcional ao número de faltas</li>
+    <li>Perda de antiguidade (os dias de falta não contam para progressão)</li>
+    <li>Constituem infração disciplinar</li>
+    <li><strong>Mais de 10 faltas injustificadas num ano:</strong> infração grave (passível de suspensão)</li>
+    <li><strong>Abandono do posto:</strong> presunção de abandono após 10 dias consecutivos de faltas injustificadas → pode levar à demissão/despedimento</li>
+  </ul>
+</div>
+
+<h2>Licenças (Arts. 265.º–279.º)</h2>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Licença parental</div>
+    <div class="art-title">Parentalidade</div>
+    <div class="art-body">
+      <strong>Licença parental inicial:</strong> 120 dias (ou 150 dias com partilha entre os pais); paga pela Segurança Social/CGA.<br/>
+      <strong>Licença parental exclusiva do pai:</strong> 20 dias obrigatórios + 5 dias facultativos.<br/>
+      <strong>Licença parental alargada:</strong> até 3 meses (não remunerada) após o fim da licença inicial.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Licença sem remuneração</div>
+    <div class="art-title">Interrupção voluntária</div>
+    <div class="art-body">
+      Por motivos pessoais: até 2 anos (prorrogável).<br/>
+      Para acompanhar cônjuge/companheiro colocado no estrangeiro: sem limite de tempo.<br/>
+      Para formação: tempo necessário.<br/>
+      Suspende a contagem de antiguidade mas mantém o vínculo.
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="s9"/>
+<p class="section-label">9. Deveres dos Trabalhadores (Arts. 73.º–76.º)</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Dever</th><th>Conteúdo</th><th>Especificidade para Inspetor AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Prossecução do interesse público</strong></td><td>Servir o interesse geral, não interesses particulares ou partidários</td><td>A inspeção tributária deve prosseguir a cobrança justa dos impostos, não visando o aumento das receitas a qualquer custo nem favorecendo contribuintes específicos</td></tr>
+      <tr><td><strong>Isenção</strong></td><td>Não retirar vantagens das funções exercidas</td><td>Proibição de receber ofertas, benefícios ou contrapartidas de contribuintes; obrigação de declarar conflitos de interesses</td></tr>
+      <tr><td><strong>Imparcialidade</strong></td><td>Atuar de forma equidistante; não favorecer nem prejudicar ninguém por razões não objetivas</td><td>As correções do relatório de inspeção devem fundar-se exclusivamente nos factos e na lei; o inspetor não pode ser influenciado por relações pessoais com o contribuinte</td></tr>
+      <tr><td><strong>Informação</strong></td><td>Prestar informações solicitadas pelos cidadãos dentro dos limites legais</td><td>Dever de informar o contribuinte sobre os seus direitos no âmbito do procedimento de inspeção; acesso ao processo (art. 60.º LGT)</td></tr>
+      <tr><td><strong>Sigilo</strong></td><td>Guardar sigilo sobre matérias que não devam ser do conhecimento público ou que prejudiquem terceiros</td><td><strong>Sigilo fiscal</strong> (art. 64.º LGT): os dados fiscais dos contribuintes são estritamente confidenciais; violação é infração disciplinar grave e crime (art. 91.º RGIT)</td></tr>
+      <tr><td><strong>Obediência</strong></td><td>Cumprir ordens e instruções dos superiores hierárquicos, exceto quando manifestamente ilegais</td><td><strong>Direito e dever de recusa de ordens ilegais:</strong> o inspetor deve recusar cumprimento de instrução que o obrigue a fazer constar do relatório factos falsos ou a omitir factos verdadeiros; a recusa deve ser comunicada por escrito ao superior com identificação do fundamento</td></tr>
+      <tr><td><strong>Lealdade</strong></td><td>Fidelidade aos valores e fins do Estado e da AT-RAM</td><td>Incluída na componente deontológica do RCPIT; o inspetor representa a AT-RAM e o Estado no exercício das suas funções</td></tr>
+      <tr><td><strong>Correção</strong></td><td>Tratar com respeito todos os cidadãos, colegas e superiores</td><td>Trato correto com contribuintes durante inspeções; especialmente relevante em situações de tensão ou conflito</td></tr>
+      <tr><td><strong>Assiduidade e pontualidade</strong></td><td>Comparecer e permanecer no local de trabalho nos termos exigidos</td><td>Para inspeções externas: comparecer nas instalações do contribuinte na data e hora acordadas; cumprir os compromissos de notificação</td></tr>
+      <tr><td><strong>Zelo</strong></td><td>Exercer as funções com competência, eficiência e dedicação</td><td>Qualidade técnica dos relatórios de inspeção; atualização dos conhecimentos de direito fiscal; cumprimento dos prazos do RCPIT</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s10"/>
+<p class="section-label">10. Incompatibilidades e Impedimentos</p>
+
+<div class="card">
+  <h3>Incompatibilidades (art. 25.º LGTFP + Lei 12-A/2008)</h3>
+  <p>O exercício de funções públicas é, em regra, incompatível com o exercício de funções em entidades privadas em simultâneo. Os trabalhadores em funções públicas não podem:</p>
+  <ul>
+    <li>Exercer, com carácter permanente ou habitual, funções em empresas privadas lucrativas</li>
+    <li>Ser gerentes, administradores ou membros de órgãos de fiscalização de empresas privadas (salvo autorização expressa)</li>
+    <li>Receber remunerações de entidades privadas para além das legalmente permitidas</li>
+  </ul>
+  <h3>Incompatibilidades específicas dos inspetores tributários (DLR 28/2022/M)</h3>
+  <ul>
+    <li><strong>Atividade de consultoria ou assessoria fiscal privada</strong> — incompatível com as funções de inspeção tributária (conflito de interesses evidente)</li>
+    <li><strong>Representação de contribuintes</strong> perante a AT-RAM — incompatível durante e após o exercício das funções por um período mínimo («período de nojo»)</li>
+    <li><strong>Período de nojo:</strong> Após cessar funções como inspetor, proibição de representar contribuintes em processos que o inspetor tenha instruído, por um período definido no DLR 28/2022/M</li>
+  </ul>
+  <h3>Acumulação de funções públicas</h3>
+  <p>A acumulação de funções em dois ou mais cargos ou empregos públicos é em geral proibida, salvo quando expressamente autorizada por lei ou quando as funções sejam de natureza muito específica (ex.: membro de júri de concurso, docência universitária).</p>
+</div>
+
+<hr class="divider" id="s11"/>
+<p class="section-label">11. Proteção Social — ADSE e CGA</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">ADSE</div>
+    <div class="art-title">Direção-Geral de Proteção Social aos Trabalhadores em Funções Públicas</div>
+    <div class="art-body">
+      Sistema de proteção de saúde dos trabalhadores em funções públicas. Os trabalhadores da AT-RAM (nomeados ou com CTFP) são beneficiários da ADSE, que comparticipa despesas de saúde (consultas, análises, internamentos, medicamentos) de acordo com tabelas próprias.<br/>
+      Financiamento: desconto de 3,5% na remuneração do trabalhador + contribuição do serviço.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">CGA</div>
+    <div class="art-title">Caixa Geral de Aposentações</div>
+    <div class="art-body">
+      Sistema de pensões dos trabalhadores nomeados em funções públicas (e de alguns CTFP admitidos antes de 2006). Os trabalhadores com CTFP admitidos após 2006 descontam para a Segurança Social (RGSS).<br/>
+      Pensão de aposentação: calculada com base nos anos de serviço e na remuneração de referência; regras específicas para carreiras especiais que acrescentam os anos de serviço como inspetores.
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="s12"/>
+<p class="section-label">12. Cessação dos Vínculos de Emprego Público (Arts. 280.º–313.º)</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Forma de cessação</th><th>Art.</th><th>Descrição</th><th>Efeitos</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Caducidade do contrato a termo</strong></td><td>280.º</td><td>Fim do prazo do contrato a termo</td><td>Extinção automática; direito a compensação de 7 ou 14 dias por ano (consoante o prazo)</td></tr>
+      <tr><td><strong>Acordo</strong></td><td>281.º</td><td>Acordo mútuo entre trabalhador e serviço</td><td>Com ou sem compensação conforme acordado; possível por razões de reestruturação</td></tr>
+      <tr><td><strong>Resolução do trabalhador (justa causa)</strong></td><td>283.º</td><td>O trabalhador pode cessar o contrato com justa causa (ilegalidade grave do empregador)</td><td>Direito a indemnização equivalente ao despedimento ilícito</td></tr>
+      <tr><td><strong>Denúncia voluntária (demissão)</strong></td><td>286.º</td><td>O trabalhador pode cessar o vínculo com aviso prévio (60 dias para cargos técnicos especializados, 30 dias para os demais)</td><td>Extinção do vínculo; sem indemnização; obrigação de prestar serviço durante o aviso prévio</td></tr>
+      <tr><td><strong>Despedimento por facto imputável ao trabalhador</strong></td><td>297.º</td><td>Equivalente a processo disciplinar que culmina na sanção expulsiva; proibição de regresso à AP por 3 a 10 anos</td><td>Extinção do vínculo; sem compensação</td></tr>
+      <tr><td><strong>Extinção do posto de trabalho</strong></td><td>288.º</td><td>Por reestruturação do serviço ou racionalização de recursos; só após mobilidade especial frustrada</td><td>Compensação por antiguidade</td></tr>
+      <tr><td><strong>Aposentação/Reforma</strong></td><td>LGTFP + Estatuto Aposentação</td><td>Limite de idade (66 anos e 4 meses em 2024, crescente) ou por invalidez</td><td>Pensão de aposentação CGA (nomeados) ou reforma SS (CTFP pós-2006)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s13"/>
+<p class="section-label">13. Avaliação de Desempenho — SIADAP e SIADAP-RAM</p>
+
+<div class="card">
+  <h3>SIADAP nacional (Lei 66-B/2007)</h3>
+  <p>O Sistema Integrado de Gestão e Avaliação do Desempenho na Administração Pública é composto por três subsistemas: SIADAP 1 (serviços), SIADAP 2 (dirigentes), SIADAP 3 (trabalhadores). A LGTFP remete para o SIADAP quanto às regras de progressão.</p>
+  <table>
+    <thead><tr><th>Dimensão</th><th>Regra</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Periodicidade</strong></td><td>Bienal (avaliação de 2 em 2 anos)</td></tr>
+      <tr><td><strong>Menções qualitativas</strong></td><td>Excelente (5 pontos); Muito Bom (4 pontos); Bom (3 pontos); Necessita de Desenvolvimento (2 pontos); Inadequado (1 ponto)</td></tr>
+      <tr><td><strong>Quem avalia</strong></td><td>O avaliador direto (superior hierárquico imediato): Chefe de Divisão avalia o Inspetor; Diretor de Serviços valida</td></tr>
+      <tr><td><strong>Quotas</strong></td><td>Máximo de 25% de Muito Bom e 5% de Excelente por unidade orgânica (para evitar inflação das avaliações)</td></tr>
+      <tr><td><strong>Avaliado tem direito a</strong></td><td>Audiência prévia do projeto de avaliação; reclamação da avaliação definitiva</td></tr>
+      <tr><td><strong>Avaliação de Inadequado</strong></td><td>Dois anos consecutivos de Inadequado → procedimento para cessação do vínculo (após processo específico que inclui período de requalificação)</td></tr>
+    </tbody>
+  </table>
+  <h3>SIADAP-RAM</h3>
+  <p>A RAM tem o seu sistema próprio de avaliação de desempenho, adaptado pelo DLR n.º 11/2018/M. Mantém a estrutura bienal e as 5 menções, mas com adaptações às especificidades da AP regional (incluindo quotas ajustadas). Para os inspetores tributários da AT-RAM, o SIADAP-RAM inclui critérios de avaliação específicos relacionados com a qualidade técnica dos relatórios de inspeção, o número de ações realizadas e a complexidade dos casos tratados.</p>
+</div>
+
+<hr class="divider" id="s14"/>
+<p class="section-label">14. Regime Disciplinar (Arts. 176.º–224.º)</p>
+
+<div class="highlight">
+  <p>O regime disciplinar é uma das matérias mais relevantes para o exame. O trabalhador está sujeito a responsabilidade disciplinar pela violação dos seus deveres funcionais. O poder disciplinar é exercido pelo superior hierárquico competente ou pelo dirigente máximo do serviço (CD da AT-RAM, para as infrações mais graves).</p>
+</div>
+
+<h2>Infrações e Sanções</h2>
+<table>
+  <thead><tr><th>Gravidade</th><th>Sanção</th><th>Efeitos</th><th>Exemplos na AT-RAM</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Leve</strong></td><td>Repreensão verbal; repreensão escrita</td><td>Repreensão escrita: registo no processo individual; sem perda de remuneração</td><td>Atrasos ocasionais; incumprimento de formalidade menor no relatório; desatenção pontual a prazos internos</td></tr>
+    <tr><td><strong>Grave</strong></td><td>Multa (1 a 30 dias de remuneração); suspensão (1 a 180 dias)</td><td>Multa: dedução na remuneração. Suspensão: perda de remuneração e antiguidade.</td><td>Faltas injustificadas reiteradas; incumprimento de ordens legais; negligência grave que provoque prejuízo ao serviço; atraso reiterado nas inspeções</td></tr>
+    <tr><td><strong>Muito grave</strong></td><td>Demissão (nomeados); despedimento por facto imputável (CTFP); cessação da comissão de serviço (dirigentes)</td><td>Extinção do vínculo; proibição de regresso à AP por 3 a 10 anos; pena acessória de proibição de exercício de funções</td><td>Violação do sigilo fiscal; corrupção passiva; falsificação do relatório de inspeção; favorecimento ilegal de contribuinte; abandono de posto</td></tr>
+  </tbody>
+</table>
+
+<h2>Procedimento Disciplinar</h2>
+<div class="card">
+  <ol>
+    <li><strong>Participação/conhecimento da infração</strong> — pelo superior hierárquico ou por denúncia</li>
+    <li><strong>Instauração:</strong> Despacho do dirigente máximo do serviço (CD da AT-RAM), designando instrutor do processo</li>
+    <li><strong>Inquérito prévio</strong> (facultativo) — para averiguação sumária quando os factos não estejam suficientemente esclarecidos</li>
+    <li><strong>Nota de culpa:</strong> Documento com os factos imputados e disposições legais violadas; notificada ao arguido</li>
+    <li><strong>Defesa do arguido:</strong> Prazo de <strong>10 dias úteis</strong> para resposta escrita; pode indicar testemunhas e solicitar diligências; pode constituir mandatário</li>
+    <li><strong>Instrução:</strong> Recolha de prova, audição de testemunhas, realização das diligências requeridas pelo arguido que não sejam manifestamente impertinentes</li>
+    <li><strong>Relatório do instrutor:</strong> Com proposta de decisão fundamentada (arquivamento ou aplicação de sanção)</li>
+    <li><strong>Decisão final:</strong> Proferida pelo dirigente competente; deve ser fundamentada; proporcional à gravidade dos factos e ao grau de culpa</li>
+    <li><strong>Notificação da decisão</strong> ao arguido</li>
+    <li><strong>Impugnação:</strong> Recurso hierárquico (30 dias); impugnação judicial no TAF ou TAAF (3 meses)</li>
+  </ol>
+</div>
+
+<h2>Prazos de Prescrição do Procedimento Disciplinar (Art. 178.º)</h2>
+<table>
+  <thead><tr><th>Sanção máxima aplicável</th><th>Prazo de prescrição</th><th>Início da contagem</th></tr></thead>
+  <tbody>
+    <tr><td>Repreensão escrita</td><td><strong>1 ano</strong></td><td>Após tomada de conhecimento pelo superior hierárquico</td></tr>
+    <tr><td>Multa</td><td><strong>2 anos</strong></td><td>Após tomada de conhecimento pelo superior hierárquico</td></tr>
+    <tr><td>Suspensão (até 180 dias)</td><td><strong>2 anos</strong></td><td>Após a prática dos factos</td></tr>
+    <tr><td>Demissão ou despedimento</td><td><strong>5 anos</strong></td><td>Após a prática dos factos</td></tr>
+    <tr><td>Infração que constitua simultaneamente crime</td><td><strong>Prazo de prescrição criminal</strong> (mínimo 5 anos; até 15 anos para crimes de corrupção)</td><td>Prazo mais longo do direito penal</td></tr>
+  </tbody>
+</table>
+
+<div class="warning">
+  <p><strong>Suspensão do prazo:</strong> A instauração do procedimento disciplinar suspende o prazo de prescrição. Durante a instrução, o prazo não corre. A suspensão máxima é de 18 meses para as infrações menos graves e de 3 anos para as mais graves.</p>
+</div>
+
+<hr class="divider" id="s15"/>
+<p class="section-label">15. Pessoal Dirigente — Comissão de Serviço</p>
+
+<div class="card">
+  <p>Na AT-RAM, os cargos de direção (Diretores de Serviços, Chefes de Divisão) são exercidos em <strong>comissão de serviço</strong> (art. 11.º LGTFP + Lei 2/2004 — Estatuto do Pessoal Dirigente).</p>
+  <h3>Características da comissão de serviço</h3>
+  <ul>
+    <li><strong>Duração:</strong> 3 anos, renovável por iguais períodos</li>
+    <li><strong>Designação:</strong> Por despacho do Conselho Diretivo da AT-RAM, após procedimento de recrutamento e seleção (concurso público para diretores de serviços); o recrutamento é por escolha de entre trabalhadores da AP (nacional ou regional) com adequado perfil de competências</li>
+    <li><strong>Remuneração:</strong> Remuneração específica do cargo dirigente (superior à remuneração da carreira de base)</li>
+    <li><strong>Cessação:</strong> Por término do mandato, a pedido do trabalhador, ou pelo dirigente máximo (CD) quando haja motivo justificado; a cessação não extingue o vínculo principal — o trabalhador regressa à sua carreira de base (ex.: regresso à carreira de inspetor tributário)</li>
+    <li><strong>Incompatibilidades reforçadas:</strong> Os dirigentes estão sujeitos a declaração de rendimentos e interesses; as incompatibilidades são mais rígidas do que as dos trabalhadores em geral</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s16"/>
+<p class="section-label">16. Síntese para o Inspetor Tributário</p>
+
+<table>
+  <thead><tr><th>Tema LGTFP</th><th>Regra aplicável ao inspetor AT-RAM</th><th>Diploma</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Vínculo de emprego</strong></td><td>Nomeação (para inspetor com poderes de autoridade) ou CTFP por tempo indeterminado; a lei especial (DLR 28/2022/M) pode determinar qual o vínculo adequado para cada categoria</td><td>LGTFP art. 9.º–10.º + DLR 28/2022/M</td></tr>
+    <tr><td><strong>Sigilo funcional</strong></td><td>Dever de sigilo fiscal (LGT art. 64.º) é concretização do dever de sigilo da LGTFP; violação é infração muito grave (sanção expulsiva) e crime tributário (RGIT art. 91.º)</td><td>LGTFP art. 73.º e) + LGT art. 64.º + RGIT art. 91.º</td></tr>
+    <tr><td><strong>Recusa de ordens ilegais</strong></td><td>O inspetor pode e deve recusar ordens manifestamente ilegais (ex.: falsificar relatório); a recusa deve ser escrita e fundamentada; não pode sofrer retaliação por isso</td><td>LGTFP art. 73.º f) + Lei 93/2021 (proteção do denunciante)</td></tr>
+    <tr><td><strong>Incompatibilidades</strong></td><td>Proibição de consultoria fiscal privada; proibição de representar contribuintes; período de nojo pós-emprego público</td><td>DLR 28/2022/M + Lei 12-A/2008</td></tr>
+    <tr><td><strong>Avaliação de desempenho</strong></td><td>SIADAP-RAM bienal; avaliação pelo Chefe de Divisão; quotas (25% MB, 5% E); impacto direto na progressão remuneratória</td><td>DLR 11/2018/M + SIADAP-RAM</td></tr>
+    <tr><td><strong>Disciplinar — sigilo fiscal</strong></td><td>Violação do sigilo: infração muito grave → demissão/despedimento; prazo de prescrição: 5 anos (ou prazo criminal se constituir crime)</td><td>LGTFP art. 178.º + art. 186.º</td></tr>
+    <tr><td><strong>Disciplinar — recusa de inspeção</strong></td><td>Recusa injustificada de realizar ação de inspeção para a qual tenha sido designado: infração grave → suspensão ou multa</td><td>LGTFP art. 73.º + art. 182.º–183.º</td></tr>
+    <tr><td><strong>Proteção do denunciante</strong></td><td>Se o inspetor denunciar irregularidades internas da AT-RAM (corrupção de colega, ordens ilegais do superior), está protegido pela Lei 93/2021 contra retaliações</td><td>Lei 93/2021 + LGTFP art. 73.º f)</td></tr>
+    <tr><td><strong>Progressão</strong></td><td>Acumulação de 10 pontos em 2 anos (ou MB consecutivos) → progressão automática; promoção a Inspetor Principal: procedimento concursal interno</td><td>LGTFP arts. 155.º–160.º + DLR 28/2022/M</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t);}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾';})();
+</script>
+</body>
+</html>

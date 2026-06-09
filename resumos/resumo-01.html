@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>01 · CPA — Código do Procedimento Administrativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--border-strong:#3a3a3a;--nav-bg:rgba(15,15,15,0.94);}
+    [data-theme="light"]{--bg:#f5f4f0;--bg-card:#ffffff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--accent2:#8a6d20;--border:#e4e2dd;--border-strong:#ccc;--nav-bg:rgba(245,244,240,0.94);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px;}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s;letter-spacing:.02em;}.nav-back:hover{color:var(--accent);}
+    .nav-right{display:flex;align-items:center;gap:1rem;}
+    .nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600;}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s;}.theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem;}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem;}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent);}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem;line-height:1.6;}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);}
+    .badge-accent{border-color:var(--accent2);color:var(--accent);}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0;}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem;}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem;}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem;}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem;}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem;}
+    li strong{color:var(--text);font-weight:600;}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem;}
+    .card h2{margin-top:0;}
+    .card p:last-child,.card ul:last-child{margin-bottom:0;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem;}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem;}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7;}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .highlight p{margin-bottom:0;font-size:.875rem;}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .warning p{margin-bottom:0;font-size:.875rem;color:var(--text-muted);}
+    .warning strong{color:#e74c3c;}
+    .info{border-left:3px solid #2980b9;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .info p{margin-bottom:0;font-size:.875rem;}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem;}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border);}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top;}
+    tr:nth-child(even) td{background:var(--bg-alt);}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem;}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.2rem 0;transition:color .15s;}
+    .toc a:hover{color:var(--accent);}
+    .toc a::before{content:"→ ";color:var(--accent);font-size:.75rem;}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label);}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem;}nav{padding:0 1.1rem;}.grid2,.grid3{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">01 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">01 · Procedimento Administrativo</p>
+<h1>Código do <em>Procedimento Administrativo</em></h1>
+<p class="doc-sub">Decreto-Lei n.º 4/2015, de 7 de janeiro · Aprovado pelo Governo ao abrigo de lei de autorização legislativa · Em vigor desde 7 de abril de 2015</p>
+<div class="meta-row">
+  <span class="badge badge-accent">CPA 2015</span>
+  <span class="badge">DL 4/2015</span>
+  <span class="badge">Procedimento Administrativo</span>
+  <span class="badge">Ato Administrativo</span>
+  <span class="badge">Garantias dos Particulares</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#enquadramento">Enquadramento e Âmbito</a>
+  <a href="#principios">Princípios Gerais da Atividade Administrativa</a>
+  <a href="#sujeitos">Sujeitos da Atividade Administrativa</a>
+  <a href="#competencia">Competência, Delegação e Substituição</a>
+  <a href="#impedimentos">Impedimentos e Suspeições</a>
+  <a href="#procedimento">O Procedimento Administrativo</a>
+  <a href="#ato">Ato Administrativo — Formação e Validade</a>
+  <a href="#ineficacia">Invalidade dos Atos Administrativos</a>
+  <a href="#revogacao">Revogação, Ratificação e Convalidação</a>
+  <a href="#recursos">Recursos Administrativos</a>
+  <a href="#regulamentos">Regulamentos Administrativos</a>
+  <a href="#contratos">Contratos Administrativos</a>
+  <a href="#sancionatorio">Direito Sancionatório Administrativo</a>
+</div>
+
+<hr class="divider" id="enquadramento" />
+<p class="section-label">1. Enquadramento e Âmbito de Aplicação</p>
+
+<div class="highlight">
+  <p>O CPA regula a atividade administrativa e o procedimento administrativo, garantindo os direitos e interesses legalmente protegidos dos particulares e a boa administração. É o principal diploma do direito administrativo formal português.</p>
+</div>
+
+<h2>Âmbito Subjetivo (artigo 2.º)</h2>
+<p>O CPA aplica-se à atividade administrativa dos órgãos de:</p>
+<ul>
+  <li>Administração direta do Estado (ministérios, serviços centrais e periféricos)</li>
+  <li>Administração indireta do Estado (institutos públicos, entidades públicas empresariais)</li>
+  <li>Administração autónoma (autarquias locais, associações públicas, Regiões Autónomas)</li>
+  <li>Entidades privadas que exercem poderes públicos administrativos (nos termos do artigo 2.º, n.º 1, alínea d))</li>
+</ul>
+
+<h2>Âmbito Objetivo (artigo 2.º, n.ºs 5 e 6)</h2>
+<p>O CPA aplica-se aos procedimentos que conduzam à prática de atos administrativos e à celebração de contratos. Algumas normas (princípios gerais) aplicam-se a toda a atividade administrativa, incluindo a gestão pública.</p>
+
+<div class="warning">
+  <p><strong>Atenção:</strong> O CPA de 2015 substituiu o CPA de 1991. Trouxe a codificação de matérias antes avulsas, nomeadamente os recursos administrativos, os contratos públicos e o direito sancionatório. Aproximou o direito administrativo de princípios do direito privado.</p>
+</div>
+
+<hr class="divider" id="principios" />
+<p class="section-label">2. Princípios Gerais da Atividade Administrativa (Artigos 3.º–19.º)</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Artigo 3.º</div>
+    <div class="art-title">Princípio da legalidade</div>
+    <div class="art-body">Os órgãos da Administração Pública devem atuar em obediência à lei e ao direito, dentro dos poderes que lhes estejam atribuídos e em conformidade com os fins para que os mesmos poderes lhes foram conferidos. <strong>Dupla vinculação:</strong> proibição do que não é permitido + dever de prosseguir o interesse público.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 4.º</div>
+    <div class="art-title">Princípio da boa fé</div>
+    <div class="art-body">A Administração e os particulares devem agir segundo as regras da boa fé. Inclui o <strong>princípio da proteção da confiança legítima</strong>: a Administração não pode frustrar expectativas legítimas que ela própria criou nos particulares. Fundamento da irrevogabilidade de atos favoráveis.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 5.º</div>
+    <div class="art-title">Princípio da proporcionalidade</div>
+    <div class="art-body">As decisões administrativas devem ser adequadas aos fins que as justificam (<strong>adequação</strong>), necessárias para atingir esses fins (<strong>necessidade / exigibilidade</strong>) e não devem sacrificar interesses privados em medida superior ao necessário (<strong>proporcionalidade em sentido estrito</strong>). Triplo teste.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 6.º</div>
+    <div class="art-title">Princípio da justiça e razoabilidade</div>
+    <div class="art-body">A Administração deve tratar de forma justa e razoável todos aqueles com quem se relaciona, adotando comportamentos que não choquem o senso comum de homem médio.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 9.º</div>
+    <div class="art-title">Princípio da imparcialidade</div>
+    <div class="art-body">A Administração deve tratar de forma imparcial os que com ela entrem em relação, ponderando todos os interesses relevantes. Operacionalizado pelos <strong>impedimentos e suspeições</strong> (artigos 69.º e ss.). Vício de <strong>desvio de poder</strong> quando violado.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 11.º</div>
+    <div class="art-title">Princípio da participação</div>
+    <div class="art-body">Os órgãos da Administração devem assegurar a participação dos particulares na formação das decisões, bem como na elaboração dos regulamentos que lhes digam respeito. Concretizado pela <strong>audiência dos interessados</strong> (artigos 121.º–125.º).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 12.º</div>
+    <div class="art-title">Princípio da decisão</div>
+    <div class="art-body">Os órgãos administrativos têm o dever de se pronunciar sobre todos os assuntos que lhes sejam apresentados pelos particulares. A falta de pronúncia no prazo de <strong>90 dias</strong> (regra geral) constitui <strong>deferimento tácito</strong> ou <strong>indeferimento tácito</strong>, conforme a lei determine.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 13.º</div>
+    <div class="art-title">Princípio da colaboração</div>
+    <div class="art-body">A Administração e os particulares devem colaborar reciprocamente. A Administração deve prestar toda a informação e colaboração necessárias ao particular para a defesa dos seus direitos e interesses legítimos.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 14.º</div>
+    <div class="art-title">Princípio da gratuitidade</div>
+    <div class="art-body">O acesso dos particulares ao procedimento administrativo é gratuito, salvo quando a lei estabeleça o pagamento de taxas. Esta regra é particularmente relevante nas reclamações e recursos administrativos.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 15.º</div>
+    <div class="art-title">Princípio da administração eletrónica</div>
+    <div class="art-body">A Administração deve usar meios eletrónicos na sua atividade, nomeadamente para comunicações com os particulares, sem prejuízo das exceções. Relevante para notificações eletrónicas, balcão único, etc.</div>
+  </div>
+</div>
+
+<hr class="divider" id="sujeitos" />
+<p class="section-label">3. Sujeitos da Atividade Administrativa</p>
+
+<h2>Órgãos Administrativos (Artigos 20.º–43.º)</h2>
+<p>São órgãos administrativos os centros individuais ou colegiais de poderes funcionais que atuam em nome e no interesse da pessoa coletiva. Distinguem-se dos <strong>serviços</strong> (estruturas de apoio) e dos <strong>agentes</strong> (pessoas que integram os órgãos).</p>
+
+<h3>Tipos de Órgãos</h3>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-title">Órgãos singulares</div>
+    <div class="art-body">Compostos por uma única pessoa. Ex.: Ministro, Presidente de Câmara, Diretor-Geral.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Órgãos colegiais</div>
+    <div class="art-body">Compostos por vários titulares. Sujeitos a regras de convocação, quórum e deliberação. A sua vontade é formada coletivamente.</div>
+  </div>
+</div>
+
+<h2>Funcionamento dos Órgãos Colegiais (Artigos 26.º–43.º)</h2>
+<ul>
+  <li><strong>Convocação:</strong> O presidente convoca com antecedência mínima necessária e com indicação da ordem de trabalhos.</li>
+  <li><strong>Quórum de funcionamento:</strong> Maioria dos membros em exercício (salvo disposição especial).</li>
+  <li><strong>Quórum deliberativo:</strong> Maioria dos votos expressos (regra geral); abstenções não contam.</li>
+  <li><strong>Declaração de voto:</strong> Qualquer membro pode fazer declaração de voto fundamentada.</li>
+  <li><strong>Ata:</strong> Registo obrigatório das deliberações, podendo ser simples (sumária) ou completa.</li>
+</ul>
+
+<div id="competencia"></div>
+<h2>Competência (Artigos 36.º–49.º)</h2>
+<div class="highlight">
+  <p>A competência é o conjunto de poderes funcionais atribuídos por lei a um órgão para a prática de determinados atos. É determinada pela lei; não pode ser objeto de renúncia nem de acordo entre particulares e administração (<strong>irrenunciabilidade</strong>). A prática de ato fora da competência constitui vício de <strong>incompetência</strong>.</p>
+</div>
+
+<h3>Delegação de Competência (Artigos 44.º–50.º)</h3>
+<p>O órgão delegante transmite ao órgão delegado a competência para a prática de atos ou para a celebração de contratos. Requisitos:</p>
+<ul>
+  <li><strong>Autorização legal:</strong> A lei deve permitir a delegação — <em>"a delegação de poderes só é possível quando exista norma que a autorize"</em> (artigo 44.º, n.º 1).</li>
+  <li><strong>Publicação obrigatória</strong> no DR ou Boletim Oficial regional para eficácia.</li>
+  <li>O delegado pode subdelegar <strong>se autorizado</strong> pelo delegante (subdelegação).</li>
+  <li>O delegante mantém poderes de <strong>avocação</strong> (chamar a si o procedimento) e de <strong>revogação</strong> da delegação.</li>
+  <li>Os atos praticados pelo delegado são atos do delegado, impugnáveis perante ele e sujeitos a recurso hierárquico para o delegante.</li>
+</ul>
+
+<h3>Substituição e Suplência (Artigos 51.º–52.º)</h3>
+<ul>
+  <li><strong>Substituição:</strong> Quando o titular do órgão está impedido, o substituto assume todas as competências do titular.</li>
+  <li><strong>Suplência:</strong> Mecanismo de substituição temporária definido no ato de organização, para ausências, impedimentos ou vagas.</li>
+</ul>
+
+<div id="impedimentos"></div>
+<h2>Impedimentos e Suspeições (Artigos 69.º–76.º)</h2>
+<p>Instrumentalizam o princípio da imparcialidade, garantindo que o agente não decide em casos em que tem interesse pessoal.</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Impedimentos (artigo 69.º) — Taxativos</h3>
+    <p>O titular do órgão ou agente deve declarar-se impedido quando:</p>
+    <ul>
+      <li>For parte no procedimento ou tiver interesse pessoal direto</li>
+      <li>For cônjuge, parente ou afim até ao 2.º grau de parte</li>
+      <li>For representante legal ou mandatário de parte</li>
+      <li>Tiver prestado informação, elaborado projeto ou participado em decisão anterior</li>
+      <li>For titular de órgão com posição de fiscalização</li>
+      <li>Pender processo de crítica ou elogio entre si e qualquer parte</li>
+    </ul>
+    <p><strong>Consequência:</strong> O ato praticado por agente impedido é <strong>anulável</strong> (não nulo, salvo se o vício for determinante da decisão).</p>
+  </div>
+  <div class="card">
+    <h3>Suspeições (artigo 74.º) — Facultativas</h3>
+    <p>O agente pode (e deve) pedir dispensa quando existam motivos sérios de dúvida sobre a sua imparcialidade (amizade, inimizade, dívida, promessa). A suspeição deve ser deduzida pela parte ou pelo próprio agente. Se indeferida, pode ser invocada como vício do procedimento em sede de impugnação.</p>
+  </div>
+</div>
+
+<div id="procedimento"></div>
+<hr class="divider" />
+<p class="section-label">4. O Procedimento Administrativo</p>
+
+<h2>Conceito e Fases (Artigos 53.º–68.º e 98.º ss.)</h2>
+<p>O procedimento administrativo é a <em>"sequência ordenada de atos e formalidades que visam a formação e expressão da vontade da Administração Pública"</em>. Fases:</p>
+
+<div class="grid3">
+  <div class="art-block">
+    <div class="art-num">Fase 1</div>
+    <div class="art-title">Iniciativa</div>
+    <div class="art-body">O procedimento pode iniciar-se por impulso do particular (<strong>requerimento</strong>) ou por iniciativa da Administração (<strong>oficiosamente</strong>). O pedido deve indicar o órgão destinatário, a identificação do requerente, o objeto e a data.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Fase 2</div>
+    <div class="art-title">Instrução</div>
+    <div class="art-body">Recolha de todos os elementos necessários à decisão. Inclui diligências instrutórias, peritagens, inspeções, audições. Vigora o princípio do <strong>inquisitório</strong> — a Administração pode investigar por sua iniciativa.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Fase 3</div>
+    <div class="art-title">Audiência prévia</div>
+    <div class="art-body">Direito de os interessados se pronunciarem antes da decisão final. Prazo mínimo: <strong>10 dias úteis</strong> (regra geral). Pode ser oral ou escrita. É dispensável em casos urgentes ou quando a decisão seja favorável.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Fase 4</div>
+    <div class="art-title">Decisão</div>
+    <div class="art-body">O órgão competente profere a decisão. Prazo geral: <strong>90 dias</strong> (artigo 128.º). Deve ser notificada ao interessado e, quando desfavorável, devidamente fundamentada.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Fase 5</div>
+    <div class="art-title">Notificação</div>
+    <div class="art-body">O ato administrativo só produz efeitos a partir da sua <strong>notificação</strong> ao destinatário (artigo 160.º). A notificação pode ser pessoal, por carta registada com AR, por meios eletrónicos ou por edital (quando o interessado for desconhecido ou de residência incerta).</div>
+  </div>
+</div>
+
+<h2>Audiência dos Interessados (Artigos 121.º–125.º)</h2>
+<div class="highlight">
+  <p>Obrigação imposta à Administração de ouvir o interessado antes de tomar decisão desfavorável ou que decida em sentido diferente do pedido. É uma concretização do princípio da participação e do direito de defesa constitucional (artigo 267.º CRP).</p>
+</div>
+<ul>
+  <li><strong>Prazo mínimo:</strong> 10 dias úteis para se pronunciar.</li>
+  <li><strong>Forma:</strong> Oral ou escrita; o particular pode juntar documentos.</li>
+  <li>O direito pode ser exercido pelo próprio ou por mandatário.</li>
+  <li><strong>Dispensa:</strong> Admitida quando a decisão seja urgente, quando o interessado a tenha expressamente renunciado, quando a audiência possa comprometer a eficácia da decisão, ou quando o número de interessados seja tão grande que a torne impraticável.</li>
+  <li><strong>Consequência da omissão:</strong> Invalidade por preterição de formalidade essencial → <strong>anulabilidade</strong>.</li>
+</ul>
+
+<h2>Fundamentação (Artigos 152.º–154.º)</h2>
+<div class="highlight">
+  <p>Os atos administrativos desfavoráveis, que resolvam litigiosidade, contradigam pedido, restrinjam direitos ou imponham deveres devem ser <strong>obrigatoriamente fundamentados</strong>. É direito constitucionalmente garantido (artigo 268.º, n.º 3 CRP).</p>
+</div>
+<ul>
+  <li><strong>Deve ser expressa:</strong> Não se admite fundamentação implícita ou por remissão (salvo quando explicitada).</li>
+  <li><strong>Deve ser clara, suficiente e coerente:</strong> O particular deve conseguir compreender o raciocínio lógico que levou à decisão.</li>
+  <li>Inclui: exposição dos factos e direito aplicável, motivos de facto e de direito, referência às normas aplicadas.</li>
+  <li><strong>Falta de fundamentação:</strong> Vício de forma → <strong>anulabilidade</strong> do ato.</li>
+</ul>
+
+<div id="ato"></div>
+<hr class="divider" />
+<p class="section-label">5. O Ato Administrativo</p>
+
+<h2>Conceito (Artigo 148.º)</h2>
+<div class="card">
+  <p>Ato administrativo é a <em>"decisão que, no exercício de poderes jurídico-administrativos, visa produzir efeitos jurídicos externos numa situação individual e concreta"</em>. Elementos essenciais do conceito:</p>
+  <ul>
+    <li><strong>Decisão:</strong> Expressão da vontade da Administração.</li>
+    <li><strong>Poderes jurídico-administrativos:</strong> Exercício de prerrogativas de autoridade pública.</li>
+    <li><strong>Efeitos jurídicos externos:</strong> Produz efeitos fora da esfera interna administrativa.</li>
+    <li><strong>Situação individual e concreta:</strong> Destinatário(s) determinado(s) e caso específico (distingue do regulamento).</li>
+  </ul>
+</div>
+
+<h2>Elementos do Ato Administrativo</h2>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-title">Elementos essenciais</div>
+    <div class="art-body">
+      <strong>Sujeito:</strong> Órgão competente<br/>
+      <strong>Objeto:</strong> A matéria sobre que recai a decisão (deve ser possível, determinado e lícito)<br/>
+      <strong>Forma:</strong> Regra geral — forma escrita; pode ser oral em casos urgentes<br/>
+      <strong>Conteúdo:</strong> O que é decidido (deve ser coerente com os fundamentos)<br/>
+      <strong>Fim:</strong> A finalidade prosseguida (deve ser de interesse público)
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Elementos acessórios</div>
+    <div class="art-body">
+      <strong>Condição:</strong> Suspensiva (eficácia depende de evento futuro e incerto) ou resolutiva (eficácia cessa com evento futuro)<br/>
+      <strong>Termo:</strong> Inicial (eficácia a partir de data futura) ou final (eficácia cessa em data futura)<br/>
+      <strong>Modo (encargo):</strong> Obrigação acessória imposta ao destinatário de ato favorável
+    </div>
+  </div>
+</div>
+
+<h2>Eficácia do Ato Administrativo (Artigos 155.º–161.º)</h2>
+<ul>
+  <li>Regra geral: o ato produz efeitos a partir da <strong>notificação</strong> ao destinatário.</li>
+  <li><strong>Eficácia retroativa</strong> (ex tunc): admitida quando em benefício do interessado, quando o atraso fosse imputável à Administração ou quando o ato seja ratificatório de ato anterior inválido.</li>
+  <li><strong>Atos com eficácia diferida:</strong> Quando condicionados a termo ou condição suspensiva.</li>
+  <li><strong>Executoriedade:</strong> A Administração pode executar coercivamente os seus atos sem necessidade de intervenção judicial prévia, nos casos previstos na lei.</li>
+</ul>
+
+<div id="ineficacia"></div>
+<hr class="divider" />
+<p class="section-label">6. Invalidade dos Atos Administrativos</p>
+
+<div class="highlight">
+  <p>O CPA distingue entre <strong>nulidade</strong> e <strong>anulabilidade</strong> — distinção fundamental com consequências práticas radicalmente diferentes.</p>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Critério</th><th>Nulidade (Art. 161.º)</th><th>Anulabilidade (Art. 163.º)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Fundamento</td><td>Vícios mais graves, taxativamente previstos na lei</td><td>Quaisquer outros vícios de legalidade</td></tr>
+    <tr><td>Sanação</td><td>Insanável — não convalida com o tempo</td><td>Sanável — pode ser ratificada, reformada ou convertida</td></tr>
+    <tr><td>Prazo de impugnação</td><td>Imprescritível (a nulidade pode ser invocada a todo o tempo)</td><td>Prazo de 1 ano para impugnação administrativa; 3 meses para ação judicial</td></tr>
+    <tr><td>Efeitos</td><td>O ato não produz quaisquer efeitos jurídicos (é como se não existisse)</td><td>Produz efeitos até ser anulado; anulação tem eficácia retroativa</td></tr>
+    <tr><td>Declaração</td><td>Pode ser declarada pelo tribunal ou pela Administração, a todo o tempo</td><td>Anulação pela Administração sujeita a prazo (regra geral: 5 anos para atos constitutivos de direitos; 6 meses para atos desfavoráveis)</td></tr>
+    <tr><td>Invocação</td><td>Por qualquer interessado, pelo MP e oficiosamente pelo tribunal</td><td>Apenas pelos interessados</td></tr>
+  </tbody>
+</table>
+
+<h2>Causas de Nulidade (Artigo 161.º) — Lista Taxativa</h2>
+<ul>
+  <li>Atos de conteúdo impossível ou ininteligível</li>
+  <li>Atos praticados sob coação física ou psicológica</li>
+  <li>Atos ofensivos do conteúdo essencial de um direito fundamental</li>
+  <li>Atos praticados por órgão estranho à hierarquia da Administração Pública (usurpação de poder)</li>
+  <li>Atos que carecem absolutamente de forma legal</li>
+  <li>Atos praticados com preterição total do procedimento legalmente exigido</li>
+  <li>Atos que constituam infração criminal dolosa</li>
+  <li>Outros casos expressamente previstos na lei</li>
+</ul>
+
+<h2>Vícios que Geram Anulabilidade</h2>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-title">Incompetência relativa</div>
+    <div class="art-body">Ato praticado por órgão competente por matéria mas incompetente em razão da hierarquia ou da área geográfica.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Vício de forma</div>
+    <div class="art-body">Falta de fundamentação exigida, preterição da audiência prévia, falta de forma escrita quando exigida.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Vício de procedimento</div>
+    <div class="art-body">Omissão de atos essenciais do procedimento (consultas obrigatórias, pareceres vinculativos, etc.).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Violação de lei</div>
+    <div class="art-body">O conteúdo do ato é contrário à lei aplicável (vício mais frequente em atos tributários).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Desvio de poder</div>
+    <div class="art-body">Ato praticado formalmente no exercício de poderes legais, mas para fim diferente do previsto na lei; viola o princípio da imparcialidade.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Erro nos pressupostos</div>
+    <div class="art-body">Erro de facto (equívoco sobre os factos) ou erro de direito (errada qualificação jurídica dos factos) que conduziram à decisão.</div>
+  </div>
+</div>
+
+<div id="revogacao"></div>
+<hr class="divider" />
+<p class="section-label">7. Revogação, Ratificação, Reforma e Conversão</p>
+
+<h2>Revogação (Artigos 165.º–170.º)</h2>
+<div class="card">
+  <p>A revogação é a supressão, por ato administrativo posterior, dos efeitos do ato revogado. Pode ser por <strong>razões de mérito</strong> (oportunidade) ou por <strong>razões de legalidade</strong> (anulação administrativa).</p>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Tipo</th><th>Atos desfavoráveis</th><th>Atos favoráveis (com efeitos constitutivos)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Revogação por mérito</td><td>Admissível a qualquer tempo (livre revogabilidade)</td><td>Apenas nos casos previstos na lei; respeito pela confiança legítima</td></tr>
+    <tr><td>Anulação administrativa (legalidade)</td><td>Admissível; prazo: 6 meses após conhecimento do vício</td><td>Prazo de 5 anos após a emissão; dever de ponderar os efeitos consolidados</td></tr>
+    <tr><td>Eficácia</td><td>Ex tunc (retroativa) — desfaz efeitos desde o início</td><td>Ex nunc (para o futuro) — regra para atos favoráveis por razões de mérito</td></tr>
+  </tbody>
+</table>
+
+<h2>Ratificação, Reforma e Conversão (Artigo 164.º)</h2>
+<ul>
+  <li><strong>Ratificação:</strong> O órgão competente "aprova" retroativamente o ato anulável praticado por órgão incompetente. Convalida o ato desde a origem. Só admitida para vícios de incompetência relativa.</li>
+  <li><strong>Reforma:</strong> Expurga do ato a parte inválida, mantendo a parte válida.</li>
+  <li><strong>Conversão:</strong> O ato inválido é convertido num ato de tipo diferente, que seria válido, quando resulte do processo que o agente teria pretendido esse resultado.</li>
+</ul>
+
+<div id="recursos"></div>
+<hr class="divider" />
+<p class="section-label">8. Recursos Administrativos (Artigos 184.º–199.º)</p>
+
+<div class="highlight">
+  <p>Os recursos administrativos são meios de impugnação de atos administrativos junto da Administração. <strong>Não são obrigatórios</strong> como condição prévia de impugnação judicial (salvo exceção legal), mas suspendem o prazo de impugnação judicial enquanto estão pendentes.</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Recurso hierárquico (artigos 193.º–199.º)</h3>
+    <p>Dirigido ao superior hierárquico do órgão que praticou o ato. Fundamentos: ilegalidade ou inconveniência (mérito). Prazo: <strong>30 dias</strong> após notificação. O superior pode confirmar, revogar, modificar ou substituir o ato. Prazo de decisão: <strong>30 dias</strong>.</p>
+  </div>
+  <div class="card">
+    <h3>Recurso tutelar (artigo 199.º)</h3>
+    <p>Dirigido ao órgão que exerce tutela sobre o órgão que praticou o ato (ex.: tutela do Estado sobre as autarquias). Fundamentos: apenas ilegalidade (salvo tutela de mérito expressamente prevista). Prazo: <strong>30 dias</strong>.</p>
+  </div>
+</div>
+<div class="card">
+  <h3>Reclamação (artigo 191.º)</h3>
+  <p>Dirigida ao mesmo órgão que praticou o ato. Fundamentos: ilegalidade ou inconveniência. Prazo: <strong>15 dias</strong> após notificação (para atos definitivos). Para atos não definitivos, a qualquer momento. A reclamação suspende o prazo de impugnação contenciosa durante a sua pendência.</p>
+</div>
+
+<div id="regulamentos"></div>
+<hr class="divider" />
+<p class="section-label">9. Regulamentos Administrativos (Artigos 135.º–145.º)</p>
+
+<div class="card">
+  <p>Regulamentos são normas jurídicas gerais e abstratas emitidas no exercício de poderes jurídico-administrativos. Distinguem-se do ato administrativo (individual e concreto) pela generalidade e abstração.</p>
+  <ul>
+    <li><strong>Regulamentos de execução:</strong> Desenvolvem as normas de uma lei.</li>
+    <li><strong>Regulamentos independentes:</strong> Emitidos sem lei prévia, no âmbito da autonomia regulamentar da Administração.</li>
+    <li>Exigem <strong>audiência pública</strong> quando tenham por objeto a disciplina das relações com os particulares.</li>
+    <li>Sujeitos a publicação no DR ou BO regional para entrada em vigor.</li>
+    <li>Podem ser impugnados diretamente por via <strong>judicial</strong> e, com fundamento em ilegalidade, pela Administração.</li>
+  </ul>
+</div>
+
+<div id="contratos"></div>
+<hr class="divider" />
+<p class="section-label">10. Contratos Administrativos (Artigos 200.º–218.º)</p>
+
+<div class="card">
+  <p>O CPA regula os contratos celebrados pela Administração no exercício de poderes administrativos. Inclui princípios gerais (boa fé, equilíbrio financeiro, estabilidade), modificação unilateral (prerrogativa exorbitante da Administração), resolução e cedência de posição contratual. Os contratos estão também sujeitos ao CCP (Código dos Contratos Públicos) quanto à formação.</p>
+</div>
+
+<div id="sancionatorio"></div>
+<hr class="divider" />
+<p class="section-label">11. Direito Sancionatório Administrativo (Artigos 219.º–224.º)</p>
+
+<div class="card">
+  <p>O CPA codificou os princípios do procedimento contraordenacional/sancionatório administrativo:</p>
+  <ul>
+    <li><strong>Princípio da legalidade</strong> da sanção: nulla poena sine lege.</li>
+    <li><strong>Princípio da culpabilidade:</strong> Não há responsabilidade objetiva; exige-se dolo ou negligência.</li>
+    <li><strong>Direito de defesa:</strong> O arguido tem direito de ser ouvido antes da aplicação da sanção.</li>
+    <li><strong>Proporcionalidade</strong> das sanções.</li>
+    <li>Prazo prescricional das sanções.</li>
+  </ul>
+</div>
+
+<hr class="divider" />
+<p class="section-label">Síntese — O CPA e a Atividade da AT-RAM</p>
+
+<div class="highlight">
+  <p>A AT-RAM, no exercício das suas funções de liquidação, cobrança e inspeção tributária, pratica atos administrativos sujeitos às regras do CPA (competência, forma, procedimento, fundamentação). Os atos tributários têm, porém, regime especial previsto na LGT e CPPT, que prevalecem sobre o CPA enquanto lex specialis. O CPA aplica-se supletivamente ao procedimento tributário onde a legislação fiscal não disponha de forma diferente.</p>
+</div>
+
+<table>
+  <thead><tr><th>Matéria CPA</th><th>Relevância no contexto tributário / AT-RAM</th></tr></thead>
+  <tbody>
+    <tr><td>Princípio da legalidade</td><td>A AT-RAM só pode atuar com fundamento legal; nenhum tributo pode ser cobrado sem norma legal habilitante</td></tr>
+    <tr><td>Fundamentação obrigatória</td><td>Toda a liquidação adicional, correcção e acto de inspeção desfavorável devem ser fundamentados</td></tr>
+    <tr><td>Audiência prévia</td><td>Antes de qualquer correcção à matéria tributável deve o contribuinte ser ouvido (artigo 60.º LGT)</td></tr>
+    <tr><td>Nulidade vs anulabilidade</td><td>Determina a impugnabilidade (limitada/prescritível vs. imprescritível) dos atos tributários ilegais</td></tr>
+    <tr><td>Impedimentos</td><td>O inspetor tributário não pode inspecionar entidades em que tenha interesse pessoal</td></tr>
+    <tr><td>Recurso hierárquico</td><td>Aplicável em matéria não tributária; na área tributária substituído pela reclamação graciosa e recurso hierárquico tributário (CPPT)</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t);}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾';})();
+</script>
+</body>
+</html>

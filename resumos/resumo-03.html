@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>03 · Lei Orgânica n.º 2/2013 — LFRA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,0.94);}
+    [data-theme="light"]{--bg:#f5f4f0;--bg-card:#ffffff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,0.94);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px;}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s;}.nav-back:hover{color:var(--accent);}
+    .nav-right{display:flex;align-items:center;gap:1rem;}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600;}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s;}.theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem;}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem;}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent);}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem;}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);}
+    .badge-accent{border-color:var(--accent2);color:var(--accent);}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0;}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem;}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem;}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem;}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem;}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem;}
+    li strong{color:var(--text);font-weight:600;}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem;}
+    .card h2,.card h3{margin-top:0;}.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem;}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem;}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7;}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .highlight p{margin-bottom:0;font-size:.875rem;}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .warning p{margin-bottom:0;font-size:.875rem;}.warning strong{color:#e74c3c;}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem;}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border);}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top;}
+    tr:nth-child(even) td{background:var(--bg-alt);}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem;}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.2rem 0;transition:color .15s;}
+    .toc a:hover{color:var(--accent);}.toc a::before{content:"→ ";color:var(--accent);font-size:.75rem;}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label);}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem;}nav{padding:0 1.1rem;}.grid2,.grid3{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">03 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">03 · Finanças das Regiões Autónomas</p>
+<h1>Lei Orgânica n.º 2/2013 — <em>Lei das Finanças das Regiões Autónomas</em></h1>
+<p class="doc-sub">De 2 de setembro de 2013 · Alterada pela Lei n.º 82-B/2014, de 31 de dezembro (OE 2015) · Aprovada nos termos do artigo 164.º, al. f), CRP</p>
+<div class="meta-row">
+  <span class="badge badge-accent">LFRA</span>
+  <span class="badge">Lei Orgânica 2/2013</span>
+  <span class="badge">Autonomia Financeira Regional</span>
+  <span class="badge">Receitas Fiscais RAM</span>
+  <span class="badge">Poderes Tributários</span>
+  <span class="badge">Madeira · Açores</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#enquadramento">Enquadramento Constitucional e Natureza Jurídica</a>
+  <a href="#principios">Princípios Gerais das Finanças Regionais</a>
+  <a href="#receitas">Receitas das Regiões Autónomas</a>
+  <a href="#poderes">Poderes Tributários Regionais</a>
+  <a href="#beneficios">Benefícios Fiscais Regionais</a>
+  <a href="#transferencias">Transferências Financeiras do Estado</a>
+  <a href="#despesas">Despesas Regionais</a>
+  <a href="#endividamento">Endividamento Regional</a>
+  <a href="#controlo">Controlo Orçamental e Transparência</a>
+  <a href="#alteracao">Alteração pela Lei n.º 82-B/2014</a>
+  <a href="#sintese">Síntese — Relevância para a AT-RAM</a>
+</div>
+
+<hr class="divider" id="enquadramento"/>
+<p class="section-label">1. Enquadramento Constitucional e Natureza Jurídica</p>
+
+<div class="highlight">
+  <p>A LFRA é aprovada como <strong>lei orgânica</strong> — exige maioria absoluta dos deputados em efetividade de funções (artigo 168.º, n.º 5 CRP). É aprovada nos termos do artigo 164.º, alínea f) CRP, que reserva à Assembleia da República a competência legislativa exclusiva para o regime das finanças das regiões autónomas.</p>
+</div>
+
+<div class="card">
+  <h3>Porque é lei orgânica?</h3>
+  <p>O artigo 164.º, al. f) CRP inclui o "regime das finanças das regiões autónomas" na reserva absoluta de competência legislativa da AR, matéria que deve ser regulada por lei orgânica. Isto significa:</p>
+  <ul>
+    <li>Não pode ser aprovada pelo Governo (mesmo com autorização legislativa), nem pela Assembleia Legislativa Regional</li>
+    <li>Exige maioria absoluta dos deputados em efetividade de funções para aprovação e para qualquer alteração</li>
+    <li>Tem hierarquia superior às leis ordinárias mas inferior à Constituição</li>
+    <li>As regiões autónomas não têm competência para se desviar do regime da LFRA — só a AR pode alterar as regras financeiras das regiões</li>
+  </ul>
+  <h3>Objeto da LFRA (Artigo 1.º)</h3>
+  <ul>
+    <li>Define o <strong>regime financeiro das regiões autónomas</strong> dos Açores e da Madeira</li>
+    <li>Estabelece os princípios das relações financeiras entre o Estado e as regiões</li>
+    <li>Fixa as regras sobre receitas, despesas, endividamento e controlo orçamental regionais</li>
+    <li>Regula a participação das regiões nas receitas fiscais geradas no seu território</li>
+  </ul>
+</div>
+
+<hr class="divider" id="principios"/>
+<p class="section-label">2. Princípios Gerais das Finanças Regionais (Artigo 3.º)</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Autonomia</div>
+    <div class="art-title">Autonomia financeira regional</div>
+    <div class="art-body">As regiões têm autonomia financeira própria, podendo criar e cobrar receitas e suportar as suas despesas. A autonomia financeira é instrumental à autonomia política: sem receitas próprias, não há verdadeira autonomia. A AT-RAM é o instrumento de cobrança dessas receitas próprias.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Solidariedade</div>
+    <div class="art-title">Solidariedade nacional</div>
+    <div class="art-body">O Estado contribui para a correção das desigualdades decorrentes da <strong>insularidade e ultraperifericidade</strong>. A RAM, sendo uma ilha no Atlântico, tem custos estruturais superiores ao continente (transportes, energia, importações). O princípio da solidariedade justifica as transferências do OE para a RAM.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Equilíbrio orçamental</div>
+    <div class="art-title">Sustentabilidade das finanças</div>
+    <div class="art-body">As regiões devem prosseguir uma política orçamental sustentável, alinhada com as regras da lei de enquadramento orçamental (LEO) nacional e com os compromissos do Pacto de Estabilidade e Crescimento. O défice regional conta para o défice nacional.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Coordenação</div>
+    <div class="art-title">Articulação com o Estado</div>
+    <div class="art-body">As políticas orçamentais regionais articulam-se com a política orçamental nacional. O GRM deve coordenar o ORM com as metas nacionais e comunicar os dados orçamentais ao Governo da República para as notificações europeias do Procedimento de Défice Excessivo (PDE).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Transparência</div>
+    <div class="art-title">Publicidade e prestação de contas</div>
+    <div class="art-body">As finanças regionais devem ser transparentes: publicação do ORM e da Conta da Região; prestação de contas ao TC; informação orçamental acessível ao público e à ALM. Reforçado após a crise financeira de 2010-2014 que revelou problemas de opacidade nas finanças regionais.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Subsidiariedade</div>
+    <div class="art-title">Proximidade das decisões</div>
+    <div class="art-body">As decisões financeiras devem ser tomadas ao nível mais próximo dos cidadãos que seja eficiente. Fundamenta a competência regional para adaptar os impostos e para criar impostos regionais próprios — a região conhece melhor as suas especificidades fiscais do que o Governo central.</div>
+  </div>
+</div>
+
+<hr class="divider" id="receitas"/>
+<p class="section-label">3. Receitas das Regiões Autónomas (Artigos 13.º–26.º)</p>
+
+<div class="highlight">
+  <p>A LFRA define exaustivamente quais as receitas que pertencem às regiões autónomas. As receitas fiscais cobradas na RAM pela AT-RAM são a fonte principal de financiamento do Orçamento Regional da Madeira.</p>
+</div>
+
+<h2>Receitas Fiscais Próprias</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Receita fiscal</th><th>Critério de atribuição à RAM</th><th>Quem cobra</th></tr></thead>
+    <tbody>
+      <tr><td><strong>IRS</strong></td><td>Totalidade da receita de IRS dos residentes na RAM</td><td>AT-RAM</td></tr>
+      <tr><td><strong>IRC</strong></td><td>Receita de IRC de empresas com sede ou estabelecimento estável na RAM, proporcionalmente ao volume de negócios regional</td><td>AT-RAM</td></tr>
+      <tr><td><strong>IVA</strong></td><td>Receita de IVA liquidado na RAM, sujeita a repartição nos termos da lei; as taxas de IVA na RAM são inferiores às nacionais (DLR de adaptação)</td><td>AT-RAM</td></tr>
+      <tr><td><strong>Impostos Especiais de Consumo</strong></td><td>ISP, IABA, IT — receita gerada na RAM (introdução no consumo regional)</td><td>AT-RAM</td></tr>
+      <tr><td><strong>Imposto do Selo</strong></td><td>IS liquidado na RAM</td><td>AT-RAM</td></tr>
+      <tr><td><strong>IMT</strong></td><td>Imóveis localizados na RAM</td><td>AT-RAM</td></tr>
+      <tr><td><strong>IMI</strong></td><td>Imóveis situados na RAM</td><td>AT-RAM</td></tr>
+      <tr><td><strong>Impostos exclusivamente regionais</strong></td><td>Criados por DLR da ALM ao abrigo do art. 227.º, n.º 1, al. i) CRP</td><td>AT-RAM</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Outros Tipos de Receitas Regionais</h2>
+<div class="card">
+  <h3>Receitas patrimoniais</h3>
+  <ul>
+    <li>Rendimentos e mais-valias dos bens do domínio público e privado da RAM (rendas de imóveis, exploração de recursos naturais)</li>
+    <li>Dividendos e lucros das participações financeiras da RAM em empresas regionais</li>
+    <li>Produto das alienações de bens do património regional</li>
+  </ul>
+  <h3>Receitas de serviços e taxas</h3>
+  <ul>
+    <li>Taxas e tarifas cobradas pelos serviços regionais pelas prestações que efetuam (taxas administrativas, taxas ambientais, tarifas de serviços públicos regionais)</li>
+    <li>Coimas e multas aplicadas pelos serviços regionais (incluindo contraordenações fiscais pela AT-RAM)</li>
+  </ul>
+  <h3>Transferências e subsídios</h3>
+  <ul>
+    <li>Dotação de solidariedade do OE</li>
+    <li>Fundos estruturais europeus (FEDER, FSE+)</li>
+    <li>Outras transferências do Estado para financiamento de políticas específicas</li>
+  </ul>
+  <h3>Receitas de endividamento</h3>
+  <ul>
+    <li>Produto de empréstimos contraídos pela RAM nos mercados financeiros, dentro dos limites da LFRA</li>
+  </ul>
+</div>
+
+<h2>Critérios de Conexão para Atribuição das Receitas Fiscais (Artigo 15.º)</h2>
+<div class="card">
+  <p>A LFRA fixa os critérios que determinam quando uma receita fiscal é atribuída à RAM. Estes critérios são fundamentais para a AT-RAM saber quando tem competência tributária:</p>
+  <table>
+    <thead><tr><th>Imposto</th><th>Critério de conexão com a RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>IRS</strong></td><td>Residência fiscal do sujeito passivo na RAM — o contribuinte com domicílio fiscal na RAM paga IRS à AT-RAM</td></tr>
+      <tr><td><strong>IRC — sede na RAM</strong></td><td>Se a sede da empresa é na RAM, a totalidade do IRC é receita da RAM</td></tr>
+      <tr><td><strong>IRC — estabelecimento estável</strong></td><td>Empresa com sede fora da RAM mas com estabelecimento estável na RAM: a parte do lucro imputável ao est. estável regional é receita da RAM, proporcionalmente</td></tr>
+      <tr><td><strong>IVA</strong></td><td>Local de tributação — IVA das operações tributáveis na RAM (entrega de bens ou prestação de serviços com localização na RAM)</td></tr>
+      <tr><td><strong>IMI e IMT</strong></td><td>Localização do imóvel na RAM — o imóvel situado na Madeira gera receita para a RAM, independentemente da residência do proprietário</td></tr>
+      <tr><td><strong>IS</strong></td><td>Local de celebração do ato ou contrato ou residência/sede das partes — depende da tipologia do facto tributável</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="poderes"/>
+<p class="section-label">4. Poderes Tributários Regionais (Artigos 20.º–22.º)</p>
+
+<div class="highlight">
+  <p>Nos termos da Constituição (artigo 227.º, n.º 1, alínea i)) e da LFRA, as regiões autónomas têm <strong>poder tributário próprio</strong>. Este poder é exercido pela Assembleia Legislativa Regional (ALM) através de Decretos Legislativos Regionais (DLR) e executado pela AT-RAM.</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Adaptação de impostos nacionais</h3>
+    <p>A RAM pode adaptar os impostos nacionais às suas especificidades regionais através de DLR. As adaptações mais importantes em vigor na RAM incluem:</p>
+    <ul>
+      <li><strong>IVA com taxas reduzidas:</strong> As taxas de IVA na RAM são substancialmente inferiores às nacionais (ex.: taxa normal de IVA na RAM vs. 23% no continente)</li>
+      <li><strong>IRS com deduções adicionais:</strong> A RAM pode conceder deduções à coleta de IRS superiores às previstas no CIRS, para determinadas despesas (ex.: obras em prédios regionais, despesas de educação com majorações regionais)</li>
+      <li><strong>IRC com taxa reduzida:</strong> A RAM tem taxa reduzida de IRC para certas categorias de empresas (ex.: empresas do CINM beneficiam de regime fiscal especial ao abrigo do regime de auxílios de Estado da UE)</li>
+      <li><strong>Isenções específicas regionais:</strong> Isenções de IMI para imóveis de reduzido valor situados em zonas de interesse histórico ou de regeneração urbana</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Criação de impostos exclusivamente regionais</h3>
+    <p>A ALM pode criar impostos que existam apenas na RAM, nos termos do artigo 227.º, n.º 1, al. i) CRP e da lei quadro dos impostos locais e regionais. Os impostos regionais devem respeitar os princípios da CRP (legalidade, igualdade, proibição de retroatividade) e não podem violar as regras do mercado interno da UE (proibição de ajudas de Estado ilegais).</p>
+    <ul>
+      <li><strong>Exemplos de impostos ou taxas exclusivamente regionais:</strong> taxas sobre a utilização de recursos naturais regionais; taxas sobre o turismo; tributos sobre atividades com impacto ambiental regional específico</li>
+    </ul>
+    <h3>Derramas regionais</h3>
+    <p>A RAM pode lançar <strong>adicionais (derramas)</strong> sobre impostos nacionais dos quais seja sujeito ativo. A derrama é um adicional percentual sobre a coleta do imposto nacional — aumenta a receita regional sem alterar a base do imposto.</p>
+  </div>
+</div>
+
+<hr class="divider" id="beneficios"/>
+<p class="section-label">5. Benefícios Fiscais Regionais</p>
+
+<div class="card">
+  <h3>Competência regional para conceder benefícios</h3>
+  <p>A RAM pode conceder <strong>benefícios fiscais</strong> relativamente aos impostos de que seja sujeito ativo (os impostos cujas receitas lhe pertencem). Os benefícios fiscais regionais são criados por DLR da ALM e aplicados e verificados pela AT-RAM.</p>
+  <h3>Regime de fixação das taxas</h3>
+  <p>A RAM pode fixar as taxas dos impostos regionais e dos impostos nacionais adaptados dentro dos limites máximos e mínimos estabelecidos pela lei nacional. A LFRA fixa esses limites para impedir que as regiões estabeleçam taxas tão baixas que criem distorção da concorrência no mercado interno nacional e europeu.</p>
+  <h3>Compatibilidade com o direito da UE</h3>
+  <p>Os benefícios fiscais regionais devem ser compatíveis com as regras europeias de <strong>auxílios de Estado</strong> (artigos 107.º–109.º TFUE). Um benefício fiscal que favoreça certas empresas de forma seletiva pode constituir um auxílio de Estado que exige notificação e aprovação prévia pela Comissão Europeia. O CINM (Centro Internacional de Negócios da Madeira) é um exemplo de regime fiscal especial que foi autorizado pela CE como compatível com o mercado interno (com limites e condições).</p>
+  <h3>Papel da AT-RAM</h3>
+  <p>A AT-RAM verifica e aplica os benefícios fiscais regionais. No âmbito das inspeções, os inspetores verificam se as empresas beneficiárias cumprem os requisitos objetivos para fruição dos benefícios. A fruição indevida de benefício fiscal constitui fraude fiscal se dolosa, ou origina liquidação adicional com juros compensatórios se meramente por erro.</p>
+</div>
+
+<hr class="divider" id="transferencias"/>
+<p class="section-label">6. Transferências Financeiras do Estado (Artigos 27.º–39.º)</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Dotação de solidariedade (art. 30.º)</h3>
+    <p>O Orçamento do Estado inclui anualmente uma <strong>dotação de solidariedade</strong> para as regiões autónomas, destinada a apoiar o desenvolvimento económico regional e a corrigir as desvantagens estruturais da insularidade e ultraperifericidade. O valor é determinado pela fórmula da LFRA com base em indicadores económicos (PIB per capita regional, taxa de desemprego, etc.) e aprovado anualmente no OE.</p>
+  </div>
+  <div class="card">
+    <h3>Participação nas receitas fiscais nacionais</h3>
+    <p>Para as receitas fiscais geridas centralmente pela AT nacional mas geradas na RAM (ex.: IVA nas transações intracomunitárias que envolvam contribuintes da RAM), a LFRA estabelece mecanismos de <strong>participação da RAM nas receitas</strong>. A AT nacional apura as receitas de origem regional e transfere a parte devida à RAM. Eventuais disputas sobre os montantes são resolvidas por acordo entre o Governo central e o GRM.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Fundo de Coesão para as Regiões Autónomas</h3>
+  <p>Para além das transferências diretas do OE, as regiões beneficiam dos fundos europeus geridos através dos programas operacionais regionais (PO RAM 2021-2027 para a Madeira). Estes fundos são cofinanciados pelo FEDER e FSE+ e destinam-se ao desenvolvimento económico regional. A SRF coordena a utilização estratégica destes fundos no quadro das prioridades do GRM.</p>
+  <h3>Compensação pelo diferencial de taxas de IVA</h3>
+  <p>Como a RAM tem taxas de IVA reduzidas face ao continente, o Orçamento do Estado deve compensar a RAM pelo diferencial de receita — esta compensação é calculada anualmente e incluída nas transferências do OE para a RAM. Sem esta compensação, a RAM seria prejudicada fiscalmente por ter exercido o seu poder de adaptar o IVA.</p>
+</div>
+
+<hr class="divider" id="despesas"/>
+<p class="section-label">7. Despesas Regionais</p>
+
+<div class="card">
+  <h3>Princípio do equilíbrio orçamental</h3>
+  <p>A LFRA impõe que as despesas correntes da RAM não excedam as receitas correntes — <strong>saldo corrente positivo</strong>. As despesas de capital podem ser financiadas por receitas de endividamento dentro dos limites fixados. Este princípio visa garantir a sustentabilidade a longo prazo das finanças regionais.</p>
+  <h3>Categorias de despesas regionais</h3>
+  <ul>
+    <li><strong>Despesas correntes:</strong> Gastos com pessoal (a maior rubrica), encargos com bens e serviços, encargos correntes da dívida (juros), transferências correntes para entidades públicas e privadas, subsídios</li>
+    <li><strong>Despesas de capital:</strong> Aquisição de ativos fixos (investimento em infraestruturas, equipamentos), transferências de capital para entidades regionais, amortizações de dívida</li>
+  </ul>
+  <h3>Proibição de despesas sem cabimento</h3>
+  <p>A LCPA (Lei dos Compromissos e dos Pagamentos em Atraso) aplica-se à RAM — nenhum serviço regional pode assumir compromissos de despesa sem verificar previamente a disponibilidade orçamental (cabimento). A violação da LCPA é infração financeira dos dirigentes responsáveis.</p>
+</div>
+
+<hr class="divider" id="endividamento"/>
+<p class="section-label">8. Endividamento Regional (Artigos 40.º–56.º)</p>
+
+<div class="highlight">
+  <p>O endividamento das regiões autónomas está sujeito a limites rigorosos, visando a sustentabilidade das finanças públicas regionais e o cumprimento dos compromissos europeus de Portugal. A RAM teve, na crise de 2011-2014, um endividamento elevado que gerou intervenção do Governo central.</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Limite de endividamento</h3>
+    <ul>
+      <li>O endividamento líquido anual de cada região não pode exceder o limite fixado na LFRA e aprovado no ORM</li>
+      <li><strong>Dívida direta:</strong> Empréstimos obtidos e obrigações emitidas pela RAM diretamente</li>
+      <li><strong>Dívida indireta:</strong> Garantias prestadas pela RAM a empresas regionais — se a empresa não pagar, a RAM fica com a dívida</li>
+      <li>A dívida total da RAM é reportada ao Governo central para inclusão nas contas nacionais do sector das AP</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Controlo do endividamento</h3>
+    <ul>
+      <li>O Governo da República pode opor-se a operações de financiamento que excedam os limites da LFRA</li>
+      <li>O <strong>Tribunal de Contas</strong> fiscaliza a legalidade das operações de endividamento regional</li>
+      <li>O <strong>Conselho das Finanças Públicas (CFP)</strong> emite pareceres sobre a sustentabilidade das finanças regionais</li>
+      <li>Em caso de incumprimento dos limites, o Governo pode reter transferências do OE para a RAM (mecanismo de sanção)</li>
+      <li>O endividamento excessivo pode levar a um programa de assistência financeira (como o PAEF-RAM de 2012-2015)</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider" id="controlo"/>
+<p class="section-label">9. Controlo Orçamental e Transparência (Artigos 57.º–68.º)</p>
+
+<div class="card">
+  <h3>Conta da Região e prestação de contas</h3>
+  <p>Cada região autónoma deve apresentar a <strong>Conta Anual de Gestão</strong> ao Tribunal de Contas (3.ª Secção Regional na Madeira). A conta inclui:</p>
+  <ul>
+    <li>Mapas orçamentais de receita e despesa (execução vs. previsão)</li>
+    <li>Mapas de execução dos programas e atividades do ORM</li>
+    <li>Demonstrações financeiras consolidadas em conformidade com o SNC-AP</li>
+    <li>Relatório de gestão do Governo Regional</li>
+    <li>Mapa da dívida pública regional</li>
+  </ul>
+  <h3>Articulação com o Conselho das Finanças Públicas (CFP)</h3>
+  <p>O CFP avalia os orçamentos regionais e acompanha a execução orçamental. Pode emitir recomendações ao GRM para corrigir desvios face às regras de equilíbrio. O GRM deve responder publicamente às recomendações do CFP — garante pressão institucional sobre a disciplina orçamental regional.</p>
+  <h3>Reporte ao Governo central</h3>
+  <p>A RAM deve enviar ao Ministério das Finanças dados mensais sobre a execução orçamental (receitas e despesas), dados trimestrais sobre o endividamento, e dados anuais para as notificações de Bruxelas (Procedimento de Défice Excessivo). A AT-RAM contribui com os dados sobre receitas fiscais efetivamente cobradas.</p>
+</div>
+
+<hr class="divider" id="alteracao"/>
+<p class="section-label">10. Alteração pela Lei n.º 82-B/2014 (OE 2015)</p>
+
+<div class="card">
+  <p>A Lei n.º 82-B/2014, de 31 de dezembro (OE 2015), alterou a LFRA em vários aspetos no contexto do programa de ajustamento financeiro da RAM (PAEF-RAM 2012–2015):</p>
+  <ul>
+    <li><strong>Regras de equilíbrio orçamental mais rigorosas:</strong> Alinhamento com as regras do Pacto de Estabilidade e Crescimento e com a revisão da LEO nacional; proibição de défice estrutural acima de 0,5% do PIB regional</li>
+    <li><strong>Mecanismos de sanção automática:</strong> Em caso de incumprimento dos objetivos orçamentais regionais, podem ser reduzidas as transferências do OE para a RAM de forma automática, sem necessidade de legislação adicional</li>
+    <li><strong>Revisão dos critérios de participação nas receitas fiscais:</strong> Atualização das fórmulas de cálculo da participação da RAM nas receitas fiscais nacionais, refletindo melhor os fluxos fiscais efetivos</li>
+    <li><strong>Obrigação de reporte mais frequente:</strong> A RAM passou a estar obrigada a reportar mensalmente ao Governo central os dados de execução orçamental (antes era trimestral)</li>
+    <li><strong>Limite de endividamento mais restritivo:</strong> O limite de endividamento líquido anual foi reduzido para forçar a desalavancagem gradual da dívida acumulada durante a crise</li>
+  </ul>
+</div>
+
+<hr class="divider" id="sintese"/>
+<p class="section-label">11. Síntese — LFRA e a AT-RAM</p>
+
+<div class="highlight">
+  <p>A AT-RAM é o principal instrumento de cobrança das receitas fiscais que constituem a base financeira da RAM. O volume das receitas cobradas pela AT-RAM determina diretamente a capacidade financeira da Região e a sua autonomia face às transferências do Estado.</p>
+</div>
+
+<table>
+  <thead><tr><th>Matéria LFRA</th><th>Implicação para a AT-RAM</th><th>Relevância para o inspetor tributário</th></tr></thead>
+  <tbody>
+    <tr><td>Receitas fiscais próprias da RAM</td><td>A AT-RAM cobra e gere estas receitas; é o sujeito ativo na relação tributária regional</td><td>O inspetor sabe que está a cobrar receita para o ORM — o seu trabalho tem impacto direto no financiamento dos serviços públicos da RAM</td></tr>
+    <tr><td>Critérios de conexão</td><td>Determinam a competência da AT-RAM: se um contribuinte tem domicílio fiscal na RAM, o IRS pertence à AT-RAM</td><td>Em inspeções de contribuintes com atividade em várias jurisdições, o inspetor deve verificar qual a parcela de receita que pertence à RAM</td></tr>
+    <tr><td>Poderes tributários regionais (DLR)</td><td>As adaptações fiscais regionais (taxas de IVA reduzidas, deduções IRS regionais, taxas de IRC no CINM) são aplicadas e verificadas pela AT-RAM</td><td>O inspetor deve conhecer os DLR fiscais em vigor na RAM para verificar a correta aplicação dos benefícios</td></tr>
+    <tr><td>Benefícios fiscais regionais</td><td>A AT-RAM verifica o cumprimento dos requisitos para fruição de benefícios regionais</td><td>A fruição indevida de benefício é objeto de liquidação adicional em inspeção — o inspetor deve identificar os casos de incumprimento dos requisitos</td></tr>
+    <tr><td>Transferências do OE — compensação IVA</td><td>A diferença entre as taxas de IVA regionais e nacionais é compensada pelo Estado — a AT-RAM deve reportar os dados de IVA cobrado para este cálculo</td><td>Os dados de IVA liquidado e cobrado pela AT-RAM alimentam a fórmula de compensação — rigor na liquidação e cobrança de IVA é essencial</td></tr>
+    <tr><td>Equilíbrio orçamental e controlo da dívida</td><td>A cobrança eficiente de receitas fiscais pela AT-RAM é condição de sustentabilidade financeira da RAM</td><td>O trabalho do inspetor contribui diretamente para o saldo orçamental regional — a inspeção é um instrumento de política fiscal e financeira, não apenas de aplicação da lei</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t);}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾';})();
+</script>
+</body>
+</html>

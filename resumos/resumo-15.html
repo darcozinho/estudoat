@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>15 · Lei 58/2019 — Execução do RGPD em Portugal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}.warning strong{color:#e74c3c}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.22rem 0;transition:color .15s}
+    .toc a:hover{color:var(--accent)}.toc a::before{content:"→ ";color:var(--accent);font-size:.75rem}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">15 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">15 · Proteção de Dados — Direito Nacional</p>
+<h1>Lei n.º 58/2019 — <em>Execução do RGPD em Portugal</em></h1>
+<p class="doc-sub">De 8 de agosto de 2019 · Assegura a execução, na ordem jurídica nacional, do Regulamento (UE) 2016/679 (RGPD) · Revoga a Lei n.º 67/98 · Complementada pelas orientações da CNPD</p>
+<div class="meta-row">
+  <span class="badge badge-accent">Lei 58/2019</span>
+  <span class="badge">RGPD Nacional</span>
+  <span class="badge">CNPD</span>
+  <span class="badge">Proteção de Dados</span>
+  <span class="badge">EPD/DPO</span>
+  <span class="badge">Sigilo Fiscal</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#objeto">Objeto, Fundamento e Relação com o RGPD</a>
+  <a href="#margens">Margens de Apreciação Nacional Exercidas por Portugal</a>
+  <a href="#cnpd">A CNPD como Autoridade de Controlo Nacional</a>
+  <a href="#bases">Bases Legais do Tratamento — Especificidades Nacionais</a>
+  <a href="#categorias">Dados de Categorias Especiais</a>
+  <a href="#laboral">Tratamento no Contexto Laboral</a>
+  <a href="#arquivo">Tratamento para Fins de Arquivo, Investigação e Estatística</a>
+  <a href="#direitos">Direitos dos Titulares e Restrições Nacionais</a>
+  <a href="#epd">Encarregado de Proteção de Dados (EPD/DPO)</a>
+  <a href="#aipd">Avaliação de Impacto de Proteção de Dados (AIPD)</a>
+  <a href="#violacoes">Violações de Dados — Notificação e Comunicação</a>
+  <a href="#transferencias">Transferências Internacionais e Intercâmbio Fiscal</a>
+  <a href="#sancoes">Regime Sancionatório</a>
+  <a href="#fiscal">Proteção de Dados Fiscais — Sigilo Fiscal vs. RGPD</a>
+  <a href="#sintese">Síntese para o Inspetor Tributário</a>
+</div>
+
+<hr class="divider" id="objeto"/>
+<p class="section-label">1. Objeto, Fundamento e Relação com o RGPD</p>
+
+<div class="highlight">
+  <p>O RGPD (Regulamento UE 2016/679) é diretamente aplicável em todos os Estados-Membros sem necessidade de transposição. Contudo, o próprio RGPD abre <em>«margens de apreciação nacional»</em> — permite que os EM complementem, especifiquem ou restrinjam certas disposições. A Lei 58/2019 exerce essas margens para o contexto português.</p>
+</div>
+
+<p>A Lei 58/2019 é lei nacional de complemento e execução — não transpõe o RGPD (desnecessário) mas concretiza as opções que o RGPD reservou aos Estados. Revogou a anterior Lei de Proteção de Dados Pessoais (Lei n.º 67/98), que transpôs a Diretiva 95/46/CE. A Lei 58/2019 não pode contrariar o RGPD — é subordinada a ele, apenas o especifica e complementa onde o RGPD o permite.</p>
+
+<div class="card">
+  <h3>Estrutura da Lei 58/2019</h3>
+  <table>
+    <thead><tr><th>Capítulo</th><th>Matéria</th></tr></thead>
+    <tbody>
+      <tr><td>Cap. I (arts. 1.º–2.º)</td><td>Objeto e âmbito de aplicação</td></tr>
+      <tr><td>Cap. II (arts. 3.º–22.º)</td><td>A CNPD — composição, competências, independência, poderes</td></tr>
+      <tr><td>Cap. III (arts. 23.º–36.º)</td><td>Tratamento de dados em contextos específicos (autoridades públicas, emprego, arquivo, investigação)</td></tr>
+      <tr><td>Cap. IV (arts. 37.º–44.º)</td><td>Encarregado de Proteção de Dados (EPD)</td></tr>
+      <tr><td>Cap. V (arts. 45.º–49.º)</td><td>Transferências internacionais</td></tr>
+      <tr><td>Cap. VI (arts. 50.º–55.º)</td><td>Códigos de conduta e certificação</td></tr>
+      <tr><td>Cap. VII (arts. 56.º–70.º)</td><td>Regime sancionatório (contraordenações)</td></tr>
+      <tr><td>Cap. VIII (arts. 71.º–73.º)</td><td>Disposições finais e transitórias</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="margens"/>
+<p class="section-label">2. Margens de Apreciação Nacional Exercidas por Portugal</p>
+
+<div class="highlight">
+  <p>O RGPD prevê numerosas disposições abertas que permitem aos EM concretizar ou restringir regras. Portugal exerceu essas margens na Lei 58/2019 nas seguintes matérias fundamentais:</p>
+</div>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Menores (art. 8.º RGPD)</div>
+    <div class="art-title">Idade de consentimento — 13 anos</div>
+    <div class="art-body">O RGPD fixou 16 anos como padrão, permitindo baixar até 13. Portugal escolheu <strong>13 anos</strong> como limiar mínimo para consentir em serviços de sociedade da informação. Abaixo dos 13 anos, o consentimento é do representante legal.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Emprego (art. 88.º RGPD)</div>
+    <div class="art-title">Dados dos trabalhadores</div>
+    <div class="art-body">Portugal estabeleceu regras específicas sobre o tratamento de dados dos trabalhadores pelas entidades empregadoras — incluindo a AT-RAM como entidade empregadora dos seus trabalhadores. Inclui regras sobre vigilância no local de trabalho e dados de desempenho.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Autoridades públicas (art. 6.º, n.º 2 RGPD)</div>
+    <div class="art-title">Tratamento por organismos públicos</div>
+    <div class="art-body">Portugal concretizou as condições em que as autoridades públicas (incluindo a AT-RAM) podem tratar dados pessoais para fins de interesse público — sem consentimento, com base legal específica (LGT, CPPT, CIRCs), restringindo os direitos dos titulares quando necessário.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Arquivo e investigação (art. 89.º RGPD)</div>
+    <div class="art-title">Fins científicos, estatísticos e históricos</div>
+    <div class="art-body">Portugal definiu as condições em que os dados podem ser conservados e tratados para fins de investigação científica, estatística e arquivo histórico, com derrogações aos direitos de apagamento e limitação.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Restrições (art. 23.º RGPD)</div>
+    <div class="art-title">Limitação dos direitos dos titulares</div>
+    <div class="art-body">Portugal restringiu certos direitos dos titulares (acesso, apagamento, portabilidade) quando o tratamento serve fins fiscais, de investigação penal, de segurança nacional ou de proteção de direitos de terceiros. Fundamental para a AT-RAM.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Coimas (art. 83.º, n.º 7 RGPD)</div>
+    <div class="art-title">Limitação de coimas a entidades públicas</div>
+    <div class="art-body">Portugal condicionou a aplicação de coimas a autoridades e organismos públicos: as coimas são aplicáveis, mas o regime pode ser diferenciado face ao setor privado; a CNPD aprecia casuisticamente o impacto orçamental da coima sobre a entidade pública.</div>
+  </div>
+</div>
+
+<hr class="divider" id="cnpd"/>
+<p class="section-label">3. A CNPD como Autoridade de Controlo Nacional</p>
+
+<h2>Composição e Independência</h2>
+<div class="card">
+  <p>A CNPD é uma <strong>autoridade administrativa independente</strong>, com personalidade jurídica própria e autonomia administrativa, financeira e patrimonial. A independência face ao Governo e à Administração Pública é condição essencial para o exercício das suas funções de controlo. Reporta diretamente à Assembleia da República, que aprecia os seus relatórios anuais.</p>
+  <h3>Composição</h3>
+  <ul>
+    <li>Presidente e 2 vogais, eleitos pela Assembleia da República por maioria de 2/3 dos deputados presentes</li>
+    <li>Mandato de 5 anos, renovável uma vez</li>
+    <li>Sujeitos a incompatibilidades rigorosas durante e após o mandato</li>
+  </ul>
+</div>
+
+<h2>Poderes e Competências da CNPD</h2>
+<div class="card">
+  <h3>Poderes investigativos</h3>
+  <ul>
+    <li>Acesso a instalações e equipamentos dos responsáveis pelo tratamento (incluindo organismos públicos como a AT-RAM)</li>
+    <li>Acesso a todos os documentos, registos e sistemas de informação relevantes</li>
+    <li>Obtenção de informações e audição de responsáveis e trabalhadores</li>
+    <li>Realização de auditorias e inspeções periódicas</li>
+  </ul>
+  <h3>Poderes corretivos</h3>
+  <ul>
+    <li>Emitir advertências e repreensões</li>
+    <li>Ordenar a retificação, apagamento ou limitação do tratamento</li>
+    <li>Impor suspensão ou proibição definitiva do tratamento</li>
+    <li>Ordenar a notificação dos titulares de dados de uma violação</li>
+    <li>Retirar a certificação a organismos certificados</li>
+    <li>Aplicar <strong>coimas</strong> até 20 milhões de euros ou 4% do volume de negócios anual global (para o setor privado)</li>
+  </ul>
+  <h3>Poderes consultivos e de autorização</h3>
+  <ul>
+    <li>Emitir pareceres sobre projetos de lei e regulamentos com impacto na proteção de dados</li>
+    <li>Aprovar cláusulas contratuais-tipo para transferências internacionais de dados</li>
+    <li>Emitir orientações e recomendações vinculativas</li>
+    <li>Apreciar AIPD submetidas por responsáveis e emitir consulta prévia</li>
+    <li>Acreditar organismos de certificação e monitorização de códigos de conduta</li>
+  </ul>
+  <h3>Cooperação com autoridades europeias</h3>
+  <p>A CNPD participa no <strong>Comité Europeu para a Proteção de Dados (CEPD/EDPB)</strong> e coopera com as autoridades de controlo dos outros EM através do mecanismo de <strong>balcão único</strong> (para tratamentos transfronteiriços) e do mecanismo de <strong>controlo da coerência</strong> (para decisões com impacto em vários EM).</p>
+</div>
+
+<hr class="divider" id="bases"/>
+<p class="section-label">4. Bases Legais do Tratamento — Especificidades Nacionais</p>
+
+<div class="highlight">
+  <p>O artigo 6.º do RGPD prevê seis bases legais para o tratamento de dados pessoais. Portugal especificou algumas dessas bases para o contexto nacional, em especial para o tratamento por autoridades públicas.</p>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Base legal (art. 6.º RGPD)</th><th>Aplicação na AT-RAM</th><th>Especificidade nacional (Lei 58/2019)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>al. a) Consentimento</strong></td><td>Não relevante para tratamentos fiscais obrigatórios</td><td>Portugal definiu requisitos de consentimento para serviços digitais (menores: 13 anos)</td></tr>
+    <tr><td><strong>al. b) Contrato</strong></td><td>Tratamento de dados de fornecedores e prestadores de serviços da AT-RAM</td><td>Aplicação direta do RGPD; sem especificidade nacional significativa</td></tr>
+    <tr><td><strong>al. c) Obrigação jurídica</strong></td><td>Principal base legal para tratamentos fiscais — LGT, CPPT, CIRCs impõem o tratamento</td><td>Portugal identificou as leis fiscais como fonte de obrigação jurídica</td></tr>
+    <tr><td><strong>al. d) Interesses vitais</strong></td><td>Residual; não típico na atividade tributária</td><td>—</td></tr>
+    <tr><td><strong>al. e) Interesse público / autoridade pública</strong></td><td>Base para tratamentos de investigação e inspeção sem obrigação jurídica específica</td><td>Portugal concretizou as condições; tratamento deve ser necessário e proporcional</td></tr>
+    <tr><td><strong>al. f) Interesses legítimos</strong></td><td>Não se aplica a organismos públicos no exercício das suas funções de autoridade</td><td>Excluída pela Lei 58/2019 para autoridades públicas quando atuam como tais</td></tr>
+  </tbody>
+</table>
+
+<div class="warning">
+  <p><strong>Regra crucial para a AT-RAM:</strong> Os interesses legítimos (base f) não podem ser invocados pela AT-RAM enquanto exerce os seus poderes de autoridade pública (liquidação, inspeção, execução fiscal). Deve sempre identificar obrigação jurídica (al. c) ou interesse público (al. e) como base legal.</p>
+</div>
+
+<hr class="divider" id="categorias"/>
+<p class="section-label">5. Dados de Categorias Especiais — Condições Nacionais</p>
+
+<div class="card">
+  <p>O artigo 9.º RGPD proíbe o tratamento de <strong>dados sensíveis</strong> salvo exceções taxativas. São dados sensíveis: saúde, biometria, genética, origem étnica ou racial, opiniões políticas, crenças religiosas ou filosóficas, filiação sindical, vida sexual e orientação sexual, e infrações penais (estas últimas no artigo 10.º RGPD).</p>
+  <h3>Exceções aplicáveis à AT-RAM</h3>
+  <ul>
+    <li><strong>Interesse público relevante (art. 9.º, n.º 2, al. g) RGPD):</strong> A AT-RAM pode tratar dados de saúde ou de infrações penais quando necessário para fins de interesse público fiscal e proporcional ao objetivo — ex.: investigação de fraude fiscal em entidades de saúde, avaliação do risco fiscal de contribuintes com historial criminal.</li>
+    <li><strong>Dados de infrações penais (art. 10.º RGPD + Lei 58/2019):</strong> A AT-RAM pode tratar dados de condenações penais dos contribuintes quando necessário para avaliação do risco fiscal (fraude e evasão qualificada) — mas sob condições rigorosas de proporcionalidade e com restrição de acesso interno.</li>
+    <li><strong>Dados biométricos:</strong> Só admissíveis com base legal específica — ex.: controlo de acesso às instalações da AT-RAM. Não são usados em contexto de inspeção tributária.</li>
+  </ul>
+  <h3>Tratamento de dados de infrações penais — regras</h3>
+  <ul>
+    <li>Acesso restrito apenas aos inspetores tributários e superiores hierárquicos que necessitem da informação para a investigação concreta</li>
+    <li>Registo obrigatório do acesso no sistema de informação (log de auditoria)</li>
+    <li>Conservação apenas pelo tempo estritamente necessário — os dados de infrações penais não podem ser conservados indefinidamente; devem ser eliminados quando a investigação fiscal concluir</li>
+  </ul>
+</div>
+
+<hr class="divider" id="laboral"/>
+<p class="section-label">6. Tratamento no Contexto Laboral (Artigo 28.º Lei 58/2019)</p>
+
+<div class="highlight">
+  <p>A Lei 58/2019, ao abrigo da margem de apreciação do artigo 88.º RGPD, estabelece regras específicas para o tratamento de dados dos trabalhadores pela entidade empregadora. Estas regras aplicam-se à AT-RAM como empregadora dos seus trabalhadores (incluindo inspetores tributários).</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Dados que a AT-RAM pode tratar sobre os seus trabalhadores</h3>
+    <ul>
+      <li>Dados de identificação, morada, contactos (base: contrato/obrigação legal)</li>
+      <li>Dados de remuneração, faltas, férias (base: obrigação legal)</li>
+      <li>Dados de avaliação de desempenho (SIADAP-RAM) — base: obrigação legal</li>
+      <li>Dados de saúde (baixas médicas) — base: obrigação legal; acesso restrito ao serviço de recursos humanos e à ADSE/seguradora</li>
+      <li>Dados biométricos para controlo de assiduidade (ex.: ponto por impressão digital) — base: lei específica que o autorize ou consentimento</li>
+      <li>Registo de chamadas e emails institucionais — com política de privacidade prévia comunicada aos trabalhadores</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Vigilância no local de trabalho</h3>
+    <p>A instalação de sistemas de videovigilância nas instalações da AT-RAM está sujeita a regras rigorosas:</p>
+    <ul>
+      <li><strong>Finalidade legítima:</strong> Segurança de instalações e equipamentos; prevenção de furtos e intrusões; não pode ser usada para controlo do desempenho dos trabalhadores</li>
+      <li><strong>Informação prévia:</strong> Os trabalhadores e o público devem ser informados da existência das câmeras (sinalização)</li>
+      <li><strong>Consulta prévia da CNPD:</strong> Exigida para vigilância nos locais de trabalho</li>
+      <li><strong>Prazo máximo de conservação:</strong> 30 dias para as imagens, salvo em caso de investigação em curso</li>
+    </ul>
+    <p>Monitorização de emails e de atividade no computador institucional dos trabalhadores da AT-RAM: admissível apenas para fins de segurança informática ou investigação disciplinar, com política prévia conhecida pelos trabalhadores.</p>
+  </div>
+</div>
+
+<hr class="divider" id="arquivo"/>
+<p class="section-label">7. Tratamento para Fins de Arquivo, Investigação e Estatística</p>
+
+<div class="card">
+  <p>O artigo 89.º RGPD permite derrogações a certos direitos dos titulares quando os dados são tratados para fins de <strong>arquivo de interesse público</strong>, <strong>investigação científica</strong> ou <strong>fins estatísticos</strong>. Portugal concretizou estas derrogações na Lei 58/2019:</p>
+  <h3>Arquivo de interesse público</h3>
+  <p>Os dados fiscais conservados pela AT-RAM por prazos legais (para efeitos de caducidade e prescrição) constituem arquivo de interesse público. Após os prazos legais de conservação, os dados devem ser eliminados — salvo se existir valor histórico identificado pelo Arquivo Nacional/Regional, caso em que são transferidos para o arquivo histórico competente. O contribuinte não pode invocar o direito ao apagamento para os dados que a AT-RAM é obrigada a conservar por lei.</p>
+  <h3>Fins estatísticos e investigação</h3>
+  <p>A AT-RAM pode facultar dados fiscais anonimizados ou pseudonimizados ao INE, à OCDE ou a investigadores académicos para fins estatísticos e de investigação, mas não pode fornecer dados identificados sem base legal específica. A agregação e análise de tendências (ex.: setores com maiores irregularidades fiscais para efeitos de planeamento da inspeção) não constitui tratamento de dados pessoais identificáveis se os resultados forem estatísticos.</p>
+</div>
+
+<hr class="divider" id="direitos"/>
+<p class="section-label">8. Direitos dos Titulares e Restrições Nacionais</p>
+
+<h2>Os Oito Direitos do RGPD</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Direito (artigo RGPD)</th><th>Conteúdo</th><th>Restrição nacional aplicável à AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Informação (arts. 13.º-14.º)</strong></td><td>Ser informado aquando da recolha (ou num prazo razoável se recolha indireta) sobre o responsável, finalidades, bases legais, destinatários e direitos</td><td>Limitação: não se aplica quando a informação possa comprometer investigações criminais ou fiscais em curso (artigo 23.º RGPD + Lei 58/2019)</td></tr>
+      <tr><td><strong>Acesso (art. 15.º)</strong></td><td>Obter confirmação de que os dados são tratados e receber cópia dos dados pessoais tratados</td><td><strong>Restrição importante:</strong> A AT-RAM pode recusar ou limitar o acesso quando possa prejudicar investigação de fraude fiscal ou evasão fiscal em curso</td></tr>
+      <tr><td><strong>Retificação (art. 16.º)</strong></td><td>Exigir correção de dados incorretos ou incompletos</td><td>Em matéria fiscal, a retificação faz-se pelos meios próprios (reclamação graciosa, pedido de revisão), não directamente pelo RGPD</td></tr>
+      <tr><td><strong>Apagamento — "ser esquecido" (art. 17.º)</strong></td><td>Exigir a eliminação dos dados em certas circunstâncias</td><td><strong>Não se aplica</strong> quando a AT-RAM tem obrigação legal de conservar os dados (prazos de caducidade, prescrição fiscal, arquivo histórico)</td></tr>
+      <tr><td><strong>Limitação do tratamento (art. 18.º)</strong></td><td>Restringir o uso dos dados em certas circunstâncias (ex.: enquanto contesta a exatidão)</td><td>Aplicação limitada em contexto fiscal — a AT-RAM pode tratar os dados enquanto a contestação está pendente nos processos tributários</td></tr>
+      <tr><td><strong>Portabilidade (art. 20.º)</strong></td><td>Receber os dados num formato estruturado e legível por máquina; transferir para outro responsável</td><td><strong>Não se aplica</strong> quando o tratamento se baseia em obrigação jurídica ou em interesse público (caso típico da AT-RAM)</td></tr>
+      <tr><td><strong>Oposição (art. 21.º)</strong></td><td>Opor-se ao tratamento por razões relacionadas com a sua situação particular</td><td><strong>Não se aplica</strong> ao tratamento necessário para o exercício de autoridade pública pela AT-RAM</td></tr>
+      <tr><td><strong>Decisões automatizadas (art. 22.º)</strong></td><td>Não ser sujeito a decisões baseadas unicamente em tratamento automatizado com efeitos significativos</td><td>A AT-RAM pode usar perfis de risco automatizados para seleção de contribuintes a inspecionar, desde que haja revisão humana antes de tomar qualquer decisão desfavorável</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Como o Contribuinte Exerce os Direitos face à AT-RAM</h2>
+<div class="card">
+  <ul>
+    <li>Pedidos dirigidos ao <strong>EPD da AT-RAM</strong> (encarregado de proteção de dados) por escrito ou por meios eletrónicos</li>
+    <li>Prazo de resposta: <strong>1 mês</strong> a contar da receção do pedido (prorrogável por mais 2 meses em casos complexos)</li>
+    <li>Se o pedido for recusado, a AT-RAM deve informar o contribuinte dos fundamentos da recusa e do direito de reclamação à CNPD</li>
+    <li>O contribuinte pode reclamar à CNPD se a AT-RAM não responder ou se recusar o pedido sem justificação suficiente</li>
+    <li>Pode impugnar judicialmente a decisão da CNPD no Tribunal Administrativo competente</li>
+  </ul>
+</div>
+
+<hr class="divider" id="epd"/>
+<p class="section-label">9. Encarregado de Proteção de Dados — EPD/DPO</p>
+
+<div class="card">
+  <h3>Designação obrigatória para entidades públicas</h3>
+  <p>Todas as autoridades e organismos públicos devem designar obrigatoriamente um EPD. A AT-RAM, como organismo público, tem esta obrigação. O EPD pode ser interno (funcionário da AT-RAM) ou externo (entidade ou profissional independente contratado). Pode ser partilhado entre vários serviços da ARAM.</p>
+  <h3>Qualificações exigidas</h3>
+  <p>O EPD deve ter conhecimentos especializados em direito e práticas de proteção de dados, bem como capacidade para desempenhar as suas funções. Não é exigida certificação formal, mas a CNPD recomenda formação específica reconhecida.</p>
+  <h3>Funções do EPD</h3>
+  <ul>
+    <li>Informar e aconselhar a AT-RAM e os seus trabalhadores sobre as obrigações do RGPD e da Lei 58/2019</li>
+    <li>Controlar a conformidade com o RGPD e as políticas internas de proteção de dados</li>
+    <li>Prestar aconselhamento sobre as AIPD e controlar a sua execução</li>
+    <li>Cooperar com a CNPD e ser o ponto de contacto da AT-RAM com a CNPD</li>
+    <li>Tratar as reclamações dos titulares de dados dirigidas à AT-RAM</li>
+    <li>Assegurar a formação dos trabalhadores da AT-RAM em matéria de proteção de dados</li>
+    <li>Manter o registo de atividades de tratamento da AT-RAM e assegurar a sua atualização</li>
+  </ul>
+  <h3>Garantias de independência</h3>
+  <ul>
+    <li>O EPD não pode receber instruções quanto ao exercício das suas funções</li>
+    <li>Não pode ser exonerado ou penalizado por exercer as suas funções</li>
+    <li>Reporta diretamente ao mais alto nível de gestão (Presidente do Conselho Diretivo da AT-RAM)</li>
+    <li>Pode exercer outras funções, desde que não haja conflito de interesses (ex.: não pode ser o mesmo que o dirigente responsável pelo tratamento que supervisiona)</li>
+  </ul>
+</div>
+
+<hr class="divider" id="aipd"/>
+<p class="section-label">10. Avaliação de Impacto de Proteção de Dados (AIPD)</p>
+
+<div class="highlight">
+  <p>A AIPD (artigo 35.º RGPD) é obrigatória antes de iniciar novos tratamentos de dados que possam implicar <strong>elevado risco</strong> para os direitos dos titulares. A CNPD publicou uma lista de tratamentos que obrigatoriamente exigem AIPD em Portugal.</p>
+</div>
+
+<div class="card">
+  <h3>Quando é obrigatória para a AT-RAM</h3>
+  <ul>
+    <li>Implementação de novos <strong>sistemas de pontuação ou perfilagem</strong> de contribuintes para seleção de inspeções — inclui modelos de risco de incumprimento fiscal</li>
+    <li>Tratamento <strong>em grande escala</strong> de dados sensíveis (ex.: dados de infrações penais de contribuintes)</li>
+    <li>Sistemas de <strong>vigilância sistemática</strong> de contribuintes ou de zonas (ex.: monitorização cruzada de e-fatura em grande escala)</li>
+    <li>Utilização de novas tecnologias de tratamento de dados (ex.: machine learning para deteção de fraude)</li>
+    <li>Combinação de <strong>fontes de dados</strong> de origens distintas (ex.: cruzamento de dados da AT-RAM com dados bancários, registos prediais e dados aduaneiros)</li>
+  </ul>
+  <h3>Conteúdo da AIPD</h3>
+  <ul>
+    <li>Descrição sistemática do tratamento e suas finalidades</li>
+    <li>Avaliação da necessidade e proporcionalidade do tratamento</li>
+    <li>Avaliação dos riscos para os direitos e liberdades dos titulares</li>
+    <li>Medidas previstas para fazer face aos riscos (técnicas e organizativas)</li>
+  </ul>
+  <h3>Consulta prévia à CNPD</h3>
+  <p>Se a AIPD concluir que o tratamento implica riscos elevados que não podem ser mitigados, a AT-RAM deve submeter a AIPD à CNPD para consulta prévia antes de iniciar o tratamento. A CNPD tem 8 semanas para se pronunciar (prorrogável por mais 6 semanas).</p>
+</div>
+
+<hr class="divider" id="violacoes"/>
+<p class="section-label">11. Violações de Dados — Notificação e Comunicação</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Notificação à CNPD (art. 33.º RGPD)</h3>
+    <p>Em caso de violação de segurança dos dados pessoais (acesso não autorizado, perda, destruição, divulgação ou alteração de dados de contribuintes), a AT-RAM deve notificar a CNPD <strong>sem demora injustificada e, se possível, no prazo de 72 horas</strong> após o momento em que tiver conhecimento da violação. Se a notificação ocorrer após 72 horas, deve ser acompanhada de justificação do atraso. A notificação deve conter: natureza da violação, categorias e número de titulares e de registos afetados, consequências prováveis, medidas tomadas ou propostas.</p>
+  </div>
+  <div class="card">
+    <h3>Comunicação aos titulares (art. 34.º RGPD)</h3>
+    <p>Quando a violação for suscetível de <strong>implicar um elevado risco para os direitos e liberdades dos contribuintes</strong> afetados (ex.: divulgação de dados bancários, rendimentos ou situação fiscal a terceiros não autorizados), a AT-RAM deve comunicar a violação diretamente a esses contribuintes sem demora injustificada. A comunicação deve ser em linguagem clara e simples. Pode ser dispensada se os dados afetados estiverem encriptados, se tiverem sido tomadas medidas que eliminem o risco, ou se a comunicação individual implicar esforço desproporcionado (neste caso, comunicação pública).</p>
+  </div>
+</div>
+
+<h2>Exemplos de violações de dados relevantes para a AT-RAM</h2>
+<div class="card">
+  <ul>
+    <li>Acesso não autorizado a dados fiscais de contribuintes por funcionário da AT-RAM sem legitimidade para tal (violação de sigilo fiscal + violação de dados RGPD)</li>
+    <li>Perda ou roubo de dispositivo móvel ou portátil de inspetor tributário contendo dados de contribuintes não encriptados</li>
+    <li>Envio acidental de dados fiscais de um contribuinte para o endereço errado</li>
+    <li>Ataque informático (ransomware) que cause destruição ou encriptação de dados dos contribuintes nos sistemas da AT-RAM</li>
+    <li>Divulgação indevida de dados fiscais a terceiros não autorizados (ex.: cônjuge em processo de divórcio, credores)</li>
+  </ul>
+</div>
+
+<hr class="divider" id="transferencias"/>
+<p class="section-label">12. Transferências Internacionais de Dados e Intercâmbio Fiscal</p>
+
+<div class="highlight">
+  <p>A AT-RAM, no âmbito da cooperação fiscal internacional, transfere dados pessoais de contribuintes para administrações tributárias estrangeiras e para organismos internacionais. Estas transferências devem cumprir o Capítulo V do RGPD (artigos 44.º–49.º).</p>
+</div>
+
+<div class="card">
+  <h3>Transferências para países da UE/EEE</h3>
+  <p>Livres, sem restrições RGPD adicionais. Os países do EEE têm nível de proteção equivalente à UE por decisão da Comissão Europeia. O intercâmbio automático de informações financeiras no âmbito das DAC (Diretivas da UE de Cooperação Administrativa) é baseado em obrigação jurídica da UE — base legal sólida.</p>
+  <h3>Transferências para países terceiros (ex.: EUA para FATCA)</h3>
+  <p>Sujeitas a condições mais rigorosas. O <strong>FATCA</strong> (Foreign Account Tax Compliance Act) implica transferências de dados de contas financeiras de cidadãos americanos na RAM para as autoridades fiscais americanas (IRS). Estas transferências têm base legal no <strong>acordo intergovernamental Portugal-EUA</strong>, que funciona como base jurídica adequada ao abrigo do artigo 49.º, n.º 1, al. d) RGPD (necessário por razões importantes de interesse público). A Lei 58/2019 concretizou este regime para as autoridades públicas portuguesas.</p>
+  <h3>CRS (Common Reporting Standard) e DAC2</h3>
+  <p>O CRS/DAC2 implica a troca automática de informações de contas financeiras de não-residentes com as autoridades fiscais dos países de residência dos titulares. A base legal é o interesse público fiscal e a obrigação jurídica decorrente do acordo multilateral OCDE e das diretivas da UE. Os dados transferidos devem ser limitados ao mínimo necessário (minimização) e os contribuintes devem ser informados — geralmente pela instituição financeira que reporta os dados.</p>
+  <h3>DAC6 — Esquemas de planeamento fiscal agressivo</h3>
+  <p>A DAC6 obriga os intermediários e contribuintes a reportar à AT esquemas fiscais transfronteiriços potencialmente agressivos. O reporte contém dados pessoais dos contribuintes envolvidos. O tratamento desses dados pela AT-RAM tem base legal na Diretiva DAC6 (transposta para direito nacional). Os dados são partilhados com administrações fiscais de outros EM da UE.</p>
+</div>
+
+<hr class="divider" id="sancoes"/>
+<p class="section-label">13. Regime Sancionatório</p>
+
+<div class="card">
+  <h3>Dois níveis de coimas (artigo 83.º RGPD + artigos 56.º–70.º Lei 58/2019)</h3>
+  <table>
+    <thead><tr><th>Tipo de infração</th><th>Coima máxima (privados)</th><th>Exemplos relevantes para a AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Infrações mais graves</strong> (art. 83.º, n.º 5 RGPD)</td><td>20 000 000 € ou 4% do VN anual global</td><td>Não ter base legal para o tratamento; violação dos princípios fundamentais; violação dos direitos dos titulares; transferências ilegais para países terceiros; inobservância de ordem da CNPD</td></tr>
+      <tr><td><strong>Infrações menos graves</strong> (art. 83.º, n.º 4 RGPD)</td><td>10 000 000 € ou 2% do VN anual global</td><td>Não nomear EPD; não realizar AIPD obrigatória; não notificar violação de dados à CNPD; não manter registo de atividades de tratamento; falhas na segurança técnica dos dados</td></tr>
+    </tbody>
+  </table>
+  <h3>Coimas para entidades públicas</h3>
+  <p>A Lei 58/2019 e o artigo 83.º, n.º 7 RGPD permitem que os EM estabeleçam regras especiais para a aplicação de coimas a organismos públicos. Em Portugal, a CNPD aplica coimas às entidades públicas mas com critérios adaptados — pondera o impacto orçamental sobre os serviços públicos e pode optar por medidas corretivas em vez de coimas em casos menos graves.</p>
+  <h3>Responsabilidade civil (artigo 82.º RGPD)</h3>
+  <p>O titular de dados que tenha sofrido dano material ou imaterial em resultado de violação do RGPD pela AT-RAM tem direito a indemnização. A AT-RAM pode ser responsabilizada solidariamente com o subcontratante se ambos forem responsáveis pelo dano. A responsabilidade do Estado por atos ilícitos da AT-RAM no tratamento de dados é regulada pela lei da responsabilidade civil extracontratual do Estado.</p>
+  <h3>Crimes (artigo 46.º Lei 58/2019)</h3>
+  <p>O acesso ilegítimo a dados pessoais, a violação intencional do sigilo de dados e o tratamento intencional de dados sem base legal podem constituir <strong>crimes</strong>, punidos com pena de prisão até 2 anos ou multa. O inspetor tributário que aceda indevidamente a dados fiscais de contribuintes fora do âmbito da sua missão comete crime de acesso ilegítimo a dados pessoais, além de infração disciplinar.</p>
+</div>
+
+<hr class="divider" id="fiscal"/>
+<p class="section-label">14. Proteção de Dados Fiscais — Sigilo Fiscal vs. RGPD</p>
+
+<div class="highlight">
+  <p>O <strong>sigilo fiscal</strong> (artigo 64.º LGT) e o <strong>RGPD</strong> são regimes complementares e cumulativos — não se excluem. Os dados fiscais dos contribuintes tratados pela AT-RAM estão protegidos por ambos os regimes simultaneamente. O RGPD acrescenta proteção ao sigilo fiscal; o sigilo fiscal acrescenta proteção específica ao RGPD.</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Sigilo fiscal (art. 64.º LGT)</h3>
+    <ul>
+      <li>Proíbe a divulgação de dados fiscais dos contribuintes a terceiros</li>
+      <li>Vincula todos os trabalhadores da AT-RAM que tenham acesso a dados fiscais</li>
+      <li>Exceções: decisão judicial; cooperação fiscal internacional; divulgação de listas de devedores em determinadas circunstâncias</li>
+      <li>Violação: infração disciplinar muito grave + eventual crime</li>
+      <li>Fundamento: relação de confiança entre Estado e contribuinte; necessidade de cumprimento voluntário</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>RGPD aplicado a dados fiscais</h3>
+    <ul>
+      <li>Direito de acesso: contribuinte pode pedir informação sobre os dados que a AT-RAM trata sobre si — com limitações quando comprometa investigação</li>
+      <li>Minimização: a AT-RAM só pode recolher os dados estritamente necessários para os fins fiscais</li>
+      <li>Limitação da conservação: dados só conservados pelo prazo necessário (prazos de caducidade e prescrição)</li>
+      <li>Segurança: medidas técnicas e organizativas para proteger os dados fiscais de acesso não autorizado</li>
+      <li>Notificação de violações: obrigação de notificar a CNPD em 72 horas</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Tratamento de dados na inspeção tributária — regras práticas</h2>
+<div class="card">
+  <h3>Acesso a dados no âmbito de ação de inspeção</h3>
+  <p>O inspetor tributário, no exercício das suas funções, acede a dados pessoais dos contribuintes inspecionados. Este acesso é lícito ao abrigo do artigo 6.º, n.º 1, al. c) e e) RGPD e do artigo 63.º LGT. Mas está sujeito a regras de proporcionalidade:</p>
+  <ul>
+    <li>O acesso deve limitar-se aos dados necessários para a investigação concreta</li>
+    <li>Os dados acedidos devem ser registados no processo de inspeção</li>
+    <li>O inspetor não pode aceder a dados de outros contribuintes que não sejam objeto da inspeção</li>
+    <li>Os dados acedidos não podem ser usados para fins diferentes dos fiscais</li>
+    <li>O inspetor não pode guardar cópias de dados fiscais fora dos sistemas controlados pela AT-RAM</li>
+  </ul>
+  <h3>Acesso a dados bancários</h3>
+  <p>O acesso a dados bancários está sujeito a regime especial de sigilo bancário (artigo 63.º-B LGT). O RGPD não afasta o sigilo bancário — o inspetor só pode aceder aos dados bancários nas condições previstas na LGT (autorização do dirigente máximo ou do tribunal), que funcionam também como base legal ao abrigo do RGPD (obrigação jurídica). Os dados bancários obtidos no âmbito da inspeção são dados pessoais e ficam sujeitos ao sigilo fiscal.</p>
+</div>
+
+<hr class="divider" id="sintese"/>
+<p class="section-label">15. Síntese — Lei 58/2019 e o Inspetor Tributário da AT-RAM</p>
+
+<table>
+  <thead><tr><th>Matéria da Lei 58/2019</th><th>Relevância prática para o inspetor tributário</th></tr></thead>
+  <tbody>
+    <tr><td>Base legal do tratamento de dados fiscais</td><td>O inspetor atua ao abrigo de obrigação jurídica (LGT, CPPT) — não precisa de consentimento do contribuinte</td></tr>
+    <tr><td>Restrição do direito de acesso</td><td>O contribuinte não tem direito de acesso a dados relativos a inspeção em curso quando isso possa comprometer a investigação</td></tr>
+    <tr><td>Direito ao apagamento inaplicável</td><td>A AT-RAM não pode apagar dados fiscais que é obrigada a conservar por lei (prazo de caducidade/prescrição)</td></tr>
+    <tr><td>Sigilo fiscal + RGPD</td><td>O inspetor está vinculado pelos dois regimes — a violação de dados fiscais é simultaneamente violação de sigilo fiscal e do RGPD</td></tr>
+    <tr><td>AIPD para perfilagem de risco</td><td>Qualquer sistema de scoring ou perfilagem de contribuintes para seleção de inspeções exige AIPD prévia</td></tr>
+    <tr><td>EPD da AT-RAM</td><td>Ponto de contacto para questões de proteção de dados; o inspetor deve reportar-lhe qualquer violação de dados que detete</td></tr>
+    <tr><td>Notificação de violação em 72h</td><td>Obrigação de reportar internamente qualquer acesso não autorizado ou perda de dados fiscais imediatamente ao superior e ao EPD</td></tr>
+    <tr><td>Transferências internacionais (FATCA, CRS, DAC)</td><td>Têm base legal sólida; o contribuinte é informado pela entidade reportante (instituição financeira), não diretamente pela AT-RAM</td></tr>
+    <tr><td>Regime sancionatório</td><td>Coimas e crime para acesso ilegítimo a dados; reforça o regime disciplinar de sigilo fiscal</td></tr>
+    <tr><td>Dados dos trabalhadores da AT-RAM</td><td>O inspetor é também titular de dados face à AT-RAM como empregadora; tem direitos RGPD sobre os seus dados de recursos humanos</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

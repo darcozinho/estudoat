@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>10 · DLR 11/2018/M — LGTFP adaptada à RAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}.warning strong{color:#e74c3c}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.22rem 0;transition:color .15s}
+    .toc a:hover{color:var(--accent)}.toc a::before{content:"→ ";color:var(--accent);font-size:.75rem}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">10 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">10 · Emprego Público — Madeira</p>
+<h1>DLR n.º 11/2018/M — <em>LGTFP Adaptada à RAM</em></h1>
+<p class="doc-sub">Decreto Legislativo Regional n.º 11/2018/M, de 3 de agosto · Na redação atual · Adapta a Lei Geral do Trabalho em Funções Públicas à Administração Regional Autónoma da Madeira</p>
+<div class="meta-row">
+  <span class="badge badge-accent">DLR 11/2018/M</span>
+  <span class="badge">LGTFP-RAM</span>
+  <span class="badge">Emprego Público Regional</span>
+  <span class="badge">Regime Disciplinar</span>
+  <span class="badge">SIADAP-RAM</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#fundamento">Fundamento Constitucional e Objeto</a>
+  <a href="#referencias">Substituição de Referências Institucionais</a>
+  <a href="#vinculos">Vínculos de Emprego Público na ARAM</a>
+  <a href="#recrutamento">Recrutamento, Seleção e Mobilidade</a>
+  <a href="#tempo">Organização do Tempo de Trabalho</a>
+  <a href="#deveres">Deveres dos Trabalhadores</a>
+  <a href="#direitos">Direitos dos Trabalhadores</a>
+  <a href="#ferias">Férias, Faltas e Licenças</a>
+  <a href="#carreiras">Carreiras e Remunerações</a>
+  <a href="#siadap">Avaliação de Desempenho — SIADAP-RAM</a>
+  <a href="#dirigentes">Pessoal Dirigente na ARAM</a>
+  <a href="#disciplinar">Regime Disciplinar</a>
+  <a href="#cessacao">Cessação dos Vínculos</a>
+  <a href="#protecao">Proteção Social</a>
+  <a href="#articulacao">Articulação com Outros Diplomas</a>
+  <a href="#sintese">Síntese para o Inspetor Tributário</a>
+</div>
+
+<hr class="divider" id="fundamento"/>
+<p class="section-label">1. Fundamento Constitucional e Objeto</p>
+
+<div class="highlight">
+  <p>O artigo 227.º, n.º 1, alínea d) da CRP confere às regiões autónomas poder para adaptar o sistema legislativo nacional às especificidades regionais. O DLR 11/2018/M exerce essa competência em matéria de emprego público, adaptando a LGTFP (Lei 35/2014) à realidade da Administração Regional Autónoma da Madeira (ARAM).</p>
+</div>
+
+<h2>Artigo 1.º — Objeto</h2>
+<p>O diploma adapta à ARAM a Lei Geral do Trabalho em Funções Públicas, aprovada pela Lei n.º 35/2014, de 20 de junho, na sua redação atual. A adaptação respeita a estrutura e os princípios da LGTFP, introduzindo especificidades decorrentes da autonomia regional.</p>
+
+<div class="card">
+  <h3>Princípio da Adaptação Regional</h3>
+  <p>A adaptação regional não cria um regime completamente diferente — respeita a estrutura da LGTFP. O que muda são:</p>
+  <ul>
+    <li>Os <strong>órgãos competentes</strong> — substituição das referências ao Estado central pelos órgãos regionais equivalentes</li>
+    <li>Algumas <strong>especificidades processuais</strong> adaptadas à dimensão e à realidade regional</li>
+    <li>Articulação com a <strong>legislação regional específica</strong> (DLR 28/2022/M para carreiras especiais da AT-RAM)</li>
+    <li><strong>Publicação no JORAM</strong> (Jornal Oficial da Região Autónoma da Madeira) em substituição do Diário da República para os atos administrativos de caráter regional</li>
+  </ul>
+</div>
+
+<hr class="divider" id="referencias"/>
+<p class="section-label">2. Substituição de Referências Institucionais</p>
+
+<div class="card">
+  <p>Uma das funções centrais do DLR 11/2018/M é substituir as referências a órgãos nacionais pelas entidades regionais equivalentes:</p>
+  <table>
+    <thead><tr><th>Referência na LGTFP (nacional)</th><th>Equivalente na RAM (DLR 11/2018/M)</th></tr></thead>
+    <tbody>
+      <tr><td>Governo / Conselho de Ministros</td><td>Governo Regional da Madeira (GRM)</td></tr>
+      <tr><td>Ministro com tutela sobre a AP</td><td>Secretário Regional com tutela sobre a AP regional</td></tr>
+      <tr><td>Direção-Geral da Administração e do Emprego Público (DGAEP)</td><td>Direção Regional de Administração Pública da RAM</td></tr>
+      <tr><td>Bolsa de Emprego Público (BEP)</td><td>Portal de emprego público regional ou articulação com a BEP nacional</td></tr>
+      <tr><td>Conselho Coordenador da Avaliação (SIADAP — nacional)</td><td>Conselho Coordenador de Avaliação Regional</td></tr>
+      <tr><td>Diário da República (para publicação de atos)</td><td>JORAM — Jornal Oficial da RAM (para atos de âmbito regional)</td></tr>
+      <tr><td>Tribunal Administrativo e Fiscal competente nacional</td><td>Tribunal Administrativo e Fiscal do Funchal (1.ª instância regional)</td></tr>
+      <tr><td>Inspeção-Geral das Finanças / IGAP</td><td>Inspeção Regional das Finanças da RAM</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="vinculos"/>
+<p class="section-label">3. Vínculos de Emprego Público na ARAM</p>
+
+<div class="highlight">
+  <p>Na ARAM, tal como na Administração Central, os trabalhadores podem ter três tipos de vínculo de emprego público, com regimes diferentes no que respeita à estabilidade, às garantias e às condições de cessação.</p>
+</div>
+
+<div class="grid3">
+  <div class="art-block">
+    <div class="art-num">Nomeação</div>
+    <div class="art-title">Vínculo mais estável</div>
+    <div class="art-body">Reservada a carreiras que impliquem o exercício de poderes de autoridade pública ou missões de soberania. Na ARAM inclui <strong>inspetores tributários e aduaneiros</strong>, pessoal de segurança pública regional, e outros agentes com poderes de autoridade. Confere maior estabilidade e regime de proteção mais amplo.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">CTFP por Tempo Indeterminado</div>
+    <div class="art-title">Regra geral</div>
+    <div class="art-body">Contrato de Trabalho em Funções Públicas por tempo indeterminado — o vínculo mais comum para a generalidade dos trabalhadores da ARAM. Não é nomeação mas confere estabilidade similar. Admissão por concurso público.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">CTFP a Termo</div>
+    <div class="art-title">Vínculo temporário</div>
+    <div class="art-body">Contrato a termo resolutivo, certo ou incerto. Apenas admissível nos casos previstos na LGTFP: necessidades temporárias e excepcionais, substituição de trabalhadores, acréscimos temporários de atividade. Na ARAM exige autorização do Secretário Regional tutelar quando o prazo exceda certos limites.</div>
+  </div>
+</div>
+
+<h2>Período Experimental</h2>
+<div class="card">
+  <ul>
+    <li><strong>Nomeação:</strong> Período experimental de 6 meses (pode ser prorrogado até 12 meses em cargos de maior complexidade).</li>
+    <li><strong>CTFP por tempo indeterminado:</strong> Período experimental de 90 dias (regra geral); 240 dias para cargos de complexidade técnica elevada.</li>
+    <li>Durante o período experimental, o vínculo pode ser resolvido por qualquer das partes sem necessidade de justificação, mas com aviso prévio e indemnização proporcional ao tempo decorrido.</li>
+    <li>Na ARAM, a avaliação do período experimental é feita pelo dirigente do serviço e comunicada à Direção Regional de Administração Pública.</li>
+  </ul>
+</div>
+
+<hr class="divider" id="recrutamento"/>
+<p class="section-label">4. Recrutamento, Seleção e Mobilidade</p>
+
+<h2>Procedimento Concursal</h2>
+<div class="card">
+  <h3>Publicação e abertura</h3>
+  <p>Os concursos de recrutamento de trabalhadores para a ARAM são publicados no <strong>JORAM</strong> e, obrigatoriamente, na <strong>Bolsa de Emprego Público (BEP)</strong> nacional. O aviso de abertura deve indicar: o número de vagas, a carreira e categoria, os requisitos de admissão, os métodos de seleção e a entidade que dirige o procedimento.</p>
+  <h3>Requisitos gerais de admissão</h3>
+  <ul>
+    <li>Ter nacionalidade portuguesa (salvo exceções legais — cidadãos da UE e equiparados)</li>
+    <li>Ter 18 anos de idade mínima</li>
+    <li>Não ter sido anteriormente demitido ou destituído de funções públicas, salvo reabilitação</li>
+    <li>Possuir a habilitação académica exigida para a categoria (licenciatura para técnico superior; 12.º ano para assistente técnico)</li>
+    <li>Para a carreira de inspeção tributária: licenciatura em Direito, Economia, Gestão, Contabilidade ou área afim + aprovação em provas específicas</li>
+  </ul>
+  <h3>Métodos de seleção obrigatórios</h3>
+  <ul>
+    <li><strong>Provas de conhecimentos:</strong> Escritas ou práticas sobre as matérias relevantes para o cargo — obrigatório na AT-RAM para inspetores tributários</li>
+    <li><strong>Avaliação psicológica:</strong> Obrigatória para cargos de maior complexidade; avalia aptidões cognitivas e perfis de personalidade</li>
+    <li><strong>Entrevista profissional de seleção:</strong> Avaliação de competências comportamentais e de perfil profissional</li>
+    <li><strong>Avaliação curricular:</strong> Pode ser usada como método complementar para valorizar a experiência profissional</li>
+  </ul>
+  <h3>Júri do concurso</h3>
+  <p>Constituído por pelo menos 3 membros: um presidente e dois vogais, todos com categoria igual ou superior à da categoria a recrutar. O júri elabora a ata de cada sessão e elabora a lista de ordenação final, que é sujeita a período de audiência prévia antes de ser homologada.</p>
+</div>
+
+<h2>Mobilidade na ARAM</h2>
+<div class="card">
+  <h3>Mobilidade interna regional</h3>
+  <p>Os trabalhadores da ARAM podem ser mobilizados entre os diferentes serviços e organismos da Administração Regional por <strong>cedência de interesse público</strong> ou por <strong>mobilidade interna</strong>. Requer acordo do trabalhador e autorização da entidade de origem e da entidade recetora. A mobilidade preserva o vínculo, a categoria e a remuneração.</p>
+  <h3>Mobilidade entre ARAM e Administração Central</h3>
+  <p>Admitida nos termos da LGTFP, com autorização do Secretário Regional tutelar. O trabalhador da ARAM que aceite mobilidade para a Administração Central mantém o seu vínculo à ARAM em situação de licença sem vencimento ou mobilidade. A mobilidade inversa (da Administração Central para a ARAM) segue o mesmo regime.</p>
+  <h3>Mobilidade especial (excedentes)</h3>
+  <p>Quando ocorrem processos de reestruturação ou extinção de serviços na ARAM, os trabalhadores afetados entram em <strong>mobilidade especial</strong>. O GRM assegura a gestão centralizada destes trabalhadores, que têm prioridade em concursos de mobilidade e recrutamento na ARAM. A mobilidade especial tem duração máxima de 12 meses, findo os quais o trabalhador pode ser declarado em situação de desemprego (se não recolocado).</p>
+</div>
+
+<hr class="divider" id="tempo"/>
+<p class="section-label">5. Organização do Tempo de Trabalho</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Período Normal de Trabalho</h3>
+    <p>O período normal de trabalho é de <strong>35 horas semanais</strong>, distribuídas por 5 dias, nos termos da LGTFP (mantidos na RAM). Pode ser organizado em horário fixo, horário flexível, jornada contínua ou isenção de horário, conforme as necessidades do serviço e a natureza das funções. Na AT-RAM, os inspetores tributários em missão de inspeção externa podem ter horário flexível adaptado às necessidades operacionais.</p>
+  </div>
+  <div class="card">
+    <h3>Trabalho Suplementar</h3>
+    <p>Prestação de trabalho fora do período normal, devidamente autorizada. Na ARAM, o trabalho suplementar é compensado por descanso compensatório ou, quando não seja possível, por acréscimo remuneratório (majoração de 25% na 1.ª hora; 37,5% nas horas seguintes; 50% em dias de descanso ou feriados). O limite anual de trabalho suplementar é de <strong>150 horas</strong>, salvo situações de reconhecida urgência autorizadas pelo dirigente máximo com fundamentação escrita.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Feriados e Descanso</h3>
+  <p>Além dos feriados nacionais obrigatórios previstos na LGTFP, a RAM pode estabelecer feriados regionais. O <strong>dia 1 de julho</strong> (Dia da Região Autónoma da Madeira) e <strong>26 de outubro</strong> (Dia da Autonomia) são feriados regionais. O trabalhador tem direito a descanso semanal obrigatório (domingo) e complementar (sábado, regra geral), devendo existir pelo menos 11 horas de descanso entre jornadas.</p>
+</div>
+
+<hr class="divider" id="deveres"/>
+<p class="section-label">6. Deveres dos Trabalhadores da ARAM</p>
+
+<div class="highlight">
+  <p>Os trabalhadores em funções públicas estão sujeitos a deveres especiais, que na ARAM se aplicam com as adaptações regionais. O incumprimento dos deveres funcionais constitui infração disciplinar.</p>
+</div>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Dever de prossecução do interesse público</div>
+    <div class="art-title">Primado do interesse público</div>
+    <div class="art-body">O trabalhador deve prosseguir o interesse público, abstendo-se de favorecer ou prejudicar interesses particulares. Para o inspetor tributário: as decisões de inspeção baseiam-se exclusivamente na lei e nos factos apurados, nunca em preferências pessoais.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Dever de isenção</div>
+    <div class="art-title">Imparcialidade e independência</div>
+    <div class="art-body">O trabalhador não pode tomar decisões ou praticar atos em situações de conflito de interesse. Deve declarar-se impedido (CPA) quando tenha interesse pessoal ou relação com uma das partes. Para o inspetor: obrigação de se declarar impedido quando inspeciona contribuintes conhecidos, familiares ou ex-empregadores.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Dever de lealdade</div>
+    <div class="art-title">Fidelidade institucional</div>
+    <div class="art-body">O trabalhador deve ser leal à entidade patronal (ARAM), cumprindo as orientações e instruções dos superiores hierárquicos. Mas a lealdade tem limites: <strong>não obriga à prática de atos ilegais</strong>. O inspetor que receba instruções para produzir relatório contrário à evidência factual pode — e deve — recusar-se.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Dever de sigilo</div>
+    <div class="art-title">Confidencialidade</div>
+    <div class="art-body">Dever de guardar sigilo sobre os factos, documentos e informações de que tome conhecimento no exercício das funções. Para o inspetor tributário, o dever de sigilo é reforçado pelo <strong>sigilo fiscal (artigo 64.º LGT)</strong> e pelo RGPD — a violação constitui infração disciplinar muito grave e pode ser crime.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Dever de assiduidade</div>
+    <div class="art-title">Presença e pontualidade</div>
+    <div class="art-body">O trabalhador deve cumprir o horário de trabalho e apresentar-se ao serviço com pontualidade. As ausências devem ser justificadas nos termos da lei. Faltas injustificadas implicam perda de remuneração e podem constituir infração disciplinar se reiteradas.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Dever de zelo</div>
+    <div class="art-title">Competência e diligência</div>
+    <div class="art-body">O trabalhador deve conhecer e dominar as técnicas próprias da sua função e realizá-las com empenho, rigor e eficiência. Para o inspetor: manter formação atualizada em direito tributário, técnicas de inspeção, contabilidade e legislação regional.</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Dever de não concorrência e incompatibilidades</h3>
+  <p>Os trabalhadores da ARAM estão sujeitos ao regime de incompatibilidades e impedimentos previsto na LGTFP e na lei de incompatibilidades da função pública (Lei n.º 12-A/2005 e seguintes). Em regra:</p>
+  <ul>
+    <li>Proibição de exercer funções em entidades privadas concorrentes ou relacionadas com as funções públicas exercidas</li>
+    <li>Os inspetores tributários não podem exercer atividade profissional de assessoria fiscal ou contabilidade enquanto em funções</li>
+    <li>Após cessação de funções: <strong>período de nojo</strong> (cooling-off period) de 3 anos para cargos de direção e de 1 ano para outros cargos, em que não podem trabalhar em entidades privadas com as quais tenham tido relação direta no exercício das suas funções</li>
+  </ul>
+</div>
+
+<hr class="divider" id="direitos"/>
+<p class="section-label">7. Direitos dos Trabalhadores da ARAM</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Direitos profissionais</h3>
+    <ul>
+      <li><strong>Direito à formação profissional:</strong> Mínimo de 35 horas anuais de formação; para carreiras especiais da AT-RAM o mínimo é superior e definido no DLR 28/2022/M</li>
+      <li><strong>Direito à avaliação de desempenho:</strong> Ser avaliado segundo critérios objetivos e conhecidos com antecedência; conhecer a avaliação e poder contestá-la</li>
+      <li><strong>Direito à carreira:</strong> Progredir na carreira com base em mérito, nos termos da lei</li>
+      <li><strong>Direito à segurança e saúde no trabalho</strong></li>
+      <li><strong>Proteção contra assédio moral e discriminação</strong></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Direitos associativos e negociais</h3>
+    <ul>
+      <li><strong>Liberdade sindical:</strong> Os trabalhadores da ARAM têm direito a filiar-se em associações sindicais, incluindo sindicatos nacionais com representação regional</li>
+      <li><strong>Negociação coletiva:</strong> As associações sindicais têm direito a negociar com o GRM as condições de trabalho da ARAM, nos termos da LGTFP</li>
+      <li><strong>Direito à greve:</strong> Exercido nos termos gerais, com obrigação de serviços mínimos nos serviços essenciais (inclui administração fiscal como serviço público essencial)</li>
+      <li><strong>Comissão de trabalhadores:</strong> Direito a eleger comissão de trabalhadores nos organismos com mais de 50 trabalhadores</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider" id="ferias"/>
+<p class="section-label">8. Férias, Faltas e Licenças</p>
+
+<h2>Férias</h2>
+<div class="card">
+  <p>O regime de férias na ARAM segue o da LGTFP, com duração de <strong>22 dias úteis</strong> base, acrescidos de:</p>
+  <ul>
+    <li><strong>+3 dias</strong> se a avaliação de desempenho do ano anterior for Muito Bom</li>
+    <li><strong>+5 dias</strong> se a avaliação for Excelente</li>
+    <li>Acréscimo por antiguidade: +1 dia por cada 10 anos de serviço (até máximo de 3 dias adicionais)</li>
+  </ul>
+  <p>As férias são marcadas por acordo entre trabalhador e serviço, com prioridade para necessidades do serviço. O período de férias obrigatório inclui sempre <strong>pelo menos 10 dias consecutivos</strong> entre maio e outubro. O gozo pode ser fracionado desde que não em períodos inferiores a 5 dias úteis.</p>
+  <h3>Subsídio de férias</h3>
+  <p>O subsídio de férias corresponde à remuneração mensal base acrescida das prestações regulares e periódicas. É pago antes do início do período de férias. Nos anos de admissão e cessação, é calculado proporcionalmente ao tempo de serviço no ano civil.</p>
+</div>
+
+<h2>Faltas</h2>
+<div class="card">
+  <h3>Faltas justificadas (sem perda de vencimento)</h3>
+  <ul>
+    <li>Por doença (com apresentação de atestado médico ou justificação para o sistema de gestão de assiduidade)</li>
+    <li>Por casamento: <strong>15 dias úteis</strong> consecutivos</li>
+    <li>Por falecimento de cônjuge ou parente próximo: 5 a 20 dias (conforme o grau de parentesco)</li>
+    <li>Por paternidade/maternidade: nos termos das licenças de parentalidade</li>
+    <li>Para assistência a filho menor com doença ou deficiência grave: limite anual de 30 dias</li>
+    <li>Para participação em ações de formação profissional autorizadas</li>
+    <li>Por convocação para atos eleitorais ou pelo poder judicial</li>
+    <li>Por motivo religioso (quando coincida com dia de descanso obrigatório da religião do trabalhador)</li>
+  </ul>
+  <h3>Faltas injustificadas (com perda de vencimento)</h3>
+  <p>Todas as ausências não previstas na lei como justificadas são faltas injustificadas. Cada falta injustificada implica perda de remuneração proporcional e pode constituir infração disciplinar se superior a um limite (5 dias seguidos ou 10 dias interpolados num ano civil podem originar procedimento disciplinar por abandono do serviço).</p>
+</div>
+
+<h2>Licenças</h2>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Licença de parentalidade</div>
+    <div class="art-title">Maternidade, paternidade e adoção</div>
+    <div class="art-body"><strong>Licença parental inicial:</strong> 120 ou 150 dias, podendo ser partilhada entre os progenitores. <strong>Licença parental exclusiva da mãe:</strong> 6 semanas obrigatórias após o parto. <strong>Licença parental exclusiva do pai:</strong> 20 dias obrigatórios + 5 facultativos. <strong>Licença parental alargada:</strong> Até 3 meses, sem vencimento, mas com manutenção do vínculo.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Licença sem vencimento</div>
+    <div class="art-title">Dispensa temporária</div>
+    <div class="art-body">Pode ser concedida por razões pessoais ou para exercício de funções noutros organismos. A licença sem vencimento de longa duração (mais de 6 meses) deve ser autorizada pelo Secretário Regional tutelar. Durante a licença, o trabalhador mantém o vínculo mas não aufere remuneração nem conta tempo de serviço para progressão (salvo exceções).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Licença por doença</div>
+    <div class="art-title">Incapacidade temporária</div>
+    <div class="art-body">Na ARAM, os trabalhadores estão cobertos pelo regime de proteção na doença da ADSE ou do regime regional equivalente. A licença por doença é remunerada durante 365 dias (taxa decrescente a partir de certo período). A partir de 60 dias, pode ser exigida junta médica. Doença de longa duração: pode implicar reforma por incapacidade.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Licença sabática</div>
+    <div class="art-title">Formação e investigação</div>
+    <div class="art-body">Pode ser concedida a trabalhadores com mais de 10 anos de serviço para realização de projetos de formação avançada ou investigação. Duração até 1 ano (prorrogável). Exige autorização do Secretário Regional e comprova-se com relatório final. Mantém-se o vínculo; a remuneração é total ou parcial, conforme o tipo de projeto.</div>
+  </div>
+</div>
+
+<hr class="divider" id="carreiras"/>
+<p class="section-label">9. Carreiras e Remunerações na ARAM</p>
+
+<h2>Estrutura de Carreiras Gerais</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Carreira</th><th>Habilitação mínima</th><th>Funções típicas</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Técnico Superior</strong></td><td>Licenciatura</td><td>Funções de conceção, estudo, planeamento, consultoria e assessoria de alta complexidade; inspeção (nas carreiras especiais)</td></tr>
+      <tr><td><strong>Assistente Técnico</strong></td><td>12.º ano</td><td>Funções de natureza executiva de apoio técnico e administrativo de complexidade média</td></tr>
+      <tr><td><strong>Assistente Operacional</strong></td><td>9.º ano (ou 4.º ano para algumas funções)</td><td>Funções de natureza executiva de apoio material, limpeza, manutenção, apoio geral</td></tr>
+    </tbody>
+  </table>
+  <p>Para além das carreiras gerais, existem as <strong>carreiras especiais</strong> da AT-RAM reguladas pelo DLR 28/2022/M (Carreira de Inspeção Tributária e Aduaneira, Carreira Técnica Tributária, Carreira de Perito Aduaneiro).</p>
+</div>
+
+<h2>Remuneração</h2>
+<div class="card">
+  <p>A remuneração na ARAM é composta por:</p>
+  <ul>
+    <li><strong>Remuneração base:</strong> Fixada por portaria do Secretário Regional das Finanças, alinhada com as tabelas remuneratórias da LGTFP. A RAM pode ajustá-las por razões de política regional, dentro dos limites nacionais.</li>
+    <li><strong>Suplementos remuneratórios:</strong> Compensam condições específicas de trabalho — risco, penosidade, disponibilidade, inspeção (para inspetores tributários), turno, isolamento geográfico.</li>
+    <li><strong>Subsídio de refeição:</strong> Pago nos dias de trabalho efetivo, nos termos legais.</li>
+    <li><strong>Prémios de desempenho:</strong> Atribuídos com base na avaliação de desempenho (avaliação de Excelente pode gerar prémio monetário, sujeito a disponibilidade orçamental).</li>
+    <li><strong>Ajudas de custo e transporte:</strong> Para deslocações em serviço oficial fora do local de trabalho habitual; relevantes para inspetores em missão de inspeção externa.</li>
+  </ul>
+</div>
+
+<hr class="divider" id="siadap"/>
+<p class="section-label">10. Avaliação de Desempenho — SIADAP-RAM</p>
+
+<div class="highlight">
+  <p>O SIADAP (Sistema Integrado de Gestão e Avaliação do Desempenho na Administração Pública) é aplicado na ARAM com as adaptações regionais introduzidas pelo DLR 11/2018/M. A avaliação de desempenho é fundamental para a progressão na carreira e para o prémio de desempenho.</p>
+</div>
+
+<h2>Componentes do SIADAP-RAM</h2>
+<div class="grid3">
+  <div class="art-block">
+    <div class="art-num">SIADAP 1</div>
+    <div class="art-title">Serviços</div>
+    <div class="art-body">Avaliação dos serviços e organismos regionais como um todo. Mede o grau de concretização dos objetivos do serviço. O resultado do SIADAP 1 influencia as quotas de avaliação dos trabalhadores (SIADAP 3).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">SIADAP 2</div>
+    <div class="art-title">Dirigentes</div>
+    <div class="art-body">Avaliação dos dirigentes intermédios (chefes de divisão, diretores de serviços). Incide sobre objetivos específicos da unidade orgânica que dirigem e sobre as suas competências de liderança e gestão. A avaliação do SIADAP 2 não está sujeita a quotas.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">SIADAP 3</div>
+    <div class="art-title">Trabalhadores</div>
+    <div class="art-body">Avaliação individual de todos os trabalhadores. Incide sobre: (a) objetivos individuais e (b) competências comportamentais. Ciclo <strong>bienal</strong>. Resultado final: Inadequado, Adequado, Bom, Muito Bom, Excelente.</div>
+  </div>
+</div>
+
+<h2>Quotas e Menções</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Menção</th><th>Quota máxima</th><th>Efeitos na carreira</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Excelente</strong></td><td>5% dos trabalhadores do serviço</td><td>+5 dias de férias; prémio monetário (se disponibilidade orçamental); conta duplo para progressão</td></tr>
+      <tr><td><strong>Muito Bom</strong></td><td>25% dos trabalhadores do serviço</td><td>+3 dias de férias; conta para progressão na carreira</td></tr>
+      <tr><td><strong>Bom</strong></td><td>Sem quota — residual após Excelente e Muito Bom</td><td>Progressão normal conforme lei</td></tr>
+      <tr><td><strong>Adequado</strong></td><td>Sem quota</td><td>Sem efeitos negativos imediatos; 2 avaliações consecutivas com Adequado podem impedir progressão</td></tr>
+      <tr><td><strong>Inadequado</strong></td><td>Sem quota</td><td>Obriga a medidas de gestão de desempenho; pode originar procedimento disciplinar se reiterado</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Processo de Avaliação</h2>
+<div class="card">
+  <ol>
+    <li><strong>Autoavaliação:</strong> O trabalhador preenche a ficha de autoavaliação no início do processo.</li>
+    <li><strong>Avaliação pelo avaliador</strong> (superior hierárquico direto): Fixa os objetivos no início do ciclo; avalia no final do biênio.</li>
+    <li><strong>Entrevista de avaliação:</strong> O avaliador discute os resultados com o avaliado antes de fixar a avaliação final.</li>
+    <li><strong>Harmonização:</strong> O Conselho Coordenador de Avaliação Regional verifica o cumprimento das quotas e pode ajustar as avaliações.</li>
+    <li><strong>Conhecimento da avaliação:</strong> O trabalhador é notificado e tem prazo de <strong>10 dias úteis</strong> para reclamar.</li>
+    <li><strong>Reclamação:</strong> Decidida pelo dirigente máximo do serviço (ex.: Presidente da AT-RAM).</li>
+    <li><strong>Impugnação judicial:</strong> No Tribunal Administrativo e Fiscal do Funchal, dentro dos prazos do CPTA.</li>
+  </ol>
+</div>
+
+<hr class="divider" id="dirigentes"/>
+<p class="section-label">11. Pessoal Dirigente na ARAM</p>
+
+<div class="card">
+  <h3>Cargos de direção superior</h3>
+  <p>Os cargos de direção superior de 1.º grau (Presidente da AT-RAM, diretores regionais das secretarias) são providos por <strong>comissão de serviço</strong>, com base em perfil de competências definido e processo de seleção aberto. Na ARAM, o provimento é feito por <strong>resolução do GRM</strong>, após publicação no JORAM, para mandatos de <strong>5 anos</strong> renováveis.</p>
+  <h3>Cargos de direção intermédia</h3>
+  <p>Diretores de serviços e chefes de divisão da AT-RAM são providos por comissão de serviço de <strong>3 anos</strong> renováveis. O recrutamento é feito por procedimento concursal interno (entre trabalhadores da ARAM com categoria e experiência adequadas), com avaliação curricular e entrevista. A nomeação é da competência do Presidente da AT-RAM, com homologação do Secretário Regional das Finanças para os cargos de topo.</p>
+  <h3>Avaliação dos dirigentes (SIADAP 2)</h3>
+  <p>Os dirigentes são avaliados anualmente pelos seus superiores hierárquicos, com base nos objetivos da unidade orgânica que dirigem. A avaliação do SIADAP 2 é condição para a renovação da comissão de serviço — uma avaliação negativa pode implicar não renovação ou cessação antecipada da comissão.</p>
+</div>
+
+<hr class="divider" id="disciplinar"/>
+<p class="section-label">12. Regime Disciplinar na ARAM</p>
+
+<div class="highlight">
+  <p>O regime disciplinar da LGTFP aplica-se aos trabalhadores da ARAM, com as adaptações institucionais do DLR 11/2018/M. O procedimento disciplinar visa apurar a responsabilidade do trabalhador por infrações aos seus deveres profissionais.</p>
+</div>
+
+<h2>Infrações Disciplinares e Sanções</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Sanção</th><th>Aplicação</th><th>Consequências</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Repreensão escrita</strong></td><td>Infrações leves; anotada no registo biográfico</td><td>Registo biográfico; sem efeitos na remuneração</td></tr>
+      <tr><td><strong>Multa</strong></td><td>Infrações por dolo ou negligência que causem dano patrimonial; até 30 dias de remuneração</td><td>Perda remuneratória proporcional; registo biográfico</td></tr>
+      <tr><td><strong>Suspensão</strong></td><td>Infrações graves; até 1 ano</td><td>Perda temporária da remuneração e antiguidade durante o período de suspensão</td></tr>
+      <tr><td><strong>Despedimento disciplinar</strong> (CTFP)</td><td>Infrações muito graves que tornem a manutenção do vínculo insustentável</td><td>Cessação do CTFP; não dá direito a indemnização</td></tr>
+      <tr><td><strong>Demissão</strong> (nomeação)</td><td>Para titulares de nomeação; infrações muito graves</td><td>Cessação do vínculo; inibição de exercício de funções públicas por até 3 anos</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Procedimento Disciplinar</h2>
+<div class="card">
+  <ol>
+    <li><strong>Participação ou conhecimento da infração</strong> pelo superior hierárquico</li>
+    <li><strong>Inquérito prévio</strong> (facultativo; duração máxima 30 dias): para apurar sumariamente os factos quando a situação é pouco clara</li>
+    <li><strong>Instauração do procedimento</strong> disciplinar por despacho do competente (dirigente máximo do serviço)</li>
+    <li><strong>Nomeação de instrutor</strong> (deve ter categoria igual ou superior à do arguido)</li>
+    <li><strong>Acusação</strong>: notificação ao arguido dos factos imputados, prazo para defesa</li>
+    <li><strong>Defesa do arguido</strong>: prazo mínimo de <strong>10 dias úteis</strong> para apresentar defesa escrita e requerer diligências de prova</li>
+    <li><strong>Diligências instrutórias</strong>: audição de testemunhas, junção de documentos, perícias</li>
+    <li><strong>Relatório do instrutor</strong> com proposta fundamentada de sanção</li>
+    <li><strong>Decisão final</strong> do competente (após audiência prévia se sanção proposta for de suspensão ou superior)</li>
+    <li><strong>Impugnação:</strong> recurso hierárquico ao Secretário Regional tutelar; impugnação judicial no TAF do Funchal</li>
+  </ol>
+  <h3>Prazos de prescrição na ARAM</h3>
+  <ul>
+    <li><strong>Prescrição da infração:</strong> 2 anos a contar do conhecimento pelo superior hierárquico (ou 5 anos da data da prática, o que ocorrer primeiro)</li>
+    <li><strong>Prescrição do procedimento:</strong> 18 meses após a instauração, se não for proferida decisão final</li>
+    <li>Infrações que sejam simultaneamente crime: a prescrição segue o prazo do crime (mais longo)</li>
+  </ul>
+</div>
+
+<h2>Infrações Específicas dos Inspetores Tributários</h2>
+<div class="card">
+  <ul>
+    <li><strong>Violação do sigilo fiscal</strong> (artigo 64.º LGT): infração disciplinar muito grave; pode constituir crime de violação de segredo</li>
+    <li><strong>Recebimento de ofertas</strong> de contribuintes: infração muito grave; pode constituir crime de corrupção passiva</li>
+    <li><strong>Conflito de interesse não declarado</strong>: participar em procedimento em que tenha interesse pessoal sem se declarar impedido — infração grave</li>
+    <li><strong>Relatório falso ou manipulado:</strong> elaborar intencionalmente relatório de inspeção com factos incorretos ou conclusões injustificadas — infração muito grave; pode constituir crime de falsificação de documento</li>
+    <li><strong>Recurso indevido a poderes de autoridade:</strong> abusar dos poderes de inspeção para fins não tributários — infração muito grave</li>
+  </ul>
+</div>
+
+<hr class="divider" id="cessacao"/>
+<p class="section-label">13. Cessação dos Vínculos de Emprego</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Formas de cessação do vínculo</h3>
+    <ul>
+      <li><strong>Caducidade:</strong> Término do prazo (para CTFP a termo); morte do trabalhador; reforma por limite de idade ou por incapacidade</li>
+      <li><strong>Acordo:</strong> Mútuo acordo entre trabalhador e ARAM, com indemnização negociada</li>
+      <li><strong>Rescisão com justa causa pelo trabalhador:</strong> Em caso de violação grave dos direitos do trabalhador pela entidade patronal</li>
+      <li><strong>Despedimento disciplinar / demissão:</strong> Por decisão disciplinar nos termos acima descritos</li>
+      <li><strong>Exoneração a pedido:</strong> O trabalhador pede a cessação do vínculo com aviso prévio de 60 dias (técnico superior) ou 30 dias (outras categorias)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Aposentação na ARAM</h3>
+    <p>Os trabalhadores da ARAM estão integrados na CGA (Caixa Geral de Aposentações) para efeitos de proteção na velhice, tal como os funcionários do Estado central. A reforma por <strong>limite de idade</strong> ocorre aos 66 anos e 6 meses (ajustada anualmente à esperança média de vida). A reforma antecipada é possível com penalização. O montante da pensão de aposentação é calculado sobre a remuneração de referência e os anos de serviço, com base no sistema público de capitalização e repartição.</p>
+  </div>
+</div>
+
+<hr class="divider" id="protecao"/>
+<p class="section-label">14. Proteção Social dos Trabalhadores da ARAM</p>
+
+<div class="card">
+  <h3>ADSE e regime regional equivalente</h3>
+  <p>Os trabalhadores nomeados e os titulares de CTFP por tempo indeterminado da ARAM beneficiam de proteção de saúde através da <strong>ADSE</strong> (para os que ficaram no regime da CGA antes de 2006) ou do sistema regional de proteção na saúde dos trabalhadores da ARAM. A inscrição é facultativa. A ADSE cobre consultas, exames, internamentos e meios complementares de diagnóstico, com comparticipação entre 50% e 70% dos encargos, conforme a tabela de comparticipações.</p>
+  <h3>Proteção na invalidez e na doença</h3>
+  <p>Em caso de incapacidade temporária para o trabalho, a proteção é assegurada pelo regime de licença por doença com remuneração (paga pela ARAM). Em caso de incapacidade permanente, o trabalhador pode ser reformado por incapacidade através da CGA. O regime de acidentes em serviço é coberto pelo sistema nacional de acidentes de trabalho dos funcionários públicos.</p>
+  <h3>Ação social complementar</h3>
+  <p>A ARAM mantém serviços de ação social para os seus trabalhadores, incluindo apoio na frequência de creches e jardins de infância, subsídios para tratamentos de saúde não cobertos pela ADSE, apoio em situações de carência e programas de férias. A AT-RAM, como organismo da ARAM, pode ter os seus próprios serviços de ação social complementar.</p>
+</div>
+
+<hr class="divider" id="articulacao"/>
+<p class="section-label">15. Articulação com Outros Diplomas</p>
+
+<div class="card">
+  <p>O quadro normativo completo do emprego público na AT-RAM resulta da articulação dos seguintes diplomas, por ordem de prevalência:</p>
+  <table>
+    <thead><tr><th>Diploma</th><th>Matéria</th><th>Prevalência</th></tr></thead>
+    <tbody>
+      <tr><td><strong>DLR 28/2022/M</strong></td><td>Carreiras especiais da AT-RAM (inspeção, técnica, aduaneira)</td><td><em>Lex specialis</em> — prevalece sobre todos os outros em matéria de carreiras especiais</td></tr>
+      <tr><td><strong>DLR 11/2018/M</strong></td><td>Adaptação da LGTFP à RAM — regime geral regional</td><td><em>Lex specialis</em> regional — prevalece sobre a LGTFP nacional</td></tr>
+      <tr><td><strong>LGTFP (Lei 35/2014)</strong></td><td>Regime geral do emprego público</td><td>Aplica-se supletivamente onde o DLR 11/2018/M não disponha</td></tr>
+      <tr><td><strong>Código do Trabalho</strong></td><td>Matérias laborais não reguladas na LGTFP</td><td>Supletivo de último recurso</td></tr>
+      <tr><td><strong>Lei de Incompatibilidades</strong></td><td>Incompatibilidades e impedimentos na função pública</td><td>Aplica-se diretamente; complementado pelo código de conduta da AT-RAM</td></tr>
+      <tr><td><strong>RGPD + Lei 58/2019</strong></td><td>Proteção de dados pessoais dos trabalhadores</td><td>Aplica-se ao tratamento de dados dos trabalhadores pela ARAM</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="sintese"/>
+<p class="section-label">16. Síntese — DLR 11/2018/M e o Inspetor Tributário da AT-RAM</p>
+
+<div class="highlight">
+  <p>O DLR 11/2018/M é o diploma que enquadra genericamente o vínculo laboral do inspetor tributário da AT-RAM. Embora o DLR 28/2022/M prevaleça nas matérias das carreiras especiais, o DLR 11/2018/M regula o quadro institucional, o regime disciplinar geral, os direitos e deveres comuns, e a estrutura de referências para os órgãos regionais.</p>
+</div>
+
+<table>
+  <thead><tr><th>Matéria DLR 11/2018/M</th><th>Relevância prática para o inspetor tributário</th></tr></thead>
+  <tbody>
+    <tr><td>Vínculo por nomeação</td><td>Os inspetores tributários são tipicamente nomeados — confere maior estabilidade e enquadra o regime disciplinar de demissão</td></tr>
+    <tr><td>Deveres de sigilo e lealdade</td><td>O sigilo fiscal é dever legal reforçado; a lealdade não obriga à prática de atos ilegais (objeção de consciência legal)</td></tr>
+    <tr><td>Incompatibilidades</td><td>Proibição de exercício de atividade de consultoria fiscal durante as funções; período de nojo após a saída</td></tr>
+    <tr><td>SIADAP-RAM</td><td>A avaliação de desempenho determina a progressão na carreira e acesso a prémios; ciclo bienal com quotas de Excelente (5%) e Muito Bom (25%)</td></tr>
+    <tr><td>Regime disciplinar</td><td>Infrações específicas do inspetor (sigilo, conflito de interesses, relatórios falsos) são mais graves — pode levar a demissão</td></tr>
+    <tr><td>Mobilidade</td><td>O inspetor pode ser mobilizado para outros serviços da ARAM ou para a Administração Central com preservação do vínculo</td></tr>
+    <tr><td>Órgãos competentes na RAM</td><td>Secretário Regional das Finanças (no papel do Ministro); TAF do Funchal (para impugnação de atos disciplinares)</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

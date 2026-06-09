@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>04 · DL 109-E/2021 — MENAC e RGPC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,0.94);}
+    [data-theme="light"]{--bg:#f5f4f0;--bg-card:#ffffff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,0.94);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px;}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s;}.nav-back:hover{color:var(--accent);}
+    .nav-right{display:flex;align-items:center;gap:1rem;}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600;}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s;}.theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem;}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem;}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent);}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem;}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);}
+    .badge-accent{border-color:var(--accent2);color:var(--accent);}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0;}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem;}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem;}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem;}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem;}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem;}
+    li strong{color:var(--text);font-weight:600;}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem;}
+    .card h2,.card h3{margin-top:0;}.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem;}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem;}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7;}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .highlight p{margin-bottom:0;font-size:.875rem;}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .warning p{margin-bottom:0;font-size:.875rem;}.warning strong{color:#e74c3c;}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem;}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border);}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top;}
+    tr:nth-child(even) td{background:var(--bg-alt);}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem;}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.2rem 0;transition:color .15s;}
+    .toc a:hover{color:var(--accent);}.toc a::before{content:"→ ";color:var(--accent);font-size:.75rem;}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label);}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem;}nav{padding:0 1.1rem;}.grid2,.grid3{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">04 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">04 · Anticorrupção</p>
+<h1>Decreto-Lei n.º 109-E/2021 — <em>Mecanismo Nacional Anticorrupção</em></h1>
+<p class="doc-sub">De 9 de dezembro de 2021 · Cria o MENAC (autoridade administrativa independente) e o RGPC (obrigações de compliance anticorrupção) · Aprovado ao abrigo de lei de autorização legislativa</p>
+<div class="meta-row">
+  <span class="badge badge-accent">RGPC</span>
+  <span class="badge">MENAC</span>
+  <span class="badge">DL 109-E/2021</span>
+  <span class="badge">PGRC</span>
+  <span class="badge">ENAC</span>
+  <span class="badge">Compliance Anticorrupção</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#contexto">Contexto, Enquadramento e Instrumentos Internacionais</a>
+  <a href="#menac">O MENAC — Natureza, Composição e Competências</a>
+  <a href="#enac">A Estratégia Nacional Anticorrupção (ENAC)</a>
+  <a href="#rgpc">O RGPC — Âmbito e Entidades Obrigadas</a>
+  <a href="#obrigacoes">Obrigações das Entidades</a>
+  <a href="#conflitos">Gestão de Conflitos de Interesse e Portas Giratórias</a>
+  <a href="#canal">Canal Interno de Denúncia</a>
+  <a href="#sancoes">Regime Sancionatório</a>
+  <a href="#atram">Aplicação à AT-RAM — O PGRC Tributário</a>
+  <a href="#inspetores">O Inspetor Tributário e o RGPC</a>
+  <a href="#sintese">Síntese</a>
+</div>
+
+<hr class="divider" id="contexto"/>
+<p class="section-label">1. Contexto, Enquadramento e Instrumentos Internacionais</p>
+
+<div class="highlight">
+  <p>O DL 109-E/2021 cria dois instrumentos complementares para o combate à corrupção: o <strong>MENAC</strong> (autoridade administrativa independente de supervisão e fiscalização) e o <strong>RGPC</strong> (obrigações de compliance anticorrupção para entidades públicas e privadas de maior dimensão). Portugal adotou uma abordagem essencialmente preventiva — a ênfase está na prevenção, não apenas na repressão penal.</p>
+</div>
+
+<div class="card">
+  <h3>Contexto nacional</h3>
+  <p>Portugal foi criticado pelo GRECO (Grupo de Estados contra a Corrupção do Conselho da Europa) e pela OCDE pela ausência de um regime sistemático de prevenção da corrupção no setor público. O DL 109-E/2021 responde a essas recomendações, criando o primeiro instrumento abrangente de prevenção da corrupção em Portugal.</p>
+  <h3>Instrumentos internacionais de referência</h3>
+  <ul>
+    <li><strong>CNUCC (Convenção das Nações Unidas contra a Corrupção):</strong> O principal instrumento global, ratificado por Portugal, que impõe medidas preventivas (artigo 5.º ss.) e criminalizadoras da corrupção</li>
+    <li><strong>GRECO — Conselho da Europa:</strong> Avaliações periódicas da eficácia das políticas anticorrupção dos Estados membros; os relatórios GRECO sobre Portugal identificaram lacunas que o DL 109-E/2021 procura colmatar</li>
+    <li><strong>OCDE — Convenção Anti-Suborno:</strong> Combate ao suborno de funcionários públicos estrangeiros por empresas portuguesas; relevante para a inspeção de empresas com operações internacionais</li>
+    <li><strong>Diretiva (UE) 2019/1937:</strong> Proteção dos denunciantes de corrupção e outras infrações ao direito da UE — transposta pela Lei 93/2021 e articulada com o RGPC</li>
+  </ul>
+  <h3>Abordagem preventiva vs. repressiva</h3>
+  <p>O RGPC tem uma lógica de <strong>compliance</strong> — as entidades devem adotar sistemas internos de prevenção antes que a corrupção ocorra. Isto contrasta com a abordagem meramente repressiva (Código Penal + MP). A prevenção é mais eficaz e menos onerosa do que a investigação e punição posterior.</p>
+</div>
+
+<hr class="divider" id="menac"/>
+<p class="section-label">2. O MENAC — Natureza, Composição e Competências</p>
+
+<h2>Natureza Jurídica</h2>
+<div class="card">
+  <p>O MENAC é uma <strong>autoridade administrativa independente</strong>, com personalidade jurídica, autonomia administrativa, financeira e patrimonial. A independência face ao Governo é garantia essencial — sem ela, o MENAC não poderia fiscalizar eficazmente o setor público. Reporta diretamente à <strong>Assembleia da República</strong>, que aprecia os seus relatórios e garante a sua independência política.</p>
+  <h3>Comparação com outras autoridades independentes</h3>
+  <table>
+    <thead><tr><th>Autoridade</th><th>Matéria</th><th>Tutela</th></tr></thead>
+    <tbody>
+      <tr><td>MENAC</td><td>Prevenção da corrupção (RGPC)</td><td>Assembleia da República</td></tr>
+      <tr><td>CNPD</td><td>Proteção de dados pessoais (RGPD)</td><td>Assembleia da República</td></tr>
+      <tr><td>Banco de Portugal</td><td>Supervisão bancária e financeira</td><td>Banco Central Europeu / independente</td></tr>
+      <tr><td>ERC</td><td>Regulação da comunicação social</td><td>Assembleia da República</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Composição e Mandato</h2>
+<div class="card">
+  <ul>
+    <li><strong>Presidente</strong> e <strong>dois vogais</strong>, designados pela Assembleia da República por deliberação de 2/3 dos deputados presentes (desde que superior a maioria absoluta dos deputados em efetividade de funções)</li>
+    <li>Mandato de <strong>5 anos</strong>, <strong>não renovável</strong> — a não renovabilidade garante independência (o titular não teme desagradar quem o pode renovar)</li>
+    <li>Incompatibilidades rigorosas durante e após o mandato: proibição de exercer funções em entidades sujeitas à supervisão do MENAC durante 2 anos após o mandato</li>
+    <li>Inamovibilidade: o Presidente e os vogais só podem ser destituídos por decisão da AR em casos taxativos (incapacidade permanente, condenação criminal, incompatibilidade superveniente)</li>
+  </ul>
+</div>
+
+<h2>Competências do MENAC</h2>
+<div class="card">
+  <h3>Competências normativas e de orientação</h3>
+  <ul>
+    <li>Elaborar a <strong>Estratégia Nacional Anticorrupção (ENAC)</strong> e acompanhar a sua execução</li>
+    <li>Emitir <strong>recomendações, instruções e orientações</strong> sobre a implementação do RGPC — as orientações do MENAC são vinculativas para as entidades obrigadas</li>
+    <li>Publicar <strong>modelos e boas práticas</strong> para o PGRC e o código de conduta — reduz o custo de implementação para as entidades</li>
+    <li>Emitir pareceres sobre projetos legislativos com impacto em matéria de prevenção da corrupção</li>
+  </ul>
+  <h3>Competências de supervisão e fiscalização</h3>
+  <ul>
+    <li>Supervisionar e fiscalizar o cumprimento do RGPC pelas entidades obrigadas</li>
+    <li>Receber e analisar os <strong>relatórios anuais de execução do PGRC</strong> submetidos pelas entidades</li>
+    <li>Realizar <strong>auditorias e inspeções</strong> às entidades — com acesso a documentos, instalações e sistemas de informação (pode aceder à AT-RAM e a todos os serviços da ARAM)</li>
+    <li>Investigar denúncias de incumprimento do RGPC</li>
+  </ul>
+  <h3>Competências sancionatórias e de cooperação</h3>
+  <ul>
+    <li>Instaurar e decidir <strong>procedimentos contraordenacionais</strong> por violação do RGPC</li>
+    <li>Cooperar com o <strong>MP, PGR, PJ</strong> e outras autoridades de investigação criminal em casos com suspeitas de corrupção</li>
+    <li>Articular com autoridades reguladoras sectoriais (Banco de Portugal, CMVM, ERC) sobre corrupção nos setores regulados</li>
+    <li>Publicar o <strong>relatório anual</strong> sobre corrupção em Portugal e a execução do RGPC</li>
+    <li>Proporcionar <strong>formação e sensibilização</strong> às entidades sobre prevenção da corrupção</li>
+  </ul>
+</div>
+
+<hr class="divider" id="enac"/>
+<p class="section-label">3. A Estratégia Nacional Anticorrupção (ENAC)</p>
+
+<div class="card">
+  <p>A ENAC é o documento estratégico plurianual que define as prioridades e as medidas de prevenção da corrupção em Portugal para um período de 5 anos. É elaborada pelo MENAC, aprovada pela Assembleia da República e vincula o Governo e as entidades públicas.</p>
+  <h3>Conteúdo típico da ENAC</h3>
+  <ul>
+    <li>Diagnóstico dos setores de maior risco de corrupção em Portugal (saúde, obras públicas, contratação pública, fiscalidade, urbanismo)</li>
+    <li>Objetivos estratégicos e metas quantificadas para redução do risco de corrupção</li>
+    <li>Medidas concretas por setor: legislativas, organizativas, formativas</li>
+    <li>Mecanismos de monitorização e avaliação da implementação das medidas</li>
+    <li>Articulação com as avaliações internacionais (GRECO, OCDE, Índice de Percepção da Corrupção da Transparência Internacional)</li>
+  </ul>
+  <h3>Relevância para a AT-RAM</h3>
+  <p>A ENAC identifica a <strong>administração fiscal</strong> como um dos setores de maior risco de corrupção (o inspetor tem acesso privilegiado a informação confidencial e pode afetar significativamente o património dos contribuintes). A AT-RAM deve alinhar o seu PGRC com as medidas previstas na ENAC para o setor fiscal.</p>
+</div>
+
+<hr class="divider" id="rgpc"/>
+<p class="section-label">4. O RGPC — Âmbito e Entidades Obrigadas</p>
+
+<h2>Entidades Obrigadas</h2>
+<div class="card">
+  <h3>Setor público — obrigação total, sem limiares</h3>
+  <ul>
+    <li>Todos os serviços e organismos da administração direta e indireta do Estado</li>
+    <li>Serviços e organismos das administrações regionais — <strong>incluindo toda a ARAM e a AT-RAM</strong></li>
+    <li>Autarquias locais (municípios, freguesias, associações de municípios)</li>
+    <li>Empresas públicas e entidades públicas empresariais</li>
+    <li>Partidos políticos, associações sindicais e patronais com financiamento público</li>
+    <li>Fundações e associações com financiamento público maioritário</li>
+  </ul>
+  <h3>Setor privado — sujeito a limiares</h3>
+  <ul>
+    <li>Entidades com <strong>volume de negócios anual superior a 600 000 euros</strong>, OU</li>
+    <li>Entidades com <strong>50 ou mais trabalhadores</strong></li>
+    <li>Entidades concessionárias ou prestadoras de serviços ao Estado com contratos que excedam <strong>750 000 euros</strong>, independentemente da dimensão</li>
+  </ul>
+  <h3>Infrações conexas cobertas pelo RGPC</h3>
+  <p>O RGPC não se limita à corrupção em sentido estrito — cobre um leque de infrações conexas que o inspetor deve conhecer:</p>
+  <ul>
+    <li><strong>Corrupção passiva e ativa</strong> (arts. 372.º–374.º CP)</li>
+    <li><strong>Concussão</strong> — funcionário que exige vantagem indevida (art. 379.º CP)</li>
+    <li><strong>Peculato</strong> — apropriação de bens públicos por funcionário (art. 375.º CP)</li>
+    <li><strong>Nepotismo</strong> — favorecimento de familiares em contratações ou decisões</li>
+    <li><strong>Tráfico de influência</strong> — obtenção de vantagem através da influência sobre decisor (art. 335.º CP)</li>
+    <li><strong>Participação económica em negócio</strong> — funcionário que participa em negócio de que se beneficia (art. 377.º CP)</li>
+    <li><strong>Abuso de poder</strong> — exercício de poderes públicos para fins diferentes dos previstos na lei</li>
+    <li><strong>Fraude na obtenção de subsídio ou benefício fiscal</strong></li>
+  </ul>
+</div>
+
+<hr class="divider" id="obrigacoes"/>
+<p class="section-label">5. Obrigações das Entidades</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Artigo 7.º</div>
+    <div class="art-title">Plano de Prevenção de Riscos de Corrupção (PGRC)</div>
+    <div class="art-body">Elaborar e implementar anualmente um <strong>PGRC</strong> que: (a) identifique os riscos concretos da atividade da entidade; (b) avalie a probabilidade e o impacto de cada risco; (c) defina medidas preventivas e os responsáveis pela implementação. O PGRC deve ser aprovado pelo órgão máximo da entidade, publicado no sítio da internet e submetido ao MENAC.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 8.º</div>
+    <div class="art-title">Código de Conduta</div>
+    <div class="art-body">Adotar um <strong>código de conduta</strong> que defina os valores, princípios e regras de comportamento ético dos trabalhadores e dirigentes. Deve incluir: normas sobre conflitos de interesse; regras sobre receção de ofertas e benefícios; uso de recursos da entidade; relação com fornecedores e clientes; uso de informação confidencial. Comunicado a todos os trabalhadores; deve haver confirmação de receção e de compreensão.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 9.º</div>
+    <div class="art-title">Responsável pelo Cumprimento Normativo (RCN)</div>
+    <div class="art-body">Designar um <strong>RCN (compliance officer)</strong> que: supervisiona a implementação do RGPC; gere o canal de denúncia; reporta ao órgão máximo e ao MENAC; tem independência funcional (não pode ser penalizado pelo exercício das suas funções). Para a AT-RAM, o RCN deve ter acesso direto ao Conselho Diretivo.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 10.º</div>
+    <div class="art-title">Canal Interno de Denúncia</div>
+    <div class="art-body">Implementar e divulgar um <strong>canal interno seguro</strong> para denúncias de irregularidades. Deve: garantir confidencialidade e possibilidade de anonimato; proteger contra retaliação; ser acessível a trabalhadores, fornecedores e terceiros; processar as denúncias em prazo razoável. Articulado com a Lei 93/2021 (ver resumo 16).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 11.º</div>
+    <div class="art-title">Formação e Sensibilização</div>
+    <div class="art-body">Realizar formação obrigatória e periódica de <strong>todos os trabalhadores</strong> sobre: riscos de corrupção; obrigações do RGPC; código de conduta; canal de denúncia; consequências das infrações. A formação deve ser documentada (evidência do cumprimento). Dirigentes têm formação diferenciada e mais aprofundada.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 12.º</div>
+    <div class="art-title">Relatório Anual de Execução</div>
+    <div class="art-body">Elaborar e submeter ao MENAC um <strong>relatório anual</strong> sobre: implementação do PGRC; medidas preventivas executadas e resultados; funcionamento do canal de denúncia (número e tipo de denúncias recebidas, decisões tomadas); ações de formação realizadas; situações de corrupção ou irregularidade detetadas e como foram tratadas. O relatório é público.</div>
+  </div>
+</div>
+
+<hr class="divider" id="conflitos"/>
+<p class="section-label">6. Gestão de Conflitos de Interesse e Portas Giratórias</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Declarações de interesses</h3>
+    <p>Os titulares de cargos de direção e gestão das entidades obrigadas devem submeter <strong>declarações de interesses</strong> que identificam:</p>
+    <ul>
+      <li>Participações em empresas privadas (acima de determinada percentagem)</li>
+      <li>Cargos de gestão ou administração em entidades privadas</li>
+      <li>Relações de parentesco com pessoas que tenham interesses em matérias da competência do declarante</li>
+      <li>Qualquer relação que possa criar aparência de conflito de interesse</li>
+    </ul>
+    <p>Na AT-RAM, o Presidente e os Vice-Presidentes do Conselho Diretivo, e os diretores de serviços, devem submeter declarações de interesses ao MENAC e publicá-las.</p>
+  </div>
+  <div class="card">
+    <h3>Portas giratórias (revolving doors)</h3>
+    <p>O fenómeno das portas giratórias — a passagem de funcionários públicos para o setor privado em áreas diretamente relacionadas com as suas funções anteriores — é um dos principais riscos de corrupção identificados pelo RGPC.</p>
+    <p>O RGPC impõe <strong>períodos de incompatibilidade</strong> após a cessação de funções (complementando a lei geral de incompatibilidades):</p>
+    <ul>
+      <li>Proibição de trabalhar em entidades privadas com as quais o funcionário tenha tido relação direta no exercício das suas funções, durante o período definido no PGRC e na lei (normalmente 1 a 3 anos consoante o cargo)</li>
+      <li>Proibição de representar entidades privadas em processos perante a entidade em que o funcionário exerceu funções</li>
+      <li>Obrigação de notificar o RCN antes de aceitar qualquer cargo privado no período de restrição</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Procedimentos de dispensa de participação</h3>
+  <p>Quando um trabalhador ou dirigente identifica um conflito de interesse real ou potencial numa decisão concreta, deve:</p>
+  <ol>
+    <li>Comunicar imediatamente ao superior hierárquico ou ao RCN a existência do conflito</li>
+    <li>Abster-se de participar na decisão (dispensa de participação)</li>
+    <li>O superior designa outro trabalhador para tomar a decisão</li>
+    <li>O processo fica documentado no registo de conflitos de interesse da entidade</li>
+  </ol>
+  <p>Para o inspetor tributário, a dispensa de participação equivale à declaração de impedimento prevista no artigo 69.º CPA — os dois regimes coincidem e reforçam-se mutuamente.</p>
+</div>
+
+<hr class="divider" id="canal"/>
+<p class="section-label">7. Canal Interno de Denúncia — Detalhe</p>
+
+<div class="card">
+  <h3>Requisitos do canal</h3>
+  <ul>
+    <li><strong>Confidencialidade obrigatória:</strong> A identidade do denunciante nunca pode ser revelada sem o seu consentimento (exceto por ordem judicial em processo criminal)</li>
+    <li><strong>Anonimato possível:</strong> O canal deve aceitar denúncias anónimas, embora as investigações com identificação do denunciante sejam mais eficazes</li>
+    <li><strong>Acessibilidade:</strong> O canal deve ser acessível de forma segura — plataforma digital protegida, linha telefónica exclusiva, correio postal (para anónimos), presencialmente junto do RCN</li>
+    <li><strong>Prazo de resposta:</strong> O RCN deve confirmar a receção da denúncia em 7 dias e dar feedback sobre o resultado da investigação em prazo razoável (máx. 3 meses)</li>
+    <li><strong>Proteção contra retaliação:</strong> O denunciante não pode ser prejudicado em razão da denúncia — despedimento, transferência, descida de avaliação ou qualquer outra medida adversa são proibidos e puníveis</li>
+  </ul>
+  <h3>Articulação com a Lei 93/2021</h3>
+  <p>O canal de denúncia do RGPC deve respeitar os requisitos da Lei 93/2021 (regime geral de proteção de denunciantes — ver resumo 16). A Lei 93/2021 acrescenta proteção: mesmo que a denúncia resulte ser infundada (mas feita de boa fé), o denunciante mantém a proteção.</p>
+  <h3>Canal externo — MENAC</h3>
+  <p>Para além do canal interno, os trabalhadores e terceiros podem denunciar ao <strong>MENAC diretamente</strong> (canal externo). O denunciante pode optar pelo canal externo sem ter de usar primeiro o canal interno — especialmente nos casos em que o RCN ou a gestão de topo estejam envolvidos na irregularidade.</p>
+</div>
+
+<hr class="divider" id="sancoes"/>
+<p class="section-label">8. Regime Sancionatório</p>
+
+<div class="highlight">
+  <p>O incumprimento das obrigações do RGPC constitui <strong>contraordenação</strong> punível com coima. A competência para instaurar o procedimento e aplicar as coimas pertence ao MENAC.</p>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Gravidade</th><th>Exemplos de infrações</th><th>Coima (pessoa singular)</th><th>Coima (pessoa coletiva)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Muito grave</strong></td><td>Não elaborar ou não implementar o PGRC; não criar canal de denúncia; retaliação contra denunciante; impedir o MENAC de realizar inspeção</td><td>Até € 44 891,81</td><td>Até € 448 918,11</td></tr>
+    <tr><td><strong>Grave</strong></td><td>Não designar RCN; não realizar formação obrigatória; não submeter relatório anual ao MENAC; PGRC sem identificação dos riscos concretos</td><td>Até € 22 445,91</td><td>Até € 224 459,06</td></tr>
+    <tr><td><strong>Leve</strong></td><td>PGRC incompleto ou desatualizado; código de conduta sem os elementos mínimos; atraso na submissão do relatório anual</td><td>Até € 3 740,98</td><td>Até € 37 409,83</td></tr>
+  </tbody>
+</table>
+
+<h2>Sanções Acessórias</h2>
+<div class="card">
+  <ul>
+    <li><strong>Publicidade da condenação</strong> no sítio do MENAC — sanção reputacional significativa para as entidades privadas</li>
+    <li><strong>Interdição temporária de participação em contratos públicos</strong> — impacto económico direto para empresas que dependam de contratos com o Estado</li>
+    <li><strong>Privação do direito a subsídios ou incentivos públicos</strong> durante o período de interdição</li>
+  </ul>
+  <h3>Procedimento contraordenacional do MENAC</h3>
+  <ol>
+    <li>Instauração do procedimento pelo MENAC (por denúncia ou por iniciativa própria após inspeção)</li>
+    <li>Notificação da entidade dos factos imputados e do prazo de defesa (mínimo 10 dias úteis)</li>
+    <li>Análise da defesa da entidade</li>
+    <li>Decisão do MENAC (arquivo ou aplicação de coima)</li>
+    <li>Recurso da decisão para o Tribunal da Comarca de Lisboa</li>
+  </ol>
+</div>
+
+<hr class="divider" id="atram"/>
+<p class="section-label">9. Aplicação à AT-RAM — O PGRC Tributário</p>
+
+<div class="highlight">
+  <p>A AT-RAM, enquanto organismo da ARAM, está sujeita à totalidade das obrigações do RGPC. A atividade tributária apresenta riscos específicos de corrupção que devem ser explicitamente identificados no PGRC da AT-RAM.</p>
+</div>
+
+<div class="card">
+  <h3>Riscos específicos da atividade tributária identificados no PGRC</h3>
+  <table>
+    <thead><tr><th>Área de risco</th><th>Risco concreto</th><th>Medida preventiva típica</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Inspeção tributária</strong></td><td>Inspetor que "vende" o resultado da inspeção (não comunicar irregularidades em troca de vantagem); inspetor que usa dados sigilosos para benefício próprio ou de terceiros</td><td>Rotação periódica dos inspetores por contribuintes; dupla assinatura nos relatórios de valor elevado; auditoria interna aleatória a relatórios</td></tr>
+      <tr><td><strong>Liquidação adicional</strong></td><td>Liquidação artificialmente reduzida para beneficiar contribuinte; omissão deliberada de irregularidades no relatório</td><td>Revisão de relatórios com correções abaixo da média pelo diretor de serviços; auditoria interna a fechamentos de inspeção sem correções</td></tr>
+      <tr><td><strong>Execução fiscal</strong></td><td>Acordo informal de não penhorar bens em troca de vantagem; cancelamento indevido de dívidas; acordo de prestações com condições mais favoráveis do que as regras permitem</td><td>Controlo automático dos acordos de prestações; auditoria aos processos de execução fiscal arquivados por incobrabilidade</td></tr>
+      <tr><td><strong>Acesso a informação</strong></td><td>Divulgação de dados fiscais sigilosos a concorrentes ou terceiros; venda de dados de contribuintes</td><td>Logs de acesso aos sistemas com alertas para acessos anómalos; acesso restrito por perfis de utilizador; formação sobre sigilo fiscal</td></tr>
+      <tr><td><strong>Benefícios fiscais</strong></td><td>Concessão irregular de isenção ou benefício fiscal a entidade não elegível em troca de vantagem</td><td>Dupla validação dos processos de reconhecimento de benefícios de maior valor; controlo pelo RCN de benefícios concedidos em situações-limite</td></tr>
+      <tr><td><strong>Contratação pública</strong></td><td>Favorecimento de fornecedores em concursos para serviços prestados à AT-RAM (software, formação, consultorias)</td><td>Declarações de interesses de todos os membros dos júris de concurso; proibição de participação de funcionários com relação com concorrentes</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h3>Obrigações concretas da AT-RAM ao abrigo do RGPC</h3>
+  <ul>
+    <li>PGRC aprovado pelo Conselho Diretivo, publicado no sítio da AT-RAM e submetido anualmente ao MENAC</li>
+    <li>Código de conduta que discipline especificamente o comportamento dos inspetores tributários (sigilo fiscal, receção de ofertas, conflitos de interesse, relação com contribuintes)</li>
+    <li>RCN designado com acesso direto ao Conselho Diretivo e independência funcional</li>
+    <li>Canal interno de denúncia acessível a trabalhadores, contribuintes e terceiros</li>
+    <li>Formação anual obrigatória sobre ética e prevenção da corrupção para todos os trabalhadores (incluindo inspetores tributários)</li>
+    <li>Relatório anual de execução do PGRC submetido ao MENAC com dados sobre o funcionamento do canal de denúncia e as irregularidades detetadas</li>
+    <li>Declarações de interesses dos membros do Conselho Diretivo e dos diretores de serviços publicadas</li>
+  </ul>
+</div>
+
+<hr class="divider" id="inspetores"/>
+<p class="section-label">10. O Inspetor Tributário e o RGPC</p>
+
+<div class="card">
+  <h3>Obrigações pessoais do inspetor ao abrigo do RGPC</h3>
+  <ul>
+    <li><strong>Conhecer o PGRC e o código de conduta da AT-RAM</strong> — confirmar por escrito que recebeu e compreendeu os documentos</li>
+    <li><strong>Participar na formação anual</strong> sobre ética e prevenção da corrupção</li>
+    <li><strong>Recusar qualquer oferta ou vantagem</strong> de contribuintes, representantes ou terceiros com interesse nas inspeções, independentemente do valor — comunicar imediatamente ao superior e ao RCN</li>
+    <li><strong>Declarar impedimento</strong> sempre que exista conflito de interesse real ou potencial (art. 69.º CPA + RGPC)</li>
+    <li><strong>Denunciar irregularidades</strong> que detete no exercício das suas funções — incluindo irregularidades praticadas por colegas ou superiores hierárquicos — ao RCN ou ao MENAC</li>
+  </ul>
+  <h3>O inspetor como verificador do RGPC nas inspeções</h3>
+  <p>Quando a AT-RAM inspeciona uma entidade privada obrigada ao RGPC (VN > 600.000 euros ou 50+ trabalhadores), o inspetor pode, no âmbito da inspeção, verificar se a entidade cumpre as obrigações do RGPC relevantes para a dedutibilidade fiscal ou para a elegibilidade de benefícios. Irregularidades graves no RGPC podem ser comunicadas ao MENAC pela AT-RAM.</p>
+</div>
+
+<hr class="divider" id="sintese"/>
+<p class="section-label">11. Síntese</p>
+
+<table>
+  <thead><tr><th>Instrumento</th><th>O que é</th><th>Relevância para o inspetor tributário</th></tr></thead>
+  <tbody>
+    <tr><td><strong>MENAC</strong></td><td>Autoridade independente de supervisão do RGPC; reporta à AR; pode inspecionar a AT-RAM</td><td>O inspetor pode ser alvo de auditoria do MENAC à AT-RAM; pode denunciar ao MENAC irregularidades na AT-RAM</td></tr>
+    <tr><td><strong>ENAC</strong></td><td>Estratégia nacional anticorrupção plurianual; identifica setores de risco (inclui administração fiscal)</td><td>O PGRC da AT-RAM deve alinhar-se com as medidas da ENAC para o setor fiscal</td></tr>
+    <tr><td><strong>PGRC</strong></td><td>Plano anual de gestão de riscos de corrupção da AT-RAM; publicado no sítio e submetido ao MENAC</td><td>O inspetor deve conhecer o PGRC; as medidas preventivas nele previstas disciplinam a sua conduta diária</td></tr>
+    <tr><td><strong>Código de conduta</strong></td><td>Regras de comportamento ético dos trabalhadores da AT-RAM</td><td>O inspetor confirmou por escrito ter recebido e compreendido; vincula todas as suas ações</td></tr>
+    <tr><td><strong>RCN</strong></td><td>Compliance officer da AT-RAM; gere o canal de denúncia; reporta ao Conselho Diretivo</td><td>Destinatário das comunicações do inspetor sobre irregularidades; interlocutor para questões de ética</td></tr>
+    <tr><td><strong>Canal de denúncia</strong></td><td>Mecanismo seguro para reportar irregularidades; aceita anónimos; protege o denunciante</td><td>O inspetor pode e deve usar o canal para reportar corrupção que detete na AT-RAM ou nas entidades inspecionadas</td></tr>
+    <tr><td><strong>Coimas MENAC</strong></td><td>Até € 448.918 para pessoa coletiva em infração muito grave</td><td>A AT-RAM pode ser sancionada pelo MENAC se não cumprir o RGPC; os dirigentes responsáveis têm responsabilidade pessoal</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t);}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾';})();
+</script>
+</body>
+</html>

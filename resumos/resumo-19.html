@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>19 · Tratado sobre o Funcionamento da UE (TFUE)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #e05c5c;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+    .toc ol{padding-left:1.2rem;margin-bottom:0}.toc li{font-size:.8rem;color:var(--text-muted);margin-bottom:.2rem}.toc a{color:var(--text-muted);text-decoration:none}.toc a:hover{color:var(--accent)}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">19 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">19 · Direito Primário da União Europeia</p>
+<h1>Tratado sobre o Funcionamento da <em>União Europeia</em></h1>
+<p class="doc-sub">TFUE — Versão consolidada · Anteriormente designado «Tratado CE» · Com as alterações do Tratado de Lisboa (2007, em vigor desde 1 de dezembro de 2009) · Versão atual: JOUE C 202 de 7 de junho de 2016 · Complementa o TUE (v. Resumo 18)</p>
+<div class="meta-row">
+  <span class="badge badge-accent">TFUE</span>
+  <span class="badge">Mercado Interno</span>
+  <span class="badge">Fiscalidade</span>
+  <span class="badge">Regiões Ultraperiféricas</span>
+  <span class="badge">Auxílios de Estado</span>
+  <span class="badge">Art. 349.º — RAM</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <ol>
+    <li><a href="#s1">Natureza, objeto e relação com o TUE</a></li>
+    <li><a href="#s2">Estrutura do TFUE — sete partes</a></li>
+    <li><a href="#s3">Categorias de competências (arts. 2.º–6.º)</a></li>
+    <li><a href="#s4">Cidadania da União e não discriminação (arts. 18.º–25.º)</a></li>
+    <li><a href="#s5">Mercado interno e liberdades fundamentais (arts. 26.º–66.º)</a></li>
+    <li><a href="#s6">Fiscalidade no TFUE (arts. 110.º–115.º)</a></li>
+    <li><a href="#s7">Cooperação administrativa em matéria fiscal — bases jurídicas (DAC)</a></li>
+    <li><a href="#s8">Regras de concorrência e auxílios de Estado (arts. 101.º–109.º)</a></li>
+    <li><a href="#s9">Regiões ultraperiféricas — art. 349.º TFUE e a Madeira</a></li>
+    <li><a href="#s10">Proteção dos interesses financeiros da UE — art. 325.º (OLAF e EPPO)</a></li>
+    <li><a href="#s11">Reenvio prejudicial e TJUE — art. 267.º</a></li>
+    <li><a href="#s12">Proteção de dados — art. 16.º TFUE</a></li>
+    <li><a href="#s13">Síntese — normas do TFUE mais relevantes para o inspetor tributário</a></li>
+  </ol>
+</div>
+
+<hr class="divider" id="s1"/>
+<p class="section-label">1. Natureza, Objeto e Relação com o TUE</p>
+
+<div class="highlight">
+  <p>O TFUE complementa o TUE — juntos constituem o <strong>direito primário da UE</strong>, com o mesmo valor jurídico. Enquanto o TUE define os valores, objetivos e o quadro institucional (quem faz o quê), o TFUE detalha as <strong>políticas, as competências e o funcionamento operacional</strong> da UE (como se faz). O TFUE tem particular relevância para a fiscalidade, o mercado interno, a concorrência e as regiões ultraperiféricas (incluindo a Madeira).</p>
+</div>
+
+<div class="card">
+  <h3>TUE vs. TFUE — comparação rápida</h3>
+  <table>
+    <thead><tr><th>Dimensão</th><th>TUE</th><th>TFUE</th></tr></thead>
+    <tbody>
+      <tr><td>Foco</td><td>Valores, objetivos, quadro institucional</td><td>Políticas, competências, procedimentos, funcionamento detalhado</td></tr>
+      <tr><td>Artigos fiscais principais</td><td>Referências a UEM (art. 3.º)</td><td>Arts. 110.º–115.º (harmonização fiscal); art. 107.º (auxílios de Estado); art. 349.º (RUP)</td></tr>
+      <tr><td>Cidadania</td><td>Menção (art. 9.º)</td><td>Regulação detalhada (arts. 20.º–25.º)</td></tr>
+      <tr><td>TJUE</td><td>Artigo 19.º (quadro geral)</td><td>Arts. 251.º–281.º + art. 267.º (reenvio prejudicial)</td></tr>
+      <tr><td>Proteção de dados</td><td>Art. 6.º (via CDFUE art. 8.º)</td><td>Art. 16.º (base jurídica específica do RGPD)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s2"/>
+<p class="section-label">2. Estrutura do TFUE — Sete Partes</p>
+
+<table>
+  <thead><tr><th>Parte</th><th>Arts.</th><th>Conteúdo</th><th>Relevância fiscal</th></tr></thead>
+  <tbody>
+    <tr><td><strong>I</strong> — Princípios</td><td>1.º–17.º</td><td>Objeto; categorias e domínios de competência; proteção de dados (art. 16.º); cidadania UE</td><td>Arts. 3.º–6.º (categorias de competências); art. 16.º (RGPD)</td></tr>
+    <tr><td><strong>II</strong> — Não discriminação e cidadania</td><td>18.º–25.º</td><td>Proibição de discriminação em razão da nacionalidade; cidadania da UE e seus direitos</td><td>Art. 18.º: proibição de discriminação fiscal de não residentes UE</td></tr>
+    <tr><td><strong>III</strong> — Políticas e ações internas</td><td>26.º–197.º</td><td>Mercado interno (liberdades + harmonização); política agrícola; livre circulação; transportes; concorrência; fiscalidade; emprego; política social; saúde; ambiente</td><td>Núcleo: arts. 26.º–66.º (mercado interno), arts. 101.º–115.º (concorrência + fiscalidade)</td></tr>
+    <tr><td><strong>IV</strong> — Países e territórios ultramarinos</td><td>198.º–204.º</td><td>Países e territórios ultramarinos (PTU) — regime diferente das RUP</td><td>Não se aplica à Madeira (que é RUP, não PTU)</td></tr>
+    <tr><td><strong>V</strong> — Ação externa</td><td>205.º–222.º</td><td>Política comercial comum; cooperação para o desenvolvimento; ajuda humanitária; sanções</td><td>Política comercial e acordos de livre comércio com impacto aduaneiro na RAM</td></tr>
+    <tr><td><strong>VI</strong> — Disposições institucionais e financeiras</td><td>223.º–334.º</td><td>Composição e funcionamento das instituições; orçamento da UE; controlo financeiro (TC UE); cooperação reforçada</td><td>Art. 325.º (proteção interesses financeiros); art. 267.º (reenvio prejudicial)</td></tr>
+    <tr><td><strong>VII</strong> — Disposições gerais e finais</td><td>335.º–358.º</td><td>Personalidade jurídica; regimes especiais; disposições finais; regiões ultraperiféricas (art. 349.º)</td><td><strong>Art. 349.º (RUP — Madeira): o mais relevante para a RAM</strong></td></tr>
+  </tbody>
+</table>
+
+<hr class="divider" id="s3"/>
+<p class="section-label">3. Categorias de Competências (Arts. 2.º–6.º)</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Tipo</th><th>Art.</th><th>Descrição</th><th>Exemplos relevantes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Exclusiva</strong></td><td>3.º</td><td>Só a UE pode legislar; os EM só podem agir se expressamente autorizados pela UE</td><td>União aduaneira; política comercial comum; política monetária (zona euro); conservação dos recursos biológicos do mar</td></tr>
+      <tr><td><strong>Partilhada</strong></td><td>4.º</td><td>A UE e os EM podem legislar; os EM exercem a sua competência na medida em que a UE não exerceu a sua; os EM readquirem a competência quando a UE a abandona</td><td>Mercado interno (incluindo harmonização IVA e IEC); política social; ambiente; proteção dos consumidores; transportes; energia</td></tr>
+      <tr><td><strong>Coordenação de políticas económicas e de emprego</strong></td><td>5.º</td><td>A UE coordena as políticas dos EM, sem harmonização</td><td>Políticas económicas e orçamentais; Semestre Europeu; Pacto de Estabilidade e Crescimento</td></tr>
+      <tr><td><strong>Apoio, coordenação e complemento</strong></td><td>6.º</td><td>A UE apoia a ação dos EM mas não harmoniza</td><td>Saúde humana; indústria; cultura; turismo; educação; proteção civil; <strong>fiscalidade direta</strong> (sem base para harmonização — só por unanimidade)</td></tr>
+    </tbody>
+  </table>
+  <div class="highlight">
+    <p><strong>Regra de ouro para o exame:</strong> A <strong>fiscalidade indireta</strong> (IVA, IEC) é competência partilhada — a UE harmoniza por diretivas adotadas por unanimidade (art. 113.º). A <strong>fiscalidade direta</strong> (IRS, IRC) é essencialmente dos EM — a UE só pode agir por unanimidade (art. 115.º) para eliminar dupla tributação ou combater fraude/evasão. Na prática: ATAD 1 e 2, Diretiva Juros/Royalties, Diretiva Fusões — todas adotadas por unanimidade no ECOFIN.</p>
+  </div>
+</div>
+
+<hr class="divider" id="s4"/>
+<p class="section-label">4. Cidadania da União e Não Discriminação (Arts. 18.º–25.º)</p>
+
+<div class="card">
+  <h3>Art. 18.º — Proibição de discriminação em razão da nacionalidade</h3>
+  <p>No âmbito de aplicação dos Tratados, é proibida toda e qualquer discriminação em razão da nacionalidade. Esta norma é diretamente aplicável e tem sido invocada em matéria fiscal pelo TJUE para limitar tributação discriminatória de não residentes. Portugal não pode tributar mais pesado um dividendo pago a um residente francês do que o pago a um residente português (a não ser que haja justificação no Tratado).</p>
+  <h3>Arts. 20.º–25.º — Cidadania da União</h3>
+  <p>Todo o nacional de um EM é automaticamente cidadão da União. A cidadania UE confere direitos adicionais: livre circulação e residência em qualquer EM; direito de votar e ser eleito nas eleições autárquicas e europeias do EM de residência; proteção consular de outros EM; direito de petição ao PE. Relevância fiscal: um cidadão alemão residente na Madeira tem os mesmos direitos de igualdade de tratamento fiscal que um cidadão português.</p>
+</div>
+
+<hr class="divider" id="s5"/>
+<p class="section-label">5. Mercado Interno e Liberdades Fundamentais (Arts. 26.º–66.º)</p>
+
+<div class="highlight">
+  <p>O mercado interno é definido pelo art. 26.º como um «espaço sem fronteiras internas, no qual a livre circulação de mercadorias, pessoas, serviços e capitais é assegurada». As quatro liberdades têm primazia sobre o direito fiscal nacional — uma norma fiscal que obstaculize injustificadamente uma liberdade é ilegal à luz do TFUE.</p>
+</div>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Arts. 28.º–37.º</div>
+    <div class="art-title">Livre circulação de mercadorias — União Aduaneira</div>
+    <div class="art-body">
+      <strong>Proibição de direitos aduaneiros</strong> e encargos de efeito equivalente entre EM. Pauta Aduaneira Comum (PAC) nas fronteiras externas da UE. Proibição de restrições quantitativas e medidas de efeito equivalente (Cassis de Dijon).<br/>
+      <strong>Relevância AT-RAM:</strong> A AT-RAM aplica a PAC nas alfândegas (Funchal, Caniçal); as mercadorias da UE entram na RAM sem direitos aduaneiros; as importações de países terceiros ficam sujeitas à PAC + derroga art. 349.º para certos produtos.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Arts. 45.º–55.º</div>
+    <div class="art-title">Livre circulação de trabalhadores</div>
+    <div class="art-body">
+      Direito de trabalhar em qualquer EM sem discriminação por razão de nacionalidade. Inclui acesso ao emprego, remuneração, condições de trabalho, integração social e familiar.<br/>
+      <strong>Relevância fiscal:</strong> Tributação de trabalhadores não residentes que trabalhem temporariamente na RAM; aplicação das regras de residência fiscal (LGT + CDT) a trabalhadores de outros EM; crédito de imposto por dupla tributação.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Arts. 49.º–55.º</div>
+    <div class="art-title">Liberdade de estabelecimento</div>
+    <div class="art-body">
+      Direito de constituir e gerir empresas nas mesmas condições que os nacionais. Proíbe discriminação fiscal entre empresas nacionais e empresas de outros EM estabelecidas em Portugal.<br/>
+      <strong>TJUE:</strong> Casos Marks &amp; Spencer, Cadbury Schweppes, SGI — jurisprudência sobre limites da legislação anti-abuso face à liberdade de estabelecimento.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Arts. 56.º–62.º</div>
+    <div class="art-title">Livre prestação de serviços</div>
+    <div class="art-body">
+      Prestação temporária de serviços noutro EM sem discriminação. Inclui os serviços digitais.<br/>
+      <strong>Relevância fiscal:</strong> Regras de localização de serviços para efeitos de IVA (onde tributar serviços transfronteiriços); a Diretiva IVA (Diretiva 2006/112/CE) harmoniza estas regras. O CINM presta serviços financeiros a não residentes ao abrigo desta liberdade.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Arts. 63.º–66.º</div>
+    <div class="art-title">Livre circulação de capitais</div>
+    <div class="art-body">
+      A mais ampla: aplica-se também entre EM e <strong>países terceiros</strong> (única liberdade com dimensão externa). Proíbe restrições a movimentos de capitais e pagamentos.<br/>
+      <strong>Relevância fiscal:</strong> A tributação de dividendos, juros e mais-valias não pode discriminar os residentes da UE face a residentes nacionais. Controlo de capitais em situações de crise (exceção — art. 66.º TFUE). Relevante para operações de capital do CINM.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Justificações e limites</div>
+    <div class="art-title">Quando pode uma medida fiscal restringir uma liberdade?</div>
+    <div class="art-body">
+      O TJUE aceita restrições quando:
+      (1) Baseadas em razão imperiosa de interesse geral (combate à evasão fiscal, coerência do sistema fiscal nacional, divisão equilibrada de competências tributárias);
+      (2) Proporcionais ao objetivo prosseguido;
+      (3) Não discriminatórias.
+      Testes: «teste Gebhard» ou «teste de proporcionalidade» do TJUE.
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="s6"/>
+<p class="section-label">6. Fiscalidade no TFUE (Arts. 110.º–115.º)</p>
+
+<div class="card">
+  <div class="art-block" style="margin-bottom:.85rem">
+    <div class="art-num">Art. 110.º</div>
+    <div class="art-title">Proibição de discriminação fiscal interna</div>
+    <div class="art-body">Nenhum EM pode aplicar, direta ou indiretamente, sobre os produtos dos outros EM, imposições internas superiores às que aplica sobre produtos nacionais similares. É diretamente aplicável e invocável pelos contribuintes contra normas fiscais nacionais discriminatórias. Exemplos: impostos sobre veículos usados importados que discriminam face a veículos nacionais usados (acórdãos do TJUE contra Portugal).</div>
+  </div>
+
+  <table>
+    <thead><tr><th>Artigo</th><th>Matéria</th><th>Regra de votação</th><th>Aplicação</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Art. 110.º</strong></td><td>Proibição de discriminação fiscal interna</td><td>—</td><td>Diretamente aplicável; invocável por contribuintes</td></tr>
+      <tr><td><strong>Art. 111.º</strong></td><td>Proibição de drawback superior ao imposto pago</td><td>—</td><td>Controla incentivos fiscais à exportação que constituam subsídios proibidos</td></tr>
+      <tr><td><strong>Art. 113.º</strong></td><td>Harmonização da fiscalidade indireta (IVA, IEC, outras imposições indiretas)</td><td><strong>Unanimidade no Conselho</strong> + consulta PE + consulta CES</td><td>Base jurídica da Diretiva IVA (2006/112/CE), Diretiva IEC (2020/262), Diretiva sobre o Imposto do Álcool, etc.</td></tr>
+      <tr><td><strong>Art. 114.º</strong></td><td>Harmonização para o mercado interno (via geral)</td><td><strong>Maioria qualificada</strong> no Conselho + co-decisão PE</td><td>Base jurídica alternativa quando o objetivo principal é o mercado interno (não exclusivamente fiscal): RGPD (art. 114.º + art. 16.º TFUE), DAC para fins de antilavagem</td></tr>
+      <tr><td><strong>Art. 115.º</strong></td><td>Harmonização da fiscalidade direta e de outras leis com impacto no mercado interno</td><td><strong>Unanimidade no Conselho</strong> + consulta PE + consulta CES</td><td>Base jurídica das diretivas de fiscalidade direta: ATAD 1 (2016/1164), ATAD 2 (2017/952), Diretiva Fusões, Diretiva Mãe-Filha, Diretiva Juros-Royalties</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Nota prática:</strong> A exigência de unanimidade para fiscalidade (arts. 113.º e 115.º) é o principal obstáculo à harmonização fiscal na UE. Mesmo uma posição de um único EM pode bloquear uma diretiva fiscal. Por isso, a Comissão propõe frequentemente migrar certas medidas para o art. 114.º (maioria qualificada), mas o Conselho resiste.</p>
+</div>
+
+<hr class="divider" id="s7"/>
+<p class="section-label">7. Cooperação Administrativa em Matéria Fiscal — Bases Jurídicas (DAC)</p>
+
+<div class="card">
+  <p>As Diretivas DAC (Diretiva de Cooperação Administrativa) são o instrumento central de cooperação entre as administrações fiscais dos EM. Baseiam-se no art. 113.º e/ou art. 115.º TFUE.</p>
+  <table>
+    <thead><tr><th>Diretiva DAC</th><th>Objeto</th><th>Obrigação para AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>DAC1</strong> (2011/16/UE)</td><td>Cooperação administrativa geral; troca de informações a pedido, espontânea e automática sobre categorias de rendimentos</td><td>Responder a pedidos de informação de outros EM sobre contribuintes da RAM; enviar informações espontâneas sobre pagamentos a residentes de outros EM</td></tr>
+      <tr><td><strong>DAC2</strong> (2014/107/UE)</td><td>Troca automática de informações sobre contas financeiras — CRS/OCDE</td><td>As instituições financeiras da RAM comunicam automaticamente à AT-RAM dados de titulares de contas residentes fora de Portugal; a AT-RAM envia para outros EM</td></tr>
+      <tr><td><strong>DAC3</strong> (2015/2376/UE)</td><td>Troca automática de informações sobre tax rulings (decisões fiscais antecipadas transfronteiriças) e APT</td><td>Comunicação de APT e tax rulings relevantes com conexão a outros EM</td></tr>
+      <tr><td><strong>DAC4</strong> (2016/881/UE)</td><td>Declaração país-a-país — Country-by-Country Reporting (CbCR) para grupos multinacionais</td><td>Grupos multinacionais com presença na RAM submetem CbCR à AT-RAM (se Portugal for o EM de residência da entidade-mãe)</td></tr>
+      <tr><td><strong>DAC5</strong> (2016/2258/UE)</td><td>Acesso das administrações fiscais às informações AML (antilavagem) — AMLD4</td><td>A AT-RAM tem acesso às informações de due diligence recolhidas pelas entidades financeiras ao abrigo da lei antilavagem</td></tr>
+      <tr><td><strong>DAC6</strong> (2018/822/UE)</td><td>Troca automática de informações sobre esquemas de planeamento fiscal agressivo (Mandatory Disclosure Rules)</td><td>Intermediários fiscais (TOC, advogados, bancos) comunicam à AT-RAM esquemas com «marcas» de agressividade; AT-RAM partilha com outros EM</td></tr>
+      <tr><td><strong>DAC7</strong> (2021/514/UE)</td><td>Troca automática de informações sobre rendimentos de plataformas digitais</td><td>Plataformas digitais (Airbnb, Uber, Amazon Sellers) comunicam rendimentos de vendedores/prestadores à AT-RAM</td></tr>
+      <tr><td><strong>DAC8</strong> (2023/2226/UE)</td><td>Troca automática sobre criptoativos (Crypto-Asset Reporting Framework — CARF)</td><td>Prestadores de serviços de criptoativos comunicam transações de contribuintes residentes em Portugal/RAM</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s8"/>
+<p class="section-label">8. Regras de Concorrência e Auxílios de Estado (Arts. 101.º–109.º)</p>
+
+<div class="card">
+  <h3>Art. 107.º, n.º 1 — Proibição geral de auxílios de Estado</h3>
+  <p>São incompatíveis com o mercado interno os auxílios concedidos pelos Estados ou provenientes de recursos estatais que, <strong>favorecendo certas empresas ou certas produções</strong>, falseiem ou ameacem falsear a concorrência nas trocas comerciais entre EM. Elementos cumulativos: (1) vantagem seletiva; (2) concedida pelo Estado ou com recursos estatais; (3) afeta as trocas entre EM; (4) falseia ou ameaça falsear a concorrência.</p>
+  <p><strong>Relevância fiscal:</strong> Um benefício fiscal regional concedido pela RAM a certas empresas (ex.: taxa reduzida de IRC só para empresas do setor X) pode constituir auxílio de Estado ilegal se for seletivo e não aprovado pela Comissão. A Comissão distingue entre medidas gerais (aplicam-se uniformemente a todas as empresas — não são auxílios) e medidas seletivas (favorecem certos operadores — potencialmente auxílios).</p>
+</div>
+
+<div class="card">
+  <h3>Art. 107.º, n.ºs 2–3 — Exceções e compatibilidade</h3>
+  <table>
+    <thead><tr><th>Exceção</th><th>Art.</th><th>Relevância para a RAM</th></tr></thead>
+    <tbody>
+      <tr><td>Auxílios de natureza social a consumidores individuais</td><td>107.º, n.º 2 a)</td><td>Subsídios a consumidores de produtos locais da Madeira (ex.: subsídios de transporte de pessoas)</td></tr>
+      <tr><td>Auxílios para reparação de danos causados por calamidades naturais</td><td>107.º, n.º 2 b)</td><td>Medidas fiscais de alívio após incêndios ou tempestades na Madeira</td></tr>
+      <tr><td>Auxílios destinados a promover o desenvolvimento económico de regiões com nível de vida anormalmente baixo ou desemprego grave</td><td>107.º, n.º 3 a)</td><td><strong>Principal base para a ZFM:</strong> a Madeira é uma das regiões mais desfavorecidas da UE (PIB per capita abaixo de 75% da média UE — elegível para auxílios de maior intensidade)</td></tr>
+      <tr><td>Auxílios a facilitar o desenvolvimento de certas atividades ou regiões económicas</td><td>107.º, n.º 3 c)</td><td>Incentivos fiscais setoriais (turismo, agricultura) aprovados pela Comissão como auxílios regionais</td></tr>
+    </tbody>
+  </table>
+  <h3>Zona Franca da Madeira (ZFM / CINM) e auxílios de Estado</h3>
+  <p>O regime fiscal especial da ZFM (Centro Internacional de Negócios da Madeira) foi notificado à Comissão Europeia e aprovado como auxílio de Estado compatível com o mercado interno ao abrigo do art. 107.º, n.º 3 a) (combinado com o art. 349.º TFUE sobre RUP). O regime atual vigora até 2027 e está sujeito a condições específicas (criação de postos de trabalho efetivos, contribuição para a economia regional, substância económica na Madeira). A AT-RAM é responsável pela fiscalização do cumprimento dessas condições.</p>
+  <div class="warning">
+    <p><strong>Obrigação do inspetor tributário:</strong> A AT-RAM não pode conceder benefícios fiscais que constituam auxílios de Estado não notificados à Comissão ou não aprovados. Se durante uma inspeção o inspetor detetar que um contribuinte beneficiou ilegalmente de um auxílio fiscal não notificado, deve comunicar ao Conselho Diretivo para articulação com a Comissão. A recuperação de auxílios de Estado ilegais é obrigatória.</p>
+  </div>
+</div>
+
+<hr class="divider" id="s9"/>
+<p class="section-label">9. Regiões Ultraperiféricas — Art. 349.º TFUE e a Madeira</p>
+
+<div class="highlight">
+  <p>O art. 349.º TFUE é a base constitucional europeia do estatuto especial da Madeira (e dos Açores, Canárias, Guadalupe, Martinica, Guiana Francesa, Reunião, Mayotte e São Martinho). Este artigo reconhece as características específicas que colocam estas regiões em situação de desvantagem permanente e autoriza derrogações aos Tratados para as compensar.</p>
+</div>
+
+<div class="card">
+  <h3>Características reconhecidas pelo art. 349.º que se aplicam à Madeira</h3>
+  <ul>
+    <li><strong>Grande afastamento</strong> dos principais mercados europeus</li>
+    <li><strong>Insularidade</strong> — dificuldades de logística e transporte</li>
+    <li><strong>Reduzida superfície e topografia difícil</strong></li>
+    <li><strong>Clima difícil</strong> — vulnerabilidade a catástrofes naturais</li>
+    <li><strong>Dependência económica de um pequeno número de produtos</strong></li>
+  </ul>
+  <h3>Medidas específicas adotadas para a Madeira ao abrigo do art. 349.º</h3>
+  <table>
+    <thead><tr><th>Medida</th><th>Instrumento</th><th>Impacto fiscal/tributário</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Taxas reduzidas de IVA</strong></td><td>Diretiva IVA (2006/112/CE) + Decisão do Conselho que autoriza derrogação a Portugal</td><td>Taxa normal de IVA na Madeira: 22% (vs. 23% mainland). Taxas intermédia (12%) e reduzida (5%) abaixo das taxas equivalentes do mainland. A AT-RAM aplica estas taxas diferenciadas.</td></tr>
+      <tr><td><strong>Regime ZFM/CINM</strong></td><td>Aprovado pela Comissão como auxílio compatível (art. 107.º, n.º 3 a)); sustentado no art. 349.º TFUE como justificação da sua necessidade</td><td>Taxas reduzidas de IRC para empresas da ZFM (5% sobre lucros tributáveis até certos limites); isenções de IS sobre operações específicas; isenções de IRS sobre rendimentos de capital de não residentes. A AT-RAM fiscaliza o cumprimento das condições do regime.</td></tr>
+      <tr><td><strong>Pautas aduaneiras adaptadas</strong></td><td>Regulamentos aduaneiros específicos para RUP</td><td>Suspensões pautais para certos produtos locais; sobretaxas de compensação para proteger a produção local; regime de portos francos (redução de direitos aduaneiros) nas zonas de entreposto da Madeira</td></tr>
+      <tr><td><strong>Fundos estruturais superiores</strong></td><td>Regulamentos dos fundos estruturais (FEDER, FSE+)</td><td>A Madeira recebe mais financiamento por habitante do que regiões desenvolvidas; como RUP, tem acesso ao POSEI (Programa de Opções Específicas para o Afastamento e a Insularidade)</td></tr>
+      <tr><td><strong>Compensação da sobrecusto de transporte</strong></td><td>Auxílios de Estado aprovados</td><td>Subsídios às transportadoras que cobrem rotas para a Madeira; não sujeitos a imposição fiscal especial (tratados como auxílios de Estado aprovados)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s10"/>
+<p class="section-label">10. Proteção dos Interesses Financeiros da UE — Art. 325.º (OLAF e EPPO)</p>
+
+<div class="card">
+  <h3>Art. 325.º TFUE — obrigação de combater a fraude</h3>
+  <p>A UE e os EM combatem a fraude e quaisquer outras atividades ilegais lesivas dos interesses financeiros da UE através de medidas que tenham efeito dissuasivo e que sejam efetivas nos EM. Os EM adotam, para combater a fraude lesiva dos interesses financeiros da UE, as mesmas medidas que adotam para combater a fraude lesiva dos seus próprios interesses financeiros.</p>
+  <h3>Principais instrumentos</h3>
+  <div class="grid2">
+    <div class="art-block">
+      <div class="art-num">OLAF</div>
+      <div class="art-title">Organismo Europeu de Luta Antifraude</div>
+      <div class="art-body">Investiga fraudes contra o orçamento da UE (fundos estruturais, PAC, receitas aduaneiras). Pode realizar inspeções nos EM, incluindo na Madeira. A AT-RAM deve cooperar com o OLAF quando este investiga irregularidades no território da RAM relacionadas com fundos europeus (FEDER, FSE) ou receitas aduaneiras.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">EPPO (art. 86.º TFUE)</div>
+      <div class="art-title">Procuradoria Europeia</div>
+      <div class="art-body">Criada pelo Regulamento 2017/1939/UE, ao abrigo do art. 86.º TFUE (cooperação reforçada — 22 EM, incluindo Portugal). Competente para investigar e perseguir penalmente infrações lesivas dos interesses financeiros da UE (fraude ao IVA acima de 10 M€; corrupção de funcionários UE; fraude a fundos UE). Portugal participou desde o início. A AT-RAM deve cooperar com o Procurador Delegado Europeu em Portugal.</div>
+    </div>
+  </div>
+  <h3>Relevância para a AT-RAM</h3>
+  <ul>
+    <li>A fuga ao IVA e as irregularidades aduaneiras afetam os <strong>recursos próprios da UE</strong> (os direitos aduaneiros e uma fração do IVA são recursos próprios tradicionais da UE)</li>
+    <li>Irregularidades na utilização do FEDER/FSE na Madeira são investigadas pelo OLAF e potencialmente pelo EPPO</li>
+    <li>A AT-RAM pode ser chamada a colaborar em investigações do OLAF/EPPO fornecendo dados tributários sobre os beneficiários investigados</li>
+    <li>A Diretiva PIF (2017/1371/UE — Proteção dos Interesses Financeiros) criminalizou a fraude ao IVA de grande dimensão como infração europeia</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s11"/>
+<p class="section-label">11. Reenvio Prejudicial e TJUE — Art. 267.º</p>
+
+<div class="card">
+  <h3>Mecanismo do reenvio prejudicial</h3>
+  <p>O art. 267.º TFUE estabelece o mecanismo pelo qual os tribunais nacionais podem (e em certos casos devem) submeter ao TJUE questões sobre a interpretação ou validade do direito da UE.</p>
+  <ul>
+    <li><strong>Faculdade:</strong> Qualquer tribunal nacional <em>pode</em> colocar uma questão prejudicial ao TJUE quando se suscite uma questão de interpretação dos Tratados ou de validade/interpretação de atos das instituições da UE</li>
+    <li><strong>Obrigação:</strong> Os tribunais de última instância (STA, STJ, TC) <em>devem</em> reenviar, exceto quando a questão já foi clarificada pelo TJUE (acórdão CILFIT) ou quando a resposta for aclarada (acte clair)</li>
+    <li><strong>Efeito das decisões:</strong> O acórdão prejudicial do TJUE é vinculativo para o tribunal que fez o reenvio e tem autoridade interpretativa erga omnes — vincula todos os tribunais dos EM na mesma matéria</li>
+  </ul>
+  <h3>Exemplos de reenvios em matéria fiscal (Portugal)</h3>
+  <p>O STA (Supremo Tribunal Administrativo) enviou questões ao TJUE sobre: (a) compatibilidade das regras de IVA sobre imóveis com a Diretiva IVA; (b) tributação de dividendos pagos a fundos de investimento não residentes; (c) regimes de tributação de mais-valias de não residentes. As respostas do TJUE obrigaram Portugal a alterar legislação e a AT-RAM aplica as soluções decorrentes dessas decisões.</p>
+</div>
+
+<hr class="divider" id="s12"/>
+<p class="section-label">12. Proteção de Dados — Art. 16.º TFUE</p>
+
+<div class="card">
+  <h3>Art. 16.º TFUE — Base jurídica do RGPD</h3>
+  <p>O art. 16.º TFUE consagra o <strong>direito à proteção de dados pessoais</strong> como direito fundamental no direito primário da UE (complementando o art. 8.º da CDFUE). O n.º 2 do art. 16.º TFUE é a <strong>base jurídica específica</strong> que habilitou o PE e o Conselho a adotar o RGPD (Regulamento 2016/679), juntamente com o art. 114.º TFUE (mercado interno).</p>
+  <p>Antes do Tratado de Lisboa, a proteção de dados no contexto das atividades da UE assentava no antigo art. 286.º TCE. O art. 16.º TFUE atualizou e reforçou este fundamento, habilitando a legislação aplicável a toda a atividade de tratamento de dados na UE, incluindo pelas autoridades públicas dos EM quando aplicam direito da UE.</p>
+  <p><strong>Relevância para a AT-RAM:</strong> Quando a AT-RAM aplica legislação de transposição de diretivas da UE (IVA, DAC, RGPD), trata dados pessoais no âmbito do direito da UE — nesse contexto, está diretamente vinculada pelo art. 8.º CDFUE (via art. 6.º TUE) e pelo RGPD (via art. 16.º TFUE), não apenas pela Lei 58/2019.</p>
+</div>
+
+<hr class="divider" id="s13"/>
+<p class="section-label">13. Síntese — Normas do TFUE Mais Relevantes para o Inspetor Tributário</p>
+
+<table>
+  <thead><tr><th>Artigo TFUE</th><th>Matéria</th><th>Impacto prático na AT-RAM</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Art. 16.º</strong></td><td>Proteção de dados pessoais — base jurídica do RGPD</td><td>A AT-RAM, ao aplicar o RGPD (tratamento de dados fiscais), actua ao abrigo do art. 16.º TFUE; os contribuintes têm direitos decorrentes da CDFUE</td></tr>
+    <tr><td><strong>Art. 18.º</strong></td><td>Proibição de discriminação por razão da nacionalidade</td><td>Contribuintes de outros EM não podem ser tributados mais pesado do que contribuintes nacionais em situações comparáveis</td></tr>
+    <tr><td><strong>Arts. 28.º–37.º</strong></td><td>União Aduaneira / livre circulação de mercadorias</td><td>A AT-RAM aplica a PAC nas alfândegas; proibição de direitos aduaneiros intra-UE</td></tr>
+    <tr><td><strong>Art. 86.º</strong></td><td>Procuradoria Europeia (EPPO)</td><td>Cooperação da AT-RAM com o Procurador Delegado Europeu em Portugal em investigações de fraude ao IVA &gt; 10 M€ e fraude a fundos UE</td></tr>
+    <tr><td><strong>Art. 107.º–109.º</strong></td><td>Auxílios de Estado</td><td>Benefícios fiscais regionais só são legais se aprovados pela Comissão; ZFM depende desta base; inspetor verifica cumprimento das condições</td></tr>
+    <tr><td><strong>Art. 110.º</strong></td><td>Proibição de discriminação fiscal interna</td><td>Portugal/RAM não pode tributar mais pesado produtos de outros EM do que produtos nacionais similares</td></tr>
+    <tr><td><strong>Art. 113.º</strong></td><td>Harmonização fiscal indireta (unanimidade)</td><td>Base das diretivas de IVA e IEC que a AT-RAM aplica</td></tr>
+    <tr><td><strong>Art. 115.º</strong></td><td>Harmonização fiscal direta (unanimidade)</td><td>Base das ATAD 1 e 2 (anti-abuso); Diretiva Mãe-Filha; Diretiva Fusões; Diretiva Juros-Royalties — todas aplicadas nas inspeções de grupos multinacionais</td></tr>
+    <tr><td><strong>Art. 267.º</strong></td><td>Reenvio prejudicial</td><td>Questões de direito fiscal da UE podem ser resolvidas pelo TJUE; as suas decisões vinculam a AT-RAM mesmo que sejam proferidas em casos de outros EM</td></tr>
+    <tr><td><strong>Art. 325.º</strong></td><td>Proteção interesses financeiros da UE</td><td>Obrigação de combater a fraude ao IVA e aduaneira; cooperação com OLAF e EPPO</td></tr>
+    <tr><td><strong>Art. 349.º</strong></td><td>Regiões ultraperiféricas</td><td>Fundamento constitucional europeu da ZFM, taxas reduzidas de IVA na RAM, pautas aduaneiras adaptadas e fundos estruturais superiores da Madeira</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

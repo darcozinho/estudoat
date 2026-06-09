@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12 · CPPT — Código de Procedimento e de Processo Tributário</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,0.94);}
+    [data-theme="light"]{--bg:#f5f4f0;--bg-card:#ffffff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--accent2:#8a6d20;--border:#e4e2dd;--nav-bg:rgba(245,244,240,0.94);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px;}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s;}.nav-back:hover{color:var(--accent);}
+    .nav-right{display:flex;align-items:center;gap:1rem;}
+    .nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600;}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s;}.theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem;}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem;}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent);}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem;line-height:1.6;}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);}
+    .badge-accent{border-color:var(--accent2);color:var(--accent);}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0;}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem;}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem;}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem;}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem;}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem;}
+    li strong{color:var(--text);font-weight:600;}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem;}
+    .card h2,.card h3{margin-top:0;}
+    .card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem;}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem;}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7;}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .highlight p{margin-bottom:0;font-size:.875rem;}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .warning p{margin-bottom:0;font-size:.875rem;color:var(--text-muted);}
+    .warning strong{color:#e74c3c;}
+    .info{border-left:3px solid #27ae60;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .info p{margin-bottom:0;font-size:.875rem;}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem;}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border);}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top;}
+    tr:nth-child(even) td{background:var(--bg-alt);}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem;}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.22rem 0;transition:color .15s;}
+    .toc a:hover{color:var(--accent);}
+    .toc a::before{content:"→ ";color:var(--accent);font-size:.75rem;}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label);}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem;}nav{padding:0 1.1rem;}.grid2,.grid3{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">12 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">12 · Procedimento e Processo Tributário</p>
+<h1>Código de Procedimento e de <em>Processo Tributário</em></h1>
+<p class="doc-sub">Decreto-Lei n.º 433/99, de 26 de outubro (CPPT) · Redação atual consolidada · Diploma que regula as garantias processuais dos contribuintes</p>
+<div class="meta-row">
+  <span class="badge badge-accent">CPPT</span>
+  <span class="badge">DL 433/99</span>
+  <span class="badge">Reclamação Graciosa</span>
+  <span class="badge">Impugnação Judicial</span>
+  <span class="badge">Execução Fiscal</span>
+  <span class="badge">Recurso Hierárquico</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#principios">Princípios do Procedimento e Processo Tributário</a>
+  <a href="#prazos-gerais">Prazos e Contagem de Prazos</a>
+  <a href="#notificacoes">Notificações em Matéria Tributária</a>
+  <a href="#reclamacao">Reclamação Graciosa</a>
+  <a href="#revisao">Recurso Hierárquico Tributário</a>
+  <a href="#revisao-at">Revisão do Ato Tributário (art. 78.º LGT)</a>
+  <a href="#impugnacao">Impugnação Judicial</a>
+  <a href="#accao-adm">Ação Administrativa</a>
+  <a href="#execucao">Execução Fiscal</a>
+  <a href="#oposicao">Oposição à Execução Fiscal</a>
+  <a href="#penhora">Penhora e Venda</a>
+  <a href="#garantias-exec">Prestação de Garantia e Suspensão da Execução</a>
+  <a href="#cautelares">Providências Cautelares</a>
+  <a href="#quadro-comparativo">Quadro Comparativo dos Meios de Defesa</a>
+</div>
+
+<hr class="divider" id="principios" />
+<p class="section-label">1. Princípios do Procedimento e Processo Tributário</p>
+
+<div class="highlight">
+  <p>O CPPT regula os meios de que dispõem os contribuintes para defenderem os seus direitos perante a AT e os tribunais, bem como o processo de execução fiscal para cobrança coerciva das dívidas tributárias.</p>
+</div>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Artigo 5.º</div>
+    <div class="art-title">Princípio da legalidade</div>
+    <div class="art-body">O procedimento tributário obedece à lei; a AT só pode praticar atos com fundamento na lei e nos limites da competência que lhe está atribuída.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 6.º</div>
+    <div class="art-title">Princípio da celeridade</div>
+    <div class="art-body">O procedimento tributário deve ser célere; as diligências devem ser praticadas dentro dos prazos. O incumprimento dos prazos pela AT não acarreta automaticamente a anulação, mas pode gerar silêncio positivo ou negativo.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 7.º</div>
+    <div class="art-title">Princípio da colaboração</div>
+    <div class="art-body">A AT e os contribuintes colaboram mutuamente na descoberta da verdade material. O ónus da prova distribui-se nos termos do artigo 74.º LGT.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 74.º LGT</div>
+    <div class="art-title">Ónus da prova</div>
+    <div class="art-body">A AT tem o ónus de provar os factos que fundamentam a liquidação adicional. O contribuinte tem o ónus de provar os factos que fundamentam direitos ou benefícios fiscais que invoca.</div>
+  </div>
+</div>
+
+<div id="prazos-gerais"></div>
+<hr class="divider" />
+<p class="section-label">2. Prazos e Contagem de Prazos (Artigos 57.º–62.º)</p>
+
+<div class="card">
+  <p>Os prazos em matéria tributária contam-se de forma diferente dos prazos administrativos gerais:</p>
+  <ul>
+    <li>Os prazos contam-se de forma contínua (incluem fins-de-semana e feriados), salvo quando a lei estabeleça que se contam em dias úteis.</li>
+    <li>O prazo que termine em sábado, domingo ou feriado transfere-se para o primeiro dia útil seguinte.</li>
+    <li><strong>Suspensão de prazos:</strong> Em agosto, os prazos processuais tributários suspendem-se (exceto os de atos urgentes).</li>
+    <li>O prazo de pagamento voluntário de imposto: <strong>30 dias</strong> após a notificação da liquidação (regra geral); há prazos específicos para cada imposto.</li>
+  </ul>
+</div>
+
+<div id="notificacoes"></div>
+<hr class="divider" />
+<p class="section-label">3. Notificações em Matéria Tributária (Artigos 35.º–43.º)</p>
+
+<div class="card">
+  <h3>Formas de notificação</h3>
+  <ul>
+    <li><strong>Correio registado com aviso de receção (AR):</strong> Forma regra para atos que afetam a situação tributária do contribuinte. Considera-se notificado no 3.º dia útil posterior ao registo, ou no 1.º dia útil seguinte ao AR.</li>
+    <li><strong>Notificação pessoal:</strong> Para determinados atos processuais (ex.: citação em execução fiscal) ou quando o endereço seja desconhecido.</li>
+    <li><strong>Notificação eletrónica:</strong> Quando o contribuinte esteja registado no portal das finanças e tenha ativado notificações eletrónicas. Presunção de notificação no 1.º dia útil seguinte ao envio.</li>
+    <li><strong>Notificação por edital/afixação:</strong> Quando o domicílio seja desconhecido ou em caso de impossibilidade de outro meio. O edital é afixado nas instalações da AT e publicado no site.</li>
+  </ul>
+</div>
+
+<div class="warning">
+  <p><strong>Consequência de notificação irregular:</strong> A notificação irregular não produz efeitos, mas pode ser sanada se o interessado demonstrar ter tido efetivo conhecimento do ato. O prazo para impugnação conta-se a partir do efetivo conhecimento.</p>
+</div>
+
+<div id="reclamacao"></div>
+<hr class="divider" />
+<p class="section-label">4. Reclamação Graciosa (Artigos 68.º–93.º)</p>
+
+<div class="highlight">
+  <p>A reclamação graciosa é o principal meio de impugnação administrativa de atos tributários de liquidação. É dirigida ao <strong>órgão periférico regional</strong> da AT (Diretor de Finanças da área) ou à AT-RAM no âmbito regional. É opcional — o contribuinte pode impugnar diretamente por via judicial.</p>
+</div>
+
+<h2>Atos reclamáveis</h2>
+<ul>
+  <li>Atos de liquidação (liquidações definitivas, liquidações adicionais, autoliquidações, retenções na fonte)</li>
+  <li>Atos de fixação da matéria coletável por métodos indiretos</li>
+  <li>Atos de determinação da base tributável quando não deem origem a liquidação</li>
+</ul>
+
+<h2>Prazo de Apresentação</h2>
+<table>
+  <thead><tr><th>Ato impugnado</th><th>Prazo</th><th>Contagem</th></tr></thead>
+  <tbody>
+    <tr><td>Liquidação (regra geral)</td><td><strong>120 dias</strong></td><td>A partir da notificação da liquidação definitiva ou do termo do prazo de pagamento voluntário (o que ocorrer mais tarde)</td></tr>
+    <tr><td>Autoliquidação</td><td><strong>2 anos</strong></td><td>A partir da apresentação da declaração ou do pagamento</td></tr>
+    <tr><td>Retenção na fonte</td><td><strong>2 anos</strong></td><td>A partir do momento da retenção</td></tr>
+    <tr><td>Pagamentos por conta indevidos</td><td><strong>2 anos</strong></td><td>A partir do pagamento</td></tr>
+  </tbody>
+</table>
+
+<h2>Tramitação</h2>
+<ol>
+  <li>Apresentação da reclamação (escrita, com indicação dos fundamentos e meios de prova).</li>
+  <li>Instrução do processo pela AT.</li>
+  <li>Audiência prévia: notificação do projeto de decisão de indeferimento ao reclamante para exercer o direito de audição (<strong>15 dias</strong>).</li>
+  <li>Decisão final: prazo máximo de <strong>4 meses</strong> após a apresentação da reclamação.</li>
+  <li>Notificação da decisão ao reclamante.</li>
+</ol>
+
+<h2>Efeitos da Reclamação Graciosa</h2>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-title">Efeito suspensivo da execução</div>
+    <div class="art-body">A reclamação graciosa <strong>não suspende automaticamente</strong> a execução fiscal. A suspensão exige prestação de garantia idónea (artigo 169.º CPPT). Se não houver garantia, a execução prossegue.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Efeito no prazo de impugnação</div>
+    <div class="art-body">A apresentação da reclamação graciosa <strong>suspende o prazo de impugnação judicial</strong> durante a sua pendência. Após decisão de indeferimento, o prazo de impugnação judicial retoma por 90 dias (prazo restante ou 30 dias se inferior).</div>
+  </div>
+</div>
+
+<h2>Indeferimento Tácito</h2>
+<div class="card">
+  <p>Se a AT não decidir no prazo de 4 meses, forma-se <strong>indeferimento tácito</strong> — o contribuinte pode impugnar judicialmente como se o pedido tivesse sido expressamente indeferido. O prazo de impugnação judicial conta-se do fim do prazo da AT. Esta é uma garantia importante — a inércia da AT não pode prejudicar o contribuinte indefinidamente.</p>
+</div>
+
+<div id="revisao"></div>
+<hr class="divider" />
+<p class="section-label">5. Recurso Hierárquico Tributário (Artigos 66.º–67.º)</p>
+
+<div class="card">
+  <p>O recurso hierárquico tributário é dirigido ao superior hierárquico do órgão que praticou o ato ou que decidiu a reclamação graciosa.</p>
+  <ul>
+    <li><strong>Prazo:</strong> 30 dias após a notificação do ato ou da decisão de indeferimento da reclamação.</li>
+    <li><strong>Fundamentos:</strong> Ilegalidade ou inconveniência (mérito) do ato.</li>
+    <li><strong>Tramitação:</strong> Instrução pela AT; audiência prévia do recorrente antes de decisão desfavorável; prazo de decisão: 60 dias.</li>
+    <li><strong>Efeito:</strong> Não suspende automaticamente a execução; para suspensão, exige prestação de garantia.</li>
+    <li>Após indeferimento do recurso hierárquico, o prazo de impugnação judicial é de <strong>30 dias</strong>.</li>
+  </ul>
+</div>
+
+<div id="impugnacao"></div>
+<hr class="divider" />
+<p class="section-label">6. Impugnação Judicial (Artigos 99.º–133.º)</p>
+
+<div class="highlight">
+  <p>A impugnação judicial é o meio processual judicial para contestar atos tributários de liquidação perante os Tribunais Tributários. É o principal meio contencioso em matéria tributária.</p>
+</div>
+
+<h2>Atos impugnáveis</h2>
+<ul>
+  <li>Atos de liquidação (incluindo liquidações adicionais, autoliquidações, retenções na fonte)</li>
+  <li>Atos de determinação da matéria tributável por métodos indiretos</li>
+  <li>Decisões de indeferimento de reclamação graciosa ou recurso hierárquico</li>
+  <li>Atos de fixação de valores patrimoniais</li>
+</ul>
+
+<h2>Fundamentos de Impugnação (Artigo 99.º)</h2>
+<ul>
+  <li>Errada qualificação e quantificação dos rendimentos, lucros, valores patrimoniais e outros factos tributários</li>
+  <li>Incompetência da entidade que praticou o ato</li>
+  <li>Ausência ou vício da fundamentação legalmente exigida</li>
+  <li>Preterição de outras formalidades legais</li>
+</ul>
+
+<h2>Prazos de Impugnação</h2>
+<table>
+  <thead><tr><th>Situação</th><th>Prazo</th></tr></thead>
+  <tbody>
+    <tr><td>Regra geral (após notificação da liquidação)</td><td><strong>3 meses</strong></td></tr>
+    <tr><td>Após indeferimento expresso de reclamação graciosa</td><td><strong>3 meses</strong> (prazo restante ou mínimo de 30 dias)</td></tr>
+    <tr><td>Após indeferimento tácito de reclamação graciosa</td><td><strong>3 meses</strong> a partir do fim do prazo da AT</td></tr>
+    <tr><td>Após indeferimento de recurso hierárquico</td><td><strong>30 dias</strong></td></tr>
+    <tr><td>Autoliquidação (com reclamação prévia obrigatória)</td><td><strong>3 meses</strong> após decisão de indeferimento da reclamação</td></tr>
+    <tr><td>Retenção na fonte</td><td><strong>3 meses</strong> após o prazo de pagamento voluntário</td></tr>
+  </tbody>
+</table>
+
+<h2>Tramitação da Impugnação Judicial</h2>
+<ol>
+  <li>Apresentação da petição inicial no Serviço de Finanças competente ou no tribunal.</li>
+  <li>Remessa do processo ao Tribunal Tributário competente.</li>
+  <li>Contestação pela AT (Representante da Fazenda Pública).</li>
+  <li>Produção de prova (documental, pericial, testemunhal).</li>
+  <li>Alegações finais.</li>
+  <li>Sentença.</li>
+  <li>Recurso para o Tribunal Central Administrativo (TCA) ou Supremo Tribunal Administrativo (STA).</li>
+</ol>
+
+<h2>Efeito da Impugnação</h2>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-title">Efeito devolutivo (regra)</div>
+    <div class="art-body">A impugnação não suspende a execução fiscal. A dívida mantém-se exigível durante o processo de impugnação.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-title">Suspensão com garantia</div>
+    <div class="art-body">A execução é suspensa se o impugnante prestar garantia idónea (fiança bancária, hipoteca, seguro-caução) ou demonstrar que a prestação causa prejuízo irreparável.</div>
+  </div>
+</div>
+
+<div id="accao-adm"></div>
+<hr class="divider" />
+<p class="section-label">7. Ação Administrativa (Artigos 97.º–98.º CPPT)</p>
+
+<div class="card">
+  <p>A ação administrativa é o meio processual adequado para impugnar atos administrativos em matéria tributária que <strong>não sejam atos de liquidação</strong> — designadamente atos de fixação de prazo de cumprimento de obrigações acessórias, atos de autorização, de reconhecimento de benefícios fiscais, de indeferimento de pedidos de pagamento em prestações, etc. Segue as regras do CPTA (Código de Processo nos Tribunais Administrativos). Prazo: <strong>3 meses</strong> após notificação do ato.</p>
+</div>
+
+<div id="execucao"></div>
+<hr class="divider" />
+<p class="section-label">8. Execução Fiscal (Artigos 148.º–264.º)</p>
+
+<div class="highlight">
+  <p>A execução fiscal é o processo judicial especial para cobrança coerciva de dívidas tributárias e outras dívidas equiparadas. Corre nos serviços da AT, mas tem natureza judicial — os atos executivos suscetíveis de lesar direitos dos executados ficam sujeitos a controlo pelo tribunal tributário.</p>
+</div>
+
+<h2>Títulos Executivos (Artigo 162.º)</h2>
+<ul>
+  <li><strong>Certidão de dívida:</strong> Emitida pelo serviço competente da AT sobre as dívidas tributárias liquidadas e não pagas.</li>
+  <li>Documentos de liquidação de impostos que não tenham sido pagos no prazo legal (guias, notas de liquidação).</li>
+  <li>Outros títulos a que a lei confira força executiva em matéria tributária.</li>
+</ul>
+
+<h2>Instauração e Citação (Artigos 188.º–193.º)</h2>
+<ol>
+  <li>Extração da certidão de dívida pelos serviços da AT após esgotado o prazo de pagamento voluntário.</li>
+  <li>Instauração do processo de execução fiscal.</li>
+  <li><strong>Citação do executado:</strong> Notificação para pagar ou deduzir oposição em 30 dias. Interrompe a prescrição.</li>
+  <li>A citação é pessoal (por carta com AR ou pessoalmente) ou, se impossível, por edital.</li>
+</ol>
+
+<h2>Pagamento em Prestações (Artigo 196.º)</h2>
+<div class="card">
+  <p>O executado pode requerer o pagamento em prestações se demonstrar que o pagamento imediato causaria grave perturbação económica. Requisitos:</p>
+  <ul>
+    <li>Requerimento fundado antes do início dos atos de penhora</li>
+    <li>Número máximo de prestações: 36 (regra geral); até 60 em situações excecionais</li>
+    <li>Prestações mensais e iguais (exceto a última, que pode diferir)</li>
+    <li>A falta de pagamento de uma prestação implica o vencimento de todas as restantes</li>
+    <li>O plano de prestações <strong>suspende</strong> a execução durante o seu cumprimento</li>
+  </ul>
+</div>
+
+<div id="oposicao"></div>
+<hr class="divider" />
+<p class="section-label">9. Oposição à Execução Fiscal (Artigos 203.º–213.º)</p>
+
+<div class="highlight">
+  <p>A oposição à execução fiscal é o meio processual de defesa do executado para contestar a <strong>legalidade da execução</strong> (não do ato de liquidação — para este existe a impugnação judicial). Tem prazo de 30 dias após a citação.</p>
+</div>
+
+<h2>Fundamentos de Oposição (Artigo 204.º) — Lista Taxativa</h2>
+<div class="card">
+  <ol>
+    <li><strong>Inexistência do imposto, taxa ou contribuição nas leis em vigor</strong> à data dos factos (ilegalidade abstrata).</li>
+    <li><strong>Ilegitimidade do executado</strong> — a dívida não é da sua responsabilidade.</li>
+    <li><strong>Falsidade do título executivo</strong> ou inexistência ou inexigibilidade da dívida.</li>
+    <li><strong>Prescrição da dívida exequenda</strong> — a dívida já prescreveu antes da instauração da execução.</li>
+    <li><strong>Falta de notificação da liquidação</strong> ao executado nos termos da lei.</li>
+    <li><strong>Pagamento ou anulação da dívida</strong> antes da instauração da execução.</li>
+    <li><strong>Duplicação de coleta</strong> — a mesma dívida foi já cobrada por outra execução.</li>
+    <li><strong>Ilegalidade da liquidação</strong> — apenas quando o executado não tenha sido previamente notificado da liquidação para efeitos de pagamento voluntário ou impugnação (ou seja, não teve oportunidade de impugnar pelo meio próprio).</li>
+    <li><strong>Qualquer outra causa</strong> de extinção ou modificação da dívida exequenda, surgida após a instauração da execução (ex.: insolvência declarada após execução).</li>
+  </ol>
+</div>
+
+<div class="warning">
+  <p><strong>Atenção:</strong> A ilegalidade da liquidação (fundamento 8) só é admissível em oposição quando o executado <em>não</em> teve oportunidade de impugnar judicialmente a liquidação. Se o executado foi notificado da liquidação e não impugnou, não pode usar a oposição para arguir ilegalidades que podia ter suscitado em impugnação — foi ultrapassado o prazo.</p>
+</div>
+
+<h2>Tramitação da Oposição</h2>
+<ol>
+  <li>Apresentação da petição de oposição no prazo de <strong>30 dias</strong> após citação.</li>
+  <li>A oposição é distribuída ao juiz do tribunal tributário.</li>
+  <li>Contestação pela AT (Fazenda Pública).</li>
+  <li>Produção de prova.</li>
+  <li>Sentença.</li>
+</ol>
+
+<div id="penhora"></div>
+<hr class="divider" />
+<p class="section-label">10. Penhora e Venda de Bens (Artigos 214.º–258.º)</p>
+
+<h2>Penhora</h2>
+<p>A penhora é o ato pelo qual se afetam bens do executado à satisfação da dívida exequenda. Só pode ocorrer após decorrido o prazo de 30 dias da citação sem pagamento ou oposição (ou após indeferimento da oposição).</p>
+
+<h3>Ordem de Penhora (Artigo 217.º)</h3>
+<div class="card">
+  <p>A lei estabelece uma ordem preferencial de bens a penhorar:</p>
+  <ol>
+    <li>Dinheiro e depósitos bancários</li>
+    <li>Títulos de crédito, valores mobiliários e outros instrumentos financeiros</li>
+    <li>Bens móveis sujeitos a registo (automóveis, embarcações, aeronaves)</li>
+    <li>Bens imóveis</li>
+    <li>Estabelecimentos comerciais</li>
+    <li>Outros bens móveis</li>
+    <li>Rendimentos periódicos (salários, pensões — com limite legal: acima do salário mínimo nacional)</li>
+  </ol>
+</div>
+
+<h3>Bens Impenhoráveis (Artigo 219.º)</h3>
+<ul>
+  <li>Bens absolutamente impenhoráveis pelo CPC (vestuário, instrumentos de trabalho imprescindíveis, alimentos por 1 mês, etc.)</li>
+  <li>Dois terços dos salários e pensões — só 1/3 é penhorável (com exceção se a dívida for de alimentos)</li>
+  <li>Habitação própria permanente do executado — penhorável, mas com especiais cautelas e proteções</li>
+</ul>
+
+<h2>Venda de Bens Penhorados</h2>
+<ul>
+  <li><strong>Venda por negociação particular:</strong> Admitida se o executado e a AT concordarem e os bens forem facilmente vendáveis.</li>
+  <li><strong>Venda em leilão eletrónico:</strong> Forma padrão atual. Publicação de anúncio no portal das finanças.</li>
+  <li>O produto da venda é destinado ao pagamento da dívida exequenda e acréscimos (juros de mora, custas).</li>
+  <li>O excedente é entregue ao executado.</li>
+</ul>
+
+<div id="garantias-exec"></div>
+<hr class="divider" />
+<p class="section-label">11. Prestação de Garantia e Suspensão da Execução (Artigos 169.º–199.º)</p>
+
+<div class="highlight">
+  <p>A execução fiscal fica suspensa quando o executado presta garantia idónea ou quando demonstra que a prestação de garantia causaria dano irreparável (artigo 170.º CPPT).</p>
+</div>
+
+<h2>Formas de Garantia Idónea (Artigo 199.º)</h2>
+<ul>
+  <li><strong>Garantia bancária</strong> (fiança bancária — a mais comum)</li>
+  <li><strong>Seguro-caução</strong></li>
+  <li><strong>Hipoteca voluntária</strong> sobre bens imóveis</li>
+  <li><strong>Penhor</strong> de bens ou créditos</li>
+  <li><strong>Fiança pessoal</strong> (se o fiador for pessoa idónea)</li>
+  <li>Outros meios admitidos pela AT</li>
+</ul>
+
+<h2>Montante da Garantia</h2>
+<p>A garantia deve cobrir o valor da dívida, incluindo juros de mora e custas estimadas para 3 anos, acrescidos de 25% (artigo 199.º, n.º 5 CPPT).</p>
+
+<h2>Isenção de Prestação de Garantia</h2>
+<div class="card">
+  <p>O contribuinte pode requerer a dispensa de prestação de garantia quando demonstre que ela causaria prejuízo irreparável ou manifesta falta de meios económicos para a constituir. Neste caso, a AT pode aceitar a suspensão sem garantia, ficando registado o crédito por hipoteca legal sobre os bens do executado.</p>
+</div>
+
+<div id="cautelares"></div>
+<hr class="divider" />
+<p class="section-label">12. Providências Cautelares (Artigos 135.º–142.º)</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Arresto (artigo 136.º)</h3>
+    <p>Medida cautelar decretada pelo tribunal tributário a requerimento da AT, para garantir a cobrança de créditos tributários ainda não liquidados ou já liquidados, quando haja fundado receio de perda de garantia de cobrança. Produz efeito semelhante à penhora mas antes da execução.</p>
+  </div>
+  <div class="card">
+    <h3>Arrolamento (artigo 140.º)</h3>
+    <p>Medida cautelar que consiste na descrição e depósito judicial de bens do contribuinte, sem os afetar definitivamente à dívida. Serve para conservar os bens durante o procedimento, evitando a sua alienação ou dissipação.</p>
+  </div>
+</div>
+
+<div id="quadro-comparativo"></div>
+<hr class="divider" />
+<p class="section-label">Quadro Comparativo dos Meios de Defesa do Contribuinte</p>
+
+<table>
+  <thead>
+    <tr><th>Meio</th><th>Natureza</th><th>Prazo</th><th>Destino</th><th>Fundamentos</th><th>Efeito suspensivo</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Reclamação graciosa</strong></td>
+      <td>Administrativa</td>
+      <td>120 dias (regra); 2 anos (autoliquidação)</td>
+      <td>AT (diretor de finanças)</td>
+      <td>Ilegalidade da liquidação</td>
+      <td>Não automático — só com garantia</td>
+    </tr>
+    <tr>
+      <td><strong>Recurso hierárquico</strong></td>
+      <td>Administrativa</td>
+      <td>30 dias</td>
+      <td>Superior hierárquico</td>
+      <td>Ilegalidade ou mérito</td>
+      <td>Não automático — só com garantia</td>
+    </tr>
+    <tr>
+      <td><strong>Revisão art. 78.º LGT</strong></td>
+      <td>Administrativa</td>
+      <td>4 anos (erro AT); 3 anos (injustiça)</td>
+      <td>AT (qualquer órgão)</td>
+      <td>Erro da AT; injustiça grave</td>
+      <td>Não</td>
+    </tr>
+    <tr>
+      <td><strong>Impugnação judicial</strong></td>
+      <td>Judicial</td>
+      <td>3 meses (regra geral)</td>
+      <td>Tribunal Tributário</td>
+      <td>Ilegalidade da liquidação</td>
+      <td>Não automático — só com garantia</td>
+    </tr>
+    <tr>
+      <td><strong>Oposição à execução</strong></td>
+      <td>Judicial</td>
+      <td>30 dias após citação</td>
+      <td>Tribunal Tributário</td>
+      <td>Fundamentos do art. 204.º (lista fechada)</td>
+      <td>Suspende execução durante pendência</td>
+    </tr>
+    <tr>
+      <td><strong>Ação administrativa</strong></td>
+      <td>Judicial</td>
+      <td>3 meses</td>
+      <td>Tribunal Tributário</td>
+      <td>Ilegalidade de atos não tributários</td>
+      <td>Não automático</td>
+    </tr>
+    <tr>
+      <td><strong>Pedido de revisão da matéria coletável</strong></td>
+      <td>Administrativa</td>
+      <td>30 dias após notif. avaliação indireta</td>
+      <td>Perito independente + AT</td>
+      <td>Discordância com avaliação indireta</td>
+      <td>Suspende procedimento</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="info">
+  <p><strong>Regra fundamental para o exame:</strong> Os meios graciosos (reclamação, recurso hierárquico) e judiciais (impugnação) são <strong>alternativos, não cumulativos</strong> quanto ao mesmo ato, salvo se a lei expressamente o admitir. O esgotamento da via graciosa não é obrigatório antes de recorrer ao tribunal — mas a pendência da reclamação suspende o prazo de impugnação judicial.</p>
+</div>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t);}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾';})();
+</script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>18 · Tratado da União Europeia (TUE)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #e05c5c;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+    .toc ol{padding-left:1.2rem;margin-bottom:0}.toc li{font-size:.8rem;color:var(--text-muted);margin-bottom:.2rem}.toc a{color:var(--text-muted);text-decoration:none}.toc a:hover{color:var(--accent)}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">18 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">18 · Direito Primário da União Europeia</p>
+<h1>Tratado da <em>União Europeia</em></h1>
+<p class="doc-sub">TUE — Versão consolidada · Assinado em Maastricht a 7 de fevereiro de 1992 · Em vigor desde 1 de novembro de 1993 · Alterado pelo Tratado de Amesterdão (1997), Tratado de Nice (2001) e Tratado de Lisboa (em vigor desde 1 de dezembro de 2009) · Versão atual: JOUE C 202/13 de 7 de junho de 2016</p>
+<div class="meta-row">
+  <span class="badge badge-accent">TUE</span>
+  <span class="badge">Maastricht 1992</span>
+  <span class="badge">Lisboa 2009</span>
+  <span class="badge">Direito Primário UE</span>
+  <span class="badge">Valores e Instituições</span>
+  <span class="badge">Princípios Estruturantes</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <ol>
+    <li><a href="#s1">Natureza jurídica e hierarquia no direito da UE</a></li>
+    <li><a href="#s2">Estrutura do TUE — sete títulos</a></li>
+    <li><a href="#s3">Valores e objetivos da União (arts. 2.º–3.º)</a></li>
+    <li><a href="#s4">Princípios estruturantes (arts. 4.º–5.º)</a></li>
+    <li><a href="#s5">Carta dos Direitos Fundamentais da UE (art. 6.º)</a></li>
+    <li><a href="#s6">Princípios democráticos (arts. 9.º–12.º)</a></li>
+    <li><a href="#s7">Quadro institucional da UE (arts. 13.º–19.º)</a></li>
+    <li><a href="#s8">Cooperação reforçada (art. 20.º)</a></li>
+    <li><a href="#s9">Política externa e de segurança comum (Título V)</a></li>
+    <li><a href="#s10">Revisão dos Tratados e adesão (arts. 48.º–49.º)</a></li>
+    <li><a href="#s11">Saída da União — art. 50.º (Brexit)</a></li>
+    <li><a href="#s12">Condicionalidade política — art. 7.º</a></li>
+    <li><a href="#s13">TUE e a RAM — ultraperificidade e identidade constitucional</a></li>
+    <li><a href="#s14">Síntese para o inspetor tributário</a></li>
+  </ol>
+</div>
+
+<hr class="divider" id="s1"/>
+<p class="section-label">1. Natureza Jurídica e Hierarquia no Direito da UE</p>
+
+<div class="highlight">
+  <p>O TUE é um dos dois <strong>tratados fundadores</strong> da União Europeia (juntamente com o TFUE). Constitui o <strong>direito primário da UE</strong> — a hierarquia normativa mais elevada no ordenamento jurídico europeu. Prevalece sobre os regulamentos, diretivas, decisões e demais atos de direito derivado. Ao ratificá-lo, os Estados-Membros aceitaram a primazia do direito da UE sobre o respetivo direito nacional.</p>
+</div>
+
+<div class="card">
+  <h3>Hierarquia das fontes de direito da UE</h3>
+  <ol>
+    <li><strong>Direito Primário:</strong> TUE + TFUE + Carta dos Direitos Fundamentais da UE (mesmo valor jurídico — art. 6.º, n.º 1 TUE) + Princípios Gerais de Direito da UE reconhecidos pelo TJUE</li>
+    <li><strong>Acordos internacionais celebrados pela UE:</strong> vinculam a UE e os EM; prevalecem sobre o direito derivado mas ficam abaixo dos Tratados</li>
+    <li><strong>Direito Derivado:</strong> Regulamentos (diretamente aplicáveis, sem transposição) → Diretivas (exigem transposição pelos EM) → Decisões (vinculam os destinatários) → Recomendações e Pareceres (não vinculativas)</li>
+    <li><strong>Direito Nacional:</strong> sujeito ao princípio do primado do direito da UE (desde acórdão Costa c. ENEL, TJUE, 1964)</li>
+  </ol>
+</div>
+
+<div class="warning">
+  <p><strong>Primado e efeito direto:</strong> O primado do direito da UE significa que em caso de conflito entre uma norma nacional e uma norma da UE diretamente aplicável, o juiz nacional (e o funcionário público) deve afastar a norma nacional e aplicar a norma da UE. Para as diretivas, este efeito direto exige que a diretiva seja suficientemente clara e precisa e que o prazo de transposição tenha decorrido.</p>
+</div>
+
+<hr class="divider" id="s2"/>
+<p class="section-label">2. Estrutura do TUE — Sete Títulos</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Título</th><th>Arts.</th><th>Conteúdo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Título I</strong> — Disposições comuns</td><td>1.º–8.º</td><td>Criação da UE; valores (art. 2.º); objetivos (art. 3.º); relações com EM (art. 4.º); princípio de atribuição, subsidiariedade e proporcionalidade (art. 5.º); direitos fundamentais e CDFUE (art. 6.º); condicionalidade política (art. 7.º); cooperação reforçada (art. 8.º)</td></tr>
+      <tr><td><strong>Título II</strong> — Princípios democráticos</td><td>9.º–12.º</td><td>Igualdade dos cidadãos; democracia representativa; democracia participativa; papel dos parlamentos nacionais</td></tr>
+      <tr><td><strong>Título III</strong> — Instituições</td><td>13.º–19.º</td><td>Elenco das 7 instituições; composição e competências de cada uma; TJUE</td></tr>
+      <tr><td><strong>Título IV</strong> — Cooperação reforçada</td><td>20.º</td><td>Mecanismo de cooperação aprofundada entre EM que desejem avançar mais rapidamente</td></tr>
+      <tr><td><strong>Título V</strong> — Ação externa e PESC</td><td>21.º–46.º</td><td>Princípios gerais da ação externa; PESC; política de segurança e defesa comum (PSDC); cooperação sistemática em matéria de defesa</td></tr>
+      <tr><td><strong>Título VI</strong> — Disposições finais</td><td>47.º–55.º</td><td>Personalidade jurídica da UE; revisão dos Tratados; adesão; saída (art. 50.º); autenticidade das versões linguísticas; duração indeterminada</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s3"/>
+<p class="section-label">3. Valores e Objetivos da União (Arts. 2.º–3.º)</p>
+
+<h2>Artigo 2.º — Valores da União</h2>
+<div class="card">
+  <p>A União funda-se nos valores de <strong>dignidade humana, liberdade, democracia, igualdade, Estado de direito e respeito pelos direitos humanos</strong>, incluindo os das minorias. Estes valores são comuns aos EM numa sociedade caracterizada pelo pluralismo, não-discriminação, tolerância, justiça, solidariedade e igualdade entre mulheres e homens.</p>
+  <p>A violação grave e persistente destes valores pode conduzir ao mecanismo do art. 7.º TUE (suspensão de direitos de voto no Conselho). Este artigo é o fundamento normativo da <em>condicionalidade de Estado de direito</em> que tem sido aplicada a alguns EM.</p>
+</div>
+
+<h2>Artigo 3.º — Objetivos da União</h2>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Art. 3.º, n.º 1–2</div>
+    <div class="art-title">Paz, valores, bem-estar</div>
+    <div class="art-body">Promover a paz, os seus valores e o bem-estar dos seus povos; oferecer um espaço de liberdade, segurança e justiça sem fronteiras internas, com livre circulação de pessoas.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 3.º, n.º 3</div>
+    <div class="art-title">Mercado interno e desenvolvimento sustentável</div>
+    <div class="art-body">Mercado interno; crescimento económico equilibrado; economia social de mercado altamente competitiva; nível elevado de proteção ambiental; coesão económica, social e territorial; solidariedade entre EM.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 3.º, n.º 4</div>
+    <div class="art-title">União Económica e Monetária</div>
+    <div class="art-body">Estabelecer uma União Económica e Monetária (UEM) cuja moeda é o euro. Portugal integra a zona euro desde 1999 (moedas físicas desde 2002). A RAM usa o euro como moeda única.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 3.º, n.º 5</div>
+    <div class="art-title">Ação externa</div>
+    <div class="art-body">Afirmar e promover os seus valores e interesses nas relações com o resto do mundo; contribuir para a paz, segurança, desenvolvimento sustentável, erradicação da pobreza e proteção dos direitos humanos.</div>
+  </div>
+</div>
+
+<hr class="divider" id="s4"/>
+<p class="section-label">4. Princípios Estruturantes do Funcionamento da UE (Arts. 4.º–5.º)</p>
+
+<div class="grid3">
+  <div class="art-block">
+    <div class="art-num">Art. 4.º, n.º 2</div>
+    <div class="art-title">Identidade nacional dos EM</div>
+    <div class="art-body">A UE respeita a identidade nacional dos EM, incluindo as suas estruturas fundamentais políticas e constitucionais, com a estrutura regional e local. As Regiões Autónomas são parte desta identidade que a UE respeita.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 4.º, n.º 3</div>
+    <div class="art-title">Cooperação leal</div>
+    <div class="art-body">A UE e os EM devem respeitar-se mutuamente e assistir-se na execução das atribuições decorrentes dos Tratados. Os EM adotam todas as medidas para cumprir as obrigações e abstêm-se de medidas que ponham em risco os objetivos da UE.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 5.º, n.º 1–2</div>
+    <div class="art-title">Princípio da atribuição</div>
+    <div class="art-body">A UE atua apenas dentro dos limites das competências que lhe são atribuídas pelos EM nos Tratados. As competências não atribuídas à União pertencem aos EM (residualidade em favor dos EM).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 5.º, n.º 3</div>
+    <div class="art-title">Subsidiariedade</div>
+    <div class="art-body">Nos domínios de competência partilhada, a UE intervém apenas se os objetivos não puderem ser suficientemente alcançados pelos EM a nível central, regional ou local. Fiscalidade direta: competência dos EM (a UE harmoniza por diretivas apenas onde os EM consintam — unanimidade no Conselho).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 5.º, n.º 4</div>
+    <div class="art-title">Proporcionalidade</div>
+    <div class="art-body">O conteúdo e a forma da ação da UE não devem exceder o necessário para alcançar os objetivos dos Tratados. Aplica-se a toda a legislação e ação administrativa europeia. Os parlamentos nacionais controlam a subsidiariedade e a proporcionalidade.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Protocolo n.º 2</div>
+    <div class="art-title">Controlo pelos parlamentos nacionais</div>
+    <div class="art-body">Os parlamentos nacionais podem emitir parecer fundamentado sobre conformidade com o princípio da subsidiariedade. Se 1/3 dos votos atribuídos aos parlamentos nacionais emitir parecer negativo: "cartão amarelo" — a Comissão deve reexaminar a proposta.</div>
+  </div>
+</div>
+
+<hr class="divider" id="s5"/>
+<p class="section-label">5. Carta dos Direitos Fundamentais da UE — Art. 6.º TUE</p>
+
+<div class="highlight">
+  <p>O art. 6.º, n.º 1 TUE equiparou a <strong>Carta dos Direitos Fundamentais da UE (CDFUE)</strong> ao valor jurídico dos Tratados (direito primário), a partir da entrada em vigor do Tratado de Lisboa. A CDFUE vincula as instituições da UE e os EM quando aplicam direito da UE.</p>
+</div>
+
+<div class="card">
+  <h3>Artigos da CDFUE mais relevantes para o inspetor tributário</h3>
+  <table>
+    <thead><tr><th>Artigo CDFUE</th><th>Direito</th><th>Aplicação na inspeção tributária</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Art. 7.º</strong></td><td>Respeito pela vida privada e familiar</td><td>Limita a recolha de dados pessoais em inspeções; exige proporcionalidade nos meios de investigação</td></tr>
+      <tr><td><strong>Art. 8.º</strong></td><td>Proteção de dados pessoais</td><td>Base da aplicação do RGPD (Regulamento 2016/679) em toda a atividade de tratamento de dados pela AT-RAM</td></tr>
+      <tr><td><strong>Art. 17.º</strong></td><td>Direito de propriedade</td><td>As liquidações adicionais e as execuções fiscais constituem restrições a este direito; devem ser proporcionais e previstas por lei</td></tr>
+      <tr><td><strong>Art. 41.º</strong></td><td>Direito à boa administração</td><td>Inclui: direito a ser ouvido antes de qualquer decisão desfavorável (audiência prévia — art. 60.º LGT); direito a fundamentação; direito de acesso ao processo; direito à decisão em prazo razoável</td></tr>
+      <tr><td><strong>Art. 47.º</strong></td><td>Direito a recurso efetivo e tribunal imparcial</td><td>O contribuinte tem direito a impugnar judicialmente as liquidações adicionais resultantes de inspeção; tribunal tributário tem de ser independente e imparcial</td></tr>
+      <tr><td><strong>Art. 48.º</strong></td><td>Presunção de inocência e direitos de defesa</td><td>Em processos de contraordenação tributária e criminal tributário: presunção de inocência; direito ao silêncio (non self-incrimination)</td></tr>
+      <tr><td><strong>Art. 49.º</strong></td><td>Princípios da legalidade e da proporcionalidade das penas</td><td>As coimas tributárias devem ter fundamento legal e ser proporcionais à gravidade da infração</td></tr>
+      <tr><td><strong>Art. 51.º</strong></td><td>Âmbito de aplicação da Carta</td><td>A Carta vincula os EM <em>quando aplicam direito da UE</em>; aplicável quando o inspetor aplica normas da UE (IVA, aduaneiro, RGPD, DAC)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s6"/>
+<p class="section-label">6. Princípios Democráticos (Arts. 9.º–12.º)</p>
+
+<div class="card">
+  <ul>
+    <li><strong>Art. 9.º — Igualdade dos cidadãos:</strong> A UE respeita a igualdade dos seus cidadãos. Cidadania da UE (arts. 20.º–25.º TFUE): complementa a cidadania nacional, não a substitui. Todo o nacional de um EM é automaticamente cidadão da UE.</li>
+    <li><strong>Art. 10.º — Democracia representativa:</strong> O funcionamento da UE assenta na democracia representativa. Os cidadãos estão representados no PE; os EM no Conselho Europeu (nível de Chefes de Estado/Governo) e no Conselho da UE (nível de ministros).</li>
+    <li><strong>Art. 11.º — Democracia participativa:</strong> As instituições dão aos cidadãos e às associações representativas a possibilidade de expressarem os seus pontos de vista em todos os domínios de ação da UE. Iniciativa dos Cidadãos Europeus: ≥ 1 milhão de cidadãos de ≥ ¼ dos EM podem convidar a Comissão a apresentar proposta legislativa.</li>
+    <li><strong>Art. 12.º — Parlamentos nacionais:</strong> Os parlamentos nacionais contribuem ativamente para o bom funcionamento da UE, nomeadamente controlando o respeito pelo princípio da subsidiariedade (mediante "cartões amarelos" e "laranja").</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s7"/>
+<p class="section-label">7. Quadro Institucional da UE (Arts. 13.º–19.º)</p>
+
+<table>
+  <thead><tr><th>Instituição</th><th>Composição</th><th>Função principal</th><th>Relevância fiscal</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Parlamento Europeu</strong></td><td>720 deputados eleitos diretamente (desde 2024)</td><td>Co-legislador com o Conselho; controlo democrático; aprovação do orçamento UE</td><td>Co-decide em matérias de harmonização fiscal (procedimento legislativo ordinário) mas fiscalidade direta é aprovada por unanimidade no Conselho sem co-decisão do PE</td></tr>
+    <tr><td><strong>Conselho Europeu</strong></td><td>Chefes de Estado/Governo + Presidente CE + Presidente Comissão</td><td>Orienta politicamente a UE; não legisla; delibera por consenso ou maioria qualificada</td><td>Define as grandes orientações de política económica da UE; pode convocar procedimento do art. 7.º TUE</td></tr>
+    <tr><td><strong>Conselho da UE</strong></td><td>Um ministro por EM (composição varia: ECOFIN, JAI, etc.)</td><td>Co-legislador; aprova orçamento UE; coordena políticas económicas; celebra acordos internacionais</td><td>ECOFIN: aprova por unanimidade todas as diretivas de harmonização fiscal (IVA, poupança, cooperação administrativa, ATAD)</td></tr>
+    <tr><td><strong>Comissão Europeia</strong></td><td>27 comissários (um por EM)</td><td>Monopólio da iniciativa legislativa; execução do orçamento; guardiã dos Tratados</td><td>Propõe diretivas fiscais (ATAD 1 e 2, DAC 1–9, Diretiva IVA, CBAM); abre procedimentos por infração contra EM</td></tr>
+    <tr><td><strong>TJUE</strong></td><td>Tribunal de Justiça + Tribunal Geral</td><td>Interpretação e aplicação do direito da UE; reenvio prejudicial; ações por incumprimento dos EM</td><td>Jurisprudência vinculativa em matéria de liberdades fundamentais com impacto fiscal; reenvio prejudicial em casos de dúvida sobre norma nacional vs. diretiva fiscal</td></tr>
+    <tr><td><strong>BCE</strong></td><td>Governadores bancos centrais zona euro + órgãos próprios</td><td>Política monetária zona euro; emissão do euro; estabilidade de preços</td><td>Regula o sistema bancário; coordena com EM em matéria de supervisão financeira com impacto indireto em fiscalidade</td></tr>
+    <tr><td><strong>Tribunal de Contas UE</strong></td><td>27 membros (um por EM)</td><td>Fiscalização das receitas e despesas da UE; auditoria da gestão financeira</td><td>Audita a utilização dos fundos da UE (FEDER, Fundo de Coesão) na RAM; emite pareceres sobre regulamentos financeiros</td></tr>
+  </tbody>
+</table>
+
+<div class="card">
+  <h3>TJUE — Reenvio prejudicial (art. 267.º TFUE) e ação por incumprimento</h3>
+  <ul>
+    <li><strong>Reenvio prejudicial:</strong> Qualquer tribunal nacional pode (e o de última instância deve) submeter ao TJUE questões sobre a interpretação do direito da UE ou sobre a validade de atos das instituições. O TJUE responde com acórdão vinculativo. Na prática, os tribunais tributários portugueses reenviam questões sobre compatibilidade de normas do CIVA, CIRC ou LGT com diretivas da UE.</li>
+    <li><strong>Ação por incumprimento:</strong> A Comissão pode instaurar ação contra um EM que não transpõe ou aplica corretamente o direito da UE. Portugal foi objeto de ações por incumprimento em matéria de IVA (isenções indevidas) e de algumas disposições das diretivas DAC. A Comissão pode pedir ao TJUE que condene o EM ao pagamento de uma quantia fixa e/ou sanção periódica.</li>
+    <li><strong>Efeito Köbler:</strong> Um EM pode ser responsabilizado civilmente perante um particular pelos danos causados por uma decisão judicial do supremo que viole manifestamente o direito da UE.</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s8"/>
+<p class="section-label">8. Cooperação Reforçada (Art. 20.º)</p>
+
+<div class="card">
+  <p>O art. 20.º TUE permite que pelo menos 9 EM que desejem desenvolver entre si uma cooperação mais estreita, numa matéria de competência não exclusiva da UE, possam fazê-lo, desde que essa cooperação seja aberta a todos os EM que queiram aderir posteriormente e não prejudique o mercado interno nem a coesão.</p>
+  <h3>Condições e aplicação</h3>
+  <ul>
+    <li>Mínimo de 9 EM participantes</li>
+    <li>Autorizada pelo Conselho após aprovação do PE</li>
+    <li>Em matérias de competência não exclusiva da UE</li>
+    <li>Atos produzidos vinculam apenas os EM participantes</li>
+    <li>Financiamento suportado pelos EM participantes (exceto custos administrativos das instituições)</li>
+  </ul>
+  <h3>Exemplo fiscal relevante: Imposto sobre Transações Financeiras (ITF)</h3>
+  <p>Vários EM (incluindo Portugal, inicialmente) tentaram estabelecer um ITF harmonizado por cooperação reforçada. O projeto tem enfrentado obstáculos e está suspenso. Ilustra como a cooperação reforçada pode ser usada para avançar em fiscalidade quando a unanimidade no ECOFIN é impossível.</p>
+</div>
+
+<hr class="divider" id="s9"/>
+<p class="section-label">9. Política Externa e de Segurança Comum — Título V TUE</p>
+
+<div class="card">
+  <p>O Título V do TUE (arts. 21.º–46.º) consagra a <strong>Política Externa e de Segurança Comum (PESC)</strong> e a <strong>Política de Segurança e Defesa Comum (PSDC)</strong>. Para o inspetor tributário, a PESC tem relevância indireta em dois domínios:</p>
+  <ul>
+    <li><strong>Medidas restritivas (sanções):</strong> A UE pode impor sanções financeiras a países terceiros ou a pessoas singulares/coletivas através de regulamentos adotados com base na PESC. As sanções incluem o congelamento de ativos e proibições de transferência de fundos. O inspetor tributário deve verificar se um contribuinte está sujeito a sanções da UE (listas OFAC/UE) ao analisar transações com países terceiros.</li>
+    <li><strong>Acordos internacionais fiscais:</strong> Alguns acordos de troca de informações fiscais são celebrados ao abrigo da ação externa da UE (ex.: acordos FATCA com os EUA, acordos de cooperação com países terceiros). A AT-RAM articula através da AT nacional e da Autoridade Competente portuguesa.</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s10"/>
+<p class="section-label">10. Revisão dos Tratados e Adesão (Arts. 48.º–49.º)</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Art. 48.º — Revisão dos Tratados</div>
+    <div class="art-title">Procedimento de revisão ordinário e simplificado</div>
+    <div class="art-body">
+      <strong>Ordinário:</strong> Proposta de qualquer EM, PE ou Comissão → Conselheiro Europeu convoca Convenção → Conferência Intergovernamental → ratificação por todos os EM.<br/>
+      <strong>Simplificado:</strong> Para alterações à Parte III do TFUE (políticas internas da UE) → aprovação por unanimidade no Conselho Europeu + aprovação parlamentar dos EM + sem extensão de competências da UE.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 49.º — Adesão</div>
+    <div class="art-title">Condições de adesão (critérios de Copenhaga)</div>
+    <div class="art-body">
+      <strong>Critérios políticos:</strong> estabilidade das instituições que garantam democracia, Estado de direito, direitos humanos e respeito pelas minorias.<br/>
+      <strong>Critérios económicos:</strong> economia de mercado funcional e capacidade de fazer face à pressão concorrencial no mercado interno.<br/>
+      <strong>Critérios do acervo:</strong> capacidade para assumir as obrigações decorrentes da adesão (incluindo o sistema fiscal harmonizado da UE).
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="s11"/>
+<p class="section-label">11. Saída da União — Art. 50.º (Brexit)</p>
+
+<div class="card">
+  <p>O art. 50.º TUE (introduzido pelo Tratado de Lisboa) consagra o direito de saída voluntária de qualquer EM:</p>
+  <ol>
+    <li>Qualquer EM pode decidir retirar-se da UE em conformidade com as suas regras constitucionais</li>
+    <li>Notificação ao Conselho Europeu da intenção de saída</li>
+    <li>A UE negocia e celebra um acordo de saída com o EM (prazo: 2 anos; prorrogável por unanimidade do Conselho Europeu)</li>
+    <li>Os Tratados deixam de aplicar-se ao EM a partir da data de entrada em vigor do acordo de saída ou, na ausência de acordo, 2 anos após a notificação</li>
+    <li>O EM que sai não participa nas deliberações do Conselho Europeu e do Conselho que lhe dizem respeito</li>
+  </ol>
+  <p>O <strong>Brexit</strong> (saída do Reino Unido, notificação em 2017, saída efetiva em 31 de janeiro de 2020) foi o primeiro caso de aplicação do art. 50.º TUE. O RU passou de EM a Estado terceiro. No contexto fiscal e aduaneiro, o RU deixou de fazer parte do mercado único e da união aduaneira, o que alterou os procedimentos para operadores económicos com ligações comerciais ao RU (incluindo exportadores e importadores na Madeira).</p>
+</div>
+
+<hr class="divider" id="s12"/>
+<p class="section-label">12. Condicionalidade Política — Art. 7.º</p>
+
+<div class="card">
+  <p>O art. 7.º TUE estabelece o mecanismo de proteção dos valores do art. 2.º:</p>
+  <ul>
+    <li><strong>Art. 7.º, n.º 1 (risco manifesto):</strong> ¼ dos EM, o PE ou a Comissão pode desencadear um procedimento de advertência se houver risco manifesto de violação grave dos valores do art. 2.º. Requer aprovação de 4/5 do Conselho + parecer conforme do PE.</li>
+    <li><strong>Art. 7.º, n.º 2 (violação grave e persistente):</strong> O Conselho Europeu, por unanimidade (exceto o EM em causa), verifica a existência de uma violação grave e persistente dos valores. Requer aprovação prévia do PE por maioria de 2/3.</li>
+    <li><strong>Art. 7.º, n.º 3 (suspensão de direitos):</strong> O Conselho pode suspender, por maioria qualificada, certos direitos decorrentes dos Tratados para o EM em causa, incluindo os direitos de voto no Conselho.</li>
+  </ul>
+  <p>O mecanismo foi acionado contra a Polónia e a Hungria por violações ao Estado de direito (independência dos tribunais). O Regulamento 2020/2092 estabeleceu, em complemento, um mecanismo de condicionalidade orçamental ligando os fundos da UE ao respeito pelo Estado de direito.</p>
+</div>
+
+<hr class="divider" id="s13"/>
+<p class="section-label">13. TUE e a RAM — Ultraperificidade e Identidade Constitucional</p>
+
+<div class="highlight">
+  <p>A Madeira é uma <strong>região ultraperiférica da UE</strong> ao abrigo do art. 349.º TFUE (não do TUE diretamente), mas o art. 4.º, n.º 2 TUE garante que a UE respeita a identidade nacional dos EM, incluindo as suas estruturas constitucionais com a dimensão regional e local. A autonomia da Madeira (garantida pela CRP) é parte dessa identidade constitucional que a UE deve respeitar.</p>
+</div>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Dimensão</th><th>Base TUE</th><th>Consequência prática para a AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Respeito pela autonomia regional</strong></td><td>Art. 4.º, n.º 2</td><td>A UE não pode impor à RAM obrigações que ignorem a sua estrutura constitucional autónoma; mas a RAM, como parte de Portugal, está vinculada pelo direito da UE</td></tr>
+      <tr><td><strong>Cooperação leal</strong></td><td>Art. 4.º, n.º 3</td><td>Portugal (e a AT-RAM como autoridade tributária regional) deve cooperar com as administrações tributárias de outros EM no âmbito das diretivas DAC</td></tr>
+      <tr><td><strong>Subsidiariedade</strong></td><td>Art. 5.º, n.º 3</td><td>A harmonização fiscal da UE (IVA, cooperação administrativa) respeita o princípio da subsidiariedade; as taxas reduzidas de IVA na RAM são possibilitadas pela Diretiva IVA que permite adaptações às regiões ultraperiféricas</td></tr>
+      <tr><td><strong>Carta dos DFU</strong></td><td>Art. 6.º</td><td>A AT-RAM, quando aplica normas de transposição de diretivas da UE (IVA, RGPD, DAC), fica vinculada pela CDFUE; em particular, o art. 41.º CDFUE (boa administração) aplica-se ao procedimento de inspeção em matérias de direito da UE</td></tr>
+      <tr><td><strong>Primado do direito da UE</strong></td><td>Acórdão Costa c. ENEL (1964); art. 8.º, n.º 4 CRP</td><td>Em caso de conflito entre a LGT/CIVA e uma diretiva fiscal da UE (ex.: ATAD, Diretiva IVA), o inspetor aplica a norma da UE; os tribunais tributários afastam a norma nacional incompatível</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s14"/>
+<p class="section-label">14. Síntese para o Inspetor Tributário</p>
+
+<table>
+  <thead><tr><th>Tema TUE</th><th>Aplicação prática na inspeção tributária</th><th>Artigo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Primado do direito da UE</strong></td><td>Em caso de conflito entre norma nacional (LGT, CIVA, CIRC) e norma da UE diretamente aplicável (ex.: Regulamento 2016/679 / RGPD), afastar a norma nacional</td><td>TUE + Costa c. ENEL</td></tr>
+    <tr><td><strong>Art. 41.º CDFUE — boa administração</strong></td><td>Audiência prévia obrigatória antes de qualquer decisão desfavorável (liquidação adicional, sanção, reversão); fundamentação do relatório de inspeção; prazo razoável de decisão</td><td>Art. 6.º TUE + Art. 41.º CDFUE</td></tr>
+    <tr><td><strong>Art. 8.º CDFUE — proteção de dados</strong></td><td>O tratamento de dados pessoais dos contribuintes durante inspeção deve respeitar o RGPD e a Lei 58/2019; finalidade específica, minimização, segurança</td><td>Art. 6.º TUE + Art. 8.º CDFUE</td></tr>
+    <tr><td><strong>Art. 47.º CDFUE — recurso efetivo</strong></td><td>O contribuinte tem direito a impugnar judicialmente a liquidação adicional; a AT-RAM não pode criar obstáculos processuais desproporcionados ao acesso à justiça tributária</td><td>Art. 6.º TUE + Art. 47.º CDFUE</td></tr>
+    <tr><td><strong>Cooperação leal (DAC)</strong></td><td>Pedidos de troca de informações de administrações tributárias de outros EM devem ser respondidos pela AT-RAM via AT nacional no prazo das Diretivas DAC</td><td>Art. 4.º, n.º 3 TUE</td></tr>
+    <tr><td><strong>Sanções UE (PESC)</strong></td><td>Verificar se contribuinte com transações em países terceiros está sujeito a medidas restritivas da UE (congelamento de ativos, proibições); comunicar às autoridades competentes</td><td>Art. 29.º TUE + TFUE</td></tr>
+    <tr><td><strong>Brexit</strong></td><td>Desde 01/02/2020, o RU é Estado terceiro: transações com o RU têm regime aduaneiro (CA União) e fiscal diferente de transações intra-UE; IVA na importação, direitos aduaneiros, fim da isenção de IVA intra-comunitário para o RU</td><td>Art. 50.º TUE</td></tr>
+    <tr><td><strong>Identidade constitucional RAM</strong></td><td>A autonomia fiscal da RAM (taxas reduzidas IVA, CINM, benefícios fiscais regionais) é compatível com o direito da UE porque assenta na Diretiva IVA, no art. 349.º TFUE e no respeito pela identidade constitucional portuguesa</td><td>Art. 4.º, n.º 2 TUE</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

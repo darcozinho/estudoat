@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>14 · Diretiva (UE) 2019/1937 — Proteção de Denunciantes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}.warning strong{color:#e74c3c}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.22rem 0;transition:color .15s}
+    .toc a:hover{color:var(--accent)}.toc a::before{content:"→ ";color:var(--accent);font-size:.75rem}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">14 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">14 · Direito da União Europeia</p>
+<h1>Diretiva (UE) 2019/1937 — <em>Proteção de Denunciantes</em></h1>
+<p class="doc-sub">Do Parlamento Europeu e do Conselho, de 23 de outubro de 2019 · Relativa à proteção de pessoas que denunciam violações do direito da União · Transposta em Portugal pela Lei n.º 93/2021</p>
+<div class="meta-row">
+  <span class="badge badge-accent">Diretiva 2019/1937</span>
+  <span class="badge">Whistleblowers</span>
+  <span class="badge">Normas Mínimas</span>
+  <span class="badge">Canais de Denúncia</span>
+  <span class="badge">Anti-retaliação</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#contexto">Contexto, Fundamento Jurídico e Natureza</a>
+  <a href="#definicoes">Conceitos Fundamentais</a>
+  <a href="#material">Âmbito Material — Violações Cobertas</a>
+  <a href="#pessoal">Âmbito Pessoal — Quem é Protegido</a>
+  <a href="#condicoes">Condições de Proteção</a>
+  <a href="#canais">Estrutura de Canais em Três Níveis</a>
+  <a href="#interno">Canal Interno — Obrigações das Entidades</a>
+  <a href="#externo">Canal Externo — Autoridades Competentes</a>
+  <a href="#retaliacao">Proteção contra Retaliação</a>
+  <a href="#isencao">Isenção de Responsabilidade e Medidas de Apoio</a>
+  <a href="#sancoes">Regime Sancionatório</a>
+  <a href="#transposicao">Transposição — Diretiva vs. Lei 93/2021</a>
+  <a href="#fiscal">Relevância Fiscal e para a AT-RAM</a>
+</div>
+
+<hr class="divider" id="contexto"/>
+<p class="section-label">1. Contexto, Fundamento Jurídico e Natureza</p>
+
+<div class="highlight">
+  <p>A Diretiva 2019/1937 é o <strong>primeiro instrumento jurídico europeu de âmbito geral</strong> dedicado à proteção de <em>whistleblowers</em>. Estabelece <strong>normas mínimas comuns</strong> que todos os EM devem garantir — podem ir mais longe, não podem ficar aquém. Portugal foi mais além com a Lei 93/2021.</p>
+</div>
+
+<div class="card">
+  <h3>Fundamento jurídico</h3>
+  <p>A base jurídica da Diretiva é o artigo <strong>114.º TFUE</strong> (mercado interno — harmonização) conjugado com outras bases setoriais. O Considerando 1 explica o racional: os denunciantes são fundamentais para detetar violações do direito da UE que, de outro modo, permaneceriam ocultas — especialmente no domínio fiscal, financeiro e ambiental. Sem proteção eficaz, os trabalhadores com conhecimento de irregularidades ficam em silêncio por medo de retaliação.</p>
+  <h3>Natureza jurídica — Diretiva de mínimos</h3>
+  <p>Por ser uma <strong>diretiva de harmonização mínima</strong>, os EM têm de transpô-la para direito nacional mas podem adotar proteções mais amplas. Portugal (Lei 93/2021) alargou o âmbito material às violações do direito nacional (a Diretiva só cobre violações do direito da UE) e reforçou as medidas de proteção.</p>
+  <h3>Prazo de transposição</h3>
+  <p>A Diretiva foi publicada em 26 de novembro de 2019 com prazo de transposição de <strong>17 de dezembro de 2021</strong>. Portugal transpôs pela Lei 93/2021 dentro do prazo. Para entidades privadas com 50-249 trabalhadores, o prazo de criação de canais internos foi prorrogado até 17 de dezembro de 2023.</p>
+</div>
+
+<hr class="divider" id="definicoes"/>
+<p class="section-label">2. Conceitos Fundamentais (Artigo 5.º)</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Denunciante</div>
+    <div class="art-title">Whistleblower</div>
+    <div class="art-body">Pessoa singular que denuncia ou divulga publicamente violações do direito da UE obtidas no contexto profissional. A proteção abrange apenas pessoas singulares — as pessoas coletivas não são denunciantes protegidos pela Diretiva (embora possam ser veículo de denúncias).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Violação</div>
+    <div class="art-title">O que se pode denunciar</div>
+    <div class="art-body">Atos ou omissões que: (a) sejam ilegais e estejam relacionados com os domínios cobertos; ou (b) contrariem o objeto ou a finalidade das normas aplicáveis nos domínios cobertos, mesmo que formalmente conformes à lei. Inclui a <em>evasão fiscal através de estruturas formalmente lícitas mas contrárias ao espírito da lei</em>.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Retaliação</div>
+    <div class="art-title">Medidas proibidas</div>
+    <div class="art-body">Qualquer ato ou omissão, direto ou indireto, que ocorra num contexto profissional, motivado pela denúncia ou pela divulgação pública e que cause ou possa causar danos injustificados ao denunciante. A causalidade entre a denúncia e o dano é presumida.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Medidas de acompanhamento</div>
+    <div class="art-title">Follow-up</div>
+    <div class="art-body">Ações tomadas pela entidade recetora (canal interno ou externo) para apreciar as alegações da denúncia: investigação interna, processo administrativo ou judicial, ações corretivas. A entidade tem obrigação de dar <em>feedback</em> ao denunciante sobre o acompanhamento dado.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Divulgação pública</div>
+    <div class="art-title">Último recurso</div>
+    <div class="art-body">Tornar informações sobre violações disponíveis ao público em geral (jornalistas, ONG's, redes sociais). Só protegida em circunstâncias específicas — quando os canais internos e externos não funcionaram adequadamente ou quando existe risco iminente ao interesse público.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Pessoa facilitadora</div>
+    <div class="art-title">Apoio ao denunciante</div>
+    <div class="art-body">Pessoa singular que auxilia o denunciante em contexto profissional e cujas informações sobre essa assistência devem ser mantidas confidenciais. A proteção da Diretiva abrange também as pessoas que auxiliam o denunciante (advogados, colegas, jornalistas que recebem a denúncia).</div>
+  </div>
+</div>
+
+<hr class="divider" id="material"/>
+<p class="section-label">3. Âmbito Material — Violações Cobertas (Artigo 2.º + Anexo)</p>
+
+<div class="card">
+  <p>A Diretiva cobre violações do direito da UE nos seguintes domínios (lista exaustiva — os EM não podem reduzir, mas podem ampliar):</p>
+  <table>
+    <thead><tr><th>Domínio</th><th>Relevância para inspetor tributário</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Contratação pública</strong></td><td>Denúncia de irregularidades em contratos públicos — ex.: conluio em concursos de obras da RAM</td></tr>
+      <tr><td><strong>Serviços financeiros, branqueamento e financiamento do terrorismo</strong></td><td>Denúncia de operações suspeitas com relevância fiscal e financeira</td></tr>
+      <tr><td><strong>Segurança dos produtos</strong></td><td>Fraude em certificações de produtos importados via porto do Funchal</td></tr>
+      <tr><td><strong>Segurança dos transportes</strong></td><td>Irregularidades na segurança aérea e marítima na RAM</td></tr>
+      <tr><td><strong>Proteção do ambiente</strong></td><td>Infração ambiental com impacto tributário (ex.: benefícios fiscais verdes obtidos fraudulentamente)</td></tr>
+      <tr><td><strong>Proteção de dados pessoais e segurança das redes</strong></td><td>Violação da proteção de dados fiscais dos contribuintes pela AT-RAM</td></tr>
+      <tr><td><strong>Interesses financeiros da União</strong></td><td><strong>Muito relevante:</strong> Fraude ao orçamento da UE (fundos europeus); irregularidades em programas cofinanciados pelo FEDER/FSE+ na RAM</td></tr>
+      <tr><td><strong>Mercado interno — concorrência e auxílios de Estado</strong></td><td><strong>Especialmente relevante:</strong> Inclui evasão fiscal, abuso de tratados fiscais, planeamento fiscal agressivo contrário ao objeto das normas — diretamente relacionado com a atividade da AT-RAM</td></tr>
+      <tr><td><strong>Saúde pública</strong></td><td>Fraude em contratos de saúde financiados pela RAM</td></tr>
+      <tr><td><strong>Proteção dos consumidores</strong></td><td>Fraude em IVA ligada a práticas de consumo enganosas</td></tr>
+    </tbody>
+  </table>
+  <div class="warning">
+    <p><strong>Atenção:</strong> A Diretiva <strong>não cobre</strong> violações do direito nacional puro — apenas do direito da UE nos domínios listados. Portugal foi mais além com a Lei 93/2021, que cobre também violações do direito nacional. O inspetor tributário em Portugal beneficia da proteção mais ampla da Lei 93/2021.</p>
+  </div>
+</div>
+
+<hr class="divider" id="pessoal"/>
+<p class="section-label">4. Âmbito Pessoal — Quem é Protegido (Artigo 4.º)</p>
+
+<div class="card">
+  <p>A Diretiva protege qualquer pessoa que tenha obtido informações sobre violações em contexto profissional:</p>
+  <div class="grid2">
+    <div class="art-block">
+      <div class="art-num">Trabalhadores ativos</div>
+      <div class="art-title">Vínculo laboral existente</div>
+      <div class="art-body">Trabalhadores do setor público (incluindo inspetores tributários da AT-RAM) e privado, independentemente da natureza do vínculo (contrato a termo, tempo parcial, teletrabalho). Membros de órgãos de administração e fiscalização.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Trabalhadores independentes</div>
+      <div class="art-title">Sem vínculo laboral</div>
+      <div class="art-body">Trabalhadores independentes, prestadores de serviços, empreiteiros, subcontratantes, fornecedores e qualquer pessoa que trabalhe sob a sua supervisão.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Candidatos e ex-trabalhadores</div>
+      <div class="art-title">Antes e depois do vínculo</div>
+      <div class="art-body">Candidatos a emprego que obtiveram informações durante o processo de recrutamento. Ex-trabalhadores cujo vínculo já cessou mas que denunciam com base em informações obtidas durante o emprego.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Terceiros afetados</div>
+      <div class="art-title">Círculo de proteção alargado</div>
+      <div class="art-body">Familiares, pessoas próximas e colegas do denunciante que possam ser objeto de retaliação. Pessoas jurídicas detidas ou controladas pelo denunciante. Intermediários (advogados, jornalistas) que apoiam o denunciante.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="condicoes"/>
+<p class="section-label">5. Condições de Proteção (Artigo 6.º)</p>
+
+<div class="highlight">
+  <p>A proteção da Diretiva não é automática — exige o cumprimento de duas condições cumulativas: fundamento razoável e uso de canal adequado.</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Condição 1 — Fundamento razoável</h3>
+    <p>O denunciante deve ter <strong>fundamento razoável para crer</strong> que as informações são verdadeiras e que as violações estão abrangidas pela Diretiva. Não é necessária certeza — basta crença razoável e de boa fé. O denunciante que agiu de boa fé mas cujas alegações se revelaram infundadas <strong>mantém a proteção</strong>. Só perde a proteção quem agiu de má fé (denúncias falsas deliberadas).</p>
+  </div>
+  <div class="card">
+    <h3>Condição 2 — Canal adequado</h3>
+    <p>A denúncia deve ser feita através de um dos <strong>canais previstos</strong> na Diretiva: canal interno, canal externo ou divulgação pública (nos casos admissíveis). A denúncia anónima que nunca se identifica pode ter dificuldades na proteção formal — mas a Diretiva admite denúncias anónimas (os EM devem decidir se as processam e se protegem o denunciante caso seja posteriormente identificado).</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Denúncias anónimas — posição da Diretiva</h3>
+  <p>A Diretiva permite que os EM decidam se as entidades são obrigadas a aceitar e processar denúncias anónimas. A Diretiva exige que, se o denunciante anónimo for mais tarde identificado e sofrer retaliação, seja protegido. Portugal (Lei 93/2021) optou por admitir denúncias anónimas mas tornando o tratamento das mesmas facultativo para as entidades — podem optar por não investigar denúncias anónimas.</p>
+</div>
+
+<hr class="divider" id="canais"/>
+<p class="section-label">6. Estrutura de Canais em Três Níveis</p>
+
+<div class="grid3">
+  <div class="art-block">
+    <div class="art-num">Nível 1 — Canal Interno (Arts. 8.º–9.º)</div>
+    <div class="art-title">Dentro da organização</div>
+    <div class="art-body">Denúncia à entidade onde o denunciante trabalha. <strong>Vantagem:</strong> Permite à organização resolver o problema internamente. <strong>Limite:</strong> Pode não ser adequado quando a gestão de topo está envolvida. O denunciante não é obrigado a usar o canal interno antes do externo — pode optar diretamente pelo externo.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Nível 2 — Canal Externo (Arts. 10.º–14.º)</div>
+    <div class="art-title">Autoridades públicas competentes</div>
+    <div class="art-body">Denúncia junto das autoridades públicas nomeadas pelos EM para receber e dar seguimento a denúncias nos domínios cobertos. Em Portugal: MP (geral) + autoridades sectoriais (AT-RAM para infrações fiscais). Pode ser usado em alternativa ao canal interno, não apenas como segundo recurso.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Nível 3 — Divulgação Pública (Art. 15.º)</div>
+    <div class="art-title">Media e redes sociais</div>
+    <div class="art-body">Protegida apenas quando: (a) canais anteriores não deram seguimento adequado; (b) denunciante tem motivo fundado para crer em risco iminente ou manifesto ao interesse público; (c) canal externo impossível (colusão sistémica). É o nível de maior risco para o denunciante — só ativa proteção em circunstâncias específicas.</div>
+  </div>
+</div>
+
+<hr class="divider" id="interno"/>
+<p class="section-label">7. Canal Interno — Obrigações das Entidades (Artigo 8.º–9.º)</p>
+
+<div class="card">
+  <h3>Entidades obrigadas (Artigo 8.º, n.º 3)</h3>
+  <ul>
+    <li>Todas as entidades jurídicas do <strong>setor privado com 50 ou mais trabalhadores</strong></li>
+    <li>Todas as entidades do <strong>setor público</strong>, independentemente da dimensão (incluindo a AT-RAM)</li>
+    <li>Municípios com mais de <strong>10 000 habitantes</strong> (mesmo que com menos de 50 trabalhadores)</li>
+    <li>Entidades privadas com menos de 50 trabalhadores nos setores de serviços financeiros, prevenção de branqueamento, aviação e segurança offshore</li>
+  </ul>
+  <h3>Requisitos do canal (Artigo 9.º)</h3>
+  <ul>
+    <li><strong>Confidencialidade obrigatória:</strong> A identidade do denunciante e de terceiros mencionados na denúncia não pode ser revelada sem consentimento — exceto se exigido por decisão judicial</li>
+    <li><strong>Suporte:</strong> O canal deve aceitar denúncias por escrito (caixa de correio física ou digital) e/ou oralmente (linha telefónica dedicada, videochamada)</li>
+    <li><strong>Gestão:</strong> Pessoa ou departamento imparcial e competente para gerir o canal, com obrigação de sigilo</li>
+    <li><strong>Acuse de receção:</strong> Em <strong>7 dias</strong> a contar da denúncia</li>
+    <li><strong>Feedback:</strong> Resposta diligente em <strong>3 meses</strong> a contar do acuse de receção (prorrogável até 6 meses em casos devidamente fundamentados)</li>
+    <li><strong>Comunicação das medidas:</strong> O denunciante deve ser informado das medidas adotadas ou previstas e das razões da decisão</li>
+  </ul>
+</div>
+
+<hr class="divider" id="externo"/>
+<p class="section-label">8. Canal Externo — Autoridades Competentes (Artigos 10.º–14.º)</p>
+
+<div class="card">
+  <h3>Obrigações dos EM</h3>
+  <p>Os EM devem designar as autoridades competentes para receber, dar seguimento e dar feedback às denúncias externas. Estas autoridades devem ser independentes e imparciais. As autoridades externas têm de:</p>
+  <ul>
+    <li>Criar canais externos seguros e confidenciais para receção de denúncias</li>
+    <li>Acusar a receção em <strong>7 dias</strong></li>
+    <li>Dar feedback ao denunciante em <strong>3 meses</strong> (prorrogável para 6 meses em casos complexos)</li>
+    <li>Investigar diligentemente as denúncias recebidas</li>
+    <li>Informar o denunciante do resultado final do processo</li>
+    <li>Encaminhar denúncias para outras autoridades quando não sejam competentes</li>
+  </ul>
+  <h3>Autoridades externas em Portugal</h3>
+  <table>
+    <thead><tr><th>Domínio</th><th>Autoridade competente (canal externo)</th></tr></thead>
+    <tbody>
+      <tr><td>Geral (todos os domínios)</td><td>Ministério Público (MP) — canal externo de âmbito geral em Portugal</td></tr>
+      <tr><td>Infrações fiscais (evasão, fraude fiscal)</td><td>AT / AT-RAM (para infrações com conexão à RAM)</td></tr>
+      <tr><td>Serviços financeiros, branqueamento</td><td>Banco de Portugal, CMVM, ASF</td></tr>
+      <tr><td>Concorrência e auxílios de Estado</td><td>Autoridade da Concorrência; Comissão Europeia</td></tr>
+      <tr><td>Contratação pública</td><td>IMPIC; Tribunal de Contas</td></tr>
+      <tr><td>Fundos europeus / interesses financeiros UE</td><td>OLAF (europeu); MP; IGF</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="retaliacao"/>
+<p class="section-label">9. Proteção contra Retaliação (Artigo 19.º–21.º)</p>
+
+<div class="highlight">
+  <p>O núcleo da Diretiva é a <strong>proteção efetiva contra retaliação</strong>. A Diretiva impõe uma presunção de causalidade — se houve denúncia e depois tratamento desfavorável, presume-se que é retaliação.</p>
+</div>
+
+<h2>Lista de Retaliações Proibidas (Artigo 19.º)</h2>
+<div class="card">
+  <div class="grid2">
+    <ul>
+      <li>Suspensão, despedimento, demissão ou equivalente</li>
+      <li>Descida de categoria ou recusa de promoção</li>
+      <li>Transferência de funções, alteração do local de trabalho</li>
+      <li>Redução de vencimento ou alteração de horário</li>
+      <li>Avaliação de desempenho negativa injustificada</li>
+      <li>Medidas disciplinares, repreensões ou sanções</li>
+    </ul>
+    <ul>
+      <li>Coerção, intimidação, assédio ou ostracismo</li>
+      <li>Discriminação ou tratamento desfavorável</li>
+      <li>Não renovação ou rescisão antecipada de contrato a termo</li>
+      <li>Danos à reputação, incluindo em redes sociais</li>
+      <li>Referências negativas para futuros empregos</li>
+      <li>Procedimentos criminais, cíveis ou outros movidos contra o denunciante</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Inversão do Ónus da Prova (Artigo 21.º, n.º 5)</h2>
+<div class="card">
+  <p>Quando o denunciante demonstra que fez uma denúncia e que sofreu tratamento desfavorável, <strong>presume-se que o tratamento é retaliação</strong>. Cabe ao empregador/entidade provar que o tratamento se baseou em fundamentos legítimos alheios à denúncia. Esta inversão é fundamental — sem ela, o denunciante teria de provar a intenção subjetiva do empregador, o que é quase impossível.</p>
+</div>
+
+<hr class="divider" id="isencao"/>
+<p class="section-label">10. Isenção de Responsabilidade e Medidas de Apoio</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Isenção de responsabilidade (Artigo 21.º, n.ºs 6–7)</h3>
+    <p>O denunciante que respeite as condições da Diretiva (boa fé, fundamento razoável, canal adequado) não incorre em:</p>
+    <ul>
+      <li><strong>Responsabilidade civil</strong> por violação de confidencialidade ou por danos à reputação da entidade denunciada</li>
+      <li><strong>Responsabilidade criminal</strong> por violação de segredo profissional, segredo de negócio ou obrigações contratuais de confidencialidade</li>
+      <li><strong>Responsabilidade disciplinar</strong> por violação de deveres de sigilo ou lealdade</li>
+    </ul>
+    <p><strong>Exceção:</strong> A isenção não cobre os atos ilegais praticados para além da denúncia em si (ex.: furto de documentos para obter prova — pode ser responsabilizado pelo furto, não pela denúncia).</p>
+  </div>
+  <div class="card">
+    <h3>Medidas de apoio (Artigo 20.º)</h3>
+    <p>Os EM devem assegurar que os denunciantes têm acesso a medidas de apoio adequadas:</p>
+    <ul>
+      <li><strong>Informação e aconselhamento</strong> acessíveis e independentes sobre as proteções disponíveis</li>
+      <li><strong>Assistência jurídica</strong> eficaz — o denunciante deve poder aceder a representação legal em processos judiciais relacionados com a denúncia</li>
+      <li><strong>Apoio financeiro</strong> em processos judiciais — os EM podem prever apoio judiciário ou outras medidas de apoio financeiro</li>
+      <li><strong>Medidas psicológicas</strong> — os EM devem garantir que os denunciantes têm acesso a apoio para fazer face ao stress e às consequências psicológicas da denúncia</li>
+    </ul>
+    <p>Em Portugal, o MP pode apoiar o denunciante no âmbito do canal externo geral.</p>
+  </div>
+</div>
+
+<hr class="divider" id="sancoes"/>
+<p class="section-label">11. Regime Sancionatório (Artigos 23.º–24.º)</p>
+
+<div class="card">
+  <h3>Sanções impostas pelos EM</h3>
+  <p>A Diretiva exige que os EM estabeleçam sanções efetivas, proporcionadas e dissuasoras para:</p>
+  <ul>
+    <li><strong>Quem retalia</strong> contra denunciantes protegidos — incluindo pessoas físicas e entidades</li>
+    <li><strong>Quem impede ou tenta impedir</strong> as denúncias (ex.: cláusulas contratuais de sigilo que proíbam denúncias)</li>
+    <li><strong>Quem pratica ações vexatórias</strong> contra o denunciante (processos judiciais infundados movidos para intimidar)</li>
+    <li><strong>Quem faz denúncias de má fé</strong> (falsas denúncias deliberadas) — o denunciante de má fé pode ser responsabilizado</li>
+  </ul>
+  <h3>Proteção de processos vexatórios (SLAPP)</h3>
+  <p>A Diretiva cobre os chamados SLAPP (Strategic Lawsuits Against Public Participation) — ações judiciais estratégicas destinadas a intimidar denunciantes. Os EM devem prever que tais processos possam ser declarados inadmissíveis ou arquivados, e que o denunciante possa ser indemnizado. Portugal transpôs esta proteção na Lei 93/2021.</p>
+</div>
+
+<hr class="divider" id="transposicao"/>
+<p class="section-label">12. Transposição — Diretiva vs. Lei 93/2021</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Aspeto</th><th>Diretiva 2019/1937 (mínimo)</th><th>Lei 93/2021 (Portugal — mais além)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Âmbito material</strong></td><td>Só violações do direito da UE nos domínios listados</td><td>Inclui também violações do direito nacional — muito mais amplo</td></tr>
+      <tr><td><strong>Âmbito fiscal</strong></td><td>Evasão e planeamento fiscal agressivo apenas enquanto violação do direito da UE</td><td>Toda a infração fiscal, incluindo puramente nacional (evasão de IRS, IRC, IVA, IS)</td></tr>
+      <tr><td><strong>Denúncias anónimas</strong></td><td>EM decide se obriga as entidades a aceitar e processar denúncias anónimas</td><td>Admitidas; tratamento facultativo para entidades mas aconselhado pelo MP</td></tr>
+      <tr><td><strong>Canal externo geral</strong></td><td>Autoridade a designar pelos EM</td><td>Ministério Público (MP) como canal externo geral</td></tr>
+      <tr><td><strong>Inversão do ónus</strong></td><td>Obrigatória — presumida a retaliação quando há nexo temporal</td><td>Igual + presunção mais ampla nos casos de retaliação administrativa</td></tr>
+      <tr><td><strong>Indemnização</strong></td><td>Os EM devem prever indemnização por retaliação</td><td>Indemnização prevista na lei; carga da prova no empregador</td></tr>
+      <tr><td><strong>Assistência jurídica</strong></td><td>Os EM devem assegurar acesso a informação e assistência jurídica</td><td>O MP pode apoiar o denunciante; apoio judiciário previsto nas condições gerais</td></tr>
+      <tr><td><strong>Autoridade fiscalizadora</strong></td><td>EM designa autoridade</td><td>MP + autoridades setoriais + MENAC (para o setor público no âmbito do RGPC)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="fiscal"/>
+<p class="section-label">13. Relevância Fiscal e para a AT-RAM</p>
+
+<div class="card">
+  <h3>A AT-RAM como canal externo para infrações fiscais</h3>
+  <p>A AT-RAM pode ser designada autoridade competente (canal externo) para receber denúncias de infrações fiscais com conexão à RAM. Neste caso, o denunciante pode reportar diretamente à AT-RAM casos de evasão fiscal, fraude, uso indevido de benefícios fiscais regionais, ou irregularidades em fundos europeus. A AT-RAM deve criar um canal externo seguro para estas denúncias e garantir a proteção do denunciante.</p>
+  <h3>O inspetor tributário como potencial denunciante</h3>
+  <p>O inspetor tributário pode denunciar irregularidades que detete no exercício das suas funções — seja dentro da AT-RAM (irregularidades de colegas ou superiores) seja nas entidades inspecionadas. A Diretiva e a Lei 93/2021 protegem o inspetor tributário que denuncia:</p>
+  <ul>
+    <li>Corrupção de um colega inspetor (aceitar vantagem de contribuinte)</li>
+    <li>Instrução de um superior para não comunicar irregularidades num relatório</li>
+    <li>Fraude fiscal detetada numa entidade inspecionada com esquemas envolvendo funcionários da AT-RAM</li>
+    <li>Irregularidades em fundos europeus detetadas numa entidade beneficiária inspecionada</li>
+  </ul>
+  <h3>Conflito com o sigilo fiscal</h3>
+  <p>O sigilo fiscal (art. 64.º LGT) pode criar tensão com o dever de denunciar. A solução é: o inspetor deve denunciar através dos canais internos da AT-RAM (RCN/canal RGPC) ou para as autoridades externas competentes (MP), não através da divulgação pública (que violaria o sigilo fiscal). A isenção de responsabilidade da Diretiva não afasta a responsabilidade por violação de sigilo fiscal em divulgação pública não justificada.</p>
+  <table>
+    <thead><tr><th>Situação</th><th>Canal adequado</th><th>Proteção da Diretiva/Lei 93/2021</th></tr></thead>
+    <tbody>
+      <tr><td>Inspetor deteta corrupção de colega na AT-RAM</td><td>RCN da AT-RAM (canal interno) ou MP</td><td>Sim — proteção total</td></tr>
+      <tr><td>Inspetor é pressionado pelo superior a alterar relatório</td><td>RCN ou MP ou MENAC</td><td>Sim — proteção total</td></tr>
+      <tr><td>Inspetor deteta fraude a fundos europeus numa inspeção</td><td>Canal interno da AT-RAM + OLAF/MP</td><td>Sim — interesses financeiros da UE cobertas pela Diretiva</td></tr>
+      <tr><td>Inspetor divulga dados fiscais a jornalista sem passar por canais</td><td>Divulgação pública não justificada</td><td>Proteção limitada + responsabilidade por sigilo fiscal</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

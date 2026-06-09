@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02 · Constituição da República Portuguesa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,0.94);}
+    [data-theme="light"]{--bg:#f5f4f0;--bg-card:#ffffff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--accent2:#8a6d20;--border:#e4e2dd;--nav-bg:rgba(245,244,240,0.94);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px;}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s;}.nav-back:hover{color:var(--accent);}
+    .nav-right{display:flex;align-items:center;gap:1rem;}
+    .nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600;}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s;}.theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem;}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem;}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent);}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem;}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);}
+    .badge-accent{border-color:var(--accent2);color:var(--accent);}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0;}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem;}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem;}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem;}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem;}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem;}
+    li strong{color:var(--text);font-weight:600;}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem;}
+    .card h2,.card h3{margin-top:0;}
+    .card p:last-child,.card ul:last-child{margin-bottom:0;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem;}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem;}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7;}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .highlight p{margin-bottom:0;font-size:.875rem;}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem;}
+    .warning p{margin-bottom:0;font-size:.875rem;}
+    .warning strong{color:#e74c3c;}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem;}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border);}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top;}
+    tr:nth-child(even) td{background:var(--bg-alt);}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem;}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem;}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.22rem 0;transition:color .15s;}
+    .toc a:hover{color:var(--accent);}
+    .toc a::before{content:"→ ";color:var(--accent);font-size:.75rem;}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label);}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem;}nav{padding:0 1.1rem;}.grid2,.grid3{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">02 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">02 · Lei Fundamental</p>
+<h1>Constituição da <em>República Portuguesa</em></h1>
+<p class="doc-sub">Aprovada a 2 de abril de 1976 · 7.ª Revisão Constitucional: Lei n.º 1/2005, de 12 de agosto · Lei suprema do Estado Português</p>
+<div class="meta-row">
+  <span class="badge badge-accent">CRP</span>
+  <span class="badge">Direitos Fundamentais</span>
+  <span class="badge">Sistema Fiscal</span>
+  <span class="badge">Administração Pública</span>
+  <span class="badge">Regiões Autónomas</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#natureza">Natureza e Supremacia da CRP</a>
+  <a href="#estado">Princípios Fundamentais do Estado</a>
+  <a href="#direitos">Direitos e Deveres Fundamentais — Estrutura</a>
+  <a href="#garantias-processuais">Garantias Processuais e de Defesa</a>
+  <a href="#sistema-fiscal">Sistema Fiscal — Artigos 103.º e 104.º</a>
+  <a href="#reserva-lei">Reserva de Lei Fiscal</a>
+  <a href="#adm-publica">Administração Pública — Artigos 266.º–272.º</a>
+  <a href="#tribunais">Tribunais e Acesso ao Direito</a>
+  <a href="#regioes">Regiões Autónomas — Artigos 225.º–234.º</a>
+  <a href="#revisao-const">Revisão Constitucional e Limites</a>
+</div>
+
+<hr class="divider" id="natureza" />
+<p class="section-label">1. Natureza e Supremacia da CRP</p>
+
+<div class="highlight">
+  <p>A Constituição é a lei fundamental da República Portuguesa. Tem <strong>supremacia normativa</strong> sobre toda a ordem jurídica: nenhuma lei, ato administrativo, decisão judicial ou norma pode contrariar a Constituição. As normas constitucionais são diretamente aplicáveis e vinculam as entidades públicas e privadas (artigo 18.º).</p>
+</div>
+
+<h2>Artigo 3.º — Soberania e Legalidade</h2>
+<p>A soberania reside no povo. O Estado subordina-se à Constituição e à lei. A validade das leis e dos demais atos do Estado, das Regiões Autónomas e do poder local depende da sua conformidade com a Constituição.</p>
+
+<h2>Artigo 18.º — Força Jurídica dos Direitos Fundamentais</h2>
+<div class="card">
+  <ul>
+    <li>Os preceitos constitucionais respeitantes aos direitos, liberdades e garantias são <strong>diretamente aplicáveis</strong> e vinculam as entidades públicas e privadas.</li>
+    <li>A lei só pode restringir direitos, liberdades e garantias nos casos expressamente previstos na Constituição, devendo as restrições limitar-se ao necessário para salvaguardar outros direitos ou interesses constitucionalmente protegidos.</li>
+    <li>As leis restritivas de direitos não podem ter efeito retroativo nem diminuir a extensão e o alcance do conteúdo essencial dos preceitos constitucionais.</li>
+  </ul>
+</div>
+
+<hr class="divider" id="estado" />
+<p class="section-label">2. Princípios Fundamentais do Estado (Artigos 1.º–11.º)</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Artigo 1.º</div>
+    <div class="art-title">República Portuguesa</div>
+    <div class="art-body">Portugal é uma República soberana, baseada na dignidade da pessoa humana e na vontade popular, empenhada na construção de uma sociedade livre, justa e solidária.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 2.º</div>
+    <div class="art-title">Estado de direito democrático</div>
+    <div class="art-body">Portugal é um Estado de direito democrático, baseado na soberania popular, no pluralismo de expressão e organização política democráticas, no respeito e na garantia de efetivação dos direitos e liberdades fundamentais e na separação e interdependência de poderes.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 6.º</div>
+    <div class="art-title">Estado unitário</div>
+    <div class="art-body">O Estado é unitário e respeita na sua organização e funcionamento o regime autonómico insular e os princípios da subsidiariedade, da autonomia das autarquias locais e da descentralização democrática da administração pública.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 8.º</div>
+    <div class="art-title">Direito internacional e da UE</div>
+    <div class="art-body">As normas e os princípios de direito internacional geral fazem parte integrante do direito português. As normas da UE diretamente aplicáveis vigoram na ordem jurídica interna nos termos definidos pelo direito da União, com respeito pelos princípios fundamentais do Estado de direito democrático.</div>
+  </div>
+</div>
+
+<hr class="divider" id="direitos" />
+<p class="section-label">3. Direitos e Deveres Fundamentais — Estrutura</p>
+
+<h2>Distinção entre DLG e DESC</h2>
+<table>
+  <thead>
+    <tr><th>Critério</th><th>Direitos, Liberdades e Garantias (DLG)</th><th>Direitos Económicos, Sociais e Culturais (DESC)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Natureza</td><td>Direitos negativos (obrigação de abstenção do Estado)</td><td>Direitos positivos (exigem atuação/prestação do Estado)</td></tr>
+    <tr><td>Aplicabilidade</td><td>Diretamente aplicáveis; exequíveis por si mesmos</td><td>Dependem de concretização legislativa (programáticos)</td></tr>
+    <tr><td>Restrição</td><td>Apenas nos casos previstos expressamente na CRP</td><td>Sujeitos à reserva do possível</td></tr>
+    <tr><td>Vinculação de privados</td><td>Vinculam também entidades privadas (eficácia horizontal)</td><td>Obrigam principalmente o Estado</td></tr>
+    <tr><td>Exemplos</td><td>Direito à vida (24.º), à integridade pessoal (25.º), à liberdade (27.º), à propriedade privada (62.º)</td><td>Direito ao trabalho (58.º), à habitação (65.º), à saúde (64.º), à segurança social (63.º)</td></tr>
+  </tbody>
+</table>
+
+<div id="garantias-processuais"></div>
+<h2>Garantias Processuais e de Defesa (Artigos 20.º e 32.º)</h2>
+<div class="card">
+  <h3>Artigo 20.º — Acesso ao direito e tutela jurisdicional efetiva</h3>
+  <ul>
+    <li>A todos é assegurado o acesso ao direito e aos tribunais para defesa dos seus direitos e interesses legalmente protegidos, não podendo a justiça ser denegada por insuficiência de meios económicos.</li>
+    <li>Fundamento constitucional do acesso gratuito aos tribunais (apoio judiciário) e da tutela cautelar urgente.</li>
+    <li>Garante o direito a julgamento em prazo razoável.</li>
+  </ul>
+  <h3>Artigo 268.º — Direitos e garantias dos administrados</h3>
+  <ul>
+    <li>Os cidadãos têm o direito de ser informados sobre o andamento dos processos em que sejam diretamente interessados.</li>
+    <li>Direito de acesso aos arquivos e registos administrativos (princípio da transparência).</li>
+    <li><strong>Direito à fundamentação</strong> dos atos administrativos que afetem direitos ou interesses legalmente protegidos (artigo 268.º, n.º 3).</li>
+    <li>Garantia de recurso contencioso para impugnar atos administrativos (artigo 268.º, n.º 4).</li>
+  </ul>
+</div>
+
+<hr class="divider" id="sistema-fiscal" />
+<p class="section-label">4. Sistema Fiscal — Artigos 103.º e 104.º CRP</p>
+
+<div class="highlight">
+  <p>Os artigos 103.º e 104.º da CRP são os preceitos constitucionais fundamentais em matéria fiscal. Qualquer lei tributária tem de ser interpretada e aplicada à luz destes princípios constitucionais.</p>
+</div>
+
+<h2>Artigo 103.º — Sistema Fiscal</h2>
+<div class="card">
+  <p><strong>N.º 1:</strong> O sistema fiscal visa a satisfação das necessidades financeiras do Estado e outras entidades públicas e uma repartição justa dos rendimentos e da riqueza.</p>
+  <p><strong>N.º 2:</strong> Os impostos são criados por lei, que determina a incidência, a taxa, os benefícios fiscais e as garantias dos contribuintes. <strong>Reserva de lei formal absoluta</strong> quanto a estes elementos essenciais.</p>
+  <p><strong>N.º 3 (proibição de retroatividade fiscal):</strong> Ninguém pode ser obrigado a pagar impostos que não hajam sido criados nos termos da Constituição, que tenham natureza retroativa ou cuja liquidação e cobrança se não façam nos termos da lei.</p>
+</div>
+
+<h2>Artigo 104.º — Impostos</h2>
+<div class="card">
+  <p><strong>N.º 1 — IRS:</strong> O imposto sobre o rendimento pessoal visa a diminuição das desigualdades e será <strong>único e progressivo</strong>, tendo em conta as necessidades e os rendimentos do agregado familiar. Progressividade ≠ tributação diferenciada arbitrária.</p>
+  <p><strong>N.º 2 — IRC:</strong> A tributação das empresas incide fundamentalmente sobre o seu <strong>rendimento real</strong>, incluindo o das empresas públicas e sujeitos a tributação especial. O conceito de rendimento real afasta as presunções de rendimento sem prova.</p>
+  <p><strong>N.º 3 — Tributação do consumo:</strong> A tributação do consumo visa adaptar a estrutura do consumo à evolução das necessidades do desenvolvimento económico e da justiça social, devendo onerar os consumos de luxo. Remissão constitucional para o IVA e impostos especiais de consumo.</p>
+  <p><strong>N.º 4 — Tributação do património:</strong> A tributação do património deve contribuir para a igualdade entre os cidadãos, sendo o IMI (tributação imobiliária) o imposto de maior relevância patrimonial.</p>
+</div>
+
+<div id="reserva-lei"></div>
+<hr class="divider" />
+<p class="section-label">5. Reserva de Lei Fiscal — Artigo 165.º, n.º 1, alínea i) CRP</p>
+
+<div class="card">
+  <p>A criação de impostos e sistema fiscal, e o regime geral das taxas e demais contribuições financeiras a favor das entidades públicas, é matéria de <strong>reserva relativa de competência legislativa da Assembleia da República</strong>.</p>
+  <h3>Reserva relativa</h3>
+  <p>Significa que a Assembleia pode autorizar o Governo a legislar sobre estas matérias mediante <strong>lei de autorização legislativa</strong> que defina o objeto, o sentido, a extensão e a duração da autorização. O Governo legisla por Decreto-Lei ao abrigo da autorização. A LGT e o CPPT foram aprovados por DL ao abrigo de lei de autorização legislativa.</p>
+  <h3>Elementos abrangidos pela reserva</h3>
+  <ul>
+    <li>Incidência (quem paga, sobre o quê)</li>
+    <li>Taxa (percentagens, escalões)</li>
+    <li>Benefícios fiscais e exclusões</li>
+    <li>Garantias dos contribuintes</li>
+  </ul>
+</div>
+
+<div id="adm-publica"></div>
+<hr class="divider" />
+<p class="section-label">6. Administração Pública — Artigos 266.º–272.º</p>
+
+<div class="highlight">
+  <p>Estes artigos são fundamentais para compreender os princípios que vinculam a AT-RAM como órgão da Administração Pública.</p>
+</div>
+
+<h2>Artigo 266.º — Princípios Fundamentais</h2>
+<div class="card">
+  <p><strong>N.º 1:</strong> A Administração Pública visa a prossecução do interesse público, no respeito pelos direitos e interesses legalmente protegidos dos cidadãos.</p>
+  <p><strong>N.º 2:</strong> Os órgãos e agentes administrativos estão subordinados à Constituição e à lei e devem atuar com respeito pelos princípios da <strong>igualdade, proporcionalidade, justiça, imparcialidade e boa fé</strong>.</p>
+</div>
+
+<h2>Artigo 267.º — Estrutura da Administração</h2>
+<ul>
+  <li>A Administração Pública será estruturada de modo a evitar a burocratização, aproximar os serviços das populações e assegurar a participação dos interessados.</li>
+  <li><strong>Desconcentração e descentralização</strong> como princípios organizativos da Administração.</li>
+  <li>Participação dos trabalhadores na gestão dos serviços.</li>
+</ul>
+
+<h2>Artigo 268.º — Direitos e Garantias dos Administrados</h2>
+<ul>
+  <li>Direito de informação sobre andamento dos processos (n.º 1)</li>
+  <li>Direito de acesso a arquivos e registos (n.º 2)</li>
+  <li><strong>Direito à fundamentação dos atos</strong> que afetem direitos ou interesses (n.º 3)</li>
+  <li><strong>Garantia do recurso contencioso</strong> com fundamento em ilegalidade contra atos administrativos definitivos (n.º 4) — o tribunal administrativo/tributário não pode ser substituído por tribunal arbitral sem consentimento do administrado</li>
+  <li>Responsabilidade civil do Estado e demais entidades públicas (n.º 5)</li>
+</ul>
+
+<h2>Artigo 269.º — Regime dos Trabalhadores da Administração Pública</h2>
+<ul>
+  <li>Os trabalhadores da Administração Pública estão exclusivamente ao serviço do interesse público.</li>
+  <li>Dever de obediência hierárquica — desde que não implique prática de ato ilegal.</li>
+  <li>Não podem ser prejudicados ou beneficiados em razão das suas convicções políticas.</li>
+</ul>
+
+<h2>Artigo 271.º — Responsabilidade dos Funcionários</h2>
+<div class="card">
+  <p>Os funcionários e agentes do Estado respondem civilmente perante terceiros pelos atos e omissões praticados no exercício das suas funções e por causa desse exercício de que resulte violação dos direitos ou interesses legalmente protegidos, ficando o Estado e demais pessoas coletivas públicas solidariamente responsáveis. Nos processos de natureza penal a lei determinará os casos e condições em que previamente deve ser exigida a responsabilidade da pessoa coletiva pública.</p>
+</div>
+
+<div id="tribunais"></div>
+<hr class="divider" />
+<p class="section-label">7. Tribunais e Acesso ao Direito (Artigos 202.º–224.º)</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Artigo 202.º</div>
+    <div class="art-title">Função jurisdicional</div>
+    <div class="art-body">Os tribunais são os órgãos de soberania com competência para administrar a justiça em nome do povo. A função jurisdicional é reservada aos tribunais — é inconstitucional atribuir a órgãos administrativos poderes jurisdicionais definitivos.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 212.º</div>
+    <div class="art-title">Tribunais Administrativos e Fiscais</div>
+    <div class="art-body">Os tribunais administrativos e fiscais são os órgãos de soberania com competência para administrar a justiça em matéria administrativa e fiscal. Inclui os Tribunais Tributários, os TCAs e o Supremo Tribunal Administrativo.</div>
+  </div>
+</div>
+
+<div id="regioes"></div>
+<hr class="divider" />
+<p class="section-label">8. Regiões Autónomas — Artigos 225.º–234.º</p>
+
+<div class="highlight">
+  <p>A Região Autónoma da Madeira (RAM) tem estatuto constitucional próprio, com autonomia política, legislativa, administrativa e financeira. A AT-RAM é o organismo que materializa a autonomia fiscal da Madeira.</p>
+</div>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Artigo 225.º</div>
+    <div class="art-title">Regime político-administrativo</div>
+    <div class="art-body">O regime político-administrativo próprio dos arquipélagos dos Açores e da Madeira fundamenta-se nas suas características geográficas, económicas, sociais e culturais e nas históricas aspirações autonomistas das populações insulares.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 226.º</div>
+    <div class="art-title">Estatutos</div>
+    <div class="art-body">Os estatutos político-administrativos são elaborados pelas Assembleias Legislativas Regionais e aprovados por lei da Assembleia da República. Definição da organização e do exercício do poder regional.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 227.º</div>
+    <div class="art-title">Poderes das Regiões Autónomas</div>
+    <div class="art-body"><strong>Poder legislativo</strong> regional (decretos legislativos regionais); <strong>poder tributário próprio</strong> (adaptar o sistema fiscal nacional às especificidades regionais — artigo 227.º, n.º 1, alínea i)); poder administrativo; receitas próprias e participação nas receitas fiscais nacionais.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 229.º</div>
+    <div class="art-title">Cooperação entre Estado e Regiões</div>
+    <div class="art-body">O Estado e as Regiões Autónomas cooperam e articulam as suas políticas, em especial nas áreas económica e fiscal. O princípio da solidariedade — o Estado apoia o desenvolvimento económico das regiões insulares (artigo 229.º, n.º 1).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 232.º</div>
+    <div class="art-title">Assembleia Legislativa Regional</div>
+    <div class="art-body">A Assembleia Legislativa da Madeira pode legislar em matéria de impostos regionais (impostos exclusivamente regionais) e adaptar os impostos nacionais às especificidades regionais. DLR = Decreto Legislativo Regional.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Artigo 229.º CRP</div>
+    <div class="art-title">Autonomia Financeira Regional</div>
+    <div class="art-body">As receitas fiscais das regiões autónomas são as cobradas ou geradas no seu território. A Lei das Finanças das Regiões Autónomas (LFRA — Lei Orgânica 2/2013) regula os detalhes, nos termos do artigo 164.º, alínea f) CRP.</div>
+  </div>
+</div>
+
+<div id="revisao-const"></div>
+<hr class="divider" />
+<p class="section-label">9. Revisão Constitucional e Limites (Artigos 284.º–289.º)</p>
+
+<div class="card">
+  <h3>Artigo 288.º — Limites Materiais de Revisão</h3>
+  <p>As leis de revisão constitucional têm de respeitar os seguintes limites materiais absolutos (cláusulas pétreas — não podem ser alteradas mesmo por maioria de dois terços):</p>
+  <ul>
+    <li>A forma republicana de governo</li>
+    <li>A separação das igrejas do Estado</li>
+    <li>Os direitos, liberdades e garantias dos cidadãos</li>
+    <li>Os direitos dos trabalhadores, das comissões de trabalhadores e das associações sindicais</li>
+    <li>A coexistência de setor público, privado e cooperativo e social de propriedade dos meios de produção</li>
+    <li>A existência de planos económicos no âmbito de uma economia mista</li>
+    <li>O sufrágio universal, direto, secreto e periódico na designação dos titulares eletivos dos órgãos de soberania, das Regiões Autónomas e do poder local</li>
+    <li>O pluralismo de expressão e organização política, incluindo partidos políticos</li>
+    <li>A separação e a interdependência dos órgãos de soberania</li>
+    <li>A fiscalização da constitucionalidade por ação ou omissão de normas jurídicas</li>
+    <li>A independência dos tribunais</li>
+    <li>A autonomia das autarquias locais</li>
+    <li>A autonomia político-administrativa dos arquipélagos dos Açores e da Madeira</li>
+  </ul>
+</div>
+
+<hr class="divider" />
+<p class="section-label">Síntese — Normas Constitucionais Fundamentais para o Inspetor Tributário</p>
+
+<table>
+  <thead><tr><th>Norma</th><th>Relevância Prática</th></tr></thead>
+  <tbody>
+    <tr><td>Art. 103.º, n.º 2</td><td>Base constitucional da reserva de lei fiscal — sem lei, não há imposto</td></tr>
+    <tr><td>Art. 103.º, n.º 3</td><td>Proibição de retroatividade fiscal desfavorável — protege contribuintes de liquidações retroativas</td></tr>
+    <tr><td>Art. 104.º, n.º 2</td><td>Tributação das empresas sobre rendimento real — afasta presunções sem prova</td></tr>
+    <tr><td>Art. 165.º, n.º 1, al. i)</td><td>Reserva relativa da AR para criar impostos — DL de impostos exige autorização legislativa</td></tr>
+    <tr><td>Art. 227.º, n.º 1, al. i)</td><td>Poder tributário próprio da RAM — fundamenta a AT-RAM e os DLR em matéria fiscal</td></tr>
+    <tr><td>Art. 268.º, n.º 3</td><td>Direito à fundamentação dos atos administrativos tributários</td></tr>
+    <tr><td>Art. 268.º, n.º 4</td><td>Garantia do recurso contencioso — impugnação judicial de atos tributários ilegais</td></tr>
+    <tr><td>Art. 266.º, n.º 2</td><td>Princípios que vinculam a AT-RAM: legalidade, proporcionalidade, imparcialidade, boa fé</td></tr>
+    <tr><td>Art. 20.º</td><td>Acesso à justiça — o contribuinte tem sempre direito a tribunal</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t);}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾';})();
+</script>
+</body>
+</html>

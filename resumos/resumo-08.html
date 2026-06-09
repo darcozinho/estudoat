@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>08 · DLR 28/2022/M — Carreiras Especiais AT-RAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}.warning strong{color:#e74c3c}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.22rem 0;transition:color .15s}
+    .toc a:hover{color:var(--accent)}.toc a::before{content:"→ ";color:var(--accent);font-size:.75rem}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">08 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">08 · Carreiras Especiais — Madeira</p>
+<h1>DLR n.º 28/2022/M — <em>Carreiras Especiais da AT-RAM</em></h1>
+<p class="doc-sub">Decreto Legislativo Regional n.º 28/2022/M, de 30 de dezembro · Aprovado pela Assembleia Legislativa Regional da Madeira · Revê as carreiras especiais da AT-RAM · Lex specialis face à LGTFP e ao DLR 11/2018/M</p>
+<div class="meta-row">
+  <span class="badge badge-accent">DLR 28/2022/M</span>
+  <span class="badge">Inspetor Tributário</span>
+  <span class="badge">Carreiras Especiais</span>
+  <span class="badge">Técnico Tributário</span>
+  <span class="badge">Perito Aduaneiro</span>
+  <span class="badge">AT-RAM</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#enquadramento">Enquadramento, Objeto e Hierarquia Normativa</a>
+  <a href="#inspecao">Carreira de Inspeção Tributária e Aduaneira</a>
+  <a href="#acesso">Requisitos de Acesso e Procedimento Concursal</a>
+  <a href="#funcoes">Conteúdo Funcional — O que faz o Inspetor</a>
+  <a href="#procedimento">Fases do Procedimento de Inspeção</a>
+  <a href="#progressao">Progressão, Avaliação e Remuneração</a>
+  <a href="#tecnica">Carreira Técnica Tributária</a>
+  <a href="#aduaneiro">Carreira de Perito Aduaneiro</a>
+  <a href="#suplementos">Suplementos Remuneratórios</a>
+  <a href="#formacao">Formação Profissional Obrigatória</a>
+  <a href="#incompatibilidades">Incompatibilidades e Impedimentos Específicos</a>
+  <a href="#disciplinar">Regime Disciplinar Específico</a>
+  <a href="#sintese">Síntese — A Carreira do Inspetor Tributário da AT-RAM</a>
+</div>
+
+<hr class="divider" id="enquadramento"/>
+<p class="section-label">1. Enquadramento, Objeto e Hierarquia Normativa</p>
+
+<div class="highlight">
+  <p>Este é o diploma que <strong>diretamente regula a carreira de inspetor tributário da AT-RAM</strong>. É o estatuto especial das carreiras especiais da AT-RAM — como <em>lex specialis</em>, prevalece sobre a LGTFP nacional (Lei 35/2014) e sobre o DLR 11/2018/M em tudo o que regula especificamente.</p>
+</div>
+
+<div class="card">
+  <h3>Objeto (Artigo 1.º)</h3>
+  <p>O DLR 28/2022/M aprova as carreiras especiais da AT-RAM, revendo o diploma anterior. Abrange três carreiras:</p>
+  <ul>
+    <li><strong>Carreira de Inspeção Tributária e Aduaneira</strong> — a mais relevante para o concurso de inspetor tributário</li>
+    <li><strong>Carreira Técnica Tributária</strong> — para funções de liquidação, cobrança e atendimento</li>
+    <li><strong>Carreira de Perito Aduaneiro</strong> — para funções especializadas de controlo aduaneiro</li>
+  </ul>
+  <h3>Por que existem carreiras especiais?</h3>
+  <p>As funções tributárias exigem: (a) conhecimentos técnicos especializados (fiscalidade, contabilidade, direito, técnicas de inspeção); (b) poderes de autoridade específicos (acesso a instalações e documentos dos contribuintes); (c) formação contínua especializada; (d) deontologia profissional reforçada (sigilo fiscal, independência). Estas características justificam um estatuto distinto das carreiras gerais da função pública.</p>
+  <h3>Hierarquia normativa para o inspetor tributário</h3>
+  <table>
+    <thead><tr><th>Diploma</th><th>Matéria</th><th>Prevalência</th></tr></thead>
+    <tbody>
+      <tr><td><strong>DLR 28/2022/M</strong></td><td>Carreira, funções, remuneração, progressão, formação, disciplina especial</td><td>Primazia — <em>lex specialis</em></td></tr>
+      <tr><td><strong>DLR 11/2018/M</strong></td><td>Regime geral do emprego público na RAM</td><td>Supletivo face ao DLR 28/2022/M</td></tr>
+      <tr><td><strong>LGTFP (Lei 35/2014)</strong></td><td>Regime geral nacional do emprego público</td><td>Supletivo de 2.º nível</td></tr>
+      <tr><td><strong>Código do Trabalho</strong></td><td>Matérias laborais não reguladas nas anteriores</td><td>Supletivo de último recurso</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="inspecao"/>
+<p class="section-label">2. Carreira de Inspeção Tributária e Aduaneira</p>
+
+<div class="highlight">
+  <p>A carreira de inspeção tributária e aduaneira é a carreira de maior responsabilidade funcional e remuneratória da AT-RAM. Os seus titulares exercem poderes de autoridade pública — inspeção, avaliação, investigação e autuação — em nome do Estado regional.</p>
+</div>
+
+<h2>Categorias da Carreira</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Categoria</th><th>Grau</th><th>Funções típicas</th><th>Acesso</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Inspetor Tributário Principal</strong></td><td>Topo</td><td>Direção e coordenação de equipas de inspeção; inspeções de maior complexidade e valor; análise de fraude qualificada; supervisão técnica de outros inspetores; elaboração de pareceres técnicos para o Conselho Diretivo</td><td>Promoção interna por concurso, a partir de Inspetor Tributário com tempo de serviço mínimo e avaliação de desempenho</td></tr>
+      <tr><td><strong>Inspetor Tributário</strong></td><td>Base</td><td>Realização de inspeções externas e internas; avaliação indireta; elaboração de relatórios; investigação de fraude; condução autónoma de procedimentos de inspeção</td><td>Ingresso por concurso público externo com licenciatura</td></tr>
+      <tr><td><strong>Técnico Superior Tributário</strong></td><td>Acesso / Transição</td><td>Apoio técnico a inspeções; análise de declarações; instrução de processos de inspeção interna; preparação de notificações e atos procedimentais</td><td>Categoria de ingresso em concurso ou transição de outra carreira</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="acesso"/>
+<p class="section-label">3. Requisitos de Acesso e Procedimento Concursal</p>
+
+<h2>Requisitos Gerais de Admissão</h2>
+<div class="card">
+  <ul>
+    <li><strong>Habilitação académica:</strong> Licenciatura (mínimo) em Direito, Economia, Gestão, Finanças, Contabilidade, Auditoria ou área afim reconhecida. Mestrado nas mesmas áreas valorizado na ordenação dos candidatos.</li>
+    <li><strong>Idoneidade:</strong> Não ter sido condenado por crimes dolosos; não ter praticado contraordenações tributárias graves; não estar inibido de exercício de funções públicas por decisão judicial ou disciplinar.</li>
+    <li><strong>Cidadania:</strong> Português ou cidadão da UE; cidadãos de PALOP com regime de reciprocidade garantida podem candidatar-se em igualdade de condições.</li>
+    <li><strong>Requisitos de saúde:</strong> Aptidão física e psíquica para o exercício das funções, verificada em exame médico (para funções de inspeção externa com eventual acesso a instalações industriais).</li>
+  </ul>
+</div>
+
+<h2>Procedimento Concursal</h2>
+<div class="card">
+  <h3>Métodos de seleção obrigatórios</h3>
+  <ol>
+    <li><strong>Provas de conhecimentos escritas:</strong> Obrigatórias; avaliam os conhecimentos técnicos em direito tributário (LGT, CPPT, CIRCs), contabilidade, direito administrativo (CPA) e legislação regional (DLR's fiscais da RAM). São as provas com maior peso na ordenação final.</li>
+    <li><strong>Avaliação curricular:</strong> Valoriza a formação académica (licenciatura, mestrado, doutoramento), a formação profissional complementar e a experiência profissional relevante na área fiscal, contabilística ou jurídica.</li>
+    <li><strong>Entrevista de seleção de competências:</strong> Avalia competências comportamentais: capacidade analítica, comunicação, integridade, trabalho em equipa, orientação para resultados, resistência ao stress. Pode ser dispensada em determinadas fases ou tipologias de concurso.</li>
+  </ol>
+  <h3>Publicação e prazo</h3>
+  <p>O aviso de abertura do concurso é publicado no <strong>JORAM</strong> e na <strong>Bolsa de Emprego Público (BEP)</strong> nacional. O prazo de candidatura é de, pelo menos, 10 dias úteis a contar da publicação. As provas de conhecimentos são agendadas pela AT-RAM e realizadas na RAM.</p>
+  <h3>Ordenação final e oferta de lugar</h3>
+  <p>Os candidatos são ordenados por nota final ponderada. O primeiro colocado recebe a oferta de lugar — se recusar, a oferta é feita ao seguinte. Os candidatos em lista de reserva podem ser chamados ao longo do prazo de validade do concurso (normalmente 18 meses).</p>
+</div>
+
+<h2>Período Probatório</h2>
+<div class="card">
+  <p>Após a nomeação ou celebração de CTFP, o novo inspetor cumpre um <strong>período probatório</strong> de 6 meses (prorrogável até 12 meses). Durante este período:</p>
+  <ul>
+    <li>Realiza formação intensiva específica (direito tributário regional, técnicas de inspeção, sistemas informáticos da AT-RAM, legislação aduaneira)</li>
+    <li>É acompanhado por um inspetor tutor (mentor designado pelo chefe de serviço)</li>
+    <li>Participa em inspeções reais sob supervisão direta do tutor</li>
+    <li>É avaliado pelo desempenho ao longo do período probatório</li>
+    <li>Se a avaliação for negativa, o vínculo pode ser resolvido sem necessidade de procedimento disciplinar</li>
+  </ul>
+</div>
+
+<hr class="divider" id="funcoes"/>
+<p class="section-label">4. Conteúdo Funcional — O que Faz o Inspetor Tributário</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Inspeção tributária externa</h3>
+    <p>Deslocação às instalações do contribuinte (empresa, escritório, armazém, estabelecimento) com apresentação da <strong>ordem de serviço</strong> de inspeção emitida pelo diretor de serviços. Acesso a:</p>
+    <ul>
+      <li>Livros e registos contabilísticos (diário, razão, balancetes)</li>
+      <li>Documentos de suporte (faturas, notas de crédito, extratos bancários, contratos)</li>
+      <li>Sistemas informáticos de faturação e contabilidade (SAF-T, programas de contabilidade)</li>
+      <li>Correspondência comercial e fiscal</li>
+      <li>Inventários, stocks e ativos físicos</li>
+      <li>Declarações prestadas pelo contribuinte ou representante</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Inspeção tributária interna</h3>
+    <p>Análise nos serviços da AT-RAM, sem deslocação. Baseia-se em:</p>
+    <ul>
+      <li>Declarações fiscais submetidas pelo contribuinte (IRS, IRC, IVA, IS)</li>
+      <li>Dados de e-fatura (cruzamento de faturas emitidas vs. declaradas)</li>
+      <li>SAF-T PT (ficheiro de auditoria normalizado) — análise da contabilidade digital</li>
+      <li>Informações de terceiros (empregadores, clientes, fornecedores, bancos)</li>
+      <li>Dados de troca automática internacional (CRS, DAC2)</li>
+      <li>Dados dos registos públicos (predial, comercial, automóvel)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Outras funções do inspetor tributário</h3>
+  <ul>
+    <li><strong>Avaliação da matéria tributável por métodos diretos:</strong> Correções técnicas baseadas em documentação — identificação de proveitos omitidos, custos indevidos, deduções indevidas</li>
+    <li><strong>Avaliação por métodos indiretos (art. 87.º ss. LGT):</strong> Quando a contabilidade está incompleta, falseada ou é inexistente — reconstituição da matéria coletável por indicadores setoriais, rácios, margens de lucro, análise patrimonial</li>
+    <li><strong>Elaboração e notificação do projeto de relatório:</strong> Apresentação das correções propostas ao contribuinte para exercício do direito de audição prévia (art. 60.º LGT)</li>
+    <li><strong>Análise da resposta do contribuinte:</strong> Ponderação dos argumentos apresentados na audição prévia; incorporação dos que procedam; elaboração do relatório final</li>
+    <li><strong>Investigação de fraude fiscal:</strong> Identificação de esquemas — faturas falsas, dupla contabilidade, offshores, preços de transferência manipulados; recolha de prova documental e digital para o MP</li>
+    <li><strong>Aplicação da cláusula anti-abuso (art. 38.º LGT):</strong> Instrução do processo com proposta ao Conselho Diretivo; prova da artificialidade e da falta de substância económica dos negócios</li>
+    <li><strong>Ações aduaneiras:</strong> Controlo de mercadorias; verificação física de cargas; classificação pautal; inspeções a despachantes aduaneiros</li>
+    <li><strong>Participações ao MP:</strong> Nos casos com indícios de crime fiscal — elaboração de participação fundamentada com os elementos recolhidos na inspeção</li>
+  </ul>
+</div>
+
+<hr class="divider" id="procedimento"/>
+<p class="section-label">5. Fases do Procedimento de Inspeção Tributária</p>
+
+<div class="highlight">
+  <p>O procedimento de inspeção tributária é regulado pelo <strong>RCPIT</strong> (Regime Complementar do Procedimento de Inspeção Tributária — Decreto-Lei n.º 413/98, aplicado na RAM) e pela LGT. O inspetor deve conhecer e cumprir todas as fases.</p>
+</div>
+
+<div class="card">
+  <ol>
+    <li><strong>Seleção e ordem de serviço:</strong> O contribuinte é selecionado com base nos critérios do PAIT; o diretor de serviços emite a ordem de serviço que habilita o inspetor a realizar a inspeção. A ordem indica: o contribuinte, o âmbito (geral ou parcial), os exercícios a inspecionar.</li>
+    <li><strong>Notificação do início da inspeção:</strong> O contribuinte é notificado do início da inspeção com antecedência mínima (exceto nas inspeções-surpresa autorizadas para casos de urgência ou risco de destruição de prova).</li>
+    <li><strong>Realização da inspeção:</strong> O inspetor examina os documentos, realiza diligências, solicita esclarecimentos e recolhe os elementos necessários. O contribuinte ou representante deve prestar toda a colaboração exigida.</li>
+    <li><strong>Conclusão e projeto de relatório:</strong> O inspetor elabora o projeto de relatório de inspeção, identificando os factos apurados, as correções propostas (com fundamentação técnica e jurídica) e a quantificação das liquidações adicionais.</li>
+    <li><strong>Notificação do projeto para audição prévia:</strong> O projeto é notificado ao contribuinte para exercício do <strong>direito de audição prévia</strong> (prazo mínimo de 15 dias úteis — art. 60.º LGT). O contribuinte pode apresentar por escrito os argumentos que considere relevantes.</li>
+    <li><strong>Análise da audição prévia:</strong> O inspetor analisa os argumentos do contribuinte. Os que procedam são incorporados no relatório final; os que não procedam são fundamentadamente refutados.</li>
+    <li><strong>Relatório final:</strong> O inspetor elabora o relatório final, que deve ser devidamente fundamentado. O relatório é aprovado pelo chefe de equipa/diretor de serviços e origina as respetivas liquidações adicionais.</li>
+    <li><strong>Liquidações adicionais:</strong> Com base no relatório, a AT-RAM emite as notas de liquidação adicional de imposto, juros compensatórios e, se aplicável, coimas por infrações contraordenacionais. As liquidações são notificadas ao contribuinte.</li>
+    <li><strong>Meios de defesa do contribuinte:</strong> O contribuinte pode reclamar graciosamente (prazo de 120 dias), recorrer hierarquicamente ou impugnar judicialmente (prazo de 90 dias). A garantia da dívida suspende a execução fiscal.</li>
+  </ol>
+</div>
+
+<hr class="divider" id="progressao"/>
+<p class="section-label">6. Progressão, Avaliação de Desempenho e Remuneração</p>
+
+<h2>Progressão na Carreira</h2>
+<div class="card">
+  <h3>Progressão por posições remuneratórias (dentro da mesma categoria)</h3>
+  <p>A progressão entre posições remuneratórias na mesma categoria (ex.: de posição 1 para posição 2 dentro de Inspetor Tributário) ocorre mediante:</p>
+  <ul>
+    <li>Tempo mínimo de permanência na posição (regra geral: 2 anos com avaliação de Bom; 1 ano e 6 meses com Muito Bom; 1 ano com Excelente)</li>
+    <li>Avaliação de desempenho pelo SIADAP-RAM com menção igual ou superior a Bom</li>
+    <li>Sem limite máximo de posições — o inspetor pode progredir até ao topo da tabela remuneratória da sua categoria</li>
+  </ul>
+  <h3>Mudança de categoria (promoção)</h3>
+  <p>De <strong>Inspetor Tributário</strong> para <strong>Inspetor Tributário Principal</strong>: por concurso interno, exigindo:</p>
+  <ul>
+    <li>Mínimo de anos de serviço na categoria de Inspetor Tributário (fixado pelo diploma ou pelo regulamento de concurso)</li>
+    <li>Avaliações de desempenho favoráveis (mínimo de Bom nos últimos ciclos avaliativos)</li>
+    <li>Provas de avaliação de competências específicas para o grau superior</li>
+    <li>Disponibilidade de vagas na categoria superior (as promoções dependem da existência de vagas no mapa de pessoal da AT-RAM)</li>
+  </ul>
+</div>
+
+<h2>Avaliação de Desempenho dos Inspetores — SIADAP-RAM</h2>
+<div class="card">
+  <p>Os inspetores tributários são avaliados pelo SIADAP-RAM (SIADAP 3 — componente dos trabalhadores), com as especificidades do DLR 28/2022/M:</p>
+  <ul>
+    <li><strong>Objetivos individuais:</strong> São definidos no início de cada ciclo bienal, articulados com os objetivos do plano de inspeção. Exemplos: número e valor das correções apuradas, tipologia de inspeções realizadas, prazo de conclusão de inspeções.</li>
+    <li><strong>Competências comportamentais:</strong> Avaliadas pelo avaliador (chefe de equipa ou diretor de serviços): rigor técnico, capacidade de análise, comunicação com contribuintes, integridade, trabalho em equipa.</li>
+    <li><strong>Quotas:</strong> Excelente (máx. 5% dos inspetores do serviço); Muito Bom (máx. 25%). Os restantes são distribuídos por Bom, Adequado e Inadequado.</li>
+    <li><strong>Consequências:</strong> Excelente → +5 dias de férias + possível prémio monetário; Muito Bom → +3 dias de férias; Inadequado → não progride + obrigação de plano de melhoria de desempenho.</li>
+  </ul>
+</div>
+
+<h2>Remuneração</h2>
+<div class="card">
+  <p>A remuneração dos inspetores tributários é composta por:</p>
+  <ul>
+    <li><strong>Remuneração base:</strong> Fixada por portaria do Secretário Regional das Finanças, por posições remuneratórias em tabela salarial específica das carreiras especiais da AT-RAM. É superior à tabela geral dos técnicos superiores, refletindo a especialização exigida.</li>
+    <li><strong>Subsídio de férias e de Natal:</strong> Igual à remuneração mensal base.</li>
+    <li><strong>Suplementos específicos</strong> (ver secção 9).</li>
+    <li><strong>Prémios de desempenho:</strong> Atribuíveis com avaliação de Excelente ou Muito Bom, sujeitos a disponibilidade orçamental e ao limite máximo fixado por portaria.</li>
+  </ul>
+</div>
+
+<hr class="divider" id="tecnica"/>
+<p class="section-label">7. Carreira Técnica Tributária</p>
+
+<div class="card">
+  <h3>Categorias</h3>
+  <table>
+    <thead><tr><th>Categoria</th><th>Habilitação mínima</th><th>Funções principais</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Técnico Tributário Principal</strong></td><td>Licenciatura</td><td>Funções técnicas de maior complexidade; coordenação de balcão de atendimento; instrução de reclamações e recursos de maior complexidade; apoio técnico à inspeção</td></tr>
+      <tr><td><strong>Técnico Tributário</strong></td><td>12.º ano</td><td>Liquidação de impostos (IMI, IMT, IS, taxas); atendimento de contribuintes; emissão de certidões; instrução de processos de execução fiscal de rotina; registo de declarações</td></tr>
+    </tbody>
+  </table>
+  <h3>Funções detalhadas</h3>
+  <ul>
+    <li>Liquidação de IMI, IMT e IS nas transmissões imobiliárias e outras operações sujeitas a IS</li>
+    <li>Atendimento presencial, telefónico e digital de contribuintes — esclarecimento de dúvidas fiscais correntes</li>
+    <li>Instrução de processos de isenção e benefícios fiscais de menor complexidade</li>
+    <li>Emissão de certidões de situação tributária, certidões de dívida e outros documentos administrativos</li>
+    <li>Tramitação de processos de execução fiscal: citação, notificação, penhora de bens de menor valor, planos de pagamento</li>
+    <li>Processamento de reclamações graciosas de menor complexidade e valor</li>
+    <li>Registo de declarações e documentos fiscais submetidos pelos contribuintes</li>
+    <li>Manutenção e atualização das matrizes prediais (articulação com o registo predial)</li>
+  </ul>
+</div>
+
+<hr class="divider" id="aduaneiro"/>
+<p class="section-label">8. Carreira de Perito Aduaneiro</p>
+
+<div class="card">
+  <h3>Enquadramento</h3>
+  <p>A carreira de perito aduaneiro é a carreira especializada para as funções de controlo e fiscalização aduaneira na RAM. Os peritos aduaneiros exercem as suas funções no porto e aeroporto do Funchal e nos demais postos aduaneiros regionais. Articulam-se com a Direção de Serviços Aduaneiros da AT-RAM e com as entidades de controlo fronteiriço (ASEF, SEF, GNR).</p>
+  <h3>Categorias</h3>
+  <ul>
+    <li><strong>Perito Aduaneiro Principal:</strong> Funções de maior complexidade; coordenação do posto aduaneiro; decisão sobre desembaraços aduaneiros complexos; análise de risco de importações/exportações</li>
+    <li><strong>Perito Aduaneiro:</strong> Controlo documental e físico de mercadorias; verificação da classificação pautal; cobrança de direitos e IVA na importação; combate ao contrabando</li>
+  </ul>
+  <h3>Requisitos de acesso</h3>
+  <p>Licenciatura em Direito, Gestão, Comércio Internacional, ou área afim, com conhecimentos específicos de legislação aduaneira europeia (Código Aduaneiro da União — CAU) e da pauta aduaneira europeia. Concurso com provas de conhecimentos específicos sobre legislação aduaneira.</p>
+  <h3>Funções específicas</h3>
+  <ul>
+    <li>Desalfandegamento de mercadorias: verificação documental (declarações aduaneiras) e física</li>
+    <li>Classificação pautal: determinação do código da Nomenclatura Combinada para cálculo dos direitos</li>
+    <li>Verificação da origem das mercadorias para aplicação de acordos preferenciais</li>
+    <li>Controlo de regimes aduaneiros especiais: trânsito, entreposto, aperfeiçoamento</li>
+    <li>Ações de fiscalização a operadores económicos registados (AEO)</li>
+    <li>Cooperação com autoridades policiais no combate ao contrabando</li>
+  </ul>
+</div>
+
+<hr class="divider" id="suplementos"/>
+<p class="section-label">9. Suplementos Remuneratórios e Compensações</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Suplemento</th><th>Quem recebe</th><th>Fundamento</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Suplemento de inspeção</strong></td><td>Inspetores tributários no exercício efetivo de funções de inspeção externa</td><td>Caráter mais exigente das funções de inspeção presencial; poderes de autoridade inerentes; deslocações frequentes</td></tr>
+      <tr><td><strong>Suplemento de disponibilidade</strong></td><td>Peritos aduaneiros e outros em funções com horários atípicos (turnos, guarda permanente)</td><td>Disponibilidade permanente ou horários fora do período normal de trabalho</td></tr>
+      <tr><td><strong>Suplemento de risco ou penosidade</strong></td><td>Peritos aduaneiros em controlo de cargas perigosas; inspetores em fiscalizações a atividades perigosas</td><td>Risco ou penosidade superiores ao normal no exercício das funções</td></tr>
+      <tr><td><strong>Abono para falhas</strong></td><td>Técnicos tributários com funções de tesouraria e manuseamento de numerário</td><td>Responsabilidade pelo manuseamento de valores em espécie</td></tr>
+      <tr><td><strong>Ajudas de custo e transporte</strong></td><td>Todos os trabalhadores em deslocações em serviço</td><td>Deslocações fora do local de trabalho habitual para inspeções, diligências ou formação</td></tr>
+    </tbody>
+  </table>
+  <p>Os montantes concretos dos suplementos são fixados por <strong>portaria do Secretário Regional das Finanças</strong>, dentro dos limites máximos previstos no diploma. A atribuição dos suplementos requer que o trabalhador exerça efetivamente as funções que os justificam — não são pagos em períodos de licença, formação ou exercício de funções sem deslocação.</p>
+</div>
+
+<hr class="divider" id="formacao"/>
+<p class="section-label">10. Formação Profissional Obrigatória</p>
+
+<div class="card">
+  <p>O DLR 28/2022/M impõe formação contínua como condição de progressão e de manutenção das qualificações. O mínimo anual de horas de formação é fixado por regulamento interno da AT-RAM, em conformidade com as orientações do diploma.</p>
+  <h3>Áreas de formação obrigatória</h3>
+  <div class="grid2">
+    <div class="art-block">
+      <div class="art-num">Direito tributário</div>
+      <div class="art-title">Atualização legislativa</div>
+      <div class="art-body">Atualizações legislativas nacionais e regionais; jurisprudência do STA e dos TCA's relevante para a inspeção; novas obrigações declarativas; circulares e orientações da AT nacional com impacto na RAM.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Técnicas de inspeção</div>
+      <div class="art-title">Metodologia inspetiva</div>
+      <div class="art-body">Técnicas de análise de risco; metodologia de inspeção por setores de atividade; análise de contabilidade e documentação; elaboração de relatórios de inspeção; condução da audição prévia.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Contabilidade e análise financeira</div>
+      <div class="art-title">Leitura de contas</div>
+      <div class="art-body">SNC e SNC-AP; análise de balanços e demonstrações de resultados; SAF-T PT e software de contabilidade; rácios financeiros e indicadores setoriais; contabilidade forense aplicada à inspeção.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Direito aduaneiro europeu</div>
+      <div class="art-title">CAU e pauta</div>
+      <div class="art-body">Código Aduaneiro da União (CAU); Nomenclatura Combinada; regras de origem; regimes aduaneiros especiais; acordos preferenciais da UE com países terceiros relevantes para a RAM.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Ética e deontologia</div>
+      <div class="art-title">Integridade funcional</div>
+      <div class="art-body">RGPC da AT-RAM; código de conduta; sigilo fiscal (art. 64.º LGT); impedimentos e suspeições (CPA); prevenção da corrupção no exercício de funções inspetivas.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Novas tecnologias</div>
+      <div class="art-title">Ferramentas digitais</div>
+      <div class="art-body">e-Fatura; SAF-T PT — análise e cruzamento; software de análise de dados fiscais; inteligência artificial na seleção de contribuintes de risco; cibersegurança e proteção de dados na inspeção.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Branqueamento de capitais</div>
+      <div class="art-title">BCFT</div>
+      <div class="art-body">Regime jurídico do BCFT (Lei n.º 83/2017); indicadores de suspeita com relevância fiscal; obrigações de comunicação à UIF (Unidade de Informação Financeira); tipologias de esquemas mistos (fraude fiscal + branqueamento).</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Troca de informações</div>
+      <div class="art-title">Cooperação internacional</div>
+      <div class="art-body">DAC1–DAC6; CRS/FATCA; informações a pedido e espontâneas; utilização de informações obtidas internacionalmente como prova em inspeções; limites legais de utilização.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="incompatibilidades"/>
+<p class="section-label">11. Incompatibilidades e Impedimentos Específicos</p>
+
+<div class="card">
+  <h3>Incompatibilidades durante o exercício de funções</h3>
+  <ul>
+    <li><strong>Proibição de atividade de consultoria ou assessoria fiscal:</strong> O inspetor tributário não pode, durante o exercício de funções, prestar serviços de consultoria, assessoria ou representação fiscal a contribuintes — constitui conflito de interesse com as funções de fiscalização.</li>
+    <li><strong>Proibição de exercício de contabilidade organizada:</strong> O inspetor não pode ser gerente, administrador ou ROC/TOC de entidades privadas.</li>
+    <li><strong>Proibição de atividades incompatíveis com o dever de disponibilidade:</strong> O inspetor não pode exercer atividade privada que comprometa a sua disponibilidade para o serviço ou que crie aparência de conflito de interesse.</li>
+  </ul>
+  <h3>Período de nojo (cooling-off) após cessação de funções</h3>
+  <ul>
+    <li>Durante <strong>3 anos</strong> após a cessação de funções (para Inspetor Tributário Principal e titulares de cargos de direção): proibição de exercer atividade profissional em entidades privadas com as quais o inspetor tenha tido relação direta no exercício das suas funções.</li>
+    <li>Durante <strong>1 ano</strong> após a cessação (para Inspetor Tributário base): mesma restrição mas com âmbito mais limitado.</li>
+    <li>Violação do período de nojo: infração disciplinar mesmo após a cessação do vínculo; pode constituir crime de corrupção passiva diferida.</li>
+  </ul>
+  <h3>Impedimentos em ações de inspeção concretas</h3>
+  <p>O inspetor deve declarar-se impedido (art. 69.º CPA) quando tenha relação com o contribuinte inspecionado que possa comprometer a sua imparcialidade: familiar até 2.º grau, ex-empregador/cliente nos últimos 3 anos, amizade íntima ou inimizade declarada, interesse económico no resultado da inspeção. A declaração de impedimento é feita ao chefe imediato, que designa outro inspetor.</p>
+</div>
+
+<hr class="divider" id="disciplinar"/>
+<p class="section-label">12. Regime Disciplinar Específico dos Inspetores</p>
+
+<div class="card">
+  <p>Os inspetores tributários estão sujeitos ao regime disciplinar geral da LGTFP/DLR 11/2018/M, com as seguintes infrações específicas das suas funções de autoridade:</p>
+  <table>
+    <thead><tr><th>Infração</th><th>Gravidade</th><th>Exemplos</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Violação do sigilo fiscal</strong></td><td>Muito grave</td><td>Divulgar dados fiscais de contribuintes a terceiros não autorizados; partilhar informação de inspeção com a empresa alvo antes do relatório final; usar informação fiscal para fins pessoais</td></tr>
+      <tr><td><strong>Receção de ofertas de contribuintes</strong></td><td>Muito grave</td><td>Aceitar qualquer vantagem patrimonial (dinheiro, bens, viagens, jantar) de contribuinte inspecionado ou seus representantes</td></tr>
+      <tr><td><strong>Relatório falso ou manipulado</strong></td><td>Muito grave</td><td>Elaborar relatório com factos incorretos, omitir irregularidades detetadas, alterar cálculos para reduzir liquidações sem fundamento</td></tr>
+      <tr><td><strong>Conflito de interesses não declarado</strong></td><td>Grave</td><td>Participar em inspeção sem se declarar impedido quando existe relação pessoal com o contribuinte</td></tr>
+      <tr><td><strong>Abuso de poderes de inspeção</strong></td><td>Grave a Muito grave</td><td>Usar poderes de inspeção para fins não fiscais; exigir informação desnecessária para intimidar o contribuinte</td></tr>
+      <tr><td><strong>Incumprimento das obrigações de formação</strong></td><td>Leve a Grave</td><td>Não cumprir o mínimo de horas de formação obrigatória; não participar em ações de formação sem justificação</td></tr>
+    </tbody>
+  </table>
+  <h3>Princípio da independência funcional</h3>
+  <p>As conclusões técnicas das inspeções baseiam-se exclusivamente nos factos apurados e na lei aplicável. Nenhum superior hierárquico pode dar instruções ao inspetor sobre o <em>resultado técnico</em> da inspeção (se há ou não correções, o montante). Pode dar instruções sobre a metodologia, o prazo e a prioridade — mas não sobre a conclusão. A interferência de um superior no resultado técnico de uma inspeção é infração disciplinar do superior e deve ser denunciada pelo inspetor ao Conselho Diretivo ou ao RCN.</p>
+</div>
+
+<hr class="divider" id="sintese"/>
+<p class="section-label">13. Síntese — A Carreira do Inspetor Tributário da AT-RAM</p>
+
+<table>
+  <thead><tr><th>Aspeto</th><th>Conteúdo essencial</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Carreira</strong></td><td>Inspeção Tributária e Aduaneira — Técnico Superior Tributário → Inspetor Tributário → Inspetor Tributário Principal</td></tr>
+    <tr><td><strong>Acesso</strong></td><td>Concurso público; licenciatura em Direito, Economia, Gestão ou afim; provas de conhecimentos + avaliação curricular + entrevista</td></tr>
+    <tr><td><strong>Vínculo</strong></td><td>Nomeação (regra para carreiras que exercem poderes de autoridade); período probatório de 6 meses</td></tr>
+    <tr><td><strong>Funções</strong></td><td>Inspeção externa e interna; avaliação direta e indireta; relatório de inspeção; investigação de fraude; anti-abuso; participações ao MP</td></tr>
+    <tr><td><strong>Progressão</strong></td><td>Por posições remuneratórias (SIADAP-RAM); promoção a Principal por concurso interno</td></tr>
+    <tr><td><strong>Formação</strong></td><td>Mínimo anual obrigatório em 8 áreas; condição de progressão</td></tr>
+    <tr><td><strong>Suplemento chave</strong></td><td>Suplemento de inspeção (pelo exercício efetivo de inspeção externa)</td></tr>
+    <tr><td><strong>Incompatibilidade crítica</strong></td><td>Proibição de consultoria fiscal durante as funções; período de nojo após saída</td></tr>
+    <tr><td><strong>Infração mais grave</strong></td><td>Violação de sigilo fiscal; relatório falso; receção de ofertas — pode levar a demissão e processo criminal</td></tr>
+    <tr><td><strong>Independência</strong></td><td>O resultado técnico da inspeção é insindicável pelos superiores hierárquicos — só os factos e a lei decidem</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

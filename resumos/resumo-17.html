@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>17 · Regulamento (UE) 2016/679 — RGPD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #e05c5c;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+    .toc ol{padding-left:1.2rem;margin-bottom:0}.toc li{font-size:.8rem;color:var(--text-muted);margin-bottom:.2rem}.toc a{color:var(--text-muted);text-decoration:none}.toc a:hover{color:var(--accent)}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">17 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">17 · Proteção de Dados — UE</p>
+<h1>Regulamento (UE) 2016/679 — <em>RGPD</em></h1>
+<p class="doc-sub">Do Parlamento Europeu e do Conselho, de 27 de abril de 2016 · Aplicável desde 25 de maio de 2018 · Regulamento Geral sobre a Proteção de Dados · Revoga a Diretiva 95/46/CE · Base jurídica: arts. 16.º e 114.º TFUE · Transposto em Portugal pela Lei 58/2019 (v. Resumo 15)</p>
+<div class="meta-row">
+  <span class="badge badge-accent">RGPD</span>
+  <span class="badge">GDPR</span>
+  <span class="badge">Regulamento 2016/679</span>
+  <span class="badge">Dados Pessoais</span>
+  <span class="badge">Direitos dos Titulares</span>
+  <span class="badge">CNPD</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <ol>
+    <li><a href="#s1">Natureza jurídica, base legal e estrutura (11 capítulos)</a></li>
+    <li><a href="#s2">Âmbito material e territorial</a></li>
+    <li><a href="#s3">Conceitos fundamentais (art. 4.º)</a></li>
+    <li><a href="#s4">Princípios do tratamento (art. 5.º)</a></li>
+    <li><a href="#s5">Bases legais do tratamento (art. 6.º)</a></li>
+    <li><a href="#s6">Categorias especiais de dados (art. 9.º)</a></li>
+    <li><a href="#s7">Obrigações de transparência e consentimento</a></li>
+    <li><a href="#s8">Direitos dos titulares (arts. 12.º–23.º)</a></li>
+    <li><a href="#s9">Obrigações dos responsáveis pelo tratamento</a></li>
+    <li><a href="#s10">Encarregado de Proteção de Dados (EPD/DPO)</a></li>
+    <li><a href="#s11">Transferências internacionais (FATCA, CRS, DAC)</a></li>
+    <li><a href="#s12">Autoridade de controlo — CNPD</a></li>
+    <li><a href="#s13">Regime sancionatório</a></li>
+    <li><a href="#s14">Sigilo fiscal vs. RGPD — tensão e compatibilização</a></li>
+    <li><a href="#s15">Síntese para o inspetor tributário</a></li>
+  </ol>
+</div>
+
+<hr class="divider" id="s1"/>
+<p class="section-label">1. Natureza Jurídica, Base Legal e Estrutura</p>
+
+<div class="highlight">
+  <p>O RGPD é um <strong>regulamento europeu diretamente aplicável</strong> em todos os EM sem necessidade de transposição (ao contrário de uma diretiva). Aplica-se uniformemente em toda a UE desde 25 de maio de 2018. A Lei 58/2019 não o transpõe mas antes <em>concretiza as margens de apreciação</em> que o próprio regulamento deixou para os EM. O RGPD tem como base jurídica o art. 16.º TFUE (proteção de dados) e o art. 114.º TFUE (mercado interno).</p>
+</div>
+
+<table>
+  <thead><tr><th>Capítulo</th><th>Arts.</th><th>Conteúdo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>I</strong> — Disposições gerais</td><td>1.º–4.º</td><td>Objeto, âmbito material e territorial, definições</td></tr>
+    <tr><td><strong>II</strong> — Princípios</td><td>5.º–11.º</td><td>6 princípios; bases legais (art. 6.º); consentimento (art. 7.º); categorias especiais (art. 9.º); dados criminais (art. 10.º)</td></tr>
+    <tr><td><strong>III</strong> — Direitos dos titulares</td><td>12.º–23.º</td><td>Transparência; informação; acesso; retificação; apagamento; limitação; portabilidade; oposição; decisões automatizadas; restrições nacionais</td></tr>
+    <tr><td><strong>IV</strong> — Responsável e subcontratante</td><td>24.º–43.º</td><td>Responsabilidade; proteção desde a conceção (privacy by design); registos de atividades; cooperação com a AC; DPO; AIPD; consulta prévia; certificação</td></tr>
+    <tr><td><strong>V</strong> — Transferências internacionais</td><td>44.º–49.º</td><td>Decisões de adequação; garantias adequadas (SCCs, BCRs, códigos de conduta); derrogações</td></tr>
+    <tr><td><strong>VI</strong> — Autoridades de controlo independentes</td><td>50.º–59.º</td><td>Independência; competências; poderes investigativos, corretivos, autorizativos, consultivos</td></tr>
+    <tr><td><strong>VII</strong> — Cooperação e coerência</td><td>60.º–76.º</td><td>One-stop-shop; mecanismo de coerência; Comité Europeu para a Proteção de Dados (CEPD)</td></tr>
+    <tr><td><strong>VIII</strong> — Vias de recurso e responsabilidade</td><td>77.º–84.º</td><td>Queixa à AC; recurso judicial; responsabilidade civil; coimas</td></tr>
+    <tr><td><strong>IX</strong> — Disposições específicas</td><td>85.º–91.º</td><td>Tratamento para fins jornalísticos/académicos; acesso público; estatísticas; sigilo profissional; igrejas</td></tr>
+    <tr><td><strong>X–XI</strong> — Atos delegados/finais</td><td>92.º–99.º</td><td>Poderes delegados à Comissão; disposições finais; revogação da Diretiva 95/46/CE</td></tr>
+  </tbody>
+</table>
+
+<hr class="divider" id="s2"/>
+<p class="section-label">2. Âmbito Material e Territorial</p>
+
+<div class="card">
+  <h3>Âmbito material (art. 2.º)</h3>
+  <p>Aplica-se ao tratamento de dados pessoais por meios total ou parcialmente automatizados e ao tratamento não automatizado que faça parte de um ficheiro. <strong>Excluído:</strong> tratamento para segurança nacional (competência exclusiva dos EM); tratamento por pessoas singulares para fins exclusivamente pessoais ou domésticos; atividades fora do âmbito do direito da UE.</p>
+  <h3>Âmbito territorial (art. 3.º) — princípio da extraterritorialidade</h3>
+  <ul>
+    <li><strong>Critério do estabelecimento:</strong> Aplica-se ao tratamento realizado por responsável ou subcontratante estabelecido na UE, independentemente de o tratamento ocorrer na UE ou fora dela</li>
+    <li><strong>Critério da localização do titular:</strong> Aplica-se ao tratamento de dados de pessoas que se encontrem na UE por responsável não estabelecido na UE, se o tratamento se relacionar com: (a) oferta de bens ou serviços a essas pessoas; (b) monitorização do seu comportamento na UE</li>
+    <li><strong>Critério do direito internacional público:</strong> Aplica-se também quando o responsável está num local sujeito ao direito de um EM por força do direito internacional público (ex.: embaixadas)</li>
+    <li><strong>RAM:</strong> Todos os organismos públicos e privados na Madeira e Porto Santo estão sujeitos ao RGPD, incluindo a AT-RAM</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s3"/>
+<p class="section-label">3. Conceitos Fundamentais (Art. 4.º)</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Dados pessoais (n.º 1)</div>
+    <div class="art-title">Definição ampla</div>
+    <div class="art-body">Qualquer informação relativa a pessoa singular identificada ou identificável. Inclui: nome, NIF, morada, email, endereço IP, dados de localização, dados bancários, rendimentos fiscais, matéria coletável, biometria, dados de saúde. O NIF é per se um dado pessoal que identifica diretamente o contribuinte.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Tratamento (n.º 2)</div>
+    <div class="art-title">Qualquer operação</div>
+    <div class="art-body">Recolha, registo, organização, estruturação, conservação, adaptação, alteração, consulta, utilização, divulgação por transmissão, difusão, disponibilização, alinhamento, combinação, limitação, apagamento ou destruição. Uma simples consulta de uma base de dados é «tratamento».</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Responsável pelo tratamento (n.º 7)</div>
+    <div class="art-title">Quem decide as finalidades</div>
+    <div class="art-body">A pessoa singular, coletiva, autoridade pública, agência ou organismo que, individualmente ou em conjunto, determina as <em>finalidades</em> e os <em>meios</em> do tratamento. A AT-RAM é responsável pelo tratamento dos dados dos contribuintes que gere. Nos tratamentos conjuntos (art. 26.º), dois responsáveis podem determinar conjuntamente as finalidades.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Subcontratante (n.º 8)</div>
+    <div class="art-title">Quem executa por conta de outrem</div>
+    <div class="art-body">Pessoa ou organismo que trata dados pessoais em nome do responsável. Ex.: empresa de TI que gere os servidores da AT-RAM; fornecedor de software tributário. O subcontratante tem obrigações próprias e deve celebrar contrato de subcontratação (art. 28.º RGPD) que inclua cláusulas obrigatórias sobre instrução do responsável, confidencialidade, segurança e auditoria.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Consentimento (n.º 11)</div>
+    <div class="art-title">Manifestação de vontade livre</div>
+    <div class="art-body">Manifestação de vontade livre, específica, informada e inequívoca pela qual o titular aceita o tratamento. Nas relações de autoridade (Estado-contribuinte), o consentimento <strong>raramente é válido</strong> — o contribuinte não tem escolha real de consentir, logo a AT-RAM não usa esta base legal para dados fiscais.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Violação de dados pessoais (n.º 12)</div>
+    <div class="art-title">Quebra de segurança</div>
+    <div class="art-body">Violação de segurança que provoque, de modo acidental ou ilícito, a destruição, perda, alteração, divulgação não autorizada ou acesso não autorizado a dados pessoais. Exemplos na AT-RAM: fuga de dados de contribuintes; acesso indevido a bases de dados fiscais; ransomware que encripte os sistemas. Obriga a notificação à CNPD em 72 horas.</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Outros conceitos relevantes do art. 4.º</h3>
+  <ul>
+    <li><strong>Pseudonimização (n.º 5):</strong> Tratamento pelo qual os dados pessoais deixam de poder ser diretamente atribuídos a um titular sem recurso a informações suplementares, mantidas separadamente e sujeitas a medidas de segurança. Reduz o risco mas <strong>não torna os dados anónimos</strong> — continuam a ser dados pessoais sujeitos ao RGPD.</li>
+    <li><strong>Anonimização:</strong> Processo irreversível de desvincular dados de um indivíduo identificável. Dados verdadeiramente anonimizados <strong>não são dados pessoais</strong> e saem do âmbito do RGPD.</li>
+    <li><strong>Definição de perfis (n.º 4):</strong> Qualquer forma de tratamento automatizado de dados pessoais para avaliar aspetos pessoais de uma pessoa, em particular para analisar ou prever o seu comportamento. Relevante para os modelos de análise de risco da AT-RAM para seleção de contribuintes a inspecionar.</li>
+    <li><strong>Autoridade de controlo (n.º 21):</strong> Autoridade pública independente instituída por um EM. Em Portugal: CNPD (Comissão Nacional de Proteção de Dados).</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s4"/>
+<p class="section-label">4. Princípios do Tratamento (Art. 5.º)</p>
+
+<div class="card">
+  <p>O artigo 5.º enuncia os 6 princípios fundamentais. Todos os tratamentos devem cumpri-los cumulativamente. A violação de qualquer princípio é infração de nível 1 (coima até 20 M€ ou 4% VN).</p>
+  <table>
+    <thead><tr><th>Princípio</th><th>Conteúdo</th><th>Aplicação AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Licitude, lealdade e transparência</strong></td><td>Base legal; tratamento honesto; titulares informados</td><td>Base legal dos tratamentos fiscais: art. 6.º c) (obrigação jurídica) ou e) (interesse público). Política de privacidade publicada no portal AT-RAM.</td></tr>
+      <tr><td><strong>Limitação das finalidades</strong></td><td>Fins determinados, explícitos e legítimos; não reutilizar para fins incompatíveis</td><td>Dados recolhidos para fins de liquidação de imposto não podem ser usados para fins de investigação criminal sem base legal específica. Exceção: fins de arquivo de interesse público, investigação científica e fins estatísticos (art. 89.º RGPD) são presumivelmente compatíveis.</td></tr>
+      <tr><td><strong>Minimização dos dados</strong></td><td>Só dados adequados, pertinentes e limitados ao necessário</td><td>Nas inspeções, o inspetor só deve solicitar documentos relevantes para o período e os impostos objeto de verificação. Não deve recolher dados que não sejam necessários para as correções a efetuar.</td></tr>
+      <tr><td><strong>Exatidão</strong></td><td>Dados exatos e atualizados; dados inexatos eliminados ou retificados</td><td>A AT-RAM deve manter os dados dos contribuintes atualizados (morada, atividade, NIFs de TOC responsáveis). Os contribuintes podem pedir retificação de dados incorretos nos sistemas fiscais.</td></tr>
+      <tr><td><strong>Limitação da conservação</strong></td><td>Só conservados durante o tempo necessário para as finalidades</td><td>Dados fiscais: conservados pelo período de caducidade de liquidação (4 anos) + prescrição tributária (8 anos) + prazo de arquivo (variável). Após esses prazos, obrigação de eliminação ou anonimização.</td></tr>
+      <tr><td><strong>Integridade e confidencialidade</strong></td><td>Segurança adequada: cifragem, pseudonimização, controlo de acesso, proteção contra destruição acidental</td><td>Sistemas informáticos da AT-RAM com controlo de acessos por perfil; sigilo fiscal dos trabalhadores (art. 64.º LGT); planos de resposta a incidentes de segurança.</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Responsabilidade (art. 5.º, n.º 2):</strong> O responsável deve ser capaz de demonstrar o cumprimento de todos os princípios — é o <em>princípio da accountability</em>. A AT-RAM tem de documentar os tratamentos que realiza e as medidas que adota para garantir conformidade.</p>
+</div>
+
+<hr class="divider" id="s5"/>
+<p class="section-label">5. Bases Legais do Tratamento (Art. 6.º)</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Alínea</th><th>Base Legal</th><th>Relevância AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>a)</strong></td><td>Consentimento do titular para um ou mais fins específicos</td><td>Raramente usável: nas relações com a AT-RAM não existe consentimento livre. Eventualmente aplicável para newsletters ou serviços voluntários no portal do contribuinte.</td></tr>
+      <tr><td><strong>b)</strong></td><td>Execução de contrato de que o titular é parte ou diligências pré-contratuais</td><td>Aplicável aos contratos de fornecimento e prestação de serviços da AT-RAM com fornecedores externos.</td></tr>
+      <tr><td><strong>c)</strong></td><td>Cumprimento de obrigação jurídica do responsável</td><td><strong>Base legal principal para dados fiscais.</strong> A LGT (arts. 59.º ss.), CIRS, CIRC, CIVA e CPPT obrigam a AT-RAM ao tratamento. Inclui tratamentos de dados em inspeções, liquidações, execuções, reclamações e recursos.</td></tr>
+      <tr><td><strong>d)</strong></td><td>Defesa de interesses vitais do titular ou de terceiros</td><td>Raramente aplicável. Situações de urgência de segurança pública associadas ao processo tributário.</td></tr>
+      <tr><td><strong>e)</strong></td><td>Exercício de funções de interesse público ou de autoridade pública</td><td><strong>Base legal subsidiária para dados fiscais.</strong> O exercício de funções tributárias é claramente de interesse público. Pode ser usada em conjunto com a alínea c).</td></tr>
+      <tr><td><strong>f)</strong></td><td>Interesses legítimos do responsável ou de terceiros</td><td><strong>Não aplicável à AT-RAM</strong> no exercício de funções de autoridade pública. O RGPD exclui expressamente as entidades públicas neste contexto.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s6"/>
+<p class="section-label">6. Categorias Especiais de Dados (Art. 9.º)</p>
+
+<div class="highlight">
+  <p>As categorias especiais de dados têm proteção reforçada porque a sua divulgação ou uso indevido pode causar discriminação grave. O tratamento destas categorias é <strong>proibido por defeito</strong> e só é permitido com base numa das condições do art. 9.º, n.º 2.</p>
+</div>
+
+<div class="card">
+  <h3>Categorias especiais (art. 9.º, n.º 1)</h3>
+  <p>Dados que revelem: origem racial ou étnica; opiniões políticas; convicções religiosas ou filosóficas; filiação sindical; dados genéticos; dados biométricos para identificação única; dados relativos à saúde; dados relativos à vida sexual ou orientação sexual.</p>
+  <h3>Exceções relevantes para a AT-RAM (art. 9.º, n.º 2)</h3>
+  <ul>
+    <li><strong>Alínea b) — Obrigações e direitos em matéria de emprego e segurança social:</strong> Dados de saúde dos trabalhadores da AT-RAM (ausências por doença, adaptação de posto de trabalho) podem ser tratados com base nesta alínea, desde que a lei nacional o permita.</li>
+    <li><strong>Alínea g) — Interesse público substancial:</strong> Quando o direito nacional prevê salvaguardas adequadas. Pode ser base para tratamento de dados de saúde ou religiosos se relevantes para a investigação de irregularidades fiscais (ex.: confirmação de isenção fiscal por razões religiosas ou de saúde).</li>
+    <li><strong>Alínea j) — Fins de arquivo, investigação científica ou estatística:</strong> Quando o tratamento é necessário para fins de arquivo de interesse público, investigação científica, histórica ou estatística, com salvaguardas adequadas.</li>
+  </ul>
+  <h3>Dados relativos a condenações criminais (art. 10.º)</h3>
+  <p>O tratamento de dados de infrações penais e condenações criminais só pode ser realizado sob o controlo da autoridade pública, ou quando autorizado pelo direito de um EM com salvaguardas adequadas. Relevante para a AT-RAM nos processos com vertente criminal tributária (comunicações ao MP, processos de RGIT).</p>
+</div>
+
+<hr class="divider" id="s7"/>
+<p class="section-label">7. Obrigações de Transparência e Consentimento</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Art. 7.º — Condições do consentimento</div>
+    <div class="art-title">Consentimento válido</div>
+    <div class="art-body">Para ser válido, o consentimento deve ser: (1) <strong>livre</strong> — sem coerção ou desequilíbrio de poder; (2) <strong>específico</strong> — para fim determinado; (3) <strong>informado</strong> — titular sabe o que consente; (4) <strong>inequívoco</strong> — ato positivo claro. O consentimento pode ser retirado a qualquer momento sem prejuízo da licitude dos tratamentos anteriores.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Arts. 13.º–14.º — Informação ao titular</div>
+    <div class="art-title">Momento e conteúdo da informação</div>
+    <div class="art-body">
+      <strong>Art. 13.º:</strong> Informação quando os dados são recolhidos diretamente do titular (ex.: declaração de rendimentos) — no momento da recolha.<br/>
+      <strong>Art. 14.º:</strong> Informação quando os dados são obtidos de terceiros (ex.: comunicação de rendimentos por entidades patronais) — no prazo de 1 mês.<br/>
+      Conteúdo: identidade do responsável, finalidades, bases legais, destinatários, transferências, prazo de conservação, direitos do titular.
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="s8"/>
+<p class="section-label">8. Direitos dos Titulares (Arts. 12.º–23.º)</p>
+
+<table>
+  <thead><tr><th>Direito</th><th>Art.</th><th>Conteúdo</th><th>Limitações na AT-RAM</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Acesso</strong></td><td>15.º</td><td>Obter confirmação e cópia dos dados tratados</td><td>Pode ser restringido quando comprometer investigações fiscais em curso (art. 23.º + Lei 58/2019 art. 20.º)</td></tr>
+    <tr><td><strong>Retificação</strong></td><td>16.º</td><td>Corrigir dados inexatos ou completar incompletos</td><td>Dados fiscais retificam-se por meios próprios (declaração de substituição, reclamação graciosa)</td></tr>
+    <tr><td><strong>Apagamento</strong></td><td>17.º</td><td>«Direito a ser esquecido»</td><td>AT-RAM pode recusar quando necessário para obrigação jurídica, interesse público ou exercício de direito em processo judicial</td></tr>
+    <tr><td><strong>Limitação</strong></td><td>18.º</td><td>Suspender o tratamento enquanto se resolve contestação</td><td>Possível durante período de reclamação ou impugnação; mas não paralisa a execução fiscal</td></tr>
+    <tr><td><strong>Portabilidade</strong></td><td>20.º</td><td>Receber dados em formato estruturado e transferi-los</td><td>Não aplicável a dados fiscais tratados com base em obrigação legal ou interesse público (só se aplica a tratamentos baseados em consentimento ou contrato)</td></tr>
+    <tr><td><strong>Oposição</strong></td><td>21.º</td><td>Opor-se ao tratamento baseado em interesse legítimo ou público</td><td>Não aplicável a tratamentos baseados em autoridade pública (liquidação, execução, inspeção). O contribuinte não pode «opor-se» com fundamento no RGPD.</td></tr>
+    <tr><td><strong>Decisões automatizadas</strong></td><td>22.º</td><td>Não ser sujeito a decisão exclusivamente automatizada com efeitos significativos</td><td>A AT-RAM deve garantir revisão humana nas decisões de seleção por modelos de risco; pode haver exceção para fins de interesse público com salvaguardas adequadas</td></tr>
+    <tr><td><strong>Restrições nacionais</strong></td><td>23.º</td><td>Os EM podem restringir os direitos dos titulares por lei, para fins de: segurança pública, defesa, segurança nacional, prevenção e investigação de infrações penais, cobrança de impostos</td><td>A Lei 58/2019, em Portugal, concretiza estas restrições para a administração tributária (sigilo fiscal prevalece sobre direitos de acesso e portabilidade em processos em curso)</td></tr>
+  </tbody>
+</table>
+
+<hr class="divider" id="s9"/>
+<p class="section-label">9. Obrigações dos Responsáveis pelo Tratamento</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Art. 24.º — Responsabilidade</div>
+    <div class="art-title">Accountability (prestação de contas)</div>
+    <div class="art-body">O responsável adota medidas técnicas e organizativas para garantir e poder demonstrar que o tratamento está em conformidade com o RGPD. A AT-RAM deve documentar as suas políticas, procedimentos e medidas de conformidade — e estar pronta a demonstrá-las à CNPD em caso de fiscalização.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 25.º — Privacy by design e by default</div>
+    <div class="art-title">Proteção desde a conceção</div>
+    <div class="art-body">
+      <strong>By design:</strong> Ao conceber qualquer novo sistema informático, processo ou produto que trate dados pessoais, a AT-RAM deve incorporar proteção de dados desde o início (ex.: anonimização por defeito, minimização de dados).<br/>
+      <strong>By default:</strong> Por defeito, só são tratados os dados estritamente necessários para a finalidade específica. Os sistemas não devem, por defeito, tornar dados acessíveis a um número indeterminado de pessoas.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 28.º — Subcontratante</div>
+    <div class="art-title">Contrato de subcontratação obrigatório</div>
+    <div class="art-body">O contrato deve estipular: tratamento apenas segundo instruções do responsável; obrigação de confidencialidade dos colaboradores; medidas de segurança (art. 32.º); não subcontratação sem autorização; assistência ao responsável para responder a pedidos dos titulares; eliminação ou devolução de dados após fim do serviço; disponibilização de informação para auditorias.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 30.º — Registo das atividades</div>
+    <div class="art-title">Registo obrigatório</div>
+    <div class="art-body">Obrigatório para entidades com ≥ 250 trabalhadores, ou que tratem dados sistemática ou em grande escala, ou que tratem categorias especiais. A AT-RAM está sempre obrigada. Conteúdo: identidade do responsável, finalidades, categorias de titulares e dados, destinatários, transferências internacionais, prazos de conservação, medidas de segurança.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Art. 32.º — Segurança</div>
+    <div class="art-title">Medidas técnicas e organizativas</div>
+    <div class="art-body">Medidas adequadas ao risco: pseudonimização e cifragem; capacidade de garantir confidencialidade, integridade, disponibilidade e resiliência dos sistemas; capacidade de restaurar o acesso a dados em caso de incidente; processo de teste e avaliação periódica das medidas. Devem ter em conta o estado da arte e os custos.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Arts. 33.º–34.º — Notificação de violação</div>
+    <div class="art-title">72 horas para notificar a CNPD</div>
+    <div class="art-body">
+      <strong>Art. 33.º:</strong> Em caso de violação, notificar a CNPD em <strong>72 horas</strong> após tomada de conhecimento. Conteúdo: natureza da violação, categorias e número de titulares afetados, consequências prováveis, medidas tomadas.<br/>
+      <strong>Art. 34.º:</strong> Notificar os próprios titulares afetados sem demora injustificada quando a violação seja suscetível de resultar em danos elevados (roubo de identidade, discriminação, fraude financeira).
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Art. 35.º — Avaliação de Impacto sobre a Proteção de Dados (AIPD)</h3>
+  <p>Obrigatória antes de iniciar tratamentos suscetíveis de implicar risco elevado para os titulares. A CNPD publicou lista de tratamentos que a obrigam. Na AT-RAM, são tratamentos que provavelmente exigem AIPD:</p>
+  <ul>
+    <li>Implementação de novos sistemas de cruzamento automático de dados fiscais com dados bancários</li>
+    <li>Sistemas de análise de risco (definição de perfis) para seleção de contribuintes a inspecionar</li>
+    <li>Tratamento sistemático de dados em grande escala relativos a infrações penais (processos RGIT)</li>
+    <li>Implementação de sistemas de vigilância em instalações da AT-RAM (videovigilância)</li>
+  </ul>
+  <p>A AIPD deve incluir: descrição sistemática do tratamento; avaliação da necessidade e proporcionalidade; avaliação dos riscos para os titulares; medidas previstas para fazer face aos riscos. Se o risco residual for elevado após as medidas, a AT-RAM deve consultar a CNPD previamente ao tratamento (art. 36.º RGPD).</p>
+</div>
+
+<hr class="divider" id="s10"/>
+<p class="section-label">10. Encarregado de Proteção de Dados — EPD/DPO (Arts. 37.º–39.º)</p>
+
+<div class="card">
+  <h3>Obrigatoriedade de designação</h3>
+  <p>O Encarregado de Proteção de Dados (EPD, também conhecido pela sigla inglesa DPO — Data Protection Officer) é de designação obrigatória para:</p>
+  <ul>
+    <li>Autoridades e organismos públicos (exceto tribunais no exercício da função jurisdicional) — a <strong>AT-RAM está obrigada</strong></li>
+    <li>Entidades cujas atividades principais consistam em operações de tratamento que exijam controlo regular e sistemático dos titulares em grande escala</li>
+    <li>Entidades cujas atividades principais consistam no tratamento em grande escala de categorias especiais de dados</li>
+  </ul>
+  <h3>Funções do EPD (art. 39.º)</h3>
+  <ul>
+    <li>Informar e aconselhar o responsável e os trabalhadores sobre as obrigações RGPD</li>
+    <li>Controlar o cumprimento do RGPD, das políticas internas e das competências, sensibilização e formação do pessoal</li>
+    <li>Prestar aconselhamento sobre as AIPDs e verificar a sua execução</li>
+    <li>Cooperar com a CNPD e ser o ponto de contacto com ela</li>
+    <li>Ser o ponto de contacto dos titulares para o exercício dos seus direitos</li>
+  </ul>
+  <h3>Estatuto e independência (art. 38.º)</h3>
+  <p>O EPD <strong>não pode receber instruções</strong> no exercício das suas funções, não pode ser exonerado nem penalizado por exercer as suas funções, e reporta diretamente ao mais alto nível hierárquico do responsável. Na AT-RAM, o EPD reporta ao Conselho Diretivo e não pode ser sujeito a pressões dos diretores de serviços ou dos inspetores tributários.</p>
+</div>
+
+<hr class="divider" id="s11"/>
+<p class="section-label">11. Transferências Internacionais de Dados (Arts. 44.º–49.º) — FATCA, CRS e DAC</p>
+
+<div class="highlight">
+  <p>As transferências de dados pessoais para países terceiros (fora da UE) só são permitidas se o país de destino oferecer proteção equivalente à da UE. Esta regra é particularmente relevante para a AT-RAM no contexto das obrigações de troca automática de informações fiscais internacionais.</p>
+</div>
+
+<div class="card">
+  <h3>Mecanismos de transferência legítima</h3>
+  <table>
+    <thead><tr><th>Mecanismo</th><th>Art.</th><th>Descrição</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Decisão de adequação</strong></td><td>45.º</td><td>A Comissão reconhece que o país terceiro oferece proteção equivalente. Ex.: países adequados incluem Suíça, Japão, Reino Unido (pós-Brexit, com reservas). EUA: sem decisão de adequação geral — as transferências usam outros mecanismos.</td></tr>
+      <tr><td><strong>Garantias adequadas (SCCs)</strong></td><td>46.º</td><td>Cláusulas Contratuais Padrão (Standard Contractual Clauses) adotadas pela Comissão — instrumento mais usado para transferências para os EUA e outros países terceiros.</td></tr>
+      <tr><td><strong>Regras vinculativas corporativas (BCRs)</strong></td><td>47.º</td><td>Políticas de proteção de dados de grupos multinacionais, aprovadas pelas autoridades de controlo da UE. Para grupos empresariais com entidades fora e dentro da UE.</td></tr>
+      <tr><td><strong>Derrogações específicas</strong></td><td>49.º</td><td>Inclui: interesse público substancial; defesa de direitos em processos judiciais; consentimento explícito. Relevante para transferências no âmbito de pedidos de Assistência Administrativa Mútua (AAM) entre administrações tributárias.</td></tr>
+    </tbody>
+  </table>
+  <h3>FATCA, CRS (DAC2) e DAC — contexto RGPD</h3>
+  <p>A AT-RAM participa em mecanismos de troca automática de informações fiscais que envolvem transferência de dados pessoais para países terceiros:</p>
+  <ul>
+    <li><strong>FATCA (Foreign Account Tax Compliance Act):</strong> Acordo Portugal-EUA para troca automática de informações sobre contas financeiras de cidadãos americanos em Portugal. Transferência de dados pessoais para os EUA. O tratamento assenta no art. 6.º, n.º 1 c) (obrigação jurídica) e o art. 49.º, n.º 1 d) RGPD (interesse público) para a transferência.</li>
+    <li><strong>CRS/DAC2 (Common Reporting Standard):</strong> Norma da OCDE transposta pela Diretiva DAC2 (Diretiva 2014/107/UE) — troca automática de informações sobre contas financeiras entre 100+ países. Inclui transferências para países terceiros com base em acordos de AAM.</li>
+    <li><strong>DAC6 (intermediários):</strong> Troca automática de informações sobre esquemas de planeamento fiscal agressivo. Os dados de contribuintes incluídos em esquemas comunicados são partilhados entre administrações fiscais da UE.</li>
+    <li><strong>Base jurídica:</strong> O art. 49.º, n.º 1 d) RGPD (interesse público substancial reconhecido no direito do EM) justifica estas transferências internacionais no contexto fiscal.</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s12"/>
+<p class="section-label">12. Autoridade de Controlo — CNPD (Arts. 51.º–59.º)</p>
+
+<div class="card">
+  <h3>Composição e independência</h3>
+  <p>A CNPD (Comissão Nacional de Proteção de Dados) é a autoridade de controlo portuguesa, estabelecida pela Lei 58/2019 (arts. 3.º ss.). Atua com total independência; os seus membros não podem receber instruções de qualquer entidade pública ou privada. Tem sede em Lisboa e competência nacional, incluindo a AT-RAM na Madeira.</p>
+  <h3>Poderes da autoridade de controlo (art. 58.º RGPD)</h3>
+  <table>
+    <thead><tr><th>Tipo de poder</th><th>Descrição</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Poderes de investigação</strong></td><td>Acesso a instalações e equipamentos; notificação do responsável; condução de auditorias; obtenção de informações; acesso a qualquer dado pessoal ou informação necessária</td></tr>
+      <tr><td><strong>Poderes corretivos</strong></td><td>Advertência/repreensão; instrução de conformidade com prazos; limitação ou proibição temporária de tratamento; imposição de AIPD; retirada de certificação; coima administrativa</td></tr>
+      <tr><td><strong>Poderes de autorização/consultivos</strong></td><td>Emitir pareceres sobre propostas legislativas; aprovar cláusulas contratuais; aprovar BCRs; autorizar transferências internacionais; emitir certificações; adotar listas de AIPD obrigatória</td></tr>
+    </tbody>
+  </table>
+  <h3>Mecanismo de «balcão único» (one-stop-shop) — art. 56.º</h3>
+  <p>Quando um responsável atua em vários EM, a autoridade de controlo do EM do seu estabelecimento principal é competente como «autoridade principal». Para a AT-RAM (estabelecimento único na Madeira), a CNPD é sempre a autoridade competente.</p>
+</div>
+
+<hr class="divider" id="s13"/>
+<p class="section-label">13. Regime Sancionatório (Arts. 83.º–84.º)</p>
+
+<table>
+  <thead><tr><th>Nível</th><th>Infrações</th><th>Coima máxima</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Nível superior</strong></td><td>Violação dos princípios (art. 5.º); bases legais (arts. 6.º–7.º); categorias especiais (art. 9.º); direitos dos titulares (arts. 12.º–22.º); transferências internacionais (arts. 44.º–49.º)</td><td>20 000 000 € ou 4% do VN anual global (o mais elevado)</td></tr>
+    <tr><td><strong>Nível inferior</strong></td><td>Obrigações do responsável/subcontratante (arts. 25.º–39.º, incluindo AIPD, DPO, segurança, registos); não certificação (arts. 41.º–43.º); não cooperação com a CNPD (art. 83.º, n.º 4)</td><td>10 000 000 € ou 2% do VN anual global (o mais elevado)</td></tr>
+  </tbody>
+</table>
+
+<div class="card">
+  <h3>Aplicação a entidades públicas em Portugal</h3>
+  <p>Em Portugal, a Lei 58/2019 (art. 42.º) limitou a aplicação de coimas a entidades do setor público: as coimas aplicadas a entidades públicas são reduzidas para um máximo de <strong>2 000 000 € para o nível superior</strong> e <strong>1 000 000 € para o nível inferior</strong>. Além das coimas, a CNPD pode aplicar à AT-RAM as restantes medidas corretivas: advertência, repreensão, instrução de conformidade, limitação do tratamento.</p>
+  <h3>Responsabilidade civil (art. 82.º)</h3>
+  <p>Qualquer pessoa que tiver sofrido danos materiais ou imateriais em resultado de tratamento ilícito tem direito a indemnização do responsável ou subcontratante. O responsável e o subcontratante ficam isentos se provarem que o dano não lhes é de modo algum imputável.</p>
+</div>
+
+<hr class="divider" id="s14"/>
+<p class="section-label">14. Sigilo Fiscal vs. RGPD — Tensão e Compatibilização</p>
+
+<div class="highlight">
+  <p>O sigilo fiscal (art. 64.º LGT) e o RGPD regulam, a partir de perspetivas diferentes, o mesmo objeto: os dados fiscais dos contribuintes. O sigilo fiscal protege os contribuintes face a divulgações indevidas pela AT-RAM. O RGPD garante os direitos dos titulares (acesso, retificação, apagamento). A compatibilização destas normas é uma das questões mais práticas para o inspetor tributário.</p>
+</div>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Dimensão</th><th>Sigilo Fiscal (LGT art. 64.º)</th><th>RGPD / Lei 58/2019</th><th>Solução</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Proteção dos dados do contribuinte</strong></td><td>Proíbe a divulgação de dados tributários a terceiros sem consentimento ou base legal</td><td>Proíbe tratamentos ilícitos; garante confidencialidade (princípio de integridade e confidencialidade)</td><td>Convergem: ambos protegem o contribuinte; o sigilo fiscal é concretização do RGPD no domínio tributário</td></tr>
+      <tr><td><strong>Direito de acesso do contribuinte</strong></td><td>O contribuinte tem direito de acesso ao seu processo (art. 60.º LGT + CPA)</td><td>Art. 15.º RGPD: direito de acesso a dados pessoais tratados</td><td>Convergem, com sobreposição: o acesso ao processo tributário satisfaz simultaneamente o RGPD e a LGT</td></tr>
+      <tr><td><strong>Restrições ao acesso em investigações</strong></td><td>Art. 64.º, n.º 2 LGT prevê exceções ao sigilo (cooperação administrativa, processos criminais)</td><td>Art. 23.º RGPD + Lei 58/2019 art. 20.º: restrição do direito de acesso para fins de prevenção e investigação de infrações penais, cobrança de impostos</td><td>O direito de acesso do contribuinte pode ser restringido durante inspeções em curso ou investigações criminais tributárias</td></tr>
+      <tr><td><strong>Troca de informações fiscais internacionais</strong></td><td>Exceção ao sigilo: informações trocadas ao abrigo de convenções de dupla tributação e acordos de AAM</td><td>Art. 49.º RGPD: interesse público substancial como base de transferência para países terceiros</td><td>A troca de informações FATCA/CRS/DAC é justificada cumulativamente pela exceção ao sigilo fiscal e pelo interesse público do RGPD</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s15"/>
+<p class="section-label">15. Síntese para o Inspetor Tributário</p>
+
+<table>
+  <thead><tr><th>Situação prática</th><th>Regra RGPD aplicável</th><th>Artigo</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Inspeção: recolha de documentos e dados contabilísticos</strong></td><td>Tratamento com base em obrigação jurídica (LGT + RCPIT); princípio da minimização: só recolher o necessário para o período inspecionado e os impostos visados</td><td>Arts. 5.º e 6.º c)</td></tr>
+    <tr><td><strong>Relatório de inspeção contém dados pessoais de terceiros</strong></td><td>Os dados de terceiros (sócios, gerentes, clientes, fornecedores) são dados pessoais protegidos; só podem ser incluídos se necessários para as correções propostas; acesso ao relatório sujeito a sigilo fiscal</td><td>Art. 5.º + art. 64.º LGT</td></tr>
+    <tr><td><strong>Contribuinte pede acesso aos dados tratados sobre si</strong></td><td>Direito de acesso (art. 15.º RGPD); pode ser restringido se comprometer inspeção em curso; não restringe o acesso ao processo tributário concluído</td><td>Arts. 15.º e 23.º + Lei 58/2019 art. 20.º</td></tr>
+    <tr><td><strong>Fuga de dados do sistema da AT-RAM</strong></td><td>Violação de dados pessoais: notificação à CNPD em 72h; avaliação de necessidade de notificação aos contribuintes afetados; plano de contenção</td><td>Arts. 33.º–34.º</td></tr>
+    <tr><td><strong>Modelo de risco para seleção de contribuintes a inspecionar</strong></td><td>Definição de perfis automatizada (art. 4.º n.º 4); obrigação de garantir revisão humana; possivelmente exige AIPD (art. 35.º) antes de implementar</td><td>Arts. 22.º e 35.º</td></tr>
+    <tr><td><strong>Envio de dados de contribuintes para EUA (FATCA)</strong></td><td>Transferência internacional; base: interesse público (art. 49.º) + obrigação jurídica decorrente do acordo FATCA; EPD deve documentar e registar a transferência</td><td>Arts. 44.º e 49.º</td></tr>
+    <tr><td><strong>Contratação de empresa TI para gerir sistemas da AT-RAM</strong></td><td>Empresa é subcontratante; obrigatório contrato com cláusulas do art. 28.º RGPD; a AT-RAM mantém a responsabilidade como responsável pelo tratamento</td><td>Art. 28.º</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

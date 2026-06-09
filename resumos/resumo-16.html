@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>16 · Lei 93/2021 — Regime Geral de Proteção de Denunciantes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}.warning strong{color:#e74c3c}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.22rem 0;transition:color .15s}
+    .toc a:hover{color:var(--accent)}.toc a::before{content:"→ ";color:var(--accent);font-size:.75rem}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">16 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">16 · Proteção de Denunciantes — Direito Nacional</p>
+<h1>Lei n.º 93/2021 — <em>Regime Geral de Proteção de Denunciantes</em></h1>
+<p class="doc-sub">De 20 de dezembro de 2021 · Transpõe a Diretiva (UE) 2019/1937 e vai além dos seus requisitos · Altera o RGPC (DL 109-E/2021) e outros diplomas</p>
+<div class="meta-row">
+  <span class="badge badge-accent">Lei 93/2021</span>
+  <span class="badge">Whistleblowers</span>
+  <span class="badge">Canal de Denúncia</span>
+  <span class="badge">Anti-retaliação</span>
+  <span class="badge">Setor Público</span>
+  <span class="badge">MP Canal Externo</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#objeto">Objeto, Estrutura e Âmbito — Ir Além da Diretiva</a>
+  <a href="#material">Âmbito Material — Violações Cobertas</a>
+  <a href="#pessoal">Âmbito Pessoal — Quem é Protegido</a>
+  <a href="#condicoes">Condições de Proteção e Boa Fé</a>
+  <a href="#canais">Sistema de Canais em Três Níveis</a>
+  <a href="#interno">Canal Interno — Obrigações Detalhadas</a>
+  <a href="#externo">Canal Externo — O Ministério Público</a>
+  <a href="#retaliacao">Proibição de Retaliação e Inversão do Ónus</a>
+  <a href="#isencao">Isenção de Responsabilidade do Denunciante</a>
+  <a href="#sancoes">Regime Sancionatório</a>
+  <a href="#slapp">Proteção contra Processos Vexatórios (SLAPP)</a>
+  <a href="#atram">AT-RAM — Entidade Obrigada e Canal Externo Fiscal</a>
+  <a href="#inspetor">O Inspetor Tributário como Denunciante Protegido</a>
+  <a href="#sintese">Síntese</a>
+</div>
+
+<hr class="divider" id="objeto"/>
+<p class="section-label">1. Objeto, Estrutura e Âmbito — Ir Além da Diretiva</p>
+
+<div class="highlight">
+  <p>A Lei 93/2021 transpõe a Diretiva 2019/1937 mas <strong>vai substancialmente além</strong>: alarga o âmbito material às violações do direito nacional, amplia o círculo de pessoas protegidas e reforça as medidas de proteção. É o mais amplo regime de proteção de denunciantes da UE.</p>
+</div>
+
+<div class="card">
+  <h3>Estrutura da lei</h3>
+  <table>
+    <thead><tr><th>Capítulo</th><th>Matéria</th></tr></thead>
+    <tbody>
+      <tr><td>Cap. I (arts. 1.º–7.º)</td><td>Objeto, âmbito material e pessoal, condições de proteção</td></tr>
+      <tr><td>Cap. II (arts. 8.º–15.º)</td><td>Canal interno — obrigações das entidades</td></tr>
+      <tr><td>Cap. III (arts. 16.º–22.º)</td><td>Canal externo — Ministério Público e autoridades competentes</td></tr>
+      <tr><td>Cap. IV (art. 23.º)</td><td>Divulgação pública — condições e proteção</td></tr>
+      <tr><td>Cap. V (arts. 24.º–35.º)</td><td>Proteção do denunciante — retaliação, isenção, apoio</td></tr>
+      <tr><td>Cap. VI (arts. 36.º–41.º)</td><td>Regime sancionatório — coimas e sanções acessórias</td></tr>
+      <tr><td>Cap. VII (arts. 42.º–47.º)</td><td>Disposições finais e alterações a outros diplomas</td></tr>
+    </tbody>
+  </table>
+  <h3>O que a lei alterou noutros diplomas</h3>
+  <ul>
+    <li><strong>DL 109-E/2021 (RGPC):</strong> Articulou o canal de denúncia do RGPC com os requisitos da Lei 93/2021 — o canal do RGPC deve cumprir ambos os regimes</li>
+    <li><strong>LGTFP:</strong> Reforçou a proteção dos trabalhadores públicos que sejam denunciantes</li>
+    <li><strong>Código do Trabalho:</strong> Alargou a proteção aos trabalhadores privados</li>
+    <li><strong>Lei da Responsabilidade Civil Extracontratual do Estado:</strong> Garantiu indemnização por retaliação praticada por entidade pública</li>
+  </ul>
+</div>
+
+<hr class="divider" id="material"/>
+<p class="section-label">2. Âmbito Material — Violações Cobertas</p>
+
+<div class="highlight">
+  <p>Este é o ponto onde a Lei 93/2021 vai mais longe que a Diretiva: cobre não apenas violações do direito da UE mas também <strong>violações do direito nacional</strong>.</p>
+</div>
+
+<div class="card">
+  <h3>Domínios cobertos (Artigo 2.º)</h3>
+  <table>
+    <thead><tr><th>Domínio</th><th>Direito UE (Diretiva)</th><th>Direito nacional (Lei 93/2021)</th></tr></thead>
+    <tbody>
+      <tr><td>Contratação pública</td><td>✓</td><td>✓ (inclui irregularidades em contratos públicos puramente nacionais)</td></tr>
+      <tr><td>Serviços financeiros e branqueamento</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Fiscalidade — evasão e fraude fiscal</td><td>✓ (apenas quando viola direito da UE)</td><td>✓ <strong>TOTAL</strong> — qualquer infração fiscal nacional (IRS, IRC, IVA, IS, impostos regionais)</td></tr>
+      <tr><td>Transparência e combate à corrupção</td><td>✓ (interesses financeiros UE)</td><td>✓ <strong>TOTAL</strong> — corrupção, peculato, tráfico de influência, abuso de poder</td></tr>
+      <tr><td>Branqueamento de capitais e financiamento terrorismo</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Proteção de dados pessoais</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Ambiente</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Saúde pública e alimentos</td><td>✓</td><td>✓</td></tr>
+      <tr><td><strong>Atos contrários ao interesse público em geral</strong></td><td>✗ Não coberto pela Diretiva</td><td>✓ <strong>Adição portuguesa fundamental</strong> — qualquer violação do ordenamento jurídico nacional que contrarie o interesse público</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="pessoal"/>
+<p class="section-label">3. Âmbito Pessoal — Quem é Protegido (Artigo 3.º)</p>
+
+<div class="card">
+  <p>A lei protege qualquer pessoa que tenha obtido informações em contexto laboral ou profissional:</p>
+  <div class="grid2">
+    <ul>
+      <li><strong>Trabalhadores públicos e privados</strong> com qualquer tipo de vínculo</li>
+      <li><strong>Titulares de órgãos sociais</strong> e membros de órgãos de fiscalização</li>
+      <li><strong>Trabalhadores independentes</strong>, empreiteiros, subcontratantes</li>
+      <li><strong>Voluntários e estagiários</strong></li>
+    </ul>
+    <ul>
+      <li><strong>Candidatos a emprego</strong> (informações obtidas no recrutamento)</li>
+      <li><strong>Ex-trabalhadores</strong> (cuja relação já cessou)</li>
+      <li><strong>Familiares e pessoas próximas</strong> do denunciante</li>
+      <li><strong>Pessoas jurídicas</strong> relacionadas com o denunciante</li>
+    </ul>
+  </div>
+  <p><strong>Para o inspetor tributário da AT-RAM:</strong> É trabalhador público com nomeação — está protegido como denunciante quer denuncie irregularidades dentro da AT-RAM quer as detete em entidades inspecionadas e as comunique ao MP ou ao MENAC.</p>
+</div>
+
+<hr class="divider" id="condicoes"/>
+<p class="section-label">4. Condições de Proteção e Boa Fé (Artigo 6.º)</p>
+
+<div class="card">
+  <p>Para beneficiar da proteção, o denunciante deve cumprir <strong>três condições cumulativas</strong>:</p>
+  <ol>
+    <li><strong>Fundamento razoável:</strong> Ter fundamento razoável para crer que as informações são verdadeiras no momento da denúncia. Não é exigida certeza — basta crença razoável e de boa fé. Denúncias fundamentadas que se revelam incorretas mantêm proteção. Só perdem proteção as denúncias de má fé (intencionalmente falsas).</li>
+    <li><strong>Âmbito coberto:</strong> As informações devem relatar violações que estejam no âmbito material da lei (fiscalidade, corrupção, direito da UE, interesse público, etc.).</li>
+    <li><strong>Canal adequado:</strong> A denúncia deve ser feita por um dos canais previstos na lei — interno, externo ou divulgação pública (nas condições admissíveis para esta última).</li>
+  </ol>
+  <h3>Denúncias anónimas</h3>
+  <p>A Lei 93/2021 admite denúncias anónimas, mas o tratamento das mesmas é <strong>facultativo</strong> para as entidades — podem optar por não investigar se a denúncia não fornecer elementos suficientes. Se o denunciante anónimo for posteriormente identificado e sofrer retaliação, fica protegido como se tivesse denunciado identificado.</p>
+  <h3>Boa fé e proteção ampla</h3>
+  <p>A exigência de boa fé não significa que o denunciante deva ter a razão. Significa que agiu de forma honesta com base no que sabia. Um inspetor tributário que denuncia um colega com base em indícios fundados e cujas alegações se revelam posteriormente infundadas <strong>mantém a proteção</strong> — desde que não tenha inventado os factos.</p>
+</div>
+
+<hr class="divider" id="canais"/>
+<p class="section-label">5. Sistema de Canais em Três Níveis</p>
+
+<div class="grid3">
+  <div class="art-block">
+    <div class="art-num">1 — Canal Interno</div>
+    <div class="art-title">Dentro da organização</div>
+    <div class="art-body">Denúncia ao RCN ou gestor do canal da entidade onde o denunciante trabalha. <strong>Vantagem:</strong> Resolução interna mais rápida. <strong>Opção, não obrigação:</strong> O denunciante pode ir direto ao canal externo. <strong>Prazo:</strong> Acuse em 7 dias; feedback em 3 meses (prorrogável por mais 3 em casos complexos).</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">2 — Canal Externo</div>
+    <div class="art-title">Autoridades competentes</div>
+    <div class="art-body">Denúncia ao <strong>Ministério Público</strong> (canal geral) ou às autoridades sectoriais competentes (AT-RAM para infrações fiscais; Banco de Portugal para financeiras; MENAC para corrupção no setor público). Pode ser usado diretamente sem ter usado o canal interno.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">3 — Divulgação Pública</div>
+    <div class="art-title">Media e público em geral</div>
+    <div class="art-body">Protegida apenas quando: (a) canais anteriores não responderam adequadamente; (b) existe risco iminente e manifesto ao interesse público; (c) existe risco de retaliação ou de colusão sistémica que impeça o funcionamento dos canais. <strong>Última opção — maior risco para o denunciante.</strong></div>
+  </div>
+</div>
+
+<hr class="divider" id="interno"/>
+<p class="section-label">6. Canal Interno — Obrigações Detalhadas das Entidades</p>
+
+<h2>Entidades Obrigadas (Artigo 9.º)</h2>
+<div class="card">
+  <ul>
+    <li>Todas as <strong>entidades públicas</strong>, independentemente do número de trabalhadores — incluindo a AT-RAM e todos os serviços da ARAM</li>
+    <li>Entidades privadas com <strong>50 ou mais trabalhadores</strong></li>
+    <li>Entidades privadas com menos de 50 trabalhadores que atuem em setores de alto risco (serviços financeiros, prevenção de branqueamento, aviação e segurança marítima offshore)</li>
+    <li>Partidos políticos com financiamento público, sindicatos e associações patronais com membros em setores cobertos</li>
+  </ul>
+</div>
+
+<h2>Requisitos do Canal Interno (Artigos 10.º–14.º)</h2>
+<div class="card">
+  <h3>Confidencialidade — a regra fundamental</h3>
+  <p>A identidade do denunciante e dos terceiros mencionados na denúncia deve ser mantida <strong>estritamente confidencial</strong>. Só pode ser revelada com o consentimento expresso do denunciante ou quando exigida por decisão judicial. A violação da confidencialidade é infração grave punível com coima.</p>
+  <h3>Anonimato</h3>
+  <p>O canal deve estar preparado para aceitar denúncias anónimas tecnicamente (ex.: caixa postal dedicada sem identificação, plataforma digital com anonimato garantido). O tratamento de denúncias anónimas é facultativo — a entidade pode optar por não investigar se não houver elementos suficientes.</p>
+  <h3>Gestor do canal</h3>
+  <p>O canal deve ser gerido por pessoa ou departamento designado, com as seguintes características:</p>
+  <ul>
+    <li><strong>Independência:</strong> Não pode estar subordinado às áreas sobre que vai receber denúncias</li>
+    <li><strong>Formação adequada:</strong> Conhecimento das obrigações legais, técnicas de investigação interna, proteção de dados</li>
+    <li><strong>Obrigação de sigilo:</strong> Não pode revelar a identidade do denunciante nem o conteúdo da denúncia a pessoas não autorizadas</li>
+    <li>Na AT-RAM: O RCN (exigido pelo RGPC) pode ser o gestor do canal da Lei 93/2021 — os dois regimes articulam-se</li>
+  </ul>
+  <h3>Prazos obrigatórios</h3>
+  <ul>
+    <li><strong>7 dias</strong> após a receção: acuse de receção ao denunciante</li>
+    <li><strong>3 meses</strong> após o acuse de receção: informação ao denunciante sobre as medidas adotadas ou previstas e razões da decisão (prorrogável por mais 3 meses em casos de complexidade especial, com comunicação fundamentada ao denunciante)</li>
+  </ul>
+  <h3>Registo das denúncias</h3>
+  <p>Todas as denúncias recebidas devem ser registadas de forma segura, com preservação da confidencialidade. O registo deve conter: data de receção, resumo dos factos denunciados, medidas adotadas, resultado. Os registos são mantidos pelo prazo de 5 anos. O acesso ao registo é restrito ao gestor do canal e ao órgão máximo da entidade.</p>
+</div>
+
+<hr class="divider" id="externo"/>
+<p class="section-label">7. Canal Externo — O Ministério Público (Artigos 16.º–22.º)</p>
+
+<div class="card">
+  <h3>MP como canal externo geral</h3>
+  <p>O <strong>Ministério Público</strong> foi designado pela Lei 93/2021 como o canal externo de âmbito geral em Portugal. O MP recebe denúncias de qualquer domínio coberto pela lei, independentemente de a entidade envolvida ter ou não canal interno. O MP deve:</p>
+  <ul>
+    <li>Criar um canal seguro e confidencial para receção de denúncias externas</li>
+    <li>Acusar a receção em <strong>7 dias</strong></li>
+    <li>Informar o denunciante das medidas adotadas em <strong>3 meses</strong> (prorrogável por mais 3)</li>
+    <li>Investigar diligentemente as denúncias recebidas</li>
+    <li>Encaminhar as denúncias para as autoridades competentes quando não seja o MP o titular da ação</li>
+    <li>Proteção do denunciante garantida desde o momento da denúncia ao MP</li>
+  </ul>
+  <h3>Autoridades sectoriais como canais externos específicos</h3>
+  <table>
+    <thead><tr><th>Autoridade</th><th>Domínio</th></tr></thead>
+    <tbody>
+      <tr><td><strong>AT / AT-RAM</strong></td><td>Infrações fiscais (evasão, fraude, uso indevido de benefícios)</td></tr>
+      <tr><td><strong>MENAC</strong></td><td>Violações do RGPC; corrupção no setor público</td></tr>
+      <tr><td><strong>Banco de Portugal</strong></td><td>Infrações financeiras, branqueamento, supervisão bancária</td></tr>
+      <tr><td><strong>CMVM</strong></td><td>Infrações em mercados de capitais</td></tr>
+      <tr><td><strong>ASF</strong></td><td>Infrações em seguros e fundos de pensões</td></tr>
+      <tr><td><strong>Autoridade da Concorrência</strong></td><td>Práticas restritivas da concorrência, auxílios de Estado</td></tr>
+      <tr><td><strong>IMPIC / Tribunal de Contas</strong></td><td>Irregularidades em contratação pública</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="retaliacao"/>
+<p class="section-label">8. Proibição de Retaliação e Inversão do Ónus (Artigos 21.º–24.º)</p>
+
+<div class="card">
+  <h3>Lista exaustiva de retaliações proibidas (Artigo 21.º)</h3>
+  <table>
+    <thead><tr><th>Tipo de retaliação</th><th>Exemplos concretos na AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td>Rescisão laboral</td><td>Despedimento, demissão, não renovação de CTFP</td></tr>
+      <tr><td>Alterações de condições de trabalho</td><td>Redução de remuneração, transferência para serviço menos favorável, alteração de horário</td></tr>
+      <tr><td>Promoção e avaliação</td><td>Recusa injustificada de promoção a Principal; avaliação SIADAP negativa não fundamentada</td></tr>
+      <tr><td>Sanções disciplinares</td><td>Instauração de procedimento disciplinar infundado ao inspetor que denunciou</td></tr>
+      <tr><td>Coerção e assédio</td><td>Pressões de superiores para o inspetor retirar a denúncia; ostracismo no local de trabalho</td></tr>
+      <tr><td>Reputação</td><td>Difamação do inspetor junto de colegas ou do Conselho Diretivo por causa da denúncia</td></tr>
+      <tr><td>Processos judiciais vexatórios</td><td>Participação criminal infundada contra o inspetor por alegada violação de sigilo</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h3>Inversão do ónus da prova (Artigo 23.º)</h3>
+  <p>Quando o denunciante demonstra que fez uma denúncia e que depois sofreu tratamento desfavorável, <strong>presume-se que o tratamento desfavorável é retaliação</strong>. Cabe à entidade (AT-RAM ou outra) provar que o tratamento desfavorável tem fundamento legítimo alheio à denúncia.</p>
+  <div class="highlight">
+    <p><strong>Exemplo prático:</strong> Um inspetor tributário da AT-RAM denuncia ao MENAC que o seu chefe de divisão pressionou a equipa para não incluir irregularidades num relatório de inspeção. Dois meses depois, o inspetor recebe uma avaliação SIADAP de Inadequado pela primeira vez em 10 anos de serviço. Presume-se que a avaliação negativa é retaliação pela denúncia. Cabe à AT-RAM provar que a avaliação negativa tem fundamento técnico e objetivo independente da denúncia.</p>
+  </div>
+</div>
+
+<hr class="divider" id="isencao"/>
+<p class="section-label">9. Isenção de Responsabilidade do Denunciante (Artigo 22.º)</p>
+
+<div class="card">
+  <p>O denunciante que cumpra as condições da lei (boa fé, fundamento razoável, canal adequado) fica isento de responsabilidade:</p>
+  <div class="grid2">
+    <div class="art-block">
+      <div class="art-num">Isenção civil</div>
+      <div class="art-title">Sem indemnização a pagar</div>
+      <div class="art-body">O denunciante não é responsável por danos patrimoniais ou morais causados pela denúncia à entidade denunciada ou a pessoas mencionadas — mesmo que a investigação não confirme as irregularidades (desde que tenha agido de boa fé).</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Isenção criminal</div>
+      <div class="art-title">Sem crime de violação de sigilo</div>
+      <div class="art-body">O denunciante não comete crime de violação de segredo profissional (incluindo sigilo fiscal, se usar o canal adequado — interno ou MP) nem crime de abuso de confiança. A isenção aplica-se às informações estritamente necessárias para a denúncia.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Isenção disciplinar</div>
+      <div class="art-title">Sem sanção disciplinar</div>
+      <div class="art-body">O denunciante não pode ser sancionado disciplinarmente por violar deveres de sigilo ou lealdade ao denunciar irregularidades pelos canais previstos na lei — mesmo que o código de conduta da AT-RAM preveja dever de lealdade e confidencialidade.</div>
+    </div>
+    <div class="art-block">
+      <div class="art-num">Exceção à isenção</div>
+      <div class="art-title">Atos ilegais adicionais</div>
+      <div class="art-body">A isenção não cobre atos ilegais praticados para além da denúncia em si. Exemplo: se o inspetor fotografou ilegalmente o computador do colega para obter prova — pode ser responsabilizado pelo ato de fotografar, mas não pela denúncia com essa prova.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="sancoes"/>
+<p class="section-label">10. Regime Sancionatório (Artigos 36.º–41.º)</p>
+
+<div class="card">
+  <h3>Infrações e coimas</h3>
+  <table>
+    <thead><tr><th>Infração</th><th>Coima (pessoa singular)</th><th>Coima (pessoa coletiva)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Retaliação contra denunciante</strong></td><td>€ 1 000 – € 7 500</td><td>€ 2 500 – € 25 000</td></tr>
+      <tr><td><strong>Não criar canal interno obrigatório</strong></td><td>€ 500 – € 5 000</td><td>€ 2 500 – € 25 000</td></tr>
+      <tr><td><strong>Violação da confidencialidade do denunciante</strong></td><td>€ 1 000 – € 7 500</td><td>€ 2 500 – € 25 000</td></tr>
+      <tr><td><strong>Denúncia de má fé (falsa denúncia intencional)</strong></td><td>€ 500 – € 5 000</td><td>€ 2 500 – € 25 000</td></tr>
+      <tr><td><strong>Obstaculização da investigação</strong></td><td>€ 1 000 – € 7 500</td><td>€ 2 500 – € 25 000</td></tr>
+      <tr><td><strong>Não respeitar prazos de resposta</strong></td><td>€ 250 – € 2 500</td><td>€ 1 000 – € 10 000</td></tr>
+    </tbody>
+  </table>
+  <h3>Autoridade competente para aplicar as coimas</h3>
+  <p>As coimas são aplicadas pela <strong>autoridade setorial competente</strong> para o domínio em que a infração ocorreu. Para infrações praticadas pela AT-RAM ou em matéria fiscal: o MENAC (para infrações ao RGPC); o MP (para retaliações contra denunciantes em matéria fiscal). Para o setor privado: as autoridades reguladoras competentes pelo setor.</p>
+  <h3>Sanções acessórias</h3>
+  <ul>
+    <li><strong>Publicidade da condenação</strong> — divulgação pública da decisão sancionatória</li>
+    <li><strong>Privação de financiamento público</strong> — para entidades que retaliaram contra denunciantes</li>
+    <li><strong>Interdição de exercício de funções</strong> de dirigente — para quem ordenou a retaliação</li>
+  </ul>
+</div>
+
+<hr class="divider" id="slapp"/>
+<p class="section-label">11. Proteção contra Processos Vexatórios — SLAPP</p>
+
+<div class="card">
+  <h3>O que são SLAPP</h3>
+  <p><em>Strategic Lawsuits Against Public Participation</em> — ações judiciais ou administrativas estratégicas instauradas contra denunciantes com o objetivo de intimidá-los, fazê-los retirar a denúncia e criar um efeito de dissuasão para futuros denunciantes. São uma forma de retaliação disfarçada de exercício do direito de ação.</p>
+  <h3>Proteção da Lei 93/2021</h3>
+  <ul>
+    <li>O denunciante que seja alvo de processo judicial por causa da denúncia pode <strong>invocar o estatuto de denunciante protegido</strong> como meio de defesa</li>
+    <li>O tribunal pode <strong>declarar a ação inadmissível</strong> ou arquivá-la se concluir que é meramente vexatória e relacionada com a denúncia</li>
+    <li>O denunciante tem direito a ser <strong>indemnizado pelas custas e encargos</strong> suportados em processos vexatórios</li>
+    <li>A entidade que instaurou o processo vexatório pode ser condenada a pagar uma <strong>indemnização agravada</strong></li>
+  </ul>
+  <h3>Exemplo típico com relevância para a AT-RAM</h3>
+  <p>Um inspetor tributário denuncia ao MENAC pressões do chefe de divisão para falsificar relatórios. O chefe instala então um processo disciplinar contra o inspetor por alegada violação do sigilo fiscal (com base no facto de o inspetor ter mencionado dados de inspeções concretas na denúncia). O inspetor pode invocar o estatuto de denunciante protegido para fazer arquivar o procedimento disciplinar, que é vexatório.</p>
+</div>
+
+<hr class="divider" id="atram"/>
+<p class="section-label">12. AT-RAM — Entidade Obrigada e Canal Externo Fiscal</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>AT-RAM como entidade obrigada</h3>
+    <p>A AT-RAM, como entidade pública, tem de cumprir todas as obrigações da Lei 93/2021:</p>
+    <ul>
+      <li>Canal interno seguro, confidencial e acessível a todos os trabalhadores (incluindo inspetores tributários)</li>
+      <li>Gestor do canal designado com formação adequada (pode ser o RCN do RGPC)</li>
+      <li>Política escrita de proteção de denunciantes comunicada a todos</li>
+      <li>Formação dos trabalhadores sobre os seus direitos como potenciais denunciantes</li>
+      <li>Registo de denúncias recebidas e investigadas, com conservação por 5 anos</li>
+      <li>Respeito estrito dos prazos de resposta (7 dias + 3 meses)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>AT-RAM como canal externo para infrações fiscais</h3>
+    <p>Em matéria de infrações fiscais, a AT-RAM pode ser designada canal externo específico para receber denúncias externas. Neste papel, a AT-RAM:</p>
+    <ul>
+      <li>Recebe denúncias de cidadãos, empresas ou intermediários sobre evasão fiscal, fraude, uso indevido de benefícios fiscais regionais</li>
+      <li>Processa a denúncia como informação de interesse fiscal — pode originar inspeção tributária ao denunciado</li>
+      <li>Garante a proteção do denunciante — não pode revelar a sua identidade ao contribuinte investigado</li>
+      <li>Articula com o MP quando a denúncia aponte para crime fiscal (fraude fiscal qualificada)</li>
+    </ul>
+    <h3>Articulação com o RGPC</h3>
+    <p>O canal de denúncia do RGPC (DL 109-E/2021) e o canal da Lei 93/2021 podem ser o mesmo — desde que cumpra os requisitos de ambos os diplomas. A AT-RAM pode ter um único canal que serve ambas as funções, gerido pelo RCN com dupla qualificação.</p>
+  </div>
+</div>
+
+<hr class="divider" id="inspetor"/>
+<p class="section-label">13. O Inspetor Tributário como Denunciante Protegido</p>
+
+<div class="card">
+  <h3>Situações em que o inspetor pode denunciar protegido</h3>
+  <table>
+    <thead><tr><th>Situação</th><th>Canal adequado</th><th>Proteção</th></tr></thead>
+    <tbody>
+      <tr><td>Colega aceita vantagem de contribuinte inspecionado</td><td>RCN da AT-RAM → se ineficaz, MENAC ou MP</td><td>Total — corrupção = domínio coberto</td></tr>
+      <tr><td>Superior hierárquico pressiona a alterar relatório de inspeção</td><td>RCN → MENAC → MP</td><td>Total — abuso de poder e corrupção</td></tr>
+      <tr><td>Detetada fraude em fundos europeus durante inspeção</td><td>Canal interno + OLAF + MP</td><td>Total — interesses financeiros da UE</td></tr>
+      <tr><td>Contribuinte inspecionado usa benefício fiscal regional fraudulentamente</td><td>Canal interno AT-RAM (inspeção é o mecanismo próprio)</td><td>Não é caso de denúncia — é a função normal do inspetor; relatório de inspeção</td></tr>
+      <tr><td>Inspetor deteta irregularidade numa entidade mas é dissuadido de reportar</td><td>RCN da AT-RAM ou MP</td><td>Total — obstrução à inspeção = domínio coberto</td></tr>
+      <tr><td>Inspetor revela dados fiscais a jornalista diretamente</td><td>Divulgação pública — só em circunstâncias excecionais</td><td>Limitada + eventual violação de sigilo fiscal</td></tr>
+    </tbody>
+  </table>
+  <h3>Obrigações do inspetor quando é alvo de retaliação</h3>
+  <ol>
+    <li>Documenta imediatamente o tratamento desfavorável (e-mails, decisões escritas, testemunhas)</li>
+    <li>Comunica ao RCN da AT-RAM — se o RCN não agir, comunica ao MENAC</li>
+    <li>Pode recorrer ao MP para pedir proteção e investigação da retaliação</li>
+    <li>Pode invocar o estatuto de denunciante protegido em qualquer processo disciplinar instaurado contra si</li>
+    <li>Tem direito a ser indemnizado pela AT-RAM pelos danos sofridos em resultado da retaliação</li>
+  </ol>
+</div>
+
+<hr class="divider" id="sintese"/>
+<p class="section-label">14. Síntese — Lei 93/2021 e o Inspetor Tributário</p>
+
+<table>
+  <thead><tr><th>Aspeto</th><th>Regra essencial</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Âmbito mais amplo que a Diretiva</strong></td><td>Cobre qualquer infração ao ordenamento jurídico nacional, incluindo toda a evasão e fraude fiscal (não apenas a que viola o direito da UE)</td></tr>
+    <tr><td><strong>Canal interno da AT-RAM</strong></td><td>Obrigatório; pode coincidir com o canal do RGPC; gerido pelo RCN com garantias de sigilo</td></tr>
+    <tr><td><strong>MP como canal externo geral</strong></td><td>O inspetor pode denunciar diretamente ao MP irregularidades na AT-RAM sem passar pelo canal interno</td></tr>
+    <tr><td><strong>Boa fé suficiente</strong></td><td>O inspetor não precisa ter certeza — basta fundamento razoável; se a denúncia for infundada mas de boa fé, mantém proteção</td></tr>
+    <tr><td><strong>Inversão do ónus</strong></td><td>Se o inspetor denunciar e sofrer avaliação negativa, transferência ou processo disciplinar, presume-se retaliação — AT-RAM tem de provar fundamento legítimo</td></tr>
+    <tr><td><strong>Isenção disciplinar</strong></td><td>O inspetor não pode ser sancionado por violar sigilo ao denunciar pelos canais adequados — o RGPC e a Lei 93/2021 prevalecem sobre o dever geral de sigilo fiscal neste contexto</td></tr>
+    <tr><td><strong>Proteção SLAPP</strong></td><td>Se a AT-RAM instaurar processo disciplinar vexatório para intimidar o inspetor, pode ser arquivado pelo TAF do Funchal e a AT-RAM pode ser condenada em custas e indemnização</td></tr>
+    <tr><td><strong>Sigilo fiscal e denúncia</strong></td><td>Usar o canal interno da AT-RAM ou o MP não viola o sigilo fiscal — esses são canais legais. Revelar ao público sem justificação pode violar o sigilo fiscal apesar da proteção da Lei 93/2021</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

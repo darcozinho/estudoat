@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>07 · Portaria 420/2021 — Estrutura Nuclear AT-RAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #e05c5c;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+    .toc ol{padding-left:1.2rem;margin-bottom:0}.toc li{font-size:.8rem;color:var(--text-muted);margin-bottom:.2rem}.toc a{color:var(--text-muted);text-decoration:none}.toc a:hover{color:var(--accent)}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">07 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">07 · AT-RAM — Estrutura Interna</p>
+<h1>Portaria n.º 420/2021 — <em>Estrutura Nuclear e Competências da AT-RAM</em></h1>
+<p class="doc-sub">De 28 de julho de 2021 · Aprovada pelo membro do Governo Regional responsável pelas finanças · Estabelece a estrutura nuclear, as competências das unidades orgânicas e o limite de unidades orgânicas flexíveis da AT-RAM · Complementa o DRR n.º 3/2019/M e o DRR n.º 7/2021/M</p>
+<div class="meta-row">
+  <span class="badge badge-accent">Portaria 420/2021</span>
+  <span class="badge">AT-RAM</span>
+  <span class="badge">Estrutura Nuclear</span>
+  <span class="badge">Unidades Orgânicas Flexíveis</span>
+  <span class="badge">Inspeção Tributária</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <ol>
+    <li><a href="#s1">Enquadramento normativo e hierarquia de diplomas</a></li>
+    <li><a href="#s2">Estrutura nuclear da AT-RAM — mapa geral</a></li>
+    <li><a href="#s3">Conselho Diretivo — competências exclusivas e delegação</a></li>
+    <li><a href="#s4">Direções de Serviços — competências detalhadas</a></li>
+    <li><a href="#s5">Direção de Serviços de Inspeção Tributária — análise aprofundada</a></li>
+    <li><a href="#s6">Unidades orgânicas flexíveis</a></li>
+    <li><a href="#s7">Serviços de Finanças locais</a></li>
+    <li><a href="#s8">Cadeia hierárquica do inspetor tributário</a></li>
+    <li><a href="#s9">Articulação entre serviços — fluxos operacionais</a></li>
+    <li><a href="#s10">Articulação com a AT nacional</a></li>
+    <li><a href="#s11">Síntese para o inspetor tributário</a></li>
+  </ol>
+</div>
+
+<hr class="divider" id="s1"/>
+<p class="section-label">1. Enquadramento Normativo e Hierarquia de Diplomas</p>
+
+<div class="highlight">
+  <p>A Portaria n.º 420/2021 é o instrumento que <strong>concretiza internamente</strong> a estrutura da AT-RAM. Enquanto o DRR n.º 3/2019/M define a estrutura nuclear de topo e as atribuições gerais, a portaria desce ao detalhe das competências específicas de cada unidade orgânica e fixa o número máximo de unidades orgânicas flexíveis (divisões e equipas). O DRR n.º 7/2021/M alterou pontualmente o DRR n.º 3/2019/M e a portaria reflete essa estrutura atualizada.</p>
+</div>
+
+<table>
+  <thead><tr><th>Diploma</th><th>Natureza</th><th>Conteúdo</th><th>Quem aprova</th></tr></thead>
+  <tbody>
+    <tr><td><strong>DRR n.º 3/2019/M</strong></td><td>Decreto Regulamentar Regional</td><td>Orgânica da AT-RAM: missão, atribuições, estrutura nuclear, Conselho Diretivo</td><td>Conselho de Governo Regional</td></tr>
+    <tr><td><strong>DRR n.º 7/2021/M</strong></td><td>Decreto Regulamentar Regional</td><td>Altera DRR 3/2019/M: cria DSIT com subunidades de inspeção</td><td>Conselho de Governo Regional</td></tr>
+    <tr><td><strong>Portaria 420/2021</strong></td><td>Portaria de estrutura</td><td>Detalha competências de cada unidade; fixa limite de UO flexíveis</td><td>Secretário Regional das Finanças</td></tr>
+    <tr><td><strong>Despachos do CD</strong></td><td>Atos administrativos internos</td><td>Criação/extinção de divisões e equipas flexíveis; delegação de poderes</td><td>Conselho Diretivo da AT-RAM</td></tr>
+    <tr><td><strong>DLR n.º 28/2022/M</strong></td><td>Decreto Legislativo Regional</td><td>Carreiras especiais AT-RAM: inspetor tributário, técnico tributário, perito aduaneiro</td><td>Assembleia Legislativa da Madeira</td></tr>
+  </tbody>
+</table>
+
+<hr class="divider" id="s2"/>
+<p class="section-label">2. Estrutura Nuclear da AT-RAM — Mapa Geral</p>
+
+<div class="card">
+  <p>A AT-RAM organiza-se em torno das seguintes unidades nucleares, conforme o DRR n.º 3/2019/M com as alterações do DRR n.º 7/2021/M e as competências detalhadas pela Portaria 420/2021:</p>
+  <table>
+    <thead><tr><th>Unidade Orgânica</th><th>Sigla</th><th>Domínio</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Conselho Diretivo</strong></td><td>CD</td><td>Órgão de gestão de topo; 3 membros (presidente + 2 vogais)</td></tr>
+      <tr><td><strong>Unidade de Apoio Geral</strong></td><td>UAG</td><td>Apoio administrativo, jurídico e comunicacional ao CD</td></tr>
+      <tr><td><strong>Direção de Serviços de Gestão</strong></td><td>DSG</td><td>Recursos humanos, financeiros, patrimoniais e tecnológicos</td></tr>
+      <tr><td><strong>Direção de Serviços de Imposto sobre o Rendimento</strong></td><td>DSIR</td><td>IRS e IRC na RAM</td></tr>
+      <tr><td><strong>Direção de Serviços de IVA e Outros Tributos</strong></td><td>DSIVOT</td><td>IVA, IS, IMI, IMT, IEC</td></tr>
+      <tr><td><strong>Direção de Serviços de Inspeção Tributária</strong></td><td>DSIT</td><td>Fiscalização e inspeção de todos os contribuintes da RAM</td></tr>
+      <tr><td><strong>Direção de Serviços de Cobrança</strong></td><td>DSC</td><td>Cobrança voluntária e coerciva; execuções fiscais</td></tr>
+      <tr><td><strong>Direção de Serviços Aduaneiros</strong></td><td>DSA</td><td>Controlo aduaneiro, alfândegas, Código Aduaneiro da União</td></tr>
+      <tr><td><strong>Serviços de Finanças</strong></td><td>SF</td><td>Serviços locais de atendimento e liquidação (Funchal, Câmara de Lobos, etc.)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s3"/>
+<p class="section-label">3. Conselho Diretivo — Competências Exclusivas e Delegação</p>
+
+<div class="card">
+  <h3>Competências exclusivas (não delegáveis)</h3>
+  <ul>
+    <li>Aprovar o plano de atividades anual e o orçamento da AT-RAM</li>
+    <li>Aprovar regulamentos internos com impacto externo (instruções de serviço, circulares normativas)</li>
+    <li>Decidir sobre informações vinculativas de elevada complexidade ou valor significativo</li>
+    <li>Instaurar procedimentos de aplicação da Cláusula Geral Anti-Abuso (CGAA — art. 38.º LGT)</li>
+    <li>Autorizar levantamento do sigilo bancário e fiscal em procedimentos de inspeção</li>
+    <li>Aprovar acordos prévios sobre preços de transferência (APT)</li>
+    <li>Aprovar a reversão de execuções fiscais contra responsáveis subsidiários acima do limite de competência</li>
+    <li>Resolver conflitos de competência entre Direções de Serviços</li>
+    <li>Representar a AT-RAM perante tribunais (através dos Representantes da Fazenda Pública)</li>
+    <li>Decidir sobre reclamações graciosas acima dos limites de competência delegada</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>Competências delegáveis nos Diretores de Serviços e Chefes de Finanças</h3>
+  <ul>
+    <li>Decisão de reclamações graciosas até determinado valor (fixado por despacho)</li>
+    <li>Autorização de pagamento em prestações até ao limite máximo delegado</li>
+    <li>Emissão de certidões de situação tributária</li>
+    <li>Instauração e tramitação de execuções fiscais até à fase de penhora</li>
+    <li>Liquidação de IRS, IRC, IVA, IMI, IMT e IS dentro de competência técnica normal</li>
+    <li>Autorização de inspeções externas no âmbito do plano anual (delegada no Diretor da DSIT)</li>
+  </ul>
+</div>
+
+<hr class="divider" id="s4"/>
+<p class="section-label">4. Direções de Serviços — Competências Detalhadas</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">DSG — Gestão</div>
+    <div class="art-title">Recursos internos da AT-RAM</div>
+    <div class="art-body">
+      <strong>RH:</strong> recrutamento, mobilidade, avaliação (SIADAP-RAM), vencimentos, disciplina.<br/>
+      <strong>Financeiro:</strong> orçamento interno, contabilidade, pagamentos de funcionamento.<br/>
+      <strong>Património/Logística:</strong> viaturas, imóveis, contratos fornecimento.<br/>
+      <strong>TI:</strong> sistemas informáticos, segurança, articulação com AT nacional sobre plataformas partilhadas (e-Fatura, Portal AT).
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">DSIR — Rendimento</div>
+    <div class="art-title">IRS e IRC</div>
+    <div class="art-body">
+      Orientações técnicas; informações vinculativas sobre IRS/IRC; controlo de autoliquidações; análise de retenções na fonte e pagamentos por conta; reclamações graciosas IRS/IRC; proposta de correções para inspeção; benefícios fiscais regionais em IRS/IRC; estatísticas de receita.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">DSIVOT — IVA e Outros</div>
+    <div class="art-title">IVA, IS, IMI, IMT, IEC</div>
+    <div class="art-body">
+      Orientações técnicas sobre IVA (taxas reduzidas RAM, CINM); análise de pedidos de reembolso IVA; verificação regimes especiais; análise isenções/reduções IS; controlo liquidações IMT; supervisão matrizes prediais IMI; receção declarações importação e tributação IEC.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">DSC — Cobrança</div>
+    <div class="art-title">Cobrança e execução fiscal</div>
+    <div class="art-body">
+      Controlo prazos pagamento voluntário; emissão certidões de dívida; coordenação execuções nos SF; autorização pagamento prestações acima do limite delegado; dações em pagamento; créditos privilegiados em insolvências; estatísticas de dívida fiscal; distribuição receitas entre Estado e RAM.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">UAG — Apoio Geral</div>
+    <div class="art-title">Apoio ao Conselho Diretivo</div>
+    <div class="art-body">
+      Gestão documental e arquivo do CD; pareceres jurídicos internos; revisão de atos administrativos; comunicação institucional; protocolo e representação em eventos; coordenação respostas a pedidos de informação de outros organismos.
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">DSA — Aduaneiro</div>
+    <div class="art-title">Alfândegas e controlo de fronteiras</div>
+    <div class="art-body">
+      Controlo nas alfândegas (Funchal, Caniçal); despacho aduaneiro (importação/exportação/trânsito); classificação pautal; proibições/restrições (CITES, duplo uso); fiscalização passageiros/bagagens; investigação contrabando; articulação GNR/PSP/ASAE; aplicação Código Aduaneiro da União (CAU).
+    </div>
+  </div>
+</div>
+
+<hr class="divider" id="s5"/>
+<p class="section-label">5. Direção de Serviços de Inspeção Tributária — Análise Aprofundada</p>
+
+<div class="highlight">
+  <p>A DSIT é a unidade mais relevante para o inspetor tributário. Abrange a fiscalização de <strong>todos os impostos</strong> geridos pela AT-RAM (IRS, IRC, IVA, IS, IMI, IMT, IEC) e articula diretamente com a DSC (para cobrança coerciva após liquidações adicionais) e com a DSIR/DSIVOT (para questões técnicas durante a inspeção).</p>
+</div>
+
+<h2>Competências da DSIT</h2>
+<div class="card">
+  <ul>
+    <li><strong>Plano anual de inspeção (PAI):</strong> Elaboração com base em análise de risco — critérios objetivos (setores de risco elevado, desvios face a rácios setoriais, informações de terceiros) e critérios subjetivos (denúncias, sinalizações, resultado de cruzamento de declarações)</li>
+    <li><strong>Seleção de contribuintes:</strong> Definição de critérios de seleção e sua documentação; distribuição de ações pelos inspetores conforme especialização e capacidade</li>
+    <li><strong>Inspeções externas:</strong> Deslocação às instalações do contribuinte; acesso a documentos, sistemas contabilísticos e informáticos; notificação de início (art. 49.º RCPIT); regra: contribuinte inspecionado recebe notificação prévia exceto em casos de urgência ou risco de ocultação de provas</li>
+    <li><strong>Inspeções internas:</strong> Análise documental e cruzamento de informação sem deslocação ao contribuinte; com base em declarações, faturas, dados bancários (quando autorizado), informação de terceiros</li>
+    <li><strong>Avaliação indireta:</strong> Aplicação dos métodos de avaliação indireta (art. 87.º–90.º LGT) nos casos de contabilidade insuficiente, inidónea ou inexistente; aplicação de rácios setoriais e métodos indiretos</li>
+    <li><strong>Investigação de fraude:</strong> Procedimentos especiais para fraude qualificada (ocultação de rendimentos, emissão de faturas falsas, esquemas de evasão organizada); cooperação com DIAP e PGR nos processos com vertente criminal; comunicação ao MP (arts. 35.º–36.º RGIT)</li>
+    <li><strong>Relatório de inspeção:</strong> Elaboração, notificação ao contribuinte (art. 60.º CPA — audiência prévia), homologação pelo Diretor da DSIT, proposta de liquidações adicionais com juros compensatórios</li>
+    <li><strong>Análise de risco setorial:</strong> Estudos de incumprimento por setor; margens brutas de referência; mapas de risco por CAE</li>
+    <li><strong>Cooperação administrativa:</strong> Troca de informação com administrações tributárias de outros EM (DAC — Diretivas de Cooperação Administrativa) e de países terceiros (FATCA, CRS); pedidos de inspeção simultânea</li>
+    <li><strong>CGAA:</strong> Instrução dos processos de aplicação da Cláusula Geral Anti-Abuso (proposta ao CD para decisão final)</li>
+  </ul>
+</div>
+
+<h2>Subunidades da DSIT (DRR n.º 7/2021/M)</h2>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Divisão de Inspeção Externa</div>
+    <div class="art-title">Inspeções com deslocação</div>
+    <div class="art-body">Conduz as inspeções externas: visitas às instalações, auditorias à contabilidade no local, apreensão de documentos quando necessário, cruzamento com sistemas informáticos do contribuinte. É o núcleo operacional da fiscalização de campo.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Divisão de Inspeção Interna</div>
+    <div class="art-title">Análise documental e cruzamento</div>
+    <div class="art-body">Realiza inspeções sem deslocação: análise de declarações, cruzamento com dados de terceiros (bancos, entidades pagadoras), verificação de consistência entre IRS/IRC e IVA declarados, análise de reembolsos de IVA de elevado valor, controlo de benefícios fiscais.</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Procedimento de inspeção tributária — fases (RCPIT aplicável)</h3>
+  <ol>
+    <li><strong>Seleção:</strong> Identificação do contribuinte com base nos critérios do PAI ou por sinalização</li>
+    <li><strong>Abertura do processo:</strong> Ordem de serviço ou despacho de inspeção assinado pelo Diretor da DSIT</li>
+    <li><strong>Notificação:</strong> Notificação ao contribuinte do início da inspeção (art. 49.º RCPIT); prazo normal: 5 dias antes do início</li>
+    <li><strong>Fase de recolha:</strong> Inspeção no terreno ou análise documental; acesso a contabilidade, faturas, contratos, documentos bancários</li>
+    <li><strong>Nota de diligência:</strong> Registo de cada diligência realizada (art. 56.º RCPIT)</li>
+    <li><strong>Projeto de conclusões:</strong> Elaboração do projeto de relatório com as correções propostas</li>
+    <li><strong>Audiência prévia:</strong> Notificação ao contribuinte para exercício do direito de audição (art. 60.º CPA + art. 60.º LGT); prazo mínimo: 15 dias</li>
+    <li><strong>Relatório final:</strong> Ponderação das alegações do contribuinte; homologação pelo Diretor da DSIT</li>
+    <li><strong>Notificação das liquidações:</strong> Proposta de liquidações adicionais com juros compensatórios (art. 35.º LGT); envio para DSC para cobrança</li>
+  </ol>
+</div>
+
+<div class="warning">
+  <p><strong>Prazo da inspeção:</strong> A inspeção externa deve concluir-se no prazo de 6 meses (art. 36.º RCPIT), prorrogável pelo Diretor da DSIT por mais 3 meses em casos complexos. O contribuinte pode suspender o prazo de caducidade de liquidação (art. 46.º LGT) durante a inspeção.</p>
+</div>
+
+<hr class="divider" id="s6"/>
+<p class="section-label">6. Unidades Orgânicas Flexíveis</p>
+
+<div class="card">
+  <h3>Natureza e função</h3>
+  <p>As unidades orgânicas flexíveis (divisões e equipas) são criadas por <strong>despacho do Conselho Diretivo</strong>, dentro do número máximo fixado pela Portaria 420/2021. Permitem à AT-RAM adaptar a organização interna às prioridades operacionais sem alterar o DRR orgânico (que exigiria aprovação em Conselho de Governo Regional).</p>
+  <h3>Tipos e critérios de criação</h3>
+  <ul>
+    <li><strong>Divisões:</strong> Unidades de maior dimensão, dirigidas por chefe de divisão; exigem volume de trabalho e especialização que justifique autonomia de gestão</li>
+    <li><strong>Equipas:</strong> Unidades menores, para projetos específicos ou áreas funcionais em crescimento; chefiadas por coordenador de equipa</li>
+    <li><strong>Critérios de criação:</strong> necessidade de especialização funcional, volume de trabalho, prioridades de política fiscal (ex: equipa especialmente dedicada ao setor imobiliário ou ao CINM)</li>
+  </ul>
+  <h3>Extinção e adaptabilidade</h3>
+  <p>As unidades flexíveis podem ser extintas por despacho do CD quando deixem de se justificar, sem procedimento formal. Esta flexibilidade é a principal vantagem do modelo de estrutura nuclear + unidades flexíveis face ao modelo de estrutura inteiramente definida por decreto.</p>
+</div>
+
+<hr class="divider" id="s7"/>
+<p class="section-label">7. Serviços de Finanças Locais</p>
+
+<div class="card">
+  <p>Cada Serviço de Finanças (SF) é uma unidade desconcentrada com competências de proximidade. O <strong>Chefe de Finanças</strong> exerce competências delegadas pelo Conselho Diretivo. Na RAM, os SF cobrem as diferentes zonas geográficas da ilha da Madeira e do Porto Santo.</p>
+  <table>
+    <thead><tr><th>Competência</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Liquidação de IMI, IMT e IS</td><td>Para contribuintes da área geográfica do SF</td></tr>
+      <tr><td>Atendimento ao contribuinte</td><td>Cumprimento de obrigações declarativas, informações, certidões</td></tr>
+      <tr><td>Emissão de certidões de situação tributária e de dívida</td><td>Necessárias para escrituras, concursos públicos, licenças</td></tr>
+      <tr><td>Reclamações graciosas simples</td><td>Dentro dos limites de competência delegada pelo CD</td></tr>
+      <tr><td>Execuções fiscais locais</td><td>Instauração e tramitação até penhora de bens móveis e imóveis</td></tr>
+      <tr><td>Pagamento em prestações</td><td>Até ao limite máximo fixado por despacho do CD</td></tr>
+      <tr><td>Registo de imóveis e transmissões</td><td>Matrizes prediais, atualização de valores patrimoniais</td></tr>
+      <tr><td>Comunicação de infrações ao MP</td><td>Participações criminais por crimes tributários na área geográfica</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s8"/>
+<p class="section-label">8. Cadeia Hierárquica do Inspetor Tributário</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Nível</th><th>Cargo</th><th>Papel na inspeção</th></tr></thead>
+    <tbody>
+      <tr><td>1.º</td><td><strong>Conselho Diretivo</strong></td><td>Aprova o PAI; decide sobre CGAA; autoriza levantamento de sigilo bancário; homologa decisões de valor elevado</td></tr>
+      <tr><td>2.º</td><td><strong>Diretor de Serviços de Inspeção Tributária</strong></td><td>Dirige a DSIT; assina ordens de serviço; homologa relatórios finais; delega ações nos chefes de divisão; propõe aplicação da CGAA ao CD</td></tr>
+      <tr><td>3.º</td><td><strong>Chefe de Divisão (Inspeção Externa ou Interna)</strong></td><td>Supervisiona a execução das inspeções; revê os projetos de relatório; gere a distribuição de processos</td></tr>
+      <tr><td>4.º</td><td><strong>Inspetor Tributário Principal</strong></td><td>Conduz inspeções de maior complexidade; orienta outros inspetores na equipa; propõe metodologias de avaliação indireta</td></tr>
+      <tr><td>5.º</td><td><strong>Inspetor Tributário</strong></td><td>Executa as inspeções: recolha de elementos, elaboração de notas de diligência, proposta de correções, projeto de relatório</td></tr>
+      <tr><td>6.º</td><td><strong>Técnico Tributário</strong></td><td>Presta apoio técnico-administrativo ao inspetor: preparação de dossiers, consulta de bases de dados, minutas de notificação</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="highlight">
+  <p><strong>Independência funcional:</strong> O DLR n.º 28/2022/M garante ao inspetor tributário <strong>independência técnica e funcional</strong> no exercício das suas funções. O inspetor não pode ser substituído nas suas conclusões técnicas por ordem hierárquica sem fundamentação; as correções ao relatório pelo superior têm de ser fundamentadas. Esta independência é condição sine qua non da fiabilidade jurídica do procedimento de inspeção.</p>
+</div>
+
+<hr class="divider" id="s9"/>
+<p class="section-label">9. Articulação Entre Serviços — Fluxos Operacionais</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Fluxo</th><th>Serviços envolvidos</th><th>Descrição</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Inspeção → Liquidação → Cobrança</strong></td><td>DSIT → DSIR/DSIVOT → DSC</td><td>Inspeção deteta incumprimento → propõe liquidação adicional → direção técnica emite nota de liquidação → DSC emite aviso de pagamento e, em caso de não pagamento, instaura execução</td></tr>
+      <tr><td><strong>Inspeção → Investigação criminal</strong></td><td>DSIT → CD → DIAP/PGR</td><td>Inspetor deteta indícios de crime tributário → elabora participação ao MP via CD → DIAP abre inquérito; processo penal corre em paralelo com liquidação administrativa</td></tr>
+      <tr><td><strong>Reembolso de IVA → Inspeção</strong></td><td>DSIVOT → DSIT</td><td>Pedidos de reembolso de IVA de valor elevado ou com indícios de irregularidade são remetidos à DSIT para inspeção prévia ao reembolso (art. 22.º CIVA)</td></tr>
+      <tr><td><strong>Reclamação graciosa → Inspeção complementar</strong></td><td>DSIR/DSIVOT → DSIT</td><td>Em caso de reclamação com novos elementos que exijam verificação no campo, a direção técnica solicita à DSIT diligência complementar</td></tr>
+      <tr><td><strong>Execução fiscal → Inspeção de responsáveis subsidiários</strong></td><td>DSC → DSIT → CD</td><td>Para reverter execução contra gerentes/administradores como responsáveis subsidiários (art. 24.º LGT), a DSC envolve a DSIT para verificação dos pressupostos e o CD para autorização formal</td></tr>
+      <tr><td><strong>Inspeção aduaneira + tributária</strong></td><td>DSA + DSIT</td><td>Inspeções a operadores com atividade de importação/exportação são frequentemente conjuntas (direitos aduaneiros + IVA na importação + IRC)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s10"/>
+<p class="section-label">10. Articulação com a AT Nacional</p>
+
+<div class="card">
+  <p>A AT-RAM é uma autoridade regional autónoma, mas articula-se com a AT nacional (sede em Lisboa) em diversas matérias:</p>
+  <table>
+    <thead><tr><th>Matéria</th><th>Mecanismo de articulação</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Plataformas informáticas</td><td>Portal AT, e-Fatura, ViaCTT partilhados</td><td>A AT-RAM usa os sistemas nacionais para declarações dos contribuintes da RAM</td></tr>
+      <tr><td>Troca de informações fiscais</td><td>Protocolos AT-RAM/AT nacional</td><td>Contribuintes que operam na mainland e na RAM: partilha de dados entre inspeções</td></tr>
+      <tr><td>Grandes contribuintes</td><td>UGC (Unidade dos Grandes Contribuintes) nacional vs. DSIT-RAM</td><td>Contribuintes com sede na mainland mas atividade significativa na RAM: competência partilhada ou articulada por protocolo</td></tr>
+      <tr><td>Cooperação DAC</td><td>AT nacional como ponto de contacto central; AT-RAM fornece elementos sobre contribuintes RAM</td><td>Pedidos de outros EM passam pela AT nacional que articula com AT-RAM para os contribuintes da RAM</td></tr>
+      <tr><td>Normas técnicas</td><td>Circulares e despachos da AT nacional com aplicação subsidiária</td><td>Quando a AT-RAM não emite instrução própria, aplica a instrução da AT nacional (à exceção das matérias fiscais específicas da RAM)</td></tr>
+      <tr><td>Formação</td><td>Centro de Formação da AT (CEFA) partilhado</td><td>Inspetores tributários da AT-RAM podem frequentar formações do CEFA nacional</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="s11"/>
+<p class="section-label">11. Síntese para o Inspetor Tributário</p>
+
+<table>
+  <thead><tr><th>Tema</th><th>O que o inspetor deve saber</th><th>Diploma relevante</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Sua posição na hierarquia</strong></td><td>Inspetor está na 5.ª posição (CD → Diretor DSIT → Chefe Divisão → Inspetor Principal → Inspetor); ordens de serviço são emitidas pelo Diretor da DSIT</td><td>Portaria 420/2021 + DLR 28/2022/M</td></tr>
+    <tr><td><strong>Independência técnica</strong></td><td>As conclusões do relatório são do inspetor; o superior não pode alterar sem fundamentação; o inspetor assina o relatório com responsabilidade técnica própria</td><td>DLR 28/2022/M art. 6.º</td></tr>
+    <tr><td><strong>Quando pedir autorização ao CD</strong></td><td>Levantamento de sigilo bancário; aplicação da CGAA; inspeções de valor muito elevado ou com suspeita de crime organizado</td><td>LGT art. 63.º-B; CGAA art. 38.º</td></tr>
+    <tr><td><strong>Articulação pós-relatório</strong></td><td>Após homologação do relatório, o processo passa automaticamente à DSIR/DSIVOT (liquidação) e depois à DSC (cobrança); o inspetor não tem papel na fase de cobrança</td><td>CPPT art. 85.º ss.</td></tr>
+    <tr><td><strong>Participação ao MP</strong></td><td>Indícios de crime tributário → participação obrigatória ao MP via CD/DSIT (não diretamente); o inspetor elabora a participação mas não a envia por conta própria</td><td>RGIT art. 35.º-36.º</td></tr>
+    <tr><td><strong>Portaria vs. DRR</strong></td><td>A portaria detalha competências mas não cria direitos para os contribuintes; tem natureza normativa interna; o contribuinte pode invocar o DRR (externo) mas não a portaria diretamente</td><td>Portaria 420/2021</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

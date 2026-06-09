@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>11 · DL 192/2015 — SNC-AP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}.warning strong{color:#e74c3c}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.22rem 0;transition:color .15s}
+    .toc a:hover{color:var(--accent)}.toc a::before{content:"→ ";color:var(--accent);font-size:.75rem}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">11 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">11 · Contabilidade Pública</p>
+<h1>Sistema de Normalização Contabilística para as <em>Administrações Públicas</em></h1>
+<p class="doc-sub">Decreto-Lei n.º 192/2015, de 11 de setembro (SNC-AP) · Revoga o POCP e os planos setoriais · Alinha a contabilidade pública portuguesa com as IPSAS</p>
+<div class="meta-row">
+  <span class="badge badge-accent">SNC-AP</span>
+  <span class="badge">DL 192/2015</span>
+  <span class="badge">Contabilidade Pública</span>
+  <span class="badge">IPSAS</span>
+  <span class="badge">NCP</span>
+  <span class="badge">Conta da Região</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#objeto">Objeto, Âmbito e Transição do POCP</a>
+  <a href="#subsistemas">Os Três Subsistemas Contabilísticos</a>
+  <a href="#orcamental">Contabilidade Orçamental — Detalhe</a>
+  <a href="#financeira">Contabilidade Financeira e Demonstrações</a>
+  <a href="#ncp">Normas de Contabilidade Pública (NCP) — 27 Normas</a>
+  <a href="#ncp-chave">NCPs Mais Relevantes para a Fiscalidade</a>
+  <a href="#principios">Princípios Contabilísticos Fundamentais</a>
+  <a href="#consolidacao">Regime de Consolidação</a>
+  <a href="#prestacao">Prestação de Contas e Fiscalização</a>
+  <a href="#sncap-vs-snc">SNC-AP vs. SNC (NCRF) — Diferenças Fiscalmente Relevantes</a>
+  <a href="#sintese">Síntese para o Inspetor Tributário</a>
+</div>
+
+<hr class="divider" id="objeto"/>
+<p class="section-label">1. Objeto, Âmbito e Transição do POCP</p>
+
+<div class="highlight">
+  <p>O SNC-AP é o sistema contabilístico único para todas as entidades da Administração Pública portuguesa. Substituiu o POCP (1997) e os quatro planos sectoriais (POCAL, POC-MS, POC-Educação, POCISSSS), criando um sistema harmonizado, comparável e alinhado com os padrões internacionais das IPSAS (International Public Sector Accounting Standards) emitidas pelo IPSASB.</p>
+</div>
+
+<h2>Âmbito Subjetivo (Artigo 2.º)</h2>
+<div class="card">
+  <p>O SNC-AP aplica-se obrigatoriamente a:</p>
+  <ul>
+    <li><strong>Administração central:</strong> Todos os serviços integrados e serviços e fundos autónomos do Estado</li>
+    <li><strong>Administração regional:</strong> Todos os serviços e organismos das Regiões Autónomas dos Açores e da Madeira — incluindo a AT-RAM, a SRF e todos os serviços regionais</li>
+    <li><strong>Administração local:</strong> Autarquias locais, comunidades intermunicipais, associações de municípios</li>
+    <li><strong>Segurança social</strong></li>
+    <li><strong>Entidades públicas reclassificadas</strong> pelo INE como pertencentes ao setor das administrações públicas</li>
+    <li>Entidades privadas que integrem o <strong>perímetro de consolidação</strong> de uma entidade pública</li>
+  </ul>
+</div>
+
+<h2>Transição do POCP para o SNC-AP</h2>
+<div class="card">
+  <h3>O que mudou</h3>
+  <table>
+    <thead><tr><th>Aspeto</th><th>POCP (anterior)</th><th>SNC-AP (atual)</th></tr></thead>
+    <tbody>
+      <tr><td>Regime contabilístico</td><td>Predominantemente de caixa; contabilidade financeira opcional em muitas entidades</td><td>Regime de acréscimo obrigatório para a contabilidade financeira; caixa mantido para a orçamental</td></tr>
+      <tr><td>Normas de referência</td><td>Baseado no POC privado, com adaptações públicas limitadas</td><td>Baseado nas IPSAS — normas internacionais específicas para o setor público</td></tr>
+      <tr><td>Número de normas</td><td>Plano geral + planos sectoriais (4 planos diferentes)</td><td>27 NCP unificadas para toda a AP</td></tr>
+      <tr><td>Consolidação</td><td>Inexistente ou rudimentar</td><td>Obrigatória para entidades consolidantes (Estado, Regiões, municípios)</td></tr>
+      <tr><td>Património público</td><td>Reconhecimento rudimentar dos ativos fixos tangíveis</td><td>Reconhecimento e mensuração rigorosos de todos os ativos (NCP 7)</td></tr>
+      <tr><td>Receitas sem contraprestação</td><td>Sem norma específica para impostos</td><td>NCP 18 — regime específico para reconhecimento de receitas fiscais e transferências</td></tr>
+    </tbody>
+  </table>
+  <h3>Calendário de implementação</h3>
+  <p>O SNC-AP entrou em vigor em <strong>1 de janeiro de 2018</strong> para a maioria das entidades públicas. A implementação foi faseada: administração central primeiro, depois regiões autónomas e autarquias locais. A RAM implementou o SNC-AP nos seus serviços em conformidade com as instruções do Governo central e da SRF.</p>
+</div>
+
+<hr class="divider" id="subsistemas"/>
+<p class="section-label">2. Os Três Subsistemas Contabilísticos</p>
+
+<div class="highlight">
+  <p>O SNC-AP integra três subsistemas contabilísticos complementares que devem coexistir e articular-se. Cada subsistema responde a uma necessidade de informação diferente: execução do orçamento, posição financeira, e eficiência dos serviços.</p>
+</div>
+
+<div class="grid3">
+  <div class="card">
+    <h3>1. Contabilidade Orçamental</h3>
+    <p>Regista e controla a execução do orçamento aprovado. Obrigatória para todas as entidades. Baseada no <strong>regime de caixa</strong> (recebimentos e pagamentos efetivos) e no <strong>regime de compromissos</strong> (momento em que a obrigação de despesa é assumida). Produz os <strong>mapas de execução orçamental</strong> da receita e da despesa.</p>
+  </div>
+  <div class="card">
+    <h3>2. Contabilidade Financeira</h3>
+    <p>Regista ativos, passivos, rendimentos e gastos em <strong>regime de acréscimo</strong> (accrual basis) — reconhecimento quando o facto ocorre, independentemente do pagamento. Obrigatória para todas as entidades do SNC-AP. Produz o <strong>Balanço, Demonstração dos Resultados, DFC e Notas</strong>.</p>
+  </div>
+  <div class="card">
+    <h3>3. Contabilidade de Gestão</h3>
+    <p>Apura os custos dos serviços, atividades e programas públicos. <strong>Facultativa</strong> para a maioria das entidades, mas recomendada. Permite medir a eficiência e eficácia dos serviços (custo por unidade de serviço prestado). A AT-RAM pode usá-la para calcular o custo por tipo de inspeção ou por tributo liquidado.</p>
+  </div>
+</div>
+
+<hr class="divider" id="orcamental"/>
+<p class="section-label">3. Contabilidade Orçamental — Detalhe</p>
+
+<div class="card">
+  <h3>Fases da despesa pública</h3>
+  <table>
+    <thead><tr><th>Fase</th><th>Momento</th><th>Conceito</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Cabimento</strong></td><td>Antes de assumir qualquer compromisso</td><td>Reserva preventiva de dotação orçamental; verifica se existe disponibilidade orçamental para a despesa</td></tr>
+      <tr><td><strong>Compromisso</strong></td><td>Assinatura do contrato ou início da obrigação legal</td><td>Momento em que a entidade fica obrigada a pagar (mesmo antes da fatura); é o momento de registo pela LCPA</td></tr>
+      <tr><td><strong>Processamento</strong></td><td>Receção da fatura ou liquidação da despesa</td><td>Verificação da conformidade da fatura com o compromisso; criação da obrigação de pagamento</td></tr>
+      <tr><td><strong>Autorização de pagamento</strong></td><td>Ato interno de autorizar o pagamento</td><td>Confirmação da disponibilidade de tesouraria e autorização do competente</td></tr>
+      <tr><td><strong>Pagamento</strong></td><td>Saída efetiva de fundos</td><td>Registo em caixa; extinção da obrigação; registo definitivo na execução orçamental da despesa</td></tr>
+    </tbody>
+  </table>
+  <h3>LCPA — Lei dos Compromissos e dos Pagamentos em Atraso</h3>
+  <p>A Lei n.º 8/2012, de 21 de fevereiro (LCPA), impõe regras rigorosas sobre a assunção de compromissos — obriga a verificar a disponibilidade orçamental antes de cada compromisso (cabimento). O objetivo é eliminar os pagamentos em atraso no setor público. A violação da LCPA constitui infração financeira e responsabilidade dos dirigentes que autorizaram despesas sem cabimento. Na RAM, a LCPA aplica-se a todos os serviços regionais.</p>
+  <h3>Fases da receita pública</h3>
+  <table>
+    <thead><tr><th>Fase</th><th>Conceito</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Liquidação</strong></td><td>Apuramento do montante concreto da receita (ex.: liquidação do imposto a pagar pelo contribuinte pela AT-RAM)</td></tr>
+      <tr><td><strong>Emissão</strong></td><td>Emissão da nota de cobrança ou da nota de liquidação ao devedor</td></tr>
+      <tr><td><strong>Cobrança</strong></td><td>Recebimento efetivo da receita — registo em caixa; ingresso nos cofres da RAM</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="financeira"/>
+<p class="section-label">4. Contabilidade Financeira — Demonstrações Obrigatórias</p>
+
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Balanço</div>
+    <div class="art-title">Posição financeira</div>
+    <div class="art-body">
+      <strong>Ativo:</strong> Recursos controlados pela entidade (ativos fixos tangíveis, intangíveis, investimentos financeiros, inventários, receitas a cobrar, disponibilidades)<br/><br/>
+      <strong>Passivo:</strong> Obrigações presentes da entidade (dívidas a pagar, empréstimos, passivos por benefícios dos empregados, provisões)<br/><br/>
+      <strong>Património líquido / Capital próprio:</strong> Diferença entre ativo e passivo; inclui reservas, excedentes e resultados acumulados
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Demonstração dos Resultados</div>
+    <div class="art-title">Desempenho económico</div>
+    <div class="art-body">
+      <strong>Rendimentos:</strong> Receitas fiscais (NCP 18), transferências recebidas, prestações de serviços, subsídios, ganhos<br/><br/>
+      <strong>Gastos:</strong> Gastos com pessoal, fornecimentos e serviços externos, amortizações, provisões, juros, transferências concedidas<br/><br/>
+      <strong>Resultado do período:</strong> Excedente (superavit) ou défice do exercício
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Demonstração de Fluxos de Caixa</div>
+    <div class="art-title">Movimentos de caixa</div>
+    <div class="art-body">
+      Apresenta os fluxos de caixa classificados em:<br/>
+      <strong>Atividades operacionais:</strong> Recebimentos e pagamentos da atividade corrente<br/>
+      <strong>Atividades de investimento:</strong> Compra e venda de ativos fixos<br/>
+      <strong>Atividades de financiamento:</strong> Empréstimos obtidos e reembolsados
+    </div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Notas às Demonstrações Financeiras</div>
+    <div class="art-title">Divulgações adicionais</div>
+    <div class="art-body">
+      Detalham e complementam as demonstrações financeiras. Incluem: políticas contabilísticas adotadas; reconciliações; detalhes de rubricas significativas; passivos contingentes; partes relacionadas; eventos após a data de relato. São parte integrante das demonstrações financeiras.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Mapas orçamentais obrigatórios</h3>
+  <ul>
+    <li><strong>Mapa de Execução Orçamental da Receita:</strong> Previsão inicial vs. previsão corrigida vs. receita liquidada vs. receita cobrada</li>
+    <li><strong>Mapa de Execução Orçamental da Despesa:</strong> Dotação inicial vs. dotação corrigida vs. compromissos vs. pagamentos efetuados</li>
+    <li><strong>Demonstração do Desempenho Orçamental:</strong> Resultado orçamental (saldo) e grau de execução orçamental</li>
+    <li><strong>Fluxos de Caixa Orçamentais:</strong> Articulação entre os mapas orçamentais e a DFC</li>
+  </ul>
+</div>
+
+<hr class="divider" id="ncp"/>
+<p class="section-label">5. As 27 Normas de Contabilidade Pública (NCP)</p>
+
+<div class="card">
+  <p>O SNC-AP inclui <strong>27 Normas de Contabilidade Pública (NCP)</strong>, baseadas nas IPSAS mas adaptadas ao contexto jurídico e económico nacional. Cada NCP detalha como reconhecer, mensurar e divulgar um tipo específico de transação ou elemento das demonstrações financeiras.</p>
+  <table>
+    <thead><tr><th>NCP</th><th>Matéria</th><th>Relevância para AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NCP 1</strong></td><td>Estrutura e conteúdo das demonstrações financeiras</td><td>Base — define os mapas obrigatórios</td></tr>
+      <tr><td><strong>NCP 2</strong></td><td>Políticas contabilísticas, alterações em estimativas e erros</td><td>Obriga à consistência; as correções de erros retroativas têm impacto fiscal</td></tr>
+      <tr><td><strong>NCP 3</strong></td><td>Demonstrações de fluxos de caixa</td><td>Articulação caixa/acréscimo</td></tr>
+      <tr><td><strong>NCP 4</strong></td><td>Efeitos de alterações em taxas de câmbio</td><td>Relevante para entidades com operações em moeda estrangeira</td></tr>
+      <tr><td><strong>NCP 5</strong></td><td>Custos de empréstimos obtidos</td><td>Capitalização de juros em ativos — relevante para inspeção a entidades públicas</td></tr>
+      <tr><td><strong>NCP 6</strong></td><td>Propriedades de investimento</td><td>Imóveis da RAM/AT-RAM detidos para valorização</td></tr>
+      <tr><td><strong>NCP 7</strong></td><td>Ativos fixos tangíveis</td><td>Muito relevante — reconhecimento e depreciação do património público</td></tr>
+      <tr><td><strong>NCP 8</strong></td><td>Ativos intangíveis</td><td>Software, licenças, bases de dados da AT-RAM</td></tr>
+      <tr><td><strong>NCP 9</strong></td><td>Locações</td><td>Contratos de arrendamento de instalações públicas</td></tr>
+      <tr><td><strong>NCP 10</strong></td><td>Inventários</td><td>Material de escritório, consumíveis, stocks de serviços</td></tr>
+      <tr><td><strong>NCP 11</strong></td><td>Contratos de construção</td><td>Obras públicas regionais</td></tr>
+      <tr><td><strong>NCP 12</strong></td><td>Imparidade de ativos geradores de fluxos de caixa</td><td>Ativos de entidades públicas com caráter comercial</td></tr>
+      <tr><td><strong>NCP 13</strong></td><td>Imparidade de ativos não geradores de fluxos de caixa</td><td>A maioria dos ativos públicos (estradas, edifícios, equipamentos)</td></tr>
+      <tr><td><strong>NCP 14</strong></td><td>Acontecimentos após a data de relato</td><td>Eventos significativos entre o fim do exercício e a emissão das contas</td></tr>
+      <tr><td><strong>NCP 15</strong></td><td>Provisões, passivos contingentes e ativos contingentes</td><td>Muito relevante — provisões para dívidas fiscais incobráveis e litígios tributários</td></tr>
+      <tr><td><strong>NCP 16</strong></td><td>Instrumentos financeiros</td><td>Dívida pública regional, aplicações financeiras, derivados</td></tr>
+      <tr><td><strong>NCP 17</strong></td><td>Rédito de transações com contraprestação</td><td>Taxas e tarifas de serviços públicos com contrapartida direta</td></tr>
+      <tr><td><strong>NCP 18</strong></td><td>Rédito de transações sem contraprestação (impostos e transferências)</td><td><strong>Essencial</strong> — reconhecimento das receitas fiscais cobradas pela AT-RAM</td></tr>
+      <tr><td><strong>NCP 19</strong></td><td>Benefícios dos empregados</td><td>Pensões dos trabalhadores públicos, encargos com pessoal da AT-RAM</td></tr>
+      <tr><td><strong>NCP 20</strong></td><td>Divulgações de partes relacionadas</td><td>Relações entre serviços da ARAM e entidades relacionadas</td></tr>
+      <tr><td><strong>NCP 21</strong></td><td>Demonstrações financeiras separadas</td><td>Contas de cada organismo individualmente</td></tr>
+      <tr><td><strong>NCP 22</strong></td><td>Demonstrações financeiras consolidadas</td><td>Conta consolidada da RAM</td></tr>
+      <tr><td><strong>NCP 23</strong></td><td>Investimentos em associadas e empreendimentos conjuntos</td><td>Participações da RAM em empresas regionais</td></tr>
+      <tr><td><strong>NCP 24</strong></td><td>Agricultura</td><td>Ativos biológicos (ex.: florestas regionais)</td></tr>
+      <tr><td><strong>NCP 25</strong></td><td>Relato por segmentos</td><td>Informação financeira por área de atividade ou geográfica</td></tr>
+      <tr><td><strong>NCP 26</strong></td><td>Informação financeira intercalar</td><td>Relatórios trimestrais de execução orçamental</td></tr>
+      <tr><td><strong>NCP 27</strong></td><td>Redução de capital da entidade</td><td>Dissolução ou liquidação de entidades públicas</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="ncp-chave"/>
+<p class="section-label">6. NCPs Mais Relevantes para a Fiscalidade</p>
+
+<h2>NCP 18 — Rédito de Transações sem Contraprestação</h2>
+<div class="card">
+  <p>Esta é a norma mais diretamente relevante para a AT-RAM: regula o reconhecimento contabilístico das <strong>receitas fiscais</strong> (impostos) e das transferências recebidas — transações <em>sem contraprestação direta</em>.</p>
+  <h3>Reconhecimento de receitas fiscais</h3>
+  <ul>
+    <li><strong>Momento de reconhecimento:</strong> As receitas fiscais devem ser reconhecidas quando o facto tributário (evento que gera a obrigação de pagamento) ocorre e quando o montante pode ser mensurado de forma fiável. Na prática: reconhecimento no momento da liquidação do imposto.</li>
+    <li><strong>Mensuração:</strong> Ao valor liquidado pela AT-RAM nos termos da lei fiscal aplicável (a taxa × a matéria coletável).</li>
+    <li><strong>Imparidade (incerteza de cobrança):</strong> Quando exista incerteza significativa sobre a cobrança (dívidas em execução fiscal de cobrança duvidosa), deve ser reconhecida uma <strong>imparidade de crédito</strong> que reduz o valor da receita reconhecida. A AT-RAM deve, assim, manter uma estimativa das dívidas incobráveis para fins contabilísticos.</li>
+    <li>Aplicável a: IRS, IRC, IVA, IS, IMI, IMT, impostos especiais de consumo — todas as receitas fiscais da AT-RAM.</li>
+  </ul>
+  <h3>Implicação para a inspeção</h3>
+  <p>Uma inspeção tributária que conclua que há imposto adicional a liquidar gera um aumento de receita fiscal que deve ser contabilizado pela AT-RAM ao abrigo da NCP 18. O relatório de inspeção é o suporte documental da liquidação adicional e consequente reconhecimento de receita.</p>
+</div>
+
+<h2>NCP 7 — Ativos Fixos Tangíveis</h2>
+<div class="card">
+  <p>Regula o reconhecimento, mensuração e depreciação dos ativos fixos tangíveis das entidades públicas (edifícios, equipamentos, viaturas, infraestruturas). Muito relevante para a inspeção a entidades públicas.</p>
+  <ul>
+    <li><strong>Reconhecimento:</strong> Um ativo fixo tangível é reconhecido quando é provável que futuros benefícios económicos (ou potencial de serviço) fluam para a entidade e o custo pode ser mensurado de forma fiável.</li>
+    <li><strong>Mensuração inicial:</strong> Ao custo histórico (custo de aquisição ou construção) ou ao justo valor (para ativos sem custo de aquisição identificável — ex.: infra estruturas recebidas por doação do Estado).</li>
+    <li><strong>Depreciação:</strong> Os ativos são depreciados ao longo da sua vida útil estimada (método da linha reta ou outros métodos). Exceto: terrenos e obras de arte (vida útil indefinida).</li>
+    <li><strong>Ativos de infraestrutura:</strong> As estradas, pontes, sistemas de drenagem, porto, aeroporto da RAM são ativos de infraestrutura, sujeitos a regras específicas de mensuração e depreciação ao abrigo desta norma.</li>
+    <li><strong>Relevância fiscal:</strong> As depreciações contabilizadas ao abrigo da NCP 7 podem diferir das amortizações fiscalmente aceites nos códigos tributários — o inspetor deve conhecer esta diferença quando inspeciona entidades públicas reclassificadas com obrigações fiscais.</li>
+  </ul>
+</div>
+
+<h2>NCP 15 — Provisões, Passivos Contingentes e Ativos Contingentes</h2>
+<div class="card">
+  <p>Esta norma é fundamental para compreender como as entidades públicas tratam as <strong>dívidas fiscais incertas</strong> e os <strong>litígios tributários</strong>.</p>
+  <ul>
+    <li><strong>Provisão:</strong> Passivo de montante ou prazo incerto, reconhecida quando existe uma obrigação presente, é provável uma saída de recursos e pode ser feita uma estimativa fiável. Exemplo: uma empresa pública inspecionada pela AT-RAM que reconhece uma provisão para o imposto adicional potencial em litígio.</li>
+    <li><strong>Passivo contingente:</strong> Obrigação possível mas não certa, ou obrigação certa mas de montante não estimável — não é reconhecida no balanço mas é divulgada nas notas. Exemplo: uma entidade pública que aguarda o resultado de um recurso hierárquico tributário pode tratar o imposto controvertido como passivo contingente.</li>
+    <li><strong>Ativo contingente:</strong> Ativo possível mas não certo — divulgado nas notas se o influxo for provável. Exemplo: a AT-RAM pode ter um ativo contingente relativo a coimas em litígio que poderão vir a ser cobradas.</li>
+    <li><strong>Relevância para inspeção:</strong> Quando o inspetor deteta que uma entidade pública omitiu o reconhecimento de uma provisão obrigatória para passivo fiscal, isso constitui irregularidade contabilística que deve ser refletida no relatório de inspeção.</li>
+  </ul>
+</div>
+
+<h2>NCP 19 — Benefícios dos Empregados</h2>
+<div class="card">
+  <p>Regula os encargos com o pessoal das entidades públicas, incluindo as <strong>responsabilidades com pensões</strong> dos trabalhadores da função pública. Muito relevante para organismos públicos de grande dimensão como a AT-RAM e os serviços regionais.</p>
+  <ul>
+    <li><strong>Benefícios de curto prazo:</strong> Vencimentos, subsídios, férias — reconhecidos no período em que o trabalho é prestado</li>
+    <li><strong>Benefícios pós-emprego (pensões):</strong> As responsabilidades da CGA (Caixa Geral de Aposentações) pelos trabalhadores da ARAM são encargos que devem ser reconhecidos e divulgados nas demonstrações financeiras da entidade empregadora</li>
+    <li><strong>Contribuições:</strong> As contribuições para a CGA e para a segurança social são reconhecidas como gasto do período</li>
+    <li><strong>Relevância fiscal:</strong> Os encargos com pessoal são frequentemente a maior rubrica de gasto das entidades públicas. Irregularidades (pagamentos não autorizados, remunerações ilícitas) são objeto de inspeção da IRF e do Tribunal de Contas, podendo ter relevância fiscal se a entidade pública for reclassificada como entidade sujeita a IRC</li>
+  </ul>
+</div>
+
+<hr class="divider" id="principios"/>
+<p class="section-label">7. Princípios Contabilísticos Fundamentais do SNC-AP</p>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Princípio</th><th>Conteúdo</th><th>Aplicação na AT-RAM</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Continuidade</strong></td><td>Presunção de que a entidade continuará a funcionar no futuro previsível</td><td>A AT-RAM reconhece ativos e passivos pressupondo a continuidade da sua atividade fiscal</td></tr>
+      <tr><td><strong>Regime de acréscimo</strong></td><td>Reconhecimento de rendimentos e gastos quando ocorrem, não quando há fluxo financeiro</td><td>Receitas fiscais liquidadas mas não cobradas são registadas como crédito; gastos com pessoal são reconhecidos no mês a que respeitam</td></tr>
+      <tr><td><strong>Consistência</strong></td><td>Políticas contabilísticas aplicadas de forma uniforme entre períodos</td><td>A AT-RAM não pode mudar o método de depreciação ou de reconhecimento de receita sem justificação e divulgação adequada</td></tr>
+      <tr><td><strong>Materialidade</strong></td><td>Omissões relevantes afetam a imagem fiel das contas</td><td>Receitas fiscais não reconhecidas de montante relevante tornam as contas não fidedignas</td></tr>
+      <tr><td><strong>Substância sobre forma</strong></td><td>Registo conforme a substância económica, não apenas a forma jurídica</td><td>Um contrato de leasing operacional com características de locação financeira deve ser tratado como tal independentemente da sua designação contratual</td></tr>
+      <tr><td><strong>Prudência</strong></td><td>Não sobrestimar ativos/rendimentos nem subestimar passivos/gastos</td><td>Imparidade para dívidas fiscais incobráveis; provisões para litígios tributários pendentes</td></tr>
+      <tr><td><strong>Comparabilidade</strong></td><td>As contas devem ser comparáveis entre períodos e entre entidades</td><td>Permite comparar a execução orçamental e as contas da AT-RAM entre anos; relevante para análise de tendências de cobrança fiscal</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="consolidacao"/>
+<p class="section-label">8. Regime de Consolidação</p>
+
+<div class="highlight">
+  <p>O SNC-AP introduziu a obrigação de elaborar <strong>demonstrações financeiras consolidadas</strong> para as entidades consolidantes, o que é novidade face ao POCP. A Região Autónoma da Madeira, como entidade pública de maior dimensão, é uma entidade consolidante.</p>
+</div>
+
+<div class="card">
+  <h3>Entidades consolidantes na RAM</h3>
+  <p>A RAM, como unidade consolidante regional, deve elaborar uma conta consolidada que integre todos os serviços e organismos da ARAM que estejam sob controlo do Governo Regional. O perímetro de consolidação inclui:</p>
+  <ul>
+    <li>Todos os serviços integrados da administração regional (SRF, Secretaria Regional de Saúde, Educação, etc.)</li>
+    <li>Serviços e fundos autónomos da RAM (AT-RAM, Fundo Regional de Saúde, etc.)</li>
+    <li>Empresas públicas regionais sob controlo do Governo Regional (participação maioritária ou exclusiva)</li>
+    <li>Fundações e outras entidades sob controlo regional</li>
+  </ul>
+  <h3>Objetivos da consolidação</h3>
+  <ul>
+    <li>Obter uma visão financeira consolidada da ARAM, eliminando as transferências internas entre serviços regionais (que de outra forma seriam contadas duas vezes)</li>
+    <li>Identificar a dimensão total dos ativos, passivos e encargos com pessoal da região</li>
+    <li>Contribuir para as contas nacionais (sector das administrações públicas) que são enviadas ao Eurostat</li>
+    <li>Permitir ao Tribunal de Contas uma fiscalização mais abrangente das finanças regionais</li>
+  </ul>
+</div>
+
+<hr class="divider" id="prestacao"/>
+<p class="section-label">9. Prestação de Contas e Fiscalização</p>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Tribunal de Contas — 3.ª Secção Regional</h3>
+    <p>A Conta da Região é submetida anualmente ao TC para <strong>julgamento</strong>. O TC verifica se as contas são regulares, se a execução orçamental foi legal e se os ativos e passivos são corretamente representados. O TC pode:</p>
+    <ul>
+      <li>Julgar a conta como regular, com observações ou irregular</li>
+      <li>Exercer fiscalização concomitante durante a execução orçamental</li>
+      <li>Emitir visto prévio sobre os contratos e atos financeiros que excedam o limiar de fiscalização prévia</li>
+      <li>Instaurar processos de responsabilidade financeira contra os responsáveis por irregularidades</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Inspeção Regional das Finanças (IRF)</h3>
+    <p>A IRF, ao abrigo do DRR 14/2024/M, audita os serviços regionais incluindo a AT-RAM. A IRF complementa a fiscalização do TC com uma perspetiva mais operacional e contínua. Pode emitir relatórios de auditoria que identifiquem irregularidades contabilísticas e financeiras e recomendar medidas corretivas ao Secretário Regional.</p>
+  </div>
+</div>
+
+<hr class="divider" id="sncap-vs-snc"/>
+<p class="section-label">10. SNC-AP vs. SNC (NCRF) — Diferenças Fiscalmente Relevantes</p>
+
+<div class="highlight">
+  <p>O <strong>SNC-AP</strong> aplica-se às entidades públicas. O <strong>SNC com NCRF</strong> (Normas Contabilísticas e de Relato Financeiro) aplica-se às empresas privadas. Quando o inspetor tributário inspeciona entidades que aplicam o SNC-AP (entidades públicas com obrigações fiscais, como empresas públicas) deve estar ciente das diferenças entre os dois sistemas.</p>
+</div>
+
+<div class="card">
+  <table>
+    <thead><tr><th>Aspeto</th><th>SNC-AP (entidades públicas)</th><th>SNC / NCRF (entidades privadas)</th><th>Implicação fiscal</th></tr></thead>
+    <tbody>
+      <tr><td>Normas de referência</td><td>IPSAS (setor público)</td><td>IAS/IFRS adaptadas (setor privado)</td><td>Diferenças nas políticas contabilísticas aceites — o inspetor verifica qual o regime aplicável antes de comparar com as declarações fiscais</td></tr>
+      <tr><td>Receitas sem contraprestação</td><td>NCP 18 — regime próprio</td><td>Sem norma equivalente (empresas têm sempre contraprestação)</td><td>Transferências e subsídios recebidos por entidades públicas têm tratamento contabilístico diferente — impacto na base fiscal de IRC das entidades públicas reclassificadas</td></tr>
+      <tr><td>Ativos de infraestrutura</td><td>Reconhecimento específico sob NCP 7</td><td>NCRF 7 (activos fixos tangíveis privados)</td><td>As depreciações dos ativos públicos podem diferir das taxas fiscalmente admissíveis — gera diferenças temporárias entre a contabilidade e a fiscal</td></tr>
+      <tr><td>Património líquido / Capital próprio</td><td>Designado "património líquido"; inclui excedentes e reservas</td><td>Capital social, reservas, resultados transitados</td><td>Estrutura diferente — o inspetor deve adaptar a análise patrimonial ao sistema contabilístico da entidade</td></tr>
+      <tr><td>Regime de caixa (orçamental)</td><td>Coexiste com o regime de acréscimo</td><td>Apenas regime de acréscimo</td><td>A entidade pública tem dois registos — orçamental (caixa) e financeiro (acréscimo). O inspetor analisa ambos para detetar discrepâncias</td></tr>
+      <tr><td>Benefícios pós-emprego</td><td>NCP 19 — inclui CGA e regimes especiais</td><td>NCRF 28 — regime privado</td><td>Os encargos com pensões nas entidades públicas seguem NCP 19; numa inspeção a empresa pública, é necessário verificar qual o regime aplicável</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="sintese"/>
+<p class="section-label">11. Síntese — SNC-AP e o Inspetor Tributário da AT-RAM</p>
+
+<table>
+  <thead><tr><th>Matéria SNC-AP</th><th>Relevância prática para o inspetor tributário</th></tr></thead>
+  <tbody>
+    <tr><td>NCP 18 — Receitas fiscais</td><td>A AT-RAM usa esta norma na sua própria contabilidade; o inspetor deve conhecê-la para compreender como as liquidações adicionais são registadas internamente</td></tr>
+    <tr><td>NCP 15 — Provisões</td><td>Ao inspecionar entidades públicas com litígios fiscais pendentes, o inspetor verifica se a entidade constituiu provisões adequadas; a omissão de provisão obrigatória é irregularidade contabilística</td></tr>
+    <tr><td>NCP 7 — Ativos fixos tangíveis</td><td>As depreciações do SNC-AP podem diferir das fiscalmente aceites; o inspetor identifica estas diferenças e trata-as como correções à matéria coletável nas inspeções a entidades públicas tributáveis</td></tr>
+    <tr><td>LCPA</td><td>A violação da LCPA por uma entidade pública pode gerar obrigações de reposição com implicações tributárias; o inspetor pode encontrá-las em inspeções a entidades públicas empresariais</td></tr>
+    <tr><td>Contabilidade orçamental</td><td>A análise da execução orçamental de uma entidade pública inspecionada pode revelar despesas não autorizadas ou receitas não declaradas</td></tr>
+    <tr><td>Conta da Região</td><td>A Conta da Região inclui os dados de receitas fiscais cobradas pela AT-RAM — é o documento público que mostra o desempenho global da AT-RAM na cobrança de receitas</td></tr>
+    <tr><td>SNC-AP vs. NCRF</td><td>Ao inspecionar uma empresa pública (ex.: empresa municipal de transportes, empresa regional de águas), o inspetor deve verificar qual o sistema aplicável e adaptar a análise contabilística em conformidade</td></tr>
+    <tr><td>Consolidação</td><td>Uma entidade pública consolidada pode ter operações financeiras com outras entidades do grupo que, na análise fiscal, sejam preços de transferência ou transferências artificiais de resultados</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>

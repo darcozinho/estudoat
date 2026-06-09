@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>06 · DRR 3/2019/M e 7/2021/M — Orgânica da AT-RAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--bg-card:#181818;--bg-alt:#111;--text:#e0ddd8;--text-muted:#999;--text-label:#555;--accent:#c8a84b;--accent2:#a07830;--border:#252525;--nav-bg:rgba(15,15,15,.94)}
+    [data-theme=light]{--bg:#f5f4f0;--bg-card:#fff;--bg-alt:#eeecea;--text:#1a1a1a;--text-muted:#555;--text-label:#aaa;--accent:#b8952e;--border:#e4e2dd;--nav-bg:rgba(245,244,240,.94)}
+    html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s;line-height:1.7;font-size:15px}
+    nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-back{font-size:.8rem;color:var(--text-muted);text-decoration:none;transition:color .2s}.nav-back:hover{color:var(--accent)}
+    .nav-right{display:flex;align-items:center;gap:1rem}.nav-num{font-size:.72rem;color:var(--text-label);letter-spacing:.06em;font-weight:600}
+    .theme-toggle{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:border-color .2s,color .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+    .wrap{max-width:860px;margin:0 auto;padding:3.5rem 2rem 6rem}
+    .doc-label{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:.5rem}
+    h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--accent)}
+    .doc-sub{font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .meta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .badge{font-size:.65rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.28rem .65rem;border-radius:4px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted)}
+    .badge-accent{border-color:var(--accent2);color:var(--accent)}
+    .divider{border:none;border-top:1px solid var(--border);margin:2.2rem 0}
+    .section-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h2{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:1.4rem}
+    h3{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.35rem;margin-top:1rem}
+    p{font-size:.875rem;color:var(--text-muted);line-height:1.8;margin-bottom:.85rem}
+    ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+    li{font-size:.875rem;color:var(--text-muted);line-height:1.75;margin-bottom:.2rem}
+    li strong{color:var(--text);font-weight:600}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;margin-bottom:.85rem}
+    .card h2,.card h3{margin-top:0}.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+    .art-block{background:var(--bg-card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem}
+    .art-num{font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .art-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+    .art-body{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+    .highlight{border-left:3px solid var(--accent);padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .highlight p{margin-bottom:0;font-size:.875rem}
+    .warning{border-left:3px solid #c0392b;padding:.75rem 1.1rem;background:var(--bg-card);border-radius:0 6px 6px 0;margin-bottom:1rem}
+    .warning p{margin-bottom:0;font-size:.875rem}.warning strong{color:#e74c3c}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.82rem}
+    th{background:var(--bg-card);color:var(--text);font-weight:600;padding:.6rem .9rem;text-align:left;border:1px solid var(--border)}
+    td{padding:.55rem .9rem;border:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+    tr:nth-child(even) td{background:var(--bg-alt)}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem}
+    .toc-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-label);margin-bottom:.8rem}
+    .toc a{display:block;font-size:.82rem;color:var(--text-muted);text-decoration:none;padding:.22rem 0;transition:color .15s}
+    .toc a:hover{color:var(--accent)}.toc a::before{content:"→ ";color:var(--accent);font-size:.75rem}
+    footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:var(--text-label)}
+    @media(max-width:700px){.wrap{padding:2rem 1.1rem 4rem}nav{padding:0 1.1rem}.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="../index.html">← Índice</a>
+  <div class="nav-right"><span class="nav-num">06 / 19</span><button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀</span></button></div>
+</nav>
+<div class="wrap">
+
+<p class="doc-label">06 · Orgânica AT-RAM</p>
+<h1>DRR n.º 3/2019/M e n.º 7/2021/M — <em>Orgânica da AT-RAM</em></h1>
+<p class="doc-sub">DRR n.º 3/2019/M, de 19 de março (orgânica base) · Alterado pelo DRR n.º 7/2021/M, de 27 de julho · Complementado pela Portaria n.º 420/2021 (estrutura nuclear)</p>
+<div class="meta-row">
+  <span class="badge badge-accent">AT-RAM</span>
+  <span class="badge">DRR 3/2019/M</span>
+  <span class="badge">DRR 7/2021/M</span>
+  <span class="badge">Orgânica</span>
+  <span class="badge">Administração Fiscal Regional</span>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Índice</div>
+  <a href="#posicao">Natureza, Posição Institucional e Enquadramento Legal</a>
+  <a href="#missao">Missão, Atribuições e Valores</a>
+  <a href="#conselho">Órgão de Gestão — Conselho Diretivo</a>
+  <a href="#centrais">Serviços Centrais — Competências Detalhadas</a>
+  <a href="#desconcentrados">Serviços Desconcentrados — Serviços de Finanças</a>
+  <a href="#alteracoes">Alterações do DRR n.º 7/2021/M</a>
+  <a href="#poderes">Poderes de Autoridade da AT-RAM</a>
+  <a href="#inspetores">Os Representantes da Fazenda Pública</a>
+  <a href="#nacional">Articulação com a AT Nacional</a>
+  <a href="#sintese">Síntese para o Inspetor Tributário</a>
+</div>
+
+<hr class="divider" id="posicao"/>
+<p class="section-label">1. Natureza, Posição Institucional e Enquadramento Legal</p>
+
+<div class="highlight">
+  <p>A AT-RAM é o <strong>organismo da Administração Regional Autónoma da Madeira responsável pela administração dos impostos e outros tributos na região</strong>. É a entidade equivalente à Autoridade Tributária e Aduaneira (AT) nacional, mas com âmbito territorial e funcional circunscrito à RAM.</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Natureza Jurídica</h3>
+    <p>A AT-RAM é um <strong>serviço regional com autonomia administrativa e financeira</strong> (mas sem personalidade jurídica própria — integra a Administração Regional da Madeira como pessoa coletiva). Tem orçamento próprio integrado no Orçamento Regional da Madeira. Os seus atos praticados no exercício de poderes públicos são atos administrativos tributários sujeitos ao regime do CPA e da LGT.</p>
+  </div>
+  <div class="card">
+    <h3>Enquadramento Legal Completo</h3>
+    <ul>
+      <li><strong>Base constitucional:</strong> Art. 227.º, n.º 1, al. i) CRP — poder tributário próprio das regiões autónomas</li>
+      <li><strong>Base financeira:</strong> Lei Orgânica n.º 2/2013 (LFRA) — autonomia financeira regional</li>
+      <li><strong>Orgânica base:</strong> DRR n.º 3/2019/M, de 19 de março</li>
+      <li><strong>Alteração:</strong> DRR n.º 7/2021/M, de 27 de julho</li>
+      <li><strong>Estrutura nuclear:</strong> Portaria n.º 420/2021, de 28 de julho</li>
+      <li><strong>Carreiras especiais:</strong> DLR n.º 28/2022/M</li>
+      <li><strong>Tutela:</strong> Secretaria Regional das Finanças (DRR 14/2024/M)</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider" id="missao"/>
+<p class="section-label">2. Missão, Atribuições e Valores</p>
+
+<div class="card">
+  <h3>Missão</h3>
+  <p>Administrar os impostos, direitos aduaneiros e demais tributos que lhe sejam atribuídos, bem como exercer o controlo das fronteiras e do território aduaneiro no âmbito regional, de acordo com as políticas definidas pelo Governo Regional, contribuindo para o desenvolvimento económico e social da Madeira e para o bem-estar dos cidadãos.</p>
+</div>
+
+<h2>Atribuições Principais (Artigo 3.º DRR 3/2019/M)</h2>
+<div class="grid2">
+  <div class="art-block">
+    <div class="art-num">Liquidação e cobrança</div>
+    <div class="art-title">Administração tributária</div>
+    <div class="art-body">Liquidar, cobrar e gerir os impostos e outros tributos de receita regional; emitir as correspondentes liquidações e notificações; gerir os processos de pagamento voluntário; instrução dos procedimentos de liquidação adicional.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Inspeção tributária</div>
+    <div class="art-title">Fiscalização do cumprimento</div>
+    <div class="art-body">Fiscalizar o cumprimento das obrigações tributárias pelos contribuintes; realizar inspeções externas e internas; investigar a fraude e evasão fiscais e aduaneiras; aplicar as normas anti-abuso; recolher informação para deteção de irregularidades.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Execução fiscal</div>
+    <div class="art-title">Cobrança coerciva</div>
+    <div class="art-body">Instaurar e tramitar os processos de execução fiscal para cobrança coerciva das dívidas tributárias; praticar atos de penhora e venda de bens; gerir acordos de pagamento em prestações; promover a reversão contra responsáveis subsidiários.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Assistência ao contribuinte</div>
+    <div class="art-title">Apoio e informação</div>
+    <div class="art-body">Prestar informação e assistência aos contribuintes no cumprimento das suas obrigações fiscais; emitir informações vinculativas; gerir a rede de atendimento presencial e os serviços digitais de acesso ao Portal das Finanças.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Controlo aduaneiro</div>
+    <div class="art-title">Fronteiras externas</div>
+    <div class="art-body">Exercer o controlo aduaneiro das mercadorias que entram e saem da RAM pelo porto e aeroporto do Funchal e portos menores; despacho aduaneiro; classificação pautal; cobrança de direitos; combate ao contrabando.</div>
+  </div>
+  <div class="art-block">
+    <div class="art-num">Política fiscal regional</div>
+    <div class="art-title">Participação normativa</div>
+    <div class="art-body">Participar na definição das orientações de política fiscal regional; prestar apoio técnico à SRF na elaboração de DLR fiscais; acompanhar a transposição de diretivas fiscais europeias para o contexto regional.</div>
+  </div>
+</div>
+
+<hr class="divider" id="conselho"/>
+<p class="section-label">3. Órgão de Gestão — Conselho Diretivo</p>
+
+<div class="card">
+  <h3>Composição</h3>
+  <p>O Conselho Diretivo é o órgão máximo de gestão e direção da AT-RAM. É composto pelo <strong>Presidente</strong> e pelos <strong>Vice-Presidentes</strong> (em número variável). O Presidente é nomeado por Resolução do Conselho do Governo Regional, sob proposta do Secretário Regional das Finanças, com mandato de 5 anos renovável. Os Vice-Presidentes são nomeados pelo mesmo processo.</p>
+  <h3>Competências exclusivas do Conselho Diretivo</h3>
+  <ul>
+    <li>Aprovar o <strong>plano de atividades e orçamento</strong> da AT-RAM (sujeitos a homologação da SRF)</li>
+    <li>Aprovar os <strong>regulamentos internos</strong> com impacto externo e as instruções de serviço relevantes</li>
+    <li>Decidir sobre <strong>informações vinculativas</strong> de maior complexidade e sobre acordos prévios de preços de transferência</li>
+    <li>Autorizar o acesso a <strong>informação bancária</strong> protegida pelo sigilo bancário (art. 63.º-B LGT)</li>
+    <li>Instaurar procedimentos de aplicação da <strong>cláusula geral anti-abuso</strong> (art. 38.º LGT)</li>
+    <li>Aprovar a <strong>reversão da execução fiscal</strong> contra responsáveis subsidiários (gerentes, administradores)</li>
+    <li>Resolver <strong>conflitos de competência</strong> entre serviços internos</li>
+    <li>Representar a AT-RAM externamente e nos tribunais (através dos Representantes da Fazenda Pública)</li>
+    <li>Autorizar <strong>pagamentos em prestações</strong> acima dos limites das competências dos serviços de finanças</li>
+    <li>Decidir sobre <strong>reclamações graciosas</strong> de maior complexidade ou valor</li>
+  </ul>
+  <h3>Funcionamento</h3>
+  <p>O Conselho Diretivo reúne regularmente (regra geral semanalmente) e delibera colegialmente sobre as matérias da sua competência exclusiva. As deliberações são por maioria dos membros presentes, com voto de qualidade do Presidente em caso de empate. As reuniões são lavradas em ata.</p>
+</div>
+
+<hr class="divider" id="centrais"/>
+<p class="section-label">4. Serviços Centrais — Competências Detalhadas</p>
+
+<h2>Direção de Serviços de Gestão e Recursos Humanos</h2>
+<div class="card">
+  <ul>
+    <li>Gestão administrativa e financeira interna da AT-RAM (contabilidade interna, pagamentos, orçamentação interna)</li>
+    <li>Gestão dos recursos humanos: recrutamento, avaliação de desempenho (SIADAP-RAM), formação, mobilidade interna</li>
+    <li>Gestão patrimonial e logística (instalações, viaturas, equipamentos, material de escritório)</li>
+    <li>Tecnologias de informação e comunicação (sistemas informáticos, e-fatura, Portal das Finanças na RAM, SAF-T)</li>
+    <li>Gestão do arquivo e documentação</li>
+    <li>Serviços de apoio jurídico interno (pareceres, revisão de atos)</li>
+    <li>Implementação do PGRC (Plano de Gestão de Riscos de Corrupção) e do canal de denúncias interno (RGPC)</li>
+    <li>Encarregado de Proteção de Dados (EPD) — articulação com esta direção</li>
+  </ul>
+</div>
+
+<h2>Direção de Serviços de Imposto sobre o Rendimento</h2>
+<div class="card">
+  <p>Competências em matéria de <strong>IRS, IRC e Imposto sobre as Sucessões e Doações</strong> (imposto regional sobre herança):</p>
+  <ul>
+    <li>Orientação normativa e procedimental sobre IRS e IRC aplicáveis na RAM</li>
+    <li>Emissão de <strong>instruções de serviço</strong> para uniformização de procedimentos nos serviços de finanças</li>
+    <li>Análise de pedidos de <strong>informação vinculativa</strong> em matéria de IRS e IRC</li>
+    <li>Controlo das <strong>autoliquidações</strong> e das retenções na fonte declaradas pelos contribuintes</li>
+    <li>Análise de pedidos de reconhecimento de <strong>benefícios fiscais</strong> regionais em matéria de rendimento</li>
+    <li>Articulação com a AT nacional em matéria de IRS e IRC de contribuintes com obrigações em ambas as jurisdições</li>
+    <li>Tramitação dos <strong>acordos de preços de transferência</strong> (APA) com proposta ao Conselho Diretivo</li>
+    <li>Controlo dos regimes especiais: tributação de não residentes, residentes não habituais, CINM</li>
+  </ul>
+</div>
+
+<h2>Direção de Serviços de IVA e Outros Impostos Indiretos</h2>
+<div class="card">
+  <p>Competências em matéria de <strong>IVA, Imposto do Selo, IMT, IMI e Impostos Especiais de Consumo</strong> (IEC) com incidência regional:</p>
+  <ul>
+    <li>Análise e controlo das <strong>declarações periódicas de IVA</strong> (DP IVA) dos contribuintes registados na RAM</li>
+    <li>Verificação de isenções de IVA regionais (DLR que adaptam as taxas e isenções do CIVA à RAM)</li>
+    <li>Gestão dos procedimentos de <strong>reembolso de IVA</strong> — instrução e decisão dos pedidos de reembolso</li>
+    <li>Articulação com a AT nacional sobre o IVA nas operações transfronteiriças (intracomunitárias) envolvendo contribuintes da RAM</li>
+    <li>Controlo do <strong>IMI</strong> — matrizes prediais, avaliações, isenções, cadernetas prediais</li>
+    <li>Controlo do <strong>IMT</strong> — liquidação e cobrança nos atos de transmissão de imóveis na RAM</li>
+    <li>Gestão dos <strong>IEC</strong> com receita regional (ISP, IABA, IT) — verificação das declarações e dos pagamentos</li>
+    <li>Controlo do <strong>Imposto do Selo</strong> liquidado na RAM</li>
+  </ul>
+</div>
+
+<h2>Direção de Serviços de Inspeção Tributária</h2>
+<div class="card">
+  <p>Serviço central com ligação direta ao Conselho Diretivo para garantir independência operacional das inspeções.</p>
+  <h3>Competências</h3>
+  <ul>
+    <li>Elaborar o <strong>Plano Anual de Inspeção Tributária (PAIT)</strong> — selecionar os contribuintes a inspecionar com base em critérios de risco, inteligência fiscal e orientações da SRF</li>
+    <li>Coordenar e dirigir as <strong>inspeções externas</strong> (realizadas nas instalações dos contribuintes) e as <strong>inspeções internas</strong> (realizadas nos serviços da AT-RAM com base em documentação)</li>
+    <li>Investigar casos de <strong>fraude fiscal e aduaneira</strong> qualificada, incluindo esquemas de evasão, manipulação de preços de transferência, offshores e esquemas agressivos</li>
+    <li>Cooperar com o <strong>Ministério Público e PJ</strong> em processos-crime fiscais (crime de fraude fiscal, burla tributária, branqueamento de capitais)</li>
+    <li>Implementar o <strong>plano de análise de risco de incumprimento</strong> — cruzamento de dados para deteção de irregularidades (e-fatura, SAF-T, informações bancárias, relatórios de países)</li>
+    <li>Recolher informação cruzada de fontes múltiplas (declarações, e-fatura, informações bancárias, DAC6, CRS) para alimentar o sistema de seleção de contribuintes</li>
+    <li>Aplicar a <strong>cláusula geral anti-abuso</strong> (com proposta ao Conselho Diretivo) em casos de planeamento fiscal agressivo</li>
+    <li>Gerir a cooperação com administrações fiscais estrangeiras no âmbito da troca de informações a pedido e espontânea</li>
+  </ul>
+  <h3>Subunidades especializadas (DRR 7/2021/M)</h3>
+  <ul>
+    <li><strong>Núcleo de Análise de Risco e Inteligência Fiscal:</strong> Seleção quantitativa e qualitativa de contribuintes de risco; modelos preditivos de incumprimento; análise de e-fatura e SAF-T</li>
+    <li><strong>Núcleo de Inspeção Interna:</strong> Inspeções sem deslocação às instalações do contribuinte; análise documental; cruzamento declarativo</li>
+    <li><strong>Núcleo de Inspeção Externa:</strong> Inspeções presenciais às instalações dos contribuintes; equipas de inspetores com chefe de equipa designado</li>
+    <li><strong>Núcleo de Investigação de Fraude:</strong> Casos de fraude qualificada; cooperação com MP e PJ</li>
+  </ul>
+</div>
+
+<h2>Direção de Serviços de Cobrança e Execução Fiscal</h2>
+<div class="card">
+  <ul>
+    <li>Gestão dos <strong>processos de execução fiscal</strong> (instauração, tramitação, distribuição)</li>
+    <li>Controlo dos <strong>prazos de pagamento voluntário</strong> e emissão de notas de cobrança</li>
+    <li>Gestão de <strong>acordos de pagamento em prestações</strong> — instrução e decisão dos pedidos que excedem a competência dos serviços de finanças</li>
+    <li>Atos de <strong>penhora</strong> (bens móveis, imóveis, créditos, salários, contas bancárias) e organização dos procedimentos de <strong>venda</strong> de bens penhorados</li>
+    <li>Distribuição de receita tributária cobrada pelas diversas fontes de receita</li>
+    <li>Articulação com os <strong>tribunais tributários</strong> sobre execuções fiscais contestadas</li>
+    <li>Procedimentos de <strong>dação em pagamento</strong> (entrega de bens em substituição do pagamento em dinheiro)</li>
+    <li>Procedimentos de <strong>reversão</strong> contra responsáveis subsidiários — proposta ao Conselho Diretivo</li>
+    <li>Gestão de acordos de regularização de dívida e concordatas tributárias</li>
+    <li>Controlo dos <strong>créditos incobráveis</strong> e proposta de abate de dívidas prescritas</li>
+  </ul>
+</div>
+
+<h2>Direção de Serviços Aduaneiros</h2>
+<div class="card">
+  <ul>
+    <li>Controlo das <strong>fronteiras externas da UE</strong> no território da RAM: porto do Funchal, aeroporto do Funchal, portos menores da RAM</li>
+    <li><strong>Despacho aduaneiro</strong> das mercadorias que entram e saem da RAM (desalfandegamento)</li>
+    <li><strong>Classificação pautal</strong> das mercadorias para aplicação das pautas aduaneiras europeias</li>
+    <li>Cobrança de <strong>direitos aduaneiros</strong> e IVA na importação</li>
+    <li>Controlo de <strong>regimes aduaneiros especiais</strong>: trânsito, entreposto, aperfeiçoamento ativo/passivo</li>
+    <li>Combate ao <strong>contrabando e tráfico</strong> (em cooperação com a PJ, SEF e GNR/PSP aduaneiro)</li>
+    <li>Articulação com a <strong>ASAE</strong> sobre controlo de produtos alimentares, com o ICNF sobre fauna/flora protegida, e com os serviços fitossanitários e veterinários</li>
+    <li>Gestão do <strong>regime CINM</strong> (Centro Internacional de Negócios da Madeira) — verificação das condições para fruição dos benefícios aduaneiros e fiscais especiais da zona franca</li>
+    <li>Reporte à AT nacional e à Comissão Europeia (DG TAXUD) sobre o tráfego aduaneiro regional</li>
+  </ul>
+</div>
+
+<hr class="divider" id="desconcentrados"/>
+<p class="section-label">5. Serviços Desconcentrados — Serviços de Finanças</p>
+
+<div class="card">
+  <p>Os Serviços de Finanças (SF) são as unidades de atendimento presencial dos contribuintes, distribuídas pelos concelhos da RAM. São chefiados por um <strong>Chefe de Finanças</strong> (cargo de direção intermédia). O DRR 7/2021/M procedeu à racionalização da rede de SF, com concentração em alguns concelhos de menor dimensão.</p>
+  <h3>Competências dos Serviços de Finanças</h3>
+  <table>
+    <thead><tr><th>Área</th><th>Competências</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Atendimento</strong></td><td>Atendimento presencial e telefónico; informação sobre obrigações fiscais; receção de documentos e declarações</td></tr>
+      <tr><td><strong>Liquidação local</strong></td><td>Liquidação de IMI, IMT, IS nas transmissões imobiliárias; emissão de certidões de situação tributária e de não-dívida</td></tr>
+      <tr><td><strong>Registo predial/fiscal</strong></td><td>Registo de bens imóveis; atualização das matrizes prediais; instrução de pedidos de avaliação</td></tr>
+      <tr><td><strong>Execução fiscal local</strong></td><td>Instauração de execuções fiscais; citação dos executados; penhoras de bens de menor valor; dentro dos limites de competência</td></tr>
+      <tr><td><strong>Pagamento em prestações</strong></td><td>Autorização de planos de pagamento dentro dos limites fixados pelo Conselho Diretivo</td></tr>
+      <tr><td><strong>Reclamações graciosas</strong></td><td>Instrução e decisão das reclamações graciosas de menor valor e menor complexidade técnica</td></tr>
+      <tr><td><strong>Inspeção local</strong></td><td>Inspeções simples de âmbito local, sob orientação da Direção de Inspeção Tributária</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="alteracoes"/>
+<p class="section-label">6. Alterações Introduzidas pelo DRR n.º 7/2021/M</p>
+
+<div class="card">
+  <ul>
+    <li><strong>Reforço da Inspeção Tributária:</strong> Criação de subunidades especializadas (análise de risco, investigação de fraude qualificada); aumento das competências de cooperação internacional; acesso alargado a dados de e-fatura e SAF-T para seleção de contribuintes</li>
+    <li><strong>Modernização da cobrança:</strong> Adaptação às novas modalidades de pagamento digital; integração com a plataforma nacional de execuções fiscais; procedimentos desmaterializados de penhora e venda</li>
+    <li><strong>Reorganização dos Serviços de Finanças:</strong> Racionalização da rede de atendimento presencial, com redução dos SF nos concelhos de menor dimensão e reforço do atendimento digital e remoto (videochamada, balcão digital); possibilidade de SF partilhados entre concelhos próximos</li>
+    <li><strong>Novas unidades orgânicas flexíveis:</strong> Núcleo de análise de risco e inteligência fiscal; unidade de planeamento e controlo de gestão; unidade de comunicação institucional</li>
+    <li><strong>Reforço da cooperação internacional:</strong> Troca automática de informações (DAC2, DAC6, CRS/FATCA); inspeções conjuntas com AT nacional em grupos económicos com presença na RAM e no continente; articulação com autoridades fiscais estrangeiras</li>
+    <li><strong>Competências em matéria de branqueamento:</strong> Instrução de comunicações de operações suspeitas à UIF (Unidade de Informação Financeira) em cooperação com as entidades financeiras regionais</li>
+  </ul>
+</div>
+
+<hr class="divider" id="poderes"/>
+<p class="section-label">7. Poderes de Autoridade da AT-RAM</p>
+
+<div class="highlight">
+  <p>A AT-RAM, no exercício das suas funções, dispõe de poderes de autoridade pública que a distinguem das entidades privadas. Esses poderes são exercidos com respeito pelos princípios do CPA (legalidade, proporcionalidade, boa fé) e pelos direitos e garantias dos contribuintes previstos na LGT.</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Poderes em matéria tributária</h3>
+    <ul>
+      <li><strong>Poder de liquidação:</strong> Fixar e notificar os impostos devidos pelos contribuintes com base nos elementos declarados ou apurados em inspeção</li>
+      <li><strong>Poder de inspeção:</strong> Aceder às instalações, documentos, sistemas informáticos e registos contabilísticos dos contribuintes para verificar o cumprimento das obrigações fiscais (art. 63.º LGT)</li>
+      <li><strong>Poder de avaliação indireta:</strong> Em caso de impossibilidade de determinação direta da matéria tributável, fixar a matéria coletável por métodos indiretos (art. 87.º ss. LGT)</li>
+      <li><strong>Poder de cobrança coerciva:</strong> Instaurar execuções fiscais, penhorar e vender bens dos devedores sem necessidade de ação judicial prévia</li>
+      <li><strong>Poder sancionatório:</strong> Instaurar e decidir processos de contraordenação fiscal; comunicar ao MP factos com relevância criminal (fraude fiscal)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Poderes de acesso a informação</h3>
+    <ul>
+      <li><strong>Acesso à informação bancária:</strong> Com autorização do dirigente máximo ou do tribunal, pode aceder a dados bancários dos contribuintes (art. 63.º-B LGT) — derrogação do sigilo bancário</li>
+      <li><strong>Acesso a dados de terceiros:</strong> Pode solicitar informações a terceiros (empregadores, clientes, fornecedores, instituições financeiras) sobre operações com os contribuintes inspecionados</li>
+      <li><strong>Troca de informações internacionais:</strong> Pode solicitar e prestar assistência às administrações fiscais estrangeiras no âmbito das DAC, dos acordos bilaterais e dos acordos multilaterais (CRS, FATCA)</li>
+      <li><strong>Acesso a sistemas de informação do Estado:</strong> Acesso ao registo predial, comercial, automóvel e às bases de dados da Segurança Social para cruzamento de informação fiscal</li>
+      <li><strong>Poder regulamentar interno:</strong> Emitir circulares, instruções de serviço e despachos de orientação vinculativos para os seus serviços internos</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Limites aos Poderes de Autoridade</h2>
+<div class="card">
+  <ul>
+    <li><strong>Princípio da legalidade:</strong> Qualquer ato de inspeção, liquidação ou execução exige base legal expressa (art. 3.º CPA)</li>
+    <li><strong>Proporcionalidade:</strong> Os meios utilizados devem ser os menos invasivos possíveis para atingir o objetivo fiscal legítimo</li>
+    <li><strong>Direito de audição prévia:</strong> O contribuinte deve ser ouvido antes de qualquer decisão desfavorável (art. 60.º LGT)</li>
+    <li><strong>Fundamentação obrigatória:</strong> Toda a liquidação adicional e ato desfavorável deve ser fundamentado (art. 268.º CRP + LGT)</li>
+    <li><strong>Garantias processuais:</strong> O contribuinte pode reclamar graciosamente, recorrer hierarquicamente e impugnar judicialmente os atos tributários ilegais (CPPT)</li>
+    <li><strong>Sigilo fiscal:</strong> Os dados dos contribuintes acedidos em inspeção ficam sujeitos ao sigilo fiscal — proibição de divulgação a terceiros (art. 64.º LGT)</li>
+  </ul>
+</div>
+
+<hr class="divider" id="inspetores"/>
+<p class="section-label">8. Os Representantes da Fazenda Pública</p>
+
+<div class="card">
+  <p>Os <strong>Representantes da Fazenda Pública (RFP)</strong> são funcionários da AT-RAM com competência para representar a Fazenda Pública (a AT-RAM como sujeito ativo) nos tribunais tributários — nos processos de impugnação judicial, de execução fiscal e outros processos judiciais tributários.</p>
+  <h3>Designação</h3>
+  <p>Os RFP são designados pelo Presidente do Conselho Diretivo. Devem ter formação jurídica ou técnica adequada e conhecimento aprofundado de direito tributário processual. O RFP não é um advogado no sentido técnico — é um representante administrativo especializado da Fazenda Pública.</p>
+  <h3>Competências</h3>
+  <ul>
+    <li>Representar a AT-RAM em todos os processos judiciais tributários junto do TAF do Funchal e do TCA Sul</li>
+    <li>Contestar as impugnações judiciais dos contribuintes contra atos de liquidação da AT-RAM</li>
+    <li>Responder às oposições à execução fiscal</li>
+    <li>Defender os atos da AT-RAM nos processos de recurso para os tribunais superiores</li>
+    <li>Acompanhar a jurisprudência tributária relevante e informar o Conselho Diretivo das tendências</li>
+  </ul>
+</div>
+
+<hr class="divider" id="nacional"/>
+<p class="section-label">9. Articulação com a AT Nacional</p>
+
+<div class="card">
+  <p>Embora a AT-RAM seja um organismo regional autónomo, articula-se estreitamente com a AT (nacional) em múltiplas dimensões operacionais e técnicas:</p>
+  <table>
+    <thead><tr><th>Dimensão</th><th>Como funciona</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sistemas tecnológicos</strong></td><td>A AT-RAM utiliza os mesmos sistemas da AT nacional (Portal das Finanças, e-fatura, SAF-T, e-BPAT) para os impostos de âmbito nacional aplicados na RAM. A AT-RAM acede como operador regional aos sistemas centrais</td></tr>
+      <tr><td><strong>Troca de informação</strong></td><td>Intercâmbio automático de dados sobre contribuintes com atividade simultânea em Portugal continental/Açores e na RAM — NIF único nacional partilhado entre as duas administrações</td></tr>
+      <tr><td><strong>Cooperação em inspeções</strong></td><td>Inspeções conjuntas a grupos económicos com presença simultânea na RAM e no continente; a AT-RAM lidera na RAM e a AT lidera no continente, com partilha de informação entre as equipas</td></tr>
+      <tr><td><strong>Receita partilhada</strong></td><td>Parte das receitas de IVA e de impostos sobre o rendimento são partilhadas entre o Estado e a RAM nos termos da LFRA; a AT-RAM e a AT nacional articulam os mecanismos de distribuição</td></tr>
+      <tr><td><strong>Informação vinculativa</strong></td><td>A AT-RAM aplica na RAM as circulares e orientações da AT nacional (com as devidas adaptações regionais), salvo quando existam orientações regionais específicas em sentido diferente</td></tr>
+      <tr><td><strong>DAC/CRS/FATCA</strong></td><td>As instituições financeiras da RAM reportam à AT nacional no âmbito do CRS/FATCA; a AT nacional partilha esses dados com a AT-RAM quando relevantes para a tributação na RAM</td></tr>
+      <tr><td><strong>Formação</strong></td><td>Os centros de formação da AT nacional prestam formação aos inspetores e técnicos da AT-RAM; os conteúdos são adaptados ao contexto regional</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" id="sintese"/>
+<p class="section-label">10. Síntese — O que o DRR 3/2019/M Significa para o Inspetor Tributário</p>
+
+<div class="highlight">
+  <p>O DRR 3/2019/M é a base orgânica da entidade empregadora do inspetor tributário. Define a estrutura dentro da qual o inspetor trabalha e as competências do serviço de inspeção tributária de que faz parte.</p>
+</div>
+
+<table>
+  <thead><tr><th>Matéria do DRR 3/2019/M</th><th>Implicação direta para o inspetor</th></tr></thead>
+  <tbody>
+    <tr><td>Direção de Serviços de Inspeção Tributária</td><td>Serviço onde o inspetor está inserido; coordena o plano de inspeção, as equipas e as metodologias</td></tr>
+    <tr><td>Competências do Conselho Diretivo</td><td>A autorização para instaurar anti-abuso, aceder a dados bancários e reverter execuções é do Conselho Diretivo — não do inspetor individualmente</td></tr>
+    <tr><td>Poderes de inspeção (art. 63.º LGT)</td><td>O inspetor tem base legal para aceder às instalações e documentos do contribuinte; deve sempre identificar-se e apresentar a ordem de serviço de inspeção</td></tr>
+    <tr><td>Serviços de Finanças</td><td>O inspetor articula-se com os SF para obter dados locais dos contribuintes e para a fase de notificação de atos locais</td></tr>
+    <tr><td>RFP</td><td>Quando o contribuinte impugna judicialmente o ato de liquidação resultante da inspeção, o RFP defende a posição da AT-RAM no tribunal — o inspetor pode ser chamado a prestar esclarecimentos</td></tr>
+    <tr><td>Cooperação internacional</td><td>O inspetor pode receber e utilizar informação obtida por troca automática internacional (DAC, CRS, FATCA) como prova em processos de inspeção</td></tr>
+    <tr><td>Articulação AT nacional</td><td>Em inspeções a grupos com presença no continente, o inspetor coordena com a AT nacional; os sistemas de e-fatura e SAF-T são partilhados</td></tr>
+  </tbody>
+</table>
+
+</div>
+<footer>Joana — Legislação &amp; Resumos · <a href="https://andreaguiar.org" style="color:var(--accent);text-decoration:none;">andreaguiar.org</a></footer>
+<script>
+  const html=document.documentElement,icon=document.getElementById('theme-icon');
+  function toggleTheme(){const t=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀':'☾';localStorage.setItem('theme',t)}
+  (function(){const s=localStorage.getItem('theme')||'dark';html.setAttribute('data-theme',s);icon.textContent=s==='dark'?'☀':'☾'})()
+</script>
+</body>
+</html>
